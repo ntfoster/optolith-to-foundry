@@ -1,6 +1,6 @@
 {
-    "name": "optolithtofoundry",
-    "title": "Optolith Hero Importer",
+    "name": "optolith-to-foundry",
+    "title": "Optolith to Foundry Importer",
     "description": "A simple tool to import The Dark Eye heroes from .json files exported from Optolith into Foundry",
     "author": "ntfoster",
     "version": "0.1.0",
