@@ -94,7 +94,7 @@ function parseActivatable(data) {
                         switch (id) {
                             case "SA_9": // Skill Specialization
                                 itemName = itemName + ' ()'
-                                var option1 = game.i18n.localize(`${i.sid}`)
+                                var option1 = game.i18n.localize(`SKILL.${i.sid}`)
                                 var option2 = game.i18n.localize(`SPEC.${i.sid}.${i.sid2}`)
                                 displayName = `${displayName} (${option1}: ${option2})`
                                 var advantage = {
@@ -133,7 +133,7 @@ function parseActivatable(data) {
                                     let sourceData = game.i18n.localize(`${id}.src`)
                                     for (let src of sourceData) {
                                         // source += ' ' + game.i18n.localize(`${src.src}.name`)+` <i>(Page: ${src.page}</i>)`
-                                        source += ` ${game.i18n.localize(`${src.src}.name`)} <i>(Page: ${src.page}</i>)`
+                                        source += ` ${game.i18n.localize(`BOOK.${src.src}`)} <i>(Page: ${src.page}</i>)`
                                     }
                                 } else{ source = "" }
                                 var advantage = {
@@ -205,7 +205,7 @@ async function importFromJSON(json) {
                 total: data.ap.total
             },
             species: {
-                value: game.i18n.localize(race)
+                value: game.i18n.localize(`RACE.${race}`)
             }
         },
         status: {
