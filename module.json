@@ -1,0 +1,25 @@
+{
+    "name": "optolithtofoundry",
+    "title": "Optolith Hero Importer",
+    "description": "A simple tool to import The Dark Eye heroes from .json files exported from Optolith into Foundry",
+    "author": "ntfoster",
+    "version": "0.1.0",
+    "minimumCoreVersion": "0.7.9",
+    "system": "dsa5",
+    "esmodules": [
+        "import.js"
+    ],
+    "dependencies": [
+      {
+        "name": "dsa5",
+        "type": "system"
+      }
+    ],
+    "languages": [
+        {
+          "lang": "en",
+          "name": "English",
+          "path": "lang/en.json"
+        }
+    ]
+  }
