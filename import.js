@@ -88,9 +88,9 @@ function parseActivatable(data) {
                     break;
             }
             d[1].forEach(i => {
-                var displayName = game.i18n.localize(`${id}.name`)
-                var itemName = displayName
-                var tempName = displayName
+                var baseName = game.i18n.localize(`${id}.name`)
+                var itemName = baseName
+                var displayName = baseName
                 var advantage = {}
                 switch (id) {
                     case "ADV_0":
@@ -103,7 +103,6 @@ function parseActivatable(data) {
                         break
                     case "ADV_50": //Spellcaster
                         var effect = "+20 AE"
-                        itemName = displayName
                         break
                     case "SA_0":
                         itemName = displayName = i.sid
@@ -122,6 +121,25 @@ function parseActivatable(data) {
                             if (typeof (i.sid) == "number") {
                                 var option1 = game.i18n.localize(`${id}.options.${i.sid - 1}`)
                                 itemName = displayName = `${displayName} (${option1})`
+                            } else {
+                                switch(i.sid.substring(0, i.sid.indexOf('_'))) {
+                                    case "TAL":
+                                        var option1 = game.i18n.localize(`SKILL.${i.sid}`)
+                                        break
+                                    case "CT":
+                                        var option1 = game.i18n.localize(`COMBATSKILL.${i.sid}`)
+                                        break
+                                    case "SPELL":
+                                        var option1 = game.i18n.localize(`SPELL.${i.sid}.name`)
+                                        break
+                                    default:
+                                        var option1 = s.id
+                                        break
+                                }
+                                itemName = `${baseName} ()`
+                                displayname = `${baseName} (${option1})`
+                            }
+                            /*
                             } else if (i.sid.startsWith("TAL_")) { // Incompetant
                                 var option1 = game.i18n.localize(`SKILL.${i.sid}`)
                                 displayName = `${displayName} (${option1})`
@@ -131,10 +149,11 @@ function parseActivatable(data) {
                                 itemName = itemName + ' ()'
                                 displayName = `${displayName} (${option1})`
                             }
+                            */
                         }
                         if (i.sid2) {
                             var option2 = i.sid2
-                            displayName = `${tempName} (${option1}: ${option2})`
+                            displayName = `${baseName} (${option1}: ${option2})`
                         }
                         if (type == "specialability") {
                             var source = "<b>Source:</b>"
