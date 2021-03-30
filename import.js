@@ -1,56 +1,11 @@
-function renderImportDialog() {
-
-    new Dialog({
-        title: 'Import JSON file from Optolith',
-        content: `
-      <form>
-        <div class="form-group">
-          <label>JSON File</label>
-          <input type='text' name='inputField'></input>
-        </div>
-      </form>`,
-        buttons: {
-            yes: {
-                icon: "<i class='fas fa-check'></i>",
-                label: `Import`
-            }
-        },
-        default: 'yes',
-        close: html => {
-            let result = html.find('input[name=\'inputField\']');
-            if (result.val() !== '') {
-                let json = result.val()
-                const obj = JSON.parse(json)
-                var skills = Object.entries(obj.talents)
-                skills.forEach(function (s) {
-                    // console.log(`${skillMap[s[0]]}: ${s[1]}`)
-                    const item = actor.data.items.find(i => i.name === skillMap[s[0]]);
-                    const update = {
-                        _id: item._id,
-                        'data.talentValue.value': s[1]
-                    };
-                    const updated = actor.updateEmbeddedEntity("OwnedItem", update);
-                    // console.log(update)
-                    // var item = {}
-                    // item["name"] = skillMap[s[0]]
-                    // item["data"] = {"talentValue": {"value": s[1]}}
-                    // items.push(item)
-                    // console.log(item)
-                });
-
-
-            }
-        }
-    }).render(true);
-}
 import {
     ATTRIBUTE_MAP,
     RACE_MAP,
     SKILL_MAP,
     COMBAT_SKILL_MAP
 } from "./data/maps.js"
+import DSAItem from "../../systems/dsa5/modules/item/item-dsa5.js"
 
-// const ATTRIBUTE_MAP = import("./data/attributes.json")
 function parseSkills(data, prefix) {
 
     var items = []
@@ -69,6 +24,48 @@ function parseSkills(data, prefix) {
     return items
 }
 
+async function parseSpells(data) {
+    const {
+        SPELL_MAP
+    } = await import("./data/spells.js")
+    var items = []
+    for (let spell of data) {
+        let item = {}
+        // console.log(spell[0])
+        // spell[0] = "SPELL_58"
+        let spellID = spell[0]
+        item.displayName = item.itemName = game.i18n.localize(`SPELL.${spell[0]}.name`)
+        item.type = "spell"
+        item.data = {
+            talentValue: {
+                value: spell[1]
+            }
+        }
+        let sourceData = game.i18n.localize(`SPELL.${spell[0]}.src`)
+        let sources = []
+        for (let src of sourceData) {
+            sources.push(`${game.i18n.localize(`BOOK.${src.src}`)} <i>(Page: ${src.page}</i>)`)
+        }
+        if (!SPELL_MAP[spell[0]]) {
+            console.warn(`Couldn't map spell ${spell[0]}`)
+        } else {
+            item.customData = {
+                characteristic1: {
+                    value: ATTRIBUTE_MAP[`${SPELL_MAP[spellID].check1}`]
+                },
+                characteristic2: {
+                    value: ATTRIBUTE_MAP[`${SPELL_MAP[spellID].check2}`]
+                },
+                characteristic3: {
+                    value: ATTRIBUTE_MAP[`${SPELL_MAP[spellID].check3}`]
+                }
+            }
+        }
+        item.source = sources.join("<br>")
+        items.push(item)
+    }
+    return items
+}
 
 // Advntages, Disadvantages and Special Abilities
 function parseActivatable(data) {
@@ -195,6 +192,61 @@ function parseActivatable(data) {
     return advantages
 }
 
+async function addItems(actor, items, compendium) {
+    var pack = await game.packs.entries.find(p => p.metadata.label == compendium);
+    if (pack) {
+        let index = await pack.getIndex()
+        for (let item of items) {
+            let newItem = {}
+            let entry = index.find(i => i.name == item.itemName)
+            if (entry) {
+                newItem = await pack.getEntry(entry._id)
+                newItem.name = item.displayName
+                if (item.data) {
+                    newItem.data = {
+                        ...newItem.data,
+                        ...item.data
+                    }
+                }
+            } else {
+                console.warn("Couldn't find item in compendium: " + item.itemName)
+                // add custom item
+                newItem = {
+                    name: item.displayName,
+                    type: item.type,
+                    img: DSAItem.defaultImages[item.type],
+                    data: {
+                        ...item.data,
+                        ...item.customData,
+                        ...{
+                            description: {
+                                value: `<b>Source:</b><br>${item.source}`
+                            }
+                        }
+                    }
+                }
+                console.log(`About to create: ${JSON.stringify(newItem)}`)
+
+            }
+            await actor.createOwnedItem(newItem)
+            // console.log(ownedItem)
+        }
+    } else {
+        console.warn("No such compendium: " + compendium)
+        for (let item of items) {
+            // add custom item
+            let newItem = {
+                name: item.displayName,
+                type: item.type,
+                data: item.data
+            }
+            console.log(newItem)
+            await actor.createOwnedItem(newItem)
+        }
+
+    }
+}
+
 async function importFromJSON(json) {
     const data = JSON.parse(json)
     var attributes = data.attr.values
@@ -214,7 +266,8 @@ async function importFromJSON(json) {
 
     // var skills = parseSkills(Object.entries(data.talents), "SKILL")
     // var combatSkills = parseSkills(Object.entries(data.ct), "COMBATSKILL")
-    // TODO: spells
+    var spells = await parseSpells(Object.entries(data.spells))
+    console.log(spells)
 
     // skills = skills.concat(combatSkills)
     // console.log(skills)
@@ -239,22 +292,69 @@ async function importFromJSON(json) {
                 total: data.ap.total
             },
             species: {
-                value: game.i18n.localize(`RACE.${race}`)
+                value: `${game.i18n.localize(`RACE.${race}`)} (${game.i18n.localize(`RACEVARIANT.${data.rv}`)})`
+            },
+            gender: {
+                // value: game.i18n.localize(`RACE.${data.sex}`) // can't find i18n data for sex
+            },
+            culture: {
+                value: game.i18n.localize(`CULTURE.${data.c}`)
+            },
+            socialstate: {
+                value: game.i18n.localize(`SOCIALSTATUS.${data.pers.socialstatus}`)
+            },
+            family: {
+                value: data.pers.family
+            },
+            age: {
+                value: data.pers.age
+            },
+            haircolor: {
+                value: game.i18n.localize(`HAIRCOLOR.${data.pers.haircolor}`)
+            },
+            eyecolor: {
+                value: game.i18n.localize(`EYECOLOR.${data.pers.eyecolor}`)
+            },
+            height: {
+                value: data.pers.size
+            },
+            weight: {
+                value: data.pers.weight
+            },
+            distinguishingmark: {
+                value: data.pers.characteristics
+            },
+            Home: {
+                value: data.pers.placeofbirth
+            },
+            biography: {
+                value: `Birthdate: ${data.pers.dateofbirth} ${data.pers.title ? `<br>Title: ${data.pers.title}` : ""}`
+            },
+            notes: {
+                value: data.pers.otherinfo
             }
+
         },
         status: {
             wounds: {
                 initial: RACE_MAP[race].lp,
+                advances: data.attr.lp,
                 value: (characteristics['ko'].advances + 8) * 2 + RACE_MAP[race].lp // set to max health
             },
             soulpower: {
-                initial: RACE_MAP[race].spi
+                initial: RACE_MAP[race].spi,
             },
             toughness: {
                 initial: RACE_MAP[race].tou
             },
             speed: {
                 initial: RACE_MAP[race].mov
+            },
+            astralenergy: {
+                advances: data.attr.ae
+            },
+            karmaenergy: {
+                advances: data.attr.kp
             }
         }
     }
@@ -289,6 +389,7 @@ async function importFromJSON(json) {
     //     const updated = actor.updateEmbeddedEntity("OwnedItem", update);
     // }
 
+    // update skills
     for (let s of Object.entries(data.talents)) {
         const update = {
             _id: SKILL_MAP[s[0]],
@@ -296,6 +397,7 @@ async function importFromJSON(json) {
         }
         actor.updateEmbeddedEntity("OwnedItem", update);
     }
+    // update combat techniques
     for (let s of Object.entries(data.ct)) {
         const update = {
             _id: COMBAT_SKILL_MAP[s[0]],
@@ -303,6 +405,7 @@ async function importFromJSON(json) {
         }
         actor.updateEmbeddedEntity("OwnedItem", update);
     }
+
 
 
     // add activables
@@ -408,6 +511,10 @@ async function importFromJSON(json) {
             // console.log(newItem)
         }
     }
+
+    // add spells
+    addItems(actor, spells, "Spells, rituals and cantrips")
+
     console.log("Finished setting up sheet")
     actor.sheet.render(true)
 
