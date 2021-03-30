@@ -5,7 +5,9 @@ import {
     COMBAT_SKILL_MAP
 } from "./data/maps.js"
 import DSAItem from "../../systems/dsa5/modules/item/item-dsa5.js"
-import { ITEM_MAP } from "./data/items.js";
+import {
+    ITEM_MAP
+} from "./data/items.js";
 
 function parseSkills(data, prefix) {
 
@@ -105,6 +107,26 @@ function parseActivatable(data) {
                     case "ADV_50": //Spellcaster
                         var effect = "+20 AE"
                         break
+                    case "DISADV_1": // Afraid of
+                        itemName = `${baseName} ()`
+                        switch (typeof (i.sid)) {
+                            case "number":
+                                var option1 = game.i18n.localize(`${id}.options.${i.sid - 1}`)
+                                if (i.sid2) {
+                                    displayName = `${baseName} ${option1} (${i.sid2})`
+                                } else{
+                                    displayName = `${baseName} ${option1}`
+                                }
+                                break
+                            default:
+                                if (i.sid2) {
+                                    displayName = `${baseName} ${i.sid} (${i.sid2})`
+                                } else{
+                                    displayName = `${baseName} ${i.sid}`
+                                }
+                                break
+                        }
+                        break
                     case "SA_0":
                         itemName = displayName = i.sid
                         var cost = i.cost
@@ -121,7 +143,7 @@ function parseActivatable(data) {
                         if (i.sid) {
                             if (typeof (i.sid) == "number") {
                                 var option1 = game.i18n.localize(`${id}.options.${i.sid - 1}`)
-                                itemName = displayName = `${displayName} (${option1})`
+                                itemName = displayName = `${baseName} (${option1})`
                             } else {
                                 switch (i.sid.substring(0, i.sid.indexOf('_'))) {
                                     case "TAL":
@@ -137,7 +159,9 @@ function parseActivatable(data) {
                                         var option1 = i.sid
                                         break
                                 }
-                                itemName = `${baseName} ()`
+                                if (!baseName.includes('(')) {
+                                    itemName = `${baseName} ()`
+                                }
                                 displayName = `${baseName} (${option1})`
                             }
                             /*
@@ -474,8 +498,14 @@ async function importFromJSON(json) {
             if (advantage) {
                 let item = await pack.getEntry(advantage._id)
                 item.name = a.displayName
-                item.data.step = {
-                    value: a.tier
+                if (a.value > item.data.max.value) {
+                    item.data.step = {
+                        value: item.data.max.value
+                    }
+                } else {
+                    item.data.step = {
+                        value: a.value
+                    }
                 }
                 await actor.createOwnedItem(item)
             } else {
@@ -494,7 +524,7 @@ async function importFromJSON(json) {
                             value: a.effect
                         },
                         step: {
-                            value: a.tier
+                            value: a.value
                         }
                     }
                 })
@@ -515,7 +545,7 @@ async function importFromJSON(json) {
                         value: a.effect
                     },
                     step: {
-                        value: a.tier
+                        value: a.value
                     }
                 }
             })
@@ -534,11 +564,14 @@ async function importFromJSON(json) {
             if (ability) {
                 let item = await pack.getEntry(ability._id)
                 item.name = a.displayName
-                item.data.step = {
-                    value: a.tier
-                }
-                if (a.effect) {
-                    item.data.effect.value = a.effect
+                if (a.value > item.data.maxRank.value) {
+                    item.data.step = {
+                        value: item.data.maxRank.value
+                    }
+                } else {
+                    item.data.step = {
+                        value: a.value
+                    }
                 }
                 await actor.createOwnedItem(item)
             } else {
