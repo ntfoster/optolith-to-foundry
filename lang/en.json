@@ -7393,5 +7393,2886 @@
                 "page": 283
             }]
         }
+    },
+    "ITEM": {
+        "ITEMTPL_1": {
+            "name": "Basilisk-Tongue",
+            "src": [{
+                "src": "US25001E",
+                "page": 366
+            }, {
+                "src": "US25208E",
+                "page": 59
+            }]
+        },
+        "ITEMTPL_2": {
+            "name": "Dagger",
+            "src": []
+        },
+        "ITEMTPL_3": {
+            "name": "Dragon Tooth",
+            "src": [{
+                "src": "US25001E",
+                "page": 366
+            }, {
+                "src": "US25208E",
+                "page": 65
+            }]
+        },
+        "ITEMTPL_4": {
+            "name": "Main-Gauche",
+            "src": [{
+                "src": "US25001E",
+                "page": 366
+            }, {
+                "src": "US25208E",
+                "page": 76
+            }]
+        },
+        "ITEMTPL_5": {
+            "name": "Knife",
+            "src": []
+        },
+        "ITEMTPL_6": {
+            "name": "Heavy Dagger",
+            "src": []
+        },
+        "ITEMTPL_7": {
+            "name": "Waqqif",
+            "src": [{
+                "src": "US25001E",
+                "page": 366
+            }, {
+                "src": "US25208E",
+                "page": 91
+            }]
+        },
+        "ITEMTPL_8": {
+            "name": "Foil",
+            "src": [{
+                "src": "US25001E",
+                "page": 366
+            }, {
+                "src": "US25208E",
+                "page": 67
+            }]
+        },
+        "ITEMTPL_9": {
+            "name": "Rapier",
+            "src": []
+        },
+        "ITEMTPL_10": {
+            "name": "Wolf-Knife",
+            "src": [{
+                "src": "US25001E",
+                "page": 366
+            }, {
+                "src": "US25208E",
+                "page": 92
+            }]
+        },
+        "ITEMTPL_11": {
+            "name": "Brabak Cudgel",
+            "src": [{
+                "src": "US25001E",
+                "page": 367
+            }, {
+                "src": "US25208E",
+                "page": 61
+            }]
+        },
+        "ITEMTPL_12": {
+            "name": "Cudgel",
+            "src": [{
+                "src": "US25001E",
+                "page": 367
+            }, {
+                "src": "US25208E",
+                "page": 63
+            }]
+        },
+        "ITEMTPL_13": {
+            "name": "Club",
+            "src": [{
+                "src": "US25001E",
+                "page": 366
+            }, {
+                "src": "US25208E",
+                "page": 63
+            }]
+        },
+        "ITEMTPL_14": {
+            "name": "Wyvern-Beater",
+            "src": [{
+                "src": "US25001E",
+                "page": 367
+            }, {
+                "src": "US25208E",
+                "page": 94
+            }]
+        },
+        "ITEMTPL_15": {
+            "name": "Mage's Staff, short",
+            "src": [{
+                "src": "US25001E",
+                "page": 367
+            }, {
+                "src": "US25208E",
+                "page": 76
+            }]
+        },
+        "ITEMTPL_16": {
+            "name": "Mage's Staff, medium",
+            "src": [{
+                "src": "US25001E",
+                "page": 367
+            }, {
+                "src": "US25208E",
+                "page": 76
+            }]
+        },
+        "ITEMTPL_17": {
+            "name": "Molokdeschnaja",
+            "src": [{
+                "src": "US25001E",
+                "page": 367
+            }, {
+                "src": "US25208E",
+                "page": 77
+            }]
+        },
+        "ITEMTPL_18": {
+            "name": "Orc-Nose",
+            "src": [{
+                "src": "US25001E",
+                "page": 367
+            }, {
+                "src": "US25208E",
+                "page": 80
+            }]
+        },
+        "ITEMTPL_19": {
+            "name": "Raven's Beak",
+            "src": [{
+                "src": "US25001E",
+                "page": 367
+            }, {
+                "src": "US25005E",
+                "page": 233
+            }, {
+                "src": "US25206E",
+                "page": 82
+            }]
+        },
+        "ITEMTPL_20": {
+            "name": "Sun-Scepter",
+            "src": [{
+                "src": "US25001E",
+                "page": 367
+            }, {
+                "src": "US25005E",
+                "page": 233
+            }, {
+                "src": "US25208E",
+                "page": 88
+            }]
+        },
+        "ITEMTPL_21": {
+            "name": "Battleaxe",
+            "src": []
+        },
+        "ITEMTPL_22": {
+            "name": "Mace",
+            "src": []
+        },
+        "ITEMTPL_23": {
+            "name": "Morningstar",
+            "src": []
+        },
+        "ITEMTPL_24": {
+            "name": "War Lance",
+            "src": [{
+                "src": "US25001E",
+                "page": 367
+            }, {
+                "src": "US25206E",
+                "page": 9
+            }]
+        },
+        "ITEMTPL_25": {
+            "name": "Brass Knuckles",
+            "src": []
+        },
+        "ITEMTPL_26": {
+            "name": "Wooden Shield",
+            "src": []
+        },
+        "ITEMTPL_27": {
+            "name": "Leather Shield",
+            "src": [{
+                "src": "US25001E",
+                "page": 368
+            }, {
+                "src": "US25208E",
+                "page": 74
+            }]
+        },
+        "ITEMTPL_28": {
+            "name": "Thorwaler Shield",
+            "src": [{
+                "src": "US25001E",
+                "page": 368
+            }, {
+                "src": "US25208E",
+                "page": 89
+            }]
+        },
+        "ITEMTPL_29": {
+            "name": "Great Shield",
+            "src": [{
+                "src": "US25001E",
+                "page": 367
+            }, {
+                "src": "US25208E",
+                "page": 68
+            }]
+        },
+        "ITEMTPL_30": {
+            "name": "Barbarian Sword",
+            "src": [{
+                "src": "US25001E",
+                "page": 368
+            }, {
+                "src": "US25208E",
+                "page": 59
+            }]
+        },
+        "ITEMTPL_31": {
+            "name": "Cutlass",
+            "src": [{
+                "src": "US25001E",
+                "page": 368
+            }, {
+                "src": "US25208E",
+                "page": 64
+            }]
+        },
+        "ITEMTPL_32": {
+            "name": "Slasher (machette)",
+            "src": [{
+                "src": "US25001E",
+                "page": 368
+            }, {
+                "src": "US25208E",
+                "page": 86
+            }]
+        },
+        "ITEMTPL_33": {
+            "name": "Khunchomer",
+            "src": [{
+                "src": "US25001E",
+                "page": 368
+            }, {
+                "src": "US25208E",
+                "page": 73
+            }]
+        },
+        "ITEMTPL_34": {
+            "name": "Short Sword",
+            "src": [{
+                "src": "US25001E",
+                "page": 368
+            }, {
+                "src": "US25208E",
+                "page": 85
+            }]
+        },
+        "ITEMTPL_35": {
+            "name": "Long Sword",
+            "src": []
+        },
+        "ITEMTPL_36": {
+            "name": "Seal-Killer",
+            "src": [{
+                "src": "US25001E",
+                "page": 368
+            }, {
+                "src": "US25208E",
+                "page": 85
+            }]
+        },
+        "ITEMTPL_37": {
+            "name": "Saber",
+            "src": [{
+                "src": "US25001E",
+                "page": 368
+            }, {
+                "src": "US25208E",
+                "page": 84
+            }]
+        },
+        "ITEMTPL_38": {
+            "name": "Slave-Death",
+            "src": [{
+                "src": "US25001E",
+                "page": 368
+            }, {
+                "src": "US25208E",
+                "page": 86
+            }]
+        },
+        "ITEMTPL_39": {
+            "name": "Trident",
+            "src": [{
+                "src": "US25001E",
+                "page": 367
+            }, {
+                "src": "US25208E",
+                "page": 89
+            }]
+        },
+        "ITEMTPL_40": {
+            "name": "Dshadra",
+            "src": [{
+                "src": "US25001E",
+                "page": 367
+            }, {
+                "src": "US25208E",
+                "page": 66
+            }]
+        },
+        "ITEMTPL_41": {
+            "name": "Halberd",
+            "src": [{
+                "src": "US25001E",
+                "page": 367
+            }, {
+                "src": "US25208E",
+                "page": 70
+            }]
+        },
+        "ITEMTPL_42": {
+            "name": "Wooden Spear",
+            "src": [{
+                "src": "US25001E",
+                "page": 367
+            }, {
+                "src": "US25208E",
+                "page": 93
+            }]
+        },
+        "ITEMTPL_43": {
+            "name": "Quarterstaff",
+            "src": [{
+                "src": "US25001E",
+                "page": 367
+            }, {
+                "src": "US25206E",
+                "page": 81
+            }]
+        },
+        "ITEMTPL_44": {
+            "name": "Mage's Staff, long",
+            "src": [{
+                "src": "US25001E",
+                "page": 367
+            }, {
+                "src": "US25208E",
+                "page": 76
+            }]
+        },
+        "ITEMTPL_45": {
+            "name": "Spear",
+            "src": []
+        },
+        "ITEMTPL_46": {
+            "name": "Two-Lillies",
+            "src": [{
+                "src": "US25001E",
+                "page": 367
+            }, {
+                "src": "US25208E",
+                "page": 90
+            }]
+        },
+        "ITEMTPL_47": {
+            "name": "Bastard Sword",
+            "src": []
+        },
+        "ITEMTPL_48": {
+            "name": "Double-Khunchomer",
+            "src": [{
+                "src": "US25001E",
+                "page": 368
+            }, {
+                "src": "US25208E",
+                "page": 65
+            }]
+        },
+        "ITEMTPL_49": {
+            "name": "Great Slave-Death",
+            "src": [{
+                "src": "US25001E",
+                "page": 368
+            }, {
+                "src": "US25208E",
+                "page": 69
+            }]
+        },
+        "ITEMTPL_50": {
+            "name": "Rondra's Crest",
+            "src": [{
+                "src": "US25001E",
+                "page": 368
+            }, {
+                "src": "US25208E",
+                "page": 84
+            }]
+        },
+        "ITEMTPL_51": {
+            "name": "Tuzak Knife",
+            "src": [{
+                "src": "US25001E",
+                "page": 368
+            }, {
+                "src": "US25208E",
+                "page": 90
+            }]
+        },
+        "ITEMTPL_52": {
+            "name": "Great Sword",
+            "src": []
+        },
+        "ITEMTPL_53": {
+            "name": "Barbarian Battle-Axe",
+            "src": [{
+                "src": "US25001E",
+                "page": 368
+            }, {
+                "src": "US25208E",
+                "page": 58
+            }]
+        },
+        "ITEMTPL_54": {
+            "name": "Rock-Cleaver",
+            "src": [{
+                "src": "US25001E",
+                "page": 368
+            }, {
+                "src": "US25208E",
+                "page": 83
+            }]
+        },
+        "ITEMTPL_55": {
+            "name": "Warhammer",
+            "src": []
+        },
+        "ITEMTPL_56": {
+            "name": "Dwarf Cudgel",
+            "src": [{
+                "src": "US25001E",
+                "page": 368
+            }, {
+                "src": "US25208E",
+                "page": 66
+            }]
+        },
+        "ITEMTPL_57": {
+            "name": "Balestrina",
+            "src": [{
+                "src": "US25001E",
+                "page": 372
+            }, {
+                "src": "US25208E",
+                "page": 95
+            }]
+        },
+        "ITEMTPL_58": {
+            "name": "Iron Forest",
+            "src": [{
+                "src": "US25001E",
+                "page": 372
+            }, {
+                "src": "US25208E",
+                "page": 99
+            }]
+        },
+        "ITEMTPL_59": {
+            "name": "Hand Crossbow",
+            "src": []
+        },
+        "ITEMTPL_60": {
+            "name": "Light Crossbow",
+            "src": []
+        },
+        "ITEMTPL_61": {
+            "name": "Heavy Crossbow",
+            "src": [{
+                "src": "US25001E",
+                "page": 372
+            }, {
+                "src": "US25208E",
+                "page": 100
+            }]
+        },
+        "ITEMTPL_62": {
+            "name": "Elf Bow",
+            "src": [{
+                "src": "US25001E",
+                "page": 372
+            }, {
+                "src": "US25208E",
+                "page": 98
+            }]
+        },
+        "ITEMTPL_63": {
+            "name": "Composite Bow",
+            "src": [{
+                "src": "US25001E",
+                "page": 372
+            }, {
+                "src": "US25208E",
+                "page": 97
+            }]
+        },
+        "ITEMTPL_64": {
+            "name": "Short Bow",
+            "src": []
+        },
+        "ITEMTPL_65": {
+            "name": "Long Bow",
+            "src": [{
+                "src": "US25001E",
+                "page": 372
+            }, {
+                "src": "US25208E",
+                "page": 100
+            }]
+        },
+        "ITEMTPL_66": {
+            "name": "Cut-Tooth",
+            "src": [{
+                "src": "US25001E",
+                "page": 372
+            }, {
+                "src": "US25208E",
+                "page": 97
+            }]
+        },
+        "ITEMTPL_67": {
+            "name": "Stone",
+            "src": []
+        },
+        "ITEMTPL_68": {
+            "name": "Throwing Axe",
+            "src": []
+        },
+        "ITEMTPL_69": {
+            "name": "Throwing Dagger",
+            "src": []
+        },
+        "ITEMTPL_70": {
+            "name": "Throwing Club",
+            "src": [{
+                "src": "US25001E",
+                "page": 372
+            }, {
+                "src": "US25208E",
+                "page": 102
+            }]
+        },
+        "ITEMTPL_71": {
+            "name": "Throwing Ring",
+            "src": [{
+                "src": "US25001E",
+                "page": 372
+            }, {
+                "src": "US25208E",
+                "page": 103
+            }]
+        },
+        "ITEMTPL_72": {
+            "name": "Throwing Disc",
+            "src": [{
+                "src": "US25001E",
+                "page": 372
+            }, {
+                "src": "US25208E",
+                "page": 103
+            }]
+        },
+        "ITEMTPL_73": {
+            "name": "Throwing Spear",
+            "src": [{
+                "src": "US25001E",
+                "page": 372
+            }, {
+                "src": "US25208E",
+                "page": 104
+            }]
+        },
+        "ITEMTPL_74": {
+            "name": "Throwing Star",
+            "src": [{
+                "src": "US25001E",
+                "page": 372
+            }, {
+                "src": "US25208E",
+                "page": 103
+            }]
+        },
+        "ITEMTPL_75": {
+            "name": "Arrow",
+            "src": []
+        },
+        "ITEMTPL_76": {
+            "name": "Bolt",
+            "src": []
+        },
+        "ITEMTPL_77": {
+            "name": "Bullet",
+            "src": []
+        },
+        "ITEMTPL_78": {
+            "name": "Normal Clothing",
+            "src": []
+        },
+        "ITEMTPL_79": {
+            "name": "Furs",
+            "src": []
+        },
+        "ITEMTPL_80": {
+            "name": "Heavy Clothing",
+            "src": []
+        },
+        "ITEMTPL_81": {
+            "name": "Winter Clothing",
+            "src": []
+        },
+        "ITEMTPL_82": {
+            "name": "Cloth Armor",
+            "src": []
+        },
+        "ITEMTPL_83": {
+            "name": "Gambeson",
+            "src": []
+        },
+        "ITEMTPL_84": {
+            "name": "Leather Armor",
+            "src": []
+        },
+        "ITEMTPL_85": {
+            "name": "Chain Armor",
+            "src": []
+        },
+        "ITEMTPL_86": {
+            "name": "Scale Armor",
+            "src": []
+        },
+        "ITEMTPL_87": {
+            "name": "Plate Mail",
+            "src": []
+        },
+        "ITEMTPL_88": {
+            "name": "Bowstring",
+            "src": []
+        },
+        "ITEMTPL_89": {
+            "name": "Dagger Sheath",
+            "src": []
+        },
+        "ITEMTPL_90": {
+            "name": "Quiver, for 20 arrows or bolts",
+            "src": []
+        },
+        "ITEMTPL_91": {
+            "name": "Sword Sheath",
+            "src": []
+        },
+        "ITEMTPL_92": {
+            "name": "Underclothes for metal armor",
+            "src": []
+        },
+        "ITEMTPL_93": {
+            "name": "Weapon maintenance set (grindstone, cloths)",
+            "src": []
+        },
+        "ITEMTPL_94": {
+            "name": "Ball gown",
+            "src": []
+        },
+        "ITEMTPL_95": {
+            "name": "Beret",
+            "src": []
+        },
+        "ITEMTPL_96": {
+            "name": "Tucker",
+            "src": []
+        },
+        "ITEMTPL_97": {
+            "name": "Felt hat",
+            "src": []
+        },
+        "ITEMTPL_98": {
+            "name": "Gugel (long hood)",
+            "src": []
+        },
+        "ITEMTPL_99": {
+            "name": "Necklace",
+            "src": []
+        },
+        "ITEMTPL_100": {
+            "name": "Shirt",
+            "src": []
+        },
+        "ITEMTPL_101": {
+            "name": "Pants",
+            "src": []
+        },
+        "ITEMTPL_102": {
+            "name": "Pants with pockets",
+            "src": []
+        },
+        "ITEMTPL_103": {
+            "name": "Jacket",
+            "src": []
+        },
+        "ITEMTPL_104": {
+            "name": "Caftan",
+            "src": []
+        },
+        "ITEMTPL_105": {
+            "name": "Hooded cloak",
+            "src": []
+        },
+        "ITEMTPL_106": {
+            "name": "Dress",
+            "src": []
+        },
+        "ITEMTPL_107": {
+            "name": "Corset",
+            "src": []
+        },
+        "ITEMTPL_108": {
+            "name": "Frock",
+            "src": []
+        },
+        "ITEMTPL_109": {
+            "name": "Leather Belt",
+            "src": []
+        },
+        "ITEMTPL_110": {
+            "name": "Leather gloves",
+            "src": []
+        },
+        "ITEMTPL_111": {
+            "name": "Leather hat with broad brim",
+            "src": []
+        },
+        "ITEMTPL_112": {
+            "name": "Leather Coat",
+            "src": []
+        },
+        "ITEMTPL_113": {
+            "name": "Leather shoes",
+            "src": []
+        },
+        "ITEMTPL_114": {
+            "name": "Leather apron with pockets",
+            "src": []
+        },
+        "ITEMTPL_115": {
+            "name": "Leather boots",
+            "src": []
+        },
+        "ITEMTPL_116": {
+            "name": "Loincloth",
+            "src": []
+        },
+        "ITEMTPL_117": {
+            "name": "Mage robe",
+            "src": [{
+                "src": "US25001E",
+                "page": 374
+            }, {
+                "src": "US25208E",
+                "page": 34
+            }]
+        },
+        "ITEMTPL_118": {
+            "name": "Coat",
+            "src": [{
+                "src": "US25001E",
+                "page": 374
+            }, {
+                "src": "US25208E",
+                "page": 19
+            }]
+        },
+        "ITEMTPL_119": {
+            "name": "Nightgown",
+            "src": []
+        },
+        "ITEMTPL_120": {
+            "name": "Fur mittens",
+            "src": []
+        },
+        "ITEMTPL_121": {
+            "name": "Fur-padded boots",
+            "src": []
+        },
+        "ITEMTPL_122": {
+            "name": "Fur hat",
+            "src": []
+        },
+        "ITEMTPL_123": {
+            "name": "Skirt",
+            "src": []
+        },
+        "ITEMTPL_124": {
+            "name": "Sandals",
+            "src": []
+        },
+        "ITEMTPL_125": {
+            "name": "Scarf",
+            "src": []
+        },
+        "ITEMTPL_126": {
+            "name": "Veil",
+            "src": []
+        },
+        "ITEMTPL_127": {
+            "name": "Bodice",
+            "src": []
+        },
+        "ITEMTPL_128": {
+            "name": "Silk sash",
+            "src": []
+        },
+        "ITEMTPL_129": {
+            "name": "Silk stockings",
+            "src": []
+        },
+        "ITEMTPL_130": {
+            "name": "Straw hat",
+            "src": []
+        },
+        "ITEMTPL_131": {
+            "name": "Tunic",
+            "src": []
+        },
+        "ITEMTPL_132": {
+            "name": "Turban",
+            "src": []
+        },
+        "ITEMTPL_133": {
+            "name": "Underpants",
+            "src": []
+        },
+        "ITEMTPL_134": {
+            "name": "Underdress",
+            "src": []
+        },
+        "ITEMTPL_135": {
+            "name": "Tabard",
+            "src": []
+        },
+        "ITEMTPL_136": {
+            "name": "Vest",
+            "src": []
+        },
+        "ITEMTPL_137": {
+            "name": "Wool socks",
+            "src": []
+        },
+        "ITEMTPL_138": {
+            "name": "Clothing package: Not Free",
+            "src": []
+        },
+        "ITEMTPL_139": {
+            "name": "Clothing package: Free",
+            "src": []
+        },
+        "ITEMTPL_140": {
+            "name": "Clothing package: Lesser Noble",
+            "src": []
+        },
+        "ITEMTPL_141": {
+            "name": "Clothing package: Noble",
+            "src": []
+        },
+        "ITEMTPL_142": {
+            "name": "Clothing package: Aristocracy",
+            "src": []
+        },
+        "ITEMTPL_143": {
+            "name": "Angling gear and fishing line, 30'",
+            "src": []
+        },
+        "ITEMTPL_144": {
+            "name": "Cup",
+            "src": []
+        },
+        "ITEMTPL_145": {
+            "name": "Hatchet",
+            "src": [{
+                "src": "US25001E",
+                "page": 375
+            }, {
+                "src": "US25208E",
+                "page": 29
+            }]
+        },
+        "ITEMTPL_146": {
+            "name": "Broom",
+            "src": []
+        },
+        "ITEMTPL_147": {
+            "name": "Spit, iron",
+            "src": []
+        },
+        "ITEMTPL_148": {
+            "name": "Pitchfork",
+            "src": []
+        },
+        "ITEMTPL_149": {
+            "name": "Threshing Flail",
+            "src": []
+        },
+        "ITEMTPL_150": {
+            "name": "Cutlery",
+            "src": []
+        },
+        "ITEMTPL_151": {
+            "name": "File",
+            "src": []
+        },
+        "ITEMTPL_152": {
+            "name": "Pulley for 500 pounds",
+            "src": []
+        },
+        "ITEMTPL_153": {
+            "name": "Hammer",
+            "src": []
+        },
+        "ITEMTPL_154": {
+            "name": "Gimlet",
+            "src": []
+        },
+        "ITEMTPL_155": {
+            "name": "Handsaw",
+            "src": []
+        },
+        "ITEMTPL_156": {
+            "name": "Hammock",
+            "src": []
+        },
+        "ITEMTPL_157": {
+            "name": "Sickle",
+            "src": [{
+                "src": "US25001E",
+                "page": 375
+            }, {
+                "src": "US25003E",
+                "page": 228
+            }, {
+                "src": "US25208E",
+                "page": 46
+            }, {
+                "src": "US25208E",
+                "page": 139
+            }]
+        },
+        "ITEMTPL_158": {
+            "name": "Woodsman's ax",
+            "src": []
+        },
+        "ITEMTPL_159": {
+            "name": "Wooden bowl",
+            "src": []
+        },
+        "ITEMTPL_160": {
+            "name": "Wooden plate",
+            "src": []
+        },
+        "ITEMTPL_161": {
+            "name": "Piton, 10",
+            "src": []
+        },
+        "ITEMTPL_162": {
+            "name": "Jug",
+            "src": []
+        },
+        "ITEMTPL_163": {
+            "name": "Copper kettle",
+            "src": []
+        },
+        "ITEMTPL_164": {
+            "name": "Glue",
+            "src": []
+        },
+        "ITEMTPL_165": {
+            "name": "Chisel",
+            "src": []
+        },
+        "ITEMTPL_166": {
+            "name": "Knife",
+            "src": []
+        },
+        "ITEMTPL_167": {
+            "name": "Needle and thread",
+            "src": []
+        },
+        "ITEMTPL_168": {
+            "name": "Nails, 10",
+            "src": []
+        },
+        "ITEMTPL_169": {
+            "name": "Frying pan",
+            "src": []
+        },
+        "ITEMTPL_170": {
+            "name": "Showel",
+            "src": []
+        },
+        "ITEMTPL_171": {
+            "name": "Scissors",
+            "src": []
+        },
+        "ITEMTPL_172": {
+            "name": "Bedroll",
+            "src": []
+        },
+        "ITEMTPL_173": {
+            "name": "Snowshoes",
+            "src": [{
+                "src": "US25001E",
+                "page": 375
+            }, {
+                "src": "US25208E",
+                "page": 47
+            }]
+        },
+        "ITEMTPL_174": {
+            "name": "Spade",
+            "src": []
+        },
+        "ITEMTPL_175": {
+            "name": "Pick",
+            "src": []
+        },
+        "ITEMTPL_176": {
+            "name": "Rope ladder, per yard",
+            "src": []
+        },
+        "ITEMTPL_177": {
+            "name": "Woolen Blanket, Regular",
+            "src": [{
+                "src": "US25001E",
+                "page": 375
+            }, {
+                "src": "US25208E",
+                "page": 54
+            }]
+        },
+        "ITEMTPL_178": {
+            "name": "Tongs",
+            "src": []
+        },
+        "ITEMTPL_179": {
+            "name": "Tent, 1 person",
+            "src": [{
+                "src": "US25001E",
+                "page": 375
+            }, {
+                "src": "US25208E",
+                "page": 50
+            }]
+        },
+        "ITEMTPL_180": {
+            "name": "Tent, 2 person",
+            "src": [{
+                "src": "US25001E",
+                "page": 375
+            }, {
+                "src": "US25208E",
+                "page": 50
+            }]
+        },
+        "ITEMTPL_181": {
+            "name": "Provisions for 1 day",
+            "src": []
+        },
+        "ITEMTPL_182": {
+            "name": "Torch",
+            "src": [{
+                "src": "US25001E",
+                "page": 376
+            }, {
+                "src": "US25003E",
+                "page": 228
+            }]
+        },
+        "ITEMTPL_183": {
+            "name": "Gwen-Petryl Stone, Fist-Sized",
+            "src": [{
+                "src": "US25001E",
+                "page": 376
+            }, {
+                "src": "US25208E",
+                "page": 28
+            }]
+        },
+        "ITEMTPL_184": {
+            "name": "Candles, 10",
+            "src": [{
+                "src": "US25001E",
+                "page": 376
+            }, {
+                "src": "US25208E",
+                "page": 16
+            }]
+        },
+        "ITEMTPL_185": {
+            "name": "Lantern",
+            "src": [{
+                "src": "US25001E",
+                "page": 376
+            }, {
+                "src": "US25208E",
+                "page": 33
+            }]
+        },
+        "ITEMTPL_186": {
+            "name": "Oil lamp",
+            "src": [{
+                "src": "US25001E",
+                "page": 376
+            }, {
+                "src": "US25208E",
+                "page": 36
+            }]
+        },
+        "ITEMTPL_187": {
+            "name": "Bulls-eye lantern",
+            "src": []
+        },
+        "ITEMTPL_188": {
+            "name": "Flint and steel",
+            "src": [{
+                "src": "US25001E",
+                "page": 376
+            }, {
+                "src": "US25208E",
+                "page": 26
+            }]
+        },
+        "ITEMTPL_189": {
+            "name": "Candle holder",
+            "src": []
+        },
+        "ITEMTPL_190": {
+            "name": "Lamp oil, 12 hours",
+            "src": []
+        },
+        "ITEMTPL_191": {
+            "name": "Tinder, 25 portion",
+            "src": [{
+                "src": "US25001E",
+                "page": 376
+            }, {
+                "src": "US25208E",
+                "page": 51
+            }]
+        },
+        "ITEMTPL_192": {
+            "name": "Tinder box (space for 25 portions)",
+            "src": [{
+                "src": "US25001E",
+                "page": 376
+            }, {
+                "src": "US25208E",
+                "page": 51
+            }]
+        },
+        "ITEMTPL_193": {
+            "name": "Leech",
+            "src": []
+        },
+        "ITEMTPL_194": {
+            "name": "Surgical instruments",
+            "src": []
+        },
+        "ITEMTPL_195": {
+            "name": "Skull drill",
+            "src": []
+        },
+        "ITEMTPL_196": {
+            "name": "Cupping glass",
+            "src": []
+        },
+        "ITEMTPL_197": {
+            "name": "Bandages, 10",
+            "src": []
+        },
+        "ITEMTPL_198": {
+            "name": "Wound sewing kit",
+            "src": []
+        },
+        "ITEMTPL_199": {
+            "name": "Canteen",
+            "src": []
+        },
+        "ITEMTPL_200": {
+            "name": "Purse",
+            "src": []
+        },
+        "ITEMTPL_201": {
+            "name": "Money pouch",
+            "src": []
+        },
+        "ITEMTPL_202": {
+            "name": "Belt pouch",
+            "src": [{
+                "src": "US25001E",
+                "page": 376
+            }, {
+                "src": "US25208E",
+                "page": 13
+            }]
+        },
+        "ITEMTPL_203": {
+            "name": "Pannier",
+            "src": []
+        },
+        "ITEMTPL_204": {
+            "name": "Leather knapsack",
+            "src": []
+        },
+        "ITEMTPL_205": {
+            "name": "Leather backpack",
+            "src": [{
+                "src": "US25001E",
+                "page": 376
+            }, {
+                "src": "US25208E",
+                "page": 13
+            }]
+        },
+        "ITEMTPL_206": {
+            "name": "Phial",
+            "src": [{
+                "src": "US25001E",
+                "page": 376
+            }, {
+                "src": "US25208E",
+                "page": 38
+            }]
+        },
+        "ITEMTPL_207": {
+            "name": "Powder box",
+            "src": []
+        },
+        "ITEMTPL_208": {
+            "name": "Sack",
+            "src": []
+        },
+        "ITEMTPL_209": {
+            "name": "Jewelry box",
+            "src": []
+        },
+        "ITEMTPL_210": {
+            "name": "Jar",
+            "src": []
+        },
+        "ITEMTPL_211": {
+            "name": "Drinking horn",
+            "src": []
+        },
+        "ITEMTPL_212": {
+            "name": "Chest",
+            "src": []
+        },
+        "ITEMTPL_213": {
+            "name": "Cloth satchel",
+            "src": []
+        },
+        "ITEMTPL_214": {
+            "name": "Shoulder bag",
+            "src": [{
+                "src": "US25001E",
+                "page": 376
+            }, {
+                "src": "US25208E",
+                "page": 45
+            }]
+        },
+        "ITEMTPL_215": {
+            "name": "Vase",
+            "src": []
+        },
+        "ITEMTPL_216": {
+            "name": "Waterskin",
+            "src": []
+        },
+        "ITEMTPL_217": {
+            "name": "Rope, thin, per yard",
+            "src": []
+        },
+        "ITEMTPL_218": {
+            "name": "Chain, per yard",
+            "src": []
+        },
+        "ITEMTPL_219": {
+            "name": "Rope, climbing, per yard",
+            "src": [{
+                "src": "US25001E",
+                "page": 377
+            }, {
+                "src": "US25208E",
+                "page": 18
+            }]
+        },
+        "ITEMTPL_220": {
+            "name": "Twine, per 10 yards",
+            "src": []
+        },
+        "ITEMTPL_221": {
+            "name": "Crowbar",
+            "src": [{
+                "src": "US25001E",
+                "page": 377
+            }, {
+                "src": "US25208E",
+                "page": 22
+            }]
+        },
+        "ITEMTPL_222": {
+            "name": "Lockpicks",
+            "src": [{
+                "src": "US25001E",
+                "page": 377
+            }, {
+                "src": "US25208E",
+                "page": 33
+            }]
+        },
+        "ITEMTPL_223": {
+            "name": "False beard/wig",
+            "src": []
+        },
+        "ITEMTPL_224": {
+            "name": "Grapnel",
+            "src": [{
+                "src": "US25001E",
+                "page": 377
+            }, {
+                "src": "US25208E",
+                "page": 27
+            }]
+        },
+        "ITEMTPL_225": {
+            "name": "Archaic laboratory",
+            "src": []
+        },
+        "ITEMTPL_226": {
+            "name": "Witch kitchen",
+            "src": []
+        },
+        "ITEMTPL_227": {
+            "name": "Alchemical laboratory",
+            "src": []
+        },
+        "ITEMTPL_228": {
+            "name": "Precision mechanic's tools",
+            "src": []
+        },
+        "ITEMTPL_229": {
+            "name": "Engraver's tools",
+            "src": []
+        },
+        "ITEMTPL_230": {
+            "name": "Cartographer's tools",
+            "src": [{
+                "src": "US25001E",
+                "page": 377
+            }, {
+                "src": "US25208E",
+                "page": 17
+            }]
+        },
+        "ITEMTPL_231": {
+            "name": "Sewing box",
+            "src": []
+        },
+        "ITEMTPL_232": {
+            "name": "Tattoo artist's tools",
+            "src": []
+        },
+        "ITEMTPL_233": {
+            "name": "Carpenter's tools",
+            "src": []
+        },
+        "ITEMTPL_234": {
+            "name": "Abacus",
+            "src": []
+        },
+        "ITEMTPL_235": {
+            "name": "Astrolabe",
+            "src": [{
+                "src": "US25001E",
+                "page": 378
+            }, {
+                "src": "US25208E",
+                "page": 12
+            }]
+        },
+        "ITEMTPL_236": {
+            "name": "Amber glasses",
+            "src": []
+        },
+        "ITEMTPL_237": {
+            "name": "Telescope",
+            "src": [{
+                "src": "US25001E",
+                "page": 378
+            }, {
+                "src": "US25208E",
+                "page": 49
+            }]
+        },
+        "ITEMTPL_238": {
+            "name": "Compass (south-pointer)",
+            "src": [{
+                "src": "US25001E",
+                "page": 378
+            }, {
+                "src": "US25208E",
+                "page": 21
+            }]
+        },
+        "ITEMTPL_239": {
+            "name": "Quadrant",
+            "src": [{
+                "src": "US25001E",
+                "page": 378
+            }, {
+                "src": "US25206E",
+                "page": 41
+            }]
+        },
+        "ITEMTPL_240": {
+            "name": "Hourglass",
+            "src": [{
+                "src": "US25001E",
+                "page": 378
+            }, {
+                "src": "US25208E",
+                "page": 32
+            }]
+        },
+        "ITEMTPL_241": {
+            "name": "Pocket watch (Vinsalter Egg)",
+            "src": [{
+                "src": "US25001E",
+                "page": 378
+            }, {
+                "src": "US25208E",
+                "page": 39
+            }]
+        },
+        "ITEMTPL_242": {
+            "name": "Amulet, Bronze",
+            "src": []
+        },
+        "ITEMTPL_243": {
+            "name": "Amulet, Silver",
+            "src": []
+        },
+        "ITEMTPL_244": {
+            "name": "Amulet, Gold",
+            "src": []
+        },
+        "ITEMTPL_245": {
+            "name": "Bracelet, Bronze",
+            "src": []
+        },
+        "ITEMTPL_246": {
+            "name": "Bracelet, Silver",
+            "src": []
+        },
+        "ITEMTPL_247": {
+            "name": "Bracelet, Gold",
+            "src": []
+        },
+        "ITEMTPL_248": {
+            "name": "Brooch, Bronze",
+            "src": []
+        },
+        "ITEMTPL_249": {
+            "name": "Brooch, Silver",
+            "src": []
+        },
+        "ITEMTPL_250": {
+            "name": "Brooch, Gold",
+            "src": []
+        },
+        "ITEMTPL_251": {
+            "name": "Necklace, Bronze",
+            "src": []
+        },
+        "ITEMTPL_252": {
+            "name": "Necklace, Silver",
+            "src": []
+        },
+        "ITEMTPL_253": {
+            "name": "Necklace, Gold",
+            "src": []
+        },
+        "ITEMTPL_254": {
+            "name": "Earing, Bronze",
+            "src": []
+        },
+        "ITEMTPL_255": {
+            "name": "Earing, Silver",
+            "src": []
+        },
+        "ITEMTPL_256": {
+            "name": "Earing, Gold",
+            "src": []
+        },
+        "ITEMTPL_257": {
+            "name": "Ring, Bronze",
+            "src": []
+        },
+        "ITEMTPL_258": {
+            "name": "Ring, Silver",
+            "src": []
+        },
+        "ITEMTPL_259": {
+            "name": "Ring, Gold",
+            "src": []
+        },
+        "ITEMTPL_260": {
+            "name": "Tiara, Bronze",
+            "src": []
+        },
+        "ITEMTPL_261": {
+            "name": "Tiara, Silver",
+            "src": []
+        },
+        "ITEMTPL_262": {
+            "name": "Tiara, Gold",
+            "src": []
+        },
+        "ITEMTPL_263": {
+            "name": "Amethyst",
+            "src": []
+        },
+        "ITEMTPL_264": {
+            "name": "Aquamarine",
+            "src": []
+        },
+        "ITEMTPL_265": {
+            "name": "Aventurine",
+            "src": []
+        },
+        "ITEMTPL_266": {
+            "name": "Clear Crystall",
+            "src": []
+        },
+        "ITEMTPL_267": {
+            "name": "Amber",
+            "src": []
+        },
+        "ITEMTPL_268": {
+            "name": "Diamond",
+            "src": []
+        },
+        "ITEMTPL_269": {
+            "name": "Garnet",
+            "src": []
+        },
+        "ITEMTPL_270": {
+            "name": "Green Jade",
+            "src": []
+        },
+        "ITEMTPL_271": {
+            "name": "Carnelian",
+            "src": []
+        },
+        "ITEMTPL_272": {
+            "name": "Lapis Lazuli",
+            "src": []
+        },
+        "ITEMTPL_273": {
+            "name": "Moonstone",
+            "src": []
+        },
+        "ITEMTPL_274": {
+            "name": "Onyx",
+            "src": []
+        },
+        "ITEMTPL_275": {
+            "name": "Opal",
+            "src": []
+        },
+        "ITEMTPL_276": {
+            "name": "Pearl",
+            "src": []
+        },
+        "ITEMTPL_277": {
+            "name": "Ruby",
+            "src": []
+        },
+        "ITEMTPL_278": {
+            "name": "Sapphire",
+            "src": []
+        },
+        "ITEMTPL_279": {
+            "name": "Emerald",
+            "src": []
+        },
+        "ITEMTPL_280": {
+            "name": "Topaz",
+            "src": []
+        },
+        "ITEMTPL_281": {
+            "name": "Turquoise",
+            "src": []
+        },
+        "ITEMTPL_282": {
+            "name": "Quill pen",
+            "src": []
+        },
+        "ITEMTPL_283": {
+            "name": "Penknife",
+            "src": []
+        },
+        "ITEMTPL_284": {
+            "name": "Charcoal",
+            "src": []
+        },
+        "ITEMTPL_285": {
+            "name": "Chalk",
+            "src": [{
+                "src": "US25001E",
+                "page": 378
+            }, {
+                "src": "US25208E",
+                "page": 17
+            }]
+        },
+        "ITEMTPL_286": {
+            "name": "Paper, 1 sheet",
+            "src": [{
+                "src": "US25001E",
+                "page": 378
+            }, {
+                "src": "US25208E",
+                "page": 37
+            }]
+        },
+        "ITEMTPL_287": {
+            "name": "Parchment, 1 sheet",
+            "src": [{
+                "src": "US25001E",
+                "page": 378
+            }, {
+                "src": "US25208E",
+                "page": 37
+            }]
+        },
+        "ITEMTPL_288": {
+            "name": "Brush",
+            "src": []
+        },
+        "ITEMTPL_289": {
+            "name": "Sealing wax",
+            "src": []
+        },
+        "ITEMTPL_290": {
+            "name": "Diary",
+            "src": []
+        },
+        "ITEMTPL_291": {
+            "name": "Ink",
+            "src": []
+        },
+        "ITEMTPL_292": {
+            "name": "Breviary of the Guidance of the Twelvegods",
+            "src": [{
+                "src": "US25001E",
+                "page": 379
+            }, {
+                "src": "US25208E",
+                "page": 15
+            }]
+        },
+        "ITEMTPL_293": {
+            "name": "Codex Albyricus",
+            "src": [{
+                "src": "US25001E",
+                "page": 379
+            }, {
+                "src": "US25208E",
+                "page": 19
+            }]
+        },
+        "ITEMTPL_294": {
+            "name": "Encyclopaedia Magica",
+            "src": [{
+                "src": "US25001E",
+                "page": 379
+            }, {
+                "src": "US25208E",
+                "page": 24
+            }]
+        },
+        "ITEMTPL_295": {
+            "name": "Handbooke of the Wandering Adept",
+            "src": []
+        },
+        "ITEMTPL_296": {
+            "name": "Bracelet of Willpower",
+            "src": []
+        },
+        "ITEMTPL_297": {
+            "name": "Firn Blade",
+            "src": []
+        },
+        "ITEMTPL_298": {
+            "name": "Antidote",
+            "src": []
+        },
+        "ITEMTPL_299": {
+            "name": "Healing potion",
+            "src": []
+        },
+        "ITEMTPL_300": {
+            "name": "Love potion",
+            "src": []
+        },
+        "ITEMTPL_301": {
+            "name": "potion of Invisibility",
+            "src": []
+        },
+        "ITEMTPL_302": {
+            "name": "Transformation Elixir",
+            "src": []
+        },
+        "ITEMTPL_303": {
+            "name": "Weapon Balm",
+            "src": []
+        },
+        "ITEMTPL_304": {
+            "name": "Potion of Will",
+            "src": []
+        },
+        "ITEMTPL_305": {
+            "name": "Arcane Potion",
+            "src": []
+        },
+        "ITEMTPL_306": {
+            "name": "Arax",
+            "src": []
+        },
+        "ITEMTPL_307": {
+            "name": "Kelmon",
+            "src": []
+        },
+        "ITEMTPL_308": {
+            "name": "Tulmadron",
+            "src": []
+        },
+        "ITEMTPL_309": {
+            "name": "Wurara",
+            "src": []
+        },
+        "ITEMTPL_310": {
+            "name": "Mandrake Root",
+            "src": []
+        },
+        "ITEMTPL_311": {
+            "name": "Axorda tree bark",
+            "src": []
+        },
+        "ITEMTPL_312": {
+            "name": "Donf",
+            "src": []
+        },
+        "ITEMTPL_313": {
+            "name": "Leechfright",
+            "src": []
+        },
+        "ITEMTPL_314": {
+            "name": "Gulmond",
+            "src": []
+        },
+        "ITEMTPL_315": {
+            "name": "Lulany",
+            "src": []
+        },
+        "ITEMTPL_316": {
+            "name": "Wirsel herb",
+            "src": []
+        },
+        "ITEMTPL_317": {
+            "name": "Symphonia",
+            "src": []
+        },
+        "ITEMTPL_318": {
+            "name": "Fanfare trumpet",
+            "src": []
+        },
+        "ITEMTPL_319": {
+            "name": "Flute",
+            "src": []
+        },
+        "ITEMTPL_320": {
+            "name": "Hand Harp",
+            "src": []
+        },
+        "ITEMTPL_321": {
+            "name": "Kabas Flute",
+            "src": []
+        },
+        "ITEMTPL_322": {
+            "name": "Lute",
+            "src": []
+        },
+        "ITEMTPL_323": {
+            "name": "Bagpipes",
+            "src": []
+        },
+        "ITEMTPL_324": {
+            "name": "Bells",
+            "src": []
+        },
+        "ITEMTPL_325": {
+            "name": "Signal horn",
+            "src": []
+        },
+        "ITEMTPL_326": {
+            "name": "Spinet",
+            "src": []
+        },
+        "ITEMTPL_327": {
+            "name": "Standing Harp",
+            "src": []
+        },
+        "ITEMTPL_328": {
+            "name": "Drum",
+            "src": []
+        },
+        "ITEMTPL_329": {
+            "name": "Bath oil",
+            "src": []
+        },
+        "ITEMTPL_330": {
+            "name": "Beer, small keg",
+            "src": []
+        },
+        "ITEMTPL_331": {
+            "name": "Burning lens",
+            "src": []
+        },
+        "ITEMTPL_332": {
+            "name": "Board game",
+            "src": []
+        },
+        "ITEMTPL_333": {
+            "name": "Brush",
+            "src": []
+        },
+        "ITEMTPL_334": {
+            "name": "Divine figurine",
+            "src": [{
+                "src": "US25001E",
+                "page": 380
+            }, {
+                "src": "US25208E",
+                "page": 27
+            }]
+        },
+        "ITEMTPL_335": {
+            "name": "Hand mirror",
+            "src": []
+        },
+        "ITEMTPL_336": {
+            "name": "Juggling ball",
+            "src": []
+        },
+        "ITEMTPL_337": {
+            "name": "Coffee, roasted",
+            "src": []
+        },
+        "ITEMTPL_338": {
+            "name": "Cocoa",
+            "src": []
+        },
+        "ITEMTPL_339": {
+            "name": "Comb",
+            "src": []
+        },
+        "ITEMTPL_340": {
+            "name": "Crystal ball",
+            "src": []
+        },
+        "ITEMTPL_341": {
+            "name": "Lipstick",
+            "src": []
+        },
+        "ITEMTPL_342": {
+            "name": "Nail file",
+            "src": []
+        },
+        "ITEMTPL_343": {
+            "name": "Perfume",
+            "src": [{
+                "src": "US25001E",
+                "page": 381
+            }, {
+                "src": "US25208E",
+                "page": 38
+            }]
+        },
+        "ITEMTPL_344": {
+            "name": "Pepper",
+            "src": []
+        },
+        "ITEMTPL_345": {
+            "name": "Powder",
+            "src": []
+        },
+        "ITEMTPL_346": {
+            "name": "Hard liquor",
+            "src": []
+        },
+        "ITEMTPL_347": {
+            "name": "Chocolate",
+            "src": []
+        },
+        "ITEMTPL_348": {
+            "name": "Sponge",
+            "src": []
+        },
+        "ITEMTPL_349": {
+            "name": "Soap",
+            "src": [{
+                "src": "US25001E",
+                "page": 381
+            }, {
+                "src": "US25208E",
+                "page": 48
+            }]
+        },
+        "ITEMTPL_350": {
+            "name": "Playing cards",
+            "src": []
+        },
+        "ITEMTPL_351": {
+            "name": "Music box",
+            "src": []
+        },
+        "ITEMTPL_352": {
+            "name": "Hobby-horse",
+            "src": []
+        },
+        "ITEMTPL_353": {
+            "name": "Cloth doll",
+            "src": []
+        },
+        "ITEMTPL_354": {
+            "name": "Tobacco",
+            "src": []
+        },
+        "ITEMTPL_355": {
+            "name": "Tobacco tin",
+            "src": []
+        },
+        "ITEMTPL_356": {
+            "name": "Tobacco pipe",
+            "src": []
+        },
+        "ITEMTPL_357": {
+            "name": "Handkerchief",
+            "src": []
+        },
+        "ITEMTPL_358": {
+            "name": "Hookah",
+            "src": [{
+                "src": "US25001E",
+                "page": 381
+            }, {
+                "src": "US25208E",
+                "page": 32
+            }]
+        },
+        "ITEMTPL_359": {
+            "name": "Wine",
+            "src": []
+        },
+        "ITEMTPL_360": {
+            "name": "Dice, Six-Sided",
+            "src": []
+        },
+        "ITEMTPL_361": {
+            "name": "Dog",
+            "src": []
+        },
+        "ITEMTPL_362": {
+            "name": "Horse",
+            "src": []
+        },
+        "ITEMTPL_363": {
+            "name": "Mule",
+            "src": []
+        },
+        "ITEMTPL_364": {
+            "name": "Pony",
+            "src": []
+        },
+        "ITEMTPL_365": {
+            "name": "Collar and leash",
+            "src": []
+        },
+        "ITEMTPL_366": {
+            "name": "Horseshoe",
+            "src": []
+        },
+        "ITEMTPL_367": {
+            "name": "Packsaddle",
+            "src": []
+        },
+        "ITEMTPL_368": {
+            "name": "Riding saddle",
+            "src": []
+        },
+        "ITEMTPL_369": {
+            "name": "Saddle-cloth",
+            "src": []
+        },
+        "ITEMTPL_370": {
+            "name": "Saddle bag",
+            "src": []
+        },
+        "ITEMTPL_371": {
+            "name": "Spur",
+            "src": []
+        },
+        "ITEMTPL_372": {
+            "name": "Currycomb",
+            "src": []
+        },
+        "ITEMTPL_373": {
+            "name": "Reins and tack",
+            "src": []
+        },
+        "ITEMTPL_374": {
+            "name": "Dog food",
+            "src": []
+        },
+        "ITEMTPL_375": {
+            "name": "Horse feed",
+            "src": []
+        },
+        "ITEMTPL_376": {
+            "name": "Pony feed",
+            "src": []
+        },
+        "ITEMTPL_377": {
+            "name": "Handcart",
+            "src": []
+        },
+        "ITEMTPL_378": {
+            "name": "Cart, one axle",
+            "src": []
+        },
+        "ITEMTPL_379": {
+            "name": "Boat, rowing, small",
+            "src": []
+        },
+        "ITEMTPL_380": {
+            "name": "Boat, sailing, small",
+            "src": []
+        },
+        "ITEMTPL_381": {
+            "name": "Coach",
+            "src": []
+        },
+        "ITEMTPL_382": {
+            "name": "Rolling Pin",
+            "src": [{
+                "src": "US25003E",
+                "page": 228
+            }, {
+                "src": "US25208E",
+                "page": 44
+            }]
+        },
+        "ITEMTPL_383": {
+            "name": "Blacksmith's Hammer",
+            "src": [{
+                "src": "US25003E",
+                "page": 228
+            }, {
+                "src": "US25208E",
+                "page": 143
+            }]
+        },
+        "ITEMTPL_384": {
+            "name": "Sickle",
+            "src": [{
+                "src": "US25001E",
+                "page": 375
+            }, {
+                "src": "US25003E",
+                "page": 228
+            }, {
+                "src": "US25208E",
+                "page": 46
+            }, {
+                "src": "US25208E",
+                "page": 139
+            }]
+        },
+        "ITEMTPL_385": {
+            "name": "Tournament Lance",
+            "src": [{
+                "src": "US25101E",
+                "page": 154
+            }, {
+                "src": "US25003E",
+                "page": 230
+            }, {
+                "src": "US25206E",
+                "page": 15
+            }]
+        },
+        "ITEMTPL_386": {
+            "name": "Horse Whip",
+            "src": []
+        },
+        "ITEMTPL_387": {
+            "name": "Broad Sword",
+            "src": [{
+                "src": "US25003E",
+                "page": 228
+            }, {
+                "src": "US25208E",
+                "page": 62
+            }]
+        },
+        "ITEMTPL_388": {
+            "name": "Parazonium (Cyclopean Short Sword)",
+            "src": [{
+                "src": "US25003E",
+                "page": 229
+            }, {
+                "src": "US25208E",
+                "page": 140
+            }]
+        },
+        "ITEMTPL_389": {
+            "name": "Scimshar (Tulamydian Short Sword)",
+            "src": [{
+                "src": "US25003E",
+                "page": 229
+            }, {
+                "src": "US25208E",
+                "page": 140
+            }]
+        },
+        "ITEMTPL_390": {
+            "name": "Tournament Sword",
+            "src": []
+        },
+        "ITEMTPL_391": {
+            "name": "Hirtenstab",
+            "src": [{
+                "src": "US25003E",
+                "page": 228
+            }, {
+                "src": "US25208E",
+                "page": 140
+            }]
+        },
+        "ITEMTPL_392": {
+            "name": "War Flail",
+            "src": [{
+                "src": "US25101E",
+                "page": 153
+            }, {
+                "src": "US25003E",
+                "page": 229
+            }, {
+                "src": "US25206E",
+                "page": 8
+            }]
+        },
+        "ITEMTPL_393": {
+            "name": "Pailos",
+            "src": [{
+                "src": "US25003E",
+                "page": 228
+            }, {
+                "src": "US25101E",
+                "page": 141
+            }]
+        },
+        "ITEMTPL_394": {
+            "name": "Scythe",
+            "src": [{
+                "src": "US25101E",
+                "page": 153
+            }, {
+                "src": "US25003E",
+                "page": 228
+            }, {
+                "src": "US25206E",
+                "page": 18
+            }]
+        },
+        "ITEMTPL_395": {
+            "name": "War Scythe",
+            "src": [{
+                "src": "US25101E",
+                "page": 153
+            }, {
+                "src": "US25003E",
+                "page": 228
+            }, {
+                "src": "US25206E",
+                "page": 14
+            }]
+        },
+        "ITEMTPL_396": {
+            "name": "Tournament Great Sword",
+            "src": []
+        },
+        "ITEMTPL_397": {
+            "name": "Slings",
+            "src": []
+        },
+        "ITEMTPL_398": {
+            "name": "Pebbles (Sling)",
+            "src": []
+        },
+        "ITEMTPL_399": {
+            "name": "Wood Armor",
+            "src": []
+        },
+        "ITEMTPL_400": {
+            "name": "Horn Armor",
+            "src": []
+        },
+        "ITEMTPL_401": {
+            "name": "Bone Armor",
+            "src": []
+        },
+        "ITEMTPL_402": {
+            "name": "Tournament Armor",
+            "src": [{
+                "src": "US25101E",
+                "page": 154
+            }, {
+                "src": "US25003E",
+                "page": 230
+            }, {
+                "src": "US25206E",
+                "page": 15
+            }]
+        },
+        "ITEMTPL_403": {
+            "name": "Armillary Sphere",
+            "src": []
+        },
+        "ITEMTPL_404": {
+            "name": "Boltan Card Set, Cloth",
+            "src": []
+        },
+        "ITEMTPL_405": {
+            "name": "Boltan Card Set, Paper",
+            "src": []
+        },
+        "ITEMTPL_406": {
+            "name": "Boltan Card Set, Cloth, Marked",
+            "src": []
+        },
+        "ITEMTPL_407": {
+            "name": "Boltan Card Set, Paper, Marked",
+            "src": []
+        },
+        "ITEMTPL_408": {
+            "name": "Pry-Bar",
+            "src": []
+        },
+        "ITEMTPL_409": {
+            "name": "Lockpick Set (6 Different Kinds)",
+            "src": []
+        },
+        "ITEMTPL_410": {
+            "name": "Telescope, Collapsible",
+            "src": []
+        },
+        "ITEMTPL_411": {
+            "name": "Telescope, Small",
+            "src": []
+        },
+        "ITEMTPL_412": {
+            "name": "Telescope, Large",
+            "src": []
+        },
+        "ITEMTPL_413": {
+            "name": "Rope for Binding, Leather, per Yard",
+            "src": []
+        },
+        "ITEMTPL_414": {
+            "name": "Gwen-Petryl Stone, Head-Sized",
+            "src": []
+        },
+        "ITEMTPL_415": {
+            "name": "Gwen-Petryl Stone, Finger-Tip-Sized",
+            "src": []
+        },
+        "ITEMTPL_416": {
+            "name": "Herbarium Kuslikum",
+            "src": []
+        },
+        "ITEMTPL_417": {
+            "name": "Camel Game",
+            "src": []
+        },
+        "ITEMTPL_418": {
+            "name": "Camel Game, Altered",
+            "src": []
+        },
+        "ITEMTPL_419": {
+            "name": "Candle, Clock, 1",
+            "src": []
+        },
+        "ITEMTPL_420": {
+            "name": "Magic Candle, 1",
+            "src": []
+        },
+        "ITEMTPL_421": {
+            "name": "Rope, Silk, per Yard",
+            "src": []
+        },
+        "ITEMTPL_422": {
+            "name": "Compass (South Pointer), Metal Case",
+            "src": []
+        },
+        "ITEMTPL_423": {
+            "name": "Chalk, Magical",
+            "src": []
+        },
+        "ITEMTPL_424": {
+            "name": "Mage Robe, Light",
+            "src": []
+        },
+        "ITEMTPL_425": {
+            "name": "Mage Robe, Great",
+            "src": []
+        },
+        "ITEMTPL_426": {
+            "name": "Mage Robe, Invocation",
+            "src": []
+        },
+        "ITEMTPL_427": {
+            "name": "Mage Robe, Convention",
+            "src": []
+        },
+        "ITEMTPL_428": {
+            "name": "Mage Robe, Traveler's",
+            "src": []
+        },
+        "ITEMTPL_429": {
+            "name": "Paper, Good, 1 Sheet",
+            "src": []
+        },
+        "ITEMTPL_430": {
+            "name": "Parchment, Good, 1 Sheet",
+            "src": []
+        },
+        "ITEMTPL_431": {
+            "name": "Prem's Wildlife",
+            "src": []
+        },
+        "ITEMTPL_432": {
+            "name": "Soap, Scented",
+            "src": []
+        },
+        "ITEMTPL_433": {
+            "name": "Vademecum of Combative Crafts",
+            "src": []
+        },
+        "ITEMTPL_434": {
+            "name": "Padlock",
+            "src": []
+        },
+        "ITEMTPL_435": {
+            "name": "Woolen Blanket, Phraisheep",
+            "src": []
+        },
+        "ITEMTPL_436": {
+            "name": "Dice, Six-Sided, Loaded",
+            "src": []
+        },
+        "ITEMTPL_437": {
+            "name": "Dice, Twenty-Sided",
+            "src": []
+        },
+        "ITEMTPL_438": {
+            "name": "Dice, Twenty-Sided, Loaded",
+            "src": []
+        },
+        "ITEMTPL_439": {
+            "name": "Tent, 4 Person",
+            "src": []
+        },
+        "ITEMTPL_440": {
+            "name": "Tent, Large, 12 Person",
+            "src": []
+        },
+        "ITEMTPL_441": {
+            "name": "Soap In Cloth Tube",
+            "src": []
+        },
+        "ITEMTPL_442": {
+            "name": "Grapnel with Climbing Rope",
+            "src": []
+        },
+        "ITEMTPL_443": {
+            "name": "Hook Dagger",
+            "src": []
+        },
+        "ITEMTPL_444": {
+            "name": "Hunting Knife",
+            "src": []
+        },
+        "ITEMTPL_445": {
+            "name": "Katar",
+            "src": []
+        },
+        "ITEMTPL_446": {
+            "name": "Mengbilar",
+            "src": []
+        },
+        "ITEMTPL_447": {
+            "name": "Ogre Catcher",
+            "src": []
+        },
+        "ITEMTPL_448": {
+            "name": "Sword Cane",
+            "src": []
+        },
+        "ITEMTPL_449": {
+            "name": "Ox-Herd",
+            "src": []
+        },
+        "ITEMTPL_450": {
+            "name": "Ogre Swatter",
+            "src": []
+        },
+        "ITEMTPL_451": {
+            "name": "Orchid",
+            "src": []
+        },
+        "ITEMTPL_452": {
+            "name": "Spiked Vambrace",
+            "src": []
+        },
+        "ITEMTPL_453": {
+            "name": "Buckler",
+            "src": []
+        },
+        "ITEMTPL_454": {
+            "name": "Amazon Saber",
+            "src": []
+        },
+        "ITEMTPL_455": {
+            "name": "Nightwind",
+            "src": []
+        },
+        "ITEMTPL_456": {
+            "name": "Glaive",
+            "src": []
+        },
+        "ITEMTPL_457": {
+            "name": "Hunting Spear",
+            "src": []
+        },
+        "ITEMTPL_458": {
+            "name": "Reaper",
+            "src": []
+        },
+        "ITEMTPL_459": {
+            "name": "Warunk Hammer",
+            "src": []
+        },
+        "ITEMTPL_460": {
+            "name": "Executioner's Sword",
+            "src": []
+        },
+        "ITEMTPL_461": {
+            "name": "Bullet-Shooting Crossbow",
+            "src": []
+        },
+        "ITEMTPL_462": {
+            "name": "Blowpipe",
+            "src": []
+        },
+        "ITEMTPL_463": {
+            "name": "Blow Dart",
+            "src": []
+        },
+        "ITEMTPL_464": {
+            "name": "Discus",
+            "src": []
+        },
+        "ITEMTPL_465": {
+            "name": "Cast-Net",
+            "src": []
+        },
+        "ITEMTPL_466": {
+            "name": "Iryan Armor",
+            "src": []
+        },
+        "ITEMTPL_467": {
+            "name": "Chainmail",
+            "src": []
+        },
+        "ITEMTPL_468": {
+            "name": "Toadskin",
+            "src": []
+        },
+        "ITEMTPL_469": {
+            "name": "Leather Harness",
+            "src": []
+        },
+        "ITEMTPL_470": {
+            "name": "Half Plate",
+            "src": []
+        },
+        "ITEMTPL_471": {
+            "name": "Scale Mail",
+            "src": []
+        },
+        "ITEMTPL_472": {
+            "name": "Mirror Armor",
+            "src": []
+        },
+        "ITEMTPL_473": {
+            "name": "Linothorax Armor",
+            "src": []
+        },
+        "ITEMTPL_474": {
+            "name": "Druid Dagger",
+            "src": [{
+                "src": "US25101E",
+                "page": 153
+            }, {
+                "src": "US25206E",
+                "page": 20
+            }]
+        },
+        "ITEMTPL_475": {
+            "name": "Boar Catcher",
+            "src": [{
+                "src": "US25101E",
+                "page": 153
+            }, {
+                "src": "US25206E",
+                "page": 7
+            }]
+        },
+        "ITEMTPL_476": {
+            "name": "Dike Fork",
+            "src": [{
+                "src": "US25101E",
+                "page": 153
+            }, {
+                "src": "US25206E",
+                "page": 17
+            }]
+        },
+        "ITEMTPL_477": {
+            "name": "Stag-Catcher",
+            "src": [{
+                "src": "US25101E",
+                "page": 153
+            }, {
+                "src": "US25206E",
+                "page": 17
+            }]
+        },
+        "ITEMTPL_478": {
+            "name": "Boar Spear",
+            "src": [{
+                "src": "US25101E",
+                "page": 153
+            }, {
+                "src": "US25206E",
+                "page": 12
+            }]
+        },
+        "ITEMTPL_479": {
+            "name": "Woodcutter's Axe",
+            "src": [{
+                "src": "US25101E",
+                "page": 153
+            }, {
+                "src": "US25206E",
+                "page": 17
+            }]
+        },
+        "ITEMTPL_480": {
+            "name": "Punt Axe",
+            "src": [{
+                "src": "US25101E",
+                "page": 153
+            }, {
+                "src": "US25206E",
+                "page": 18
+            }]
+        },
+        "ITEMTPL_481": {
+            "name": "Andergaster",
+            "src": [{
+                "src": "US25101E",
+                "page": 153
+            }, {
+                "src": "US25206E",
+                "page": 6
+            }]
+        },
+        "ITEMTPL_482": {
+            "name": "Nostrianer",
+            "src": [{
+                "src": "US25101E",
+                "page": 153
+            }, {
+                "src": "US25206E",
+                "page": 6
+            }]
+        },
+        "ITEMTPL_483": {
+            "name": "Nostrian Long Bow",
+            "src": [{
+                "src": "US25101E",
+                "page": 153
+            }, {
+                "src": "US25206E",
+                "page": 11
+            }]
+        },
+        "ITEMTPL_484": {
+            "name": "Eagle Feathers",
+            "src": []
+        },
+        "ITEMTPL_485": {
+            "name": "Ashes",
+            "src": []
+        },
+        "ITEMTPL_486": {
+            "name": "Blood",
+            "src": []
+        },
+        "ITEMTPL_487": {
+            "name": "Lizard or Serpent Scales ",
+            "src": []
+        },
+        "ITEMTPL_488": {
+            "name": "Own Blood",
+            "src": []
+        },
+        "ITEMTPL_489": {
+            "name": "Ice Crystals, Ice Water",
+            "src": []
+        },
+        "ITEMTPL_490": {
+            "name": "Cherry Blossoms",
+            "src": []
+        },
+        "ITEMTPL_491": {
+            "name": "Flour",
+            "src": []
+        },
+        "ITEMTPL_492": {
+            "name": "Seeds",
+            "src": []
+        },
+        "ITEMTPL_493": {
+            "name": "Anointment Oil",
+            "src": []
+        },
+        "ITEMTPL_494": {
+            "name": "Stardust",
+            "src": []
+        },
+        "ITEMTPL_495": {
+            "name": "Tharf (a Holy Wine)",
+            "src": []
+        },
+        "ITEMTPL_496": {
+            "name": "Holy Water",
+            "src": []
+        },
+        "ITEMTPL_497": {
+            "name": "Feathers of Migratory Birds",
+            "src": []
+        },
+        "ITEMTPL_498": {
+            "name": "Annals of the Age of Gods",
+            "src": []
+        },
+        "ITEMTPL_499": {
+            "name": "Great Aventurian Atlas, Modern Edition",
+            "src": []
+        },
+        "ITEMTPL_500": {
+            "name": "Rahjasutra, Elrem-al’Moran Edition",
+            "src": []
+        },
+        "ITEMTPL_501": {
+            "name": "Rahjasutra, Second Edition",
+            "src": []
+        },
+        "ITEMTPL_502": {
+            "name": "Vademecum",
+            "src": []
+        },
+        "ITEMTPL_503": {
+            "name": "Book of the Serpent",
+            "src": []
+        },
+        "ITEMTPL_504": {
+            "name": "Unicorn Headband",
+            "src": []
+        },
+        "ITEMTPL_505": {
+            "name": "Goose Pouch",
+            "src": []
+        },
+        "ITEMTPL_506": {
+            "name": "Green Gloves",
+            "src": []
+        },
+        "ITEMTPL_507": {
+            "name": "Moon Amulet",
+            "src": []
+        },
+        "ITEMTPL_508": {
+            "name": "Prism",
+            "src": []
+        },
+        "ITEMTPL_509": {
+            "name": "Red Veil",
+            "src": []
+        },
+        "ITEMTPL_510": {
+            "name": "Sacrificial Dagger of the Nameless One (Basilisk’s Tongue)",
+            "src": []
+        },
+        "ITEMTPL_511": {
+            "name": "Knife of Firun",
+            "src": []
+        },
+        "ITEMTPL_512": {
+            "name": "Ingerimm’s Hammer",
+            "src": []
+        },
+        "ITEMTPL_513": {
+            "name": "Amazon Shield",
+            "src": []
+        },
+        "ITEMTPL_514": {
+            "name": "Whale Shield",
+            "src": []
+        },
+        "ITEMTPL_515": {
+            "name": "Aves’ Staff (2H)",
+            "src": []
+        },
+        "ITEMTPL_516": {
+            "name": "Efferd’ Beard (2H)",
+            "src": []
+        },
+        "ITEMTPL_517": {
+            "name": "Walking Staff",
+            "src": []
+        },
+        "ITEMTPL_518": {
+            "name": "Kor’s Spear (2H)",
+            "src": []
+        },
+        "ITEMTPL_519": {
+            "name": "Efferd’s Beard (2H) (Thrown Weapon)",
+            "src": []
+        },
+        "ITEMTPL_520": {
+            "name": "Amazon Armor",
+            "src": []
+        },
+        "ITEMTPL_521": {
+            "name": "Ifirn’s Coat",
+            "src": []
+        },
+        "ITEMTPL_522": {
+            "name": "Panther Armor",
+            "src": []
+        },
+        "ITEMTPL_523": {
+            "name": "Scale Gown",
+            "src": []
+        },
+        "ITEMTPL_546": {
+            "name": "Oakhavener (Andergastian)",
+            "src": []
+        },
+        "ITEMTPL_547": {
+            "name": "Harmlyner (Nostrian)",
+            "src": []
+        },
+        "ITEMTPL_548": {
+            "name": "Long Sword (Andergastian)",
+            "src": []
+        },
+        "ITEMTPL_549": {
+            "name": "Long Sword (Nostrian)",
+            "src": []
+        },
+        "ITEMTPL_550": {
+            "name": "Battle-Axe (Warring Kingdoms)",
+            "src": []
+        },
+        "ITEMTPL_551": {
+            "name": "Mace (Warring Kingdoms)",
+            "src": []
+        },
+        "ITEMTPL_552": {
+            "name": "Tournament Shield (Warring Kindoms)",
+            "src": []
+        },
+        "ITEMTPL_553": {
+            "name": "Mage's Staff, Stone Oak Wood",
+            "src": []
+        },
+        "ITEMTPL_795": {
+            "name": "Walking Staff (2H)",
+            "src": []
+        },
+        "ITEMTPL_796": {
+            "name": "Raven's Beak",
+            "src": [{
+                "src": "US25001E",
+                "page": 367
+            }, {
+                "src": "US25206E",
+                "page": 82
+            }]
+        }
     }
 }

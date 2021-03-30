@@ -5,6 +5,7 @@ import {
     COMBAT_SKILL_MAP
 } from "./data/maps.js"
 import DSAItem from "../../systems/dsa5/modules/item/item-dsa5.js"
+import { ITEM_MAP } from "./data/items.js";
 
 function parseSkills(data, prefix) {
 
@@ -122,7 +123,7 @@ function parseActivatable(data) {
                                 var option1 = game.i18n.localize(`${id}.options.${i.sid - 1}`)
                                 itemName = displayName = `${displayName} (${option1})`
                             } else {
-                                switch(i.sid.substring(0, i.sid.indexOf('_'))) {
+                                switch (i.sid.substring(0, i.sid.indexOf('_'))) {
                                     case "TAL":
                                         var option1 = game.i18n.localize(`SKILL.${i.sid}`)
                                         break
@@ -211,13 +212,45 @@ function parseActivatable(data) {
     return advantages
 }
 
+async function parseBelongings(data) {
+    var items = []
+    for (const item of data) {
+        // console.log(item)
+        let newItem = {}
+        let itemID = item[1].template
+        if (itemID) {
+            newItem.displayName = item[1].name
+            newItem.itemName = game.i18n.localize(`ITEM.${itemID}.name`)
+            newItem.type = "equipment"
+            let sourceData = game.i18n.localize(`ITEM.${itemID}.src`)
+            let sources = []
+            for (let src of sourceData) {
+                sources.push(`${game.i18n.localize(`BOOK.${src.src}`)} <i>(Page: ${src.page}</i>)`)
+            }
+            newItem.source = sources.join("<br>")
+        } else {
+            newItem.displayName = newItem.itemName = item[1].name
+            newItem.source = "Custom Item"
+            newItem.type = ITEM_MAP[item[1].gr]
+        }
+        items.push(newItem)
+
+    }
+    return items
+}
+
 async function addItems(actor, items, compendium) {
     var pack = await game.packs.entries.find(p => p.metadata.label == compendium);
     if (pack) {
         let index = await pack.getIndex()
         for (let item of items) {
             let newItem = {}
-            let entry = index.find(i => i.name == item.itemName)
+            let entry = index.find(i =>
+                // i.name == item.itemName
+                i.name.localeCompare(item.itemName, undefined, {
+                    sensitivity: 'accent'
+                }) === 0
+            )
             if (entry) {
                 newItem = await pack.getEntry(entry._id)
                 newItem.name = item.displayName
@@ -294,6 +327,10 @@ async function importFromJSON(json) {
     var activatables = parseActivatable(Object.entries(data.activatable))
     console.log(activatables)
     // console.log(activatables)
+
+    // parse belongings
+    var belongings = await parseBelongings(Object.entries(data.belongings.items))
+    console.log(belongings)
 
     // parseRace
     var charData = {}
@@ -437,6 +474,9 @@ async function importFromJSON(json) {
             if (advantage) {
                 let item = await pack.getEntry(advantage._id)
                 item.name = a.displayName
+                item.data.step = {
+                    value: a.tier
+                }
                 await actor.createOwnedItem(item)
             } else {
                 console.warn(`Can't find ${a.itemName} in compendium`)
@@ -452,6 +492,9 @@ async function importFromJSON(json) {
                         },
                         effect: {
                             value: a.effect
+                        },
+                        step: {
+                            value: a.tier
                         }
                     }
                 })
@@ -470,6 +513,9 @@ async function importFromJSON(json) {
                     },
                     effect: {
                         value: a.effect
+                    },
+                    step: {
+                        value: a.tier
                     }
                 }
             })
@@ -488,6 +534,9 @@ async function importFromJSON(json) {
             if (ability) {
                 let item = await pack.getEntry(ability._id)
                 item.name = a.displayName
+                item.data.step = {
+                    value: a.tier
+                }
                 if (a.effect) {
                     item.data.effect.value = a.effect
                 }
@@ -506,6 +555,9 @@ async function importFromJSON(json) {
                         },
                         APValue: {
                             value: a.cost
+                        },
+                        step: {
+                            value: a.tier
                         }
                     }
                 })
@@ -524,6 +576,9 @@ async function importFromJSON(json) {
                     },
                     APValue: {
                         value: a.cost
+                    },
+                    step: {
+                        value: a.tier
                     }
                 }
             })
@@ -533,6 +588,8 @@ async function importFromJSON(json) {
 
     // add spells
     addItems(actor, spells, "Spells, rituals and cantrips")
+
+    addItems(actor, belongings, "Equipment")
 
     console.log("Finished setting up sheet")
     actor.sheet.render(true)
