@@ -5,9 +5,8 @@ import {
     COMBAT_SKILL_MAP
 } from "./data/maps.js"
 import DSAItem from "../../systems/dsa5/modules/item/item-dsa5.js"
-import {
-    ITEM_MAP
-} from "./data/items.js";
+
+var importErrors
 
 function parseSkills(data, prefix) {
 
@@ -50,7 +49,7 @@ async function parseSpells(data) {
             sources.push(`${game.i18n.localize(`BOOK.${src.src}`)} <i>(Page: ${src.page}</i>)`)
         }
         if (!SPELL_MAP[spell[0]]) {
-            console.warn(`Couldn't map spell ${spell[0]}`)
+            console.log(`Optolith to Foundry Importer | Couldn't map spell: ${spell[0]}`)
         } else {
             item.customData = {
                 characteristic1: {
@@ -96,18 +95,22 @@ function parseActivatable(data) {
                 var displayName = baseName
                 var advantage = {}
                 switch (id) {
-                    case "ADV_0":
+                    // Special cases that need handling
+                    case "ADV_0": // Custom
                         itemName = displayName = i.sid
                         var source = "Custom Advantage"
                         break
-                    case "DISADV_0":
+                    case "DISADV_0": // Custom
                         itemName = displayName = i.sid
                         var source = "Custom Disadvantage"
                         break
-                    case "ADV_50": //Spellcaster
+                    case "ADV_50": // Spellcaster, needed for correct AE
                         var effect = "+20 AE"
                         break
-                    case "DISADV_1": // Afraid of
+                    case "ADV_12": // Blessed, needed for correct KP
+                        var effect = "+20 KP"
+                        break
+                    case "DISADV_1": // Afraid of, can be a mix of pre-defined and custom text
                         itemName = `${baseName} ()`
                         switch (typeof (i.sid)) {
                             case "number":
@@ -127,17 +130,24 @@ function parseActivatable(data) {
                                 break
                         }
                         break
-                    case "SA_0":
+                    case "SA_0": // Custom
                         itemName = displayName = i.sid
                         var cost = i.cost
                         var source = "Custom Ability"
                         break
-                    case "SA_9": // Skill Specialization
-                        itemName = itemName + ' ()'
+                    case "SA_9": // Skill Specialization, need to localize both options
+                        itemName = `${itemName} ()`
                         var option1 = game.i18n.localize(`SKILL.${i.sid}`)
                         var option2 = game.i18n.localize(`SPEC.${i.sid}.${i.sid2}`)
                         displayName = `${displayName} (${option1}: ${option2})`
                         var effect = `${option1} FP2`
+                        break
+                    case "SA_12": // Terrain Knowledge 
+                    case "SA_28": // Writing
+                    case "SA_87": // Aspect Knowledge // These have pre-defined options that Foundry doesn't have pre-made items for
+                        itemName = `${itemName} ()`
+                        var option1 = game.i18n.localize(`${id}.options.${i.sid - 1}`)
+                        displayName = `${baseName} (${option1})`
                         break
                     default:
                         if (i.sid) {
@@ -181,7 +191,7 @@ function parseActivatable(data) {
                             displayName = `${baseName} (${option1}: ${option2})`
                         }
                         if (type == "specialability") {
-                            var source = "<b>Source:</b>"
+                            var source = ""
                             let sourceData = game.i18n.localize(`${id}.src`)
                             for (let src of sourceData) {
                                 // source += ' ' + game.i18n.localize(`${src.src}.name`)+` <i>(Page: ${src.page}</i>)`
@@ -237,15 +247,17 @@ function parseActivatable(data) {
 }
 
 async function parseBelongings(data) {
+    const {ITEM_TYPE_MAP, ITEM_CATEGORY_MAP} = await import("./data/items.js");
     var items = []
     for (const item of data) {
-        // console.log(item)
         let newItem = {}
         let itemID = item[1].template
         if (itemID) {
             newItem.displayName = item[1].name
             newItem.itemName = game.i18n.localize(`ITEM.${itemID}.name`)
-            newItem.type = "equipment"
+            if (!(newItem.type = ITEM_TYPE_MAP[item[1].gr])) {
+                newItem.type = "equipment"
+            }
             let sourceData = game.i18n.localize(`ITEM.${itemID}.src`)
             let sources = []
             for (let src of sourceData) {
@@ -255,14 +267,26 @@ async function parseBelongings(data) {
         } else {
             newItem.displayName = newItem.itemName = item[1].name
             newItem.source = "Custom Item"
-            newItem.type = ITEM_MAP[item[1].gr]
+            if (!(newItem.type = ITEM_TYPE_MAP[item[1].gr])) {
+                newItem.type = "equipment"
+            }
+        }
+        // newItem.quantity = item[1].amount
+        newItem.data = {
+            quantity: {
+                value: item[1].amount
+            },
+            equipmentType: {
+                value: ITEM_CATEGORY_MAP[item[1].gr]
+              },
+      
         }
         items.push(newItem)
-
     }
     return items
 }
 
+// TODO: get all suitable compendiums (see DSA utility), rather than specifying single one
 async function addItems(actor, items, compendium) {
     var pack = await game.packs.entries.find(p => p.metadata.label == compendium);
     if (pack) {
@@ -270,7 +294,6 @@ async function addItems(actor, items, compendium) {
         for (let item of items) {
             let newItem = {}
             let entry = index.find(i =>
-                // i.name == item.itemName
                 i.name.localeCompare(item.itemName, undefined, {
                     sensitivity: 'accent'
                 }) === 0
@@ -285,7 +308,8 @@ async function addItems(actor, items, compendium) {
                     }
                 }
             } else {
-                console.warn("Couldn't find item in compendium: " + item.itemName)
+                // console.warn("Couldn't find item in compendium: " + item.itemName)
+                importErrors.push({type: item.type, displayName: item.displayName, itemName: item.itemName, source: item.source})
                 // add custom item
                 newItem = {
                     name: item.displayName,
@@ -296,19 +320,17 @@ async function addItems(actor, items, compendium) {
                         ...item.customData,
                         ...{
                             description: {
-                                value: `<b>Source:</b><br>${item.source}`
+                                value: `<p>Source:</p><p>${item.source}</p>`
                             }
                         }
                     }
                 }
-                console.log(`About to create: ${JSON.stringify(newItem)}`)
-
             }
             await actor.createOwnedItem(newItem)
-            // console.log(ownedItem)
         }
     } else {
         console.warn("No such compendium: " + compendium)
+        importErrors.push({ itemName: item.itemName, displayName: item.displayName, type: item.type, source: item.source})
         for (let item of items) {
             // add custom item
             let newItem = {
@@ -316,21 +338,21 @@ async function addItems(actor, items, compendium) {
                 type: item.type,
                 data: item.data
             }
-            console.log(newItem)
+            // console.log(newItem)
             await actor.createOwnedItem(newItem)
         }
 
     }
 }
 
-async function importFromJSON(json) {
+async function importFromJSON(json, showResults) {
+    importErrors = []
     const data = JSON.parse(json)
+    
     var attributes = data.attr.values
     var characteristics = {}
     attributes.forEach(function (attr) {
         var attributeName = ATTRIBUTE_MAP[attr.id]
-        // var char = {name:foundry_name,value:att.value}
-        // var species = (impAttr == att.id) ? 1 : 0
         var advances = attr.value - 8
         characteristics[attributeName] = {
             // "species": species,
@@ -340,29 +362,19 @@ async function importFromJSON(json) {
     // var improvedAttibuteMax = sheet.attr.attributeAdjustmentSelected
 
 
-    // var skills = parseSkills(Object.entries(data.talents), "SKILL")
-    // var combatSkills = parseSkills(Object.entries(data.ct), "COMBATSKILL")
     var spells = await parseSpells(Object.entries(data.spells))
-    console.log(spells)
+    // console.log(spells)
 
-    // skills = skills.concat(combatSkills)
-    // console.log(skills)
-    // console.log(Object.entries(data.activatable))
     var activatables = parseActivatable(Object.entries(data.activatable))
-    console.log(activatables)
     // console.log(activatables)
 
     // parse belongings
     var belongings = await parseBelongings(Object.entries(data.belongings.items))
-    console.log(belongings)
+    // console.log(belongings)
 
-    // parseRace
+    // setup base character data
     var charData = {}
-
-
     let race = data.r
-
-
     charData.name = data.name
     charData.type = "character"
     charData.data = {
@@ -413,13 +425,12 @@ async function importFromJSON(json) {
             notes: {
                 value: data.pers.otherinfo
             }
-
         },
         status: {
             wounds: {
                 initial: RACE_MAP[race].lp,
                 advances: data.attr.lp,
-                value: (characteristics['ko'].advances + 8) * 2 + RACE_MAP[race].lp // set to max health
+                value: (characteristics['ko'].advances + 8) * 2 + RACE_MAP[race].lp // set to max LP
             },
             soulpower: {
                 initial: RACE_MAP[race].spi,
@@ -438,38 +449,27 @@ async function importFromJSON(json) {
             }
         }
     }
-    // console.log(charData)
 
     let actor = await CONFIG.Actor.entityClass.create(charData, {
         renderSheet: false
     })
-    // Actordsa5.create() doesn't return an actor, need to workaround
-    // actor = game.actors.entities.find(a => a.name == data.name)
-    // actor = game.actors.entities.pop()
-    console.log(actor)
-    // update skills
-    // skills.forEach(function (s) {
-    //     console.log(`Trying skill: ${s.name} with value: ${s.data.talentValue.value}`)
-    //     let item = actor.data.items.find(i => i.name === s.name);
-    //     console.log(item)
-    //     const update = {
-    //         _id: item._id,
-    //         'data.talentValue.value': s.data.talentValue.value
-    //     }
-    //     // console.log(update)
-    //     const updated = actor.updateEmbeddedEntity("OwnedItem", update);
-    // })
+    // console.log(actor)
 
-    // for (let s of skills) {
-    //     let item = actor.data.items.find(i => i.name === s.name)
-    //     const update = {
-    //         _id: item._id,
-    //         'data.talentValue.value': s.data.talentValue.value
-    //     }
-    //     const updated = actor.updateEmbeddedEntity("OwnedItem", update);
-    // }
+    /* 
+    * Use the following if skill IDs change
+    * 
+    // update skills by finding skill name
+    for (let s of skills) {
+        let item = actor.data.items.find(i => i.name === s.name)
+        const update = {
+            _id: item._id,
+            'data.talentValue.value': s.data.talentValue.value
+        }
+        const updated = actor.updateEmbeddedEntity("OwnedItem", update);
+    }
+    */
 
-    // update skills
+    // update skills using using IDs in SKILL_MAP
     for (let s of Object.entries(data.talents)) {
         const update = {
             _id: SKILL_MAP[s[0]],
@@ -477,7 +477,7 @@ async function importFromJSON(json) {
         }
         actor.updateEmbeddedEntity("OwnedItem", update);
     }
-    // update combat techniques
+    // update combat techniques using IDs in COMBAT_SKILL_MAP
     for (let s of Object.entries(data.ct)) {
         const update = {
             _id: COMBAT_SKILL_MAP[s[0]],
@@ -486,9 +486,7 @@ async function importFromJSON(json) {
         actor.updateEmbeddedEntity("OwnedItem", update);
     }
 
-
-
-    // add activables
+    // add activables TODO: refactor into function
     let advantages = activatables.filter(a => a.type.includes("advantage"))
     for (let a of advantages) {
         var pack = await game.packs.entries.find(p => p.metadata.label == "Disadvantages and Advantages");
@@ -509,7 +507,9 @@ async function importFromJSON(json) {
                 }
                 await actor.createOwnedItem(item)
             } else {
-                console.warn(`Can't find ${a.itemName} in compendium`)
+                // console.warn(`Can't find ${a.itemName} in compendium`)
+                importErrors.push({type: a.type, displayName: a.displayName, itemName: a.itemName, source: a.source})
+
                 let newItem = await actor.createOwnedItem({
                     name: a.displayName,
                     type: a.type,
@@ -531,7 +531,7 @@ async function importFromJSON(json) {
 
             }
         } else {
-            let newItem = await actor.createOwnedItem({
+            await actor.createOwnedItem({
                 name: a.displayName,
                 type: a.type,
                 data: {
@@ -554,7 +554,7 @@ async function importFromJSON(json) {
         }
     }
 
-    // add special abilities
+    // add special abilities  // TODO: refactor into function
     let abilities = activatables.filter(a => a.type == "specialability")
     for (let a of abilities) {
         var pack = await game.packs.entries.find(p => p.metadata.label == "Special Abilities");
@@ -575,7 +575,8 @@ async function importFromJSON(json) {
                 }
                 await actor.createOwnedItem(item)
             } else {
-                console.warn(`Can't find ${a.itemName} in compendium`)
+                // console.warn(`Can't find ${a.itemName} in compendium`)
+                importErrors.push({type: a.type, displayName: a.displayName, itemName: a.itemName, source: a.source})
                 let newItem = await actor.createOwnedItem({
                     name: a.displayName,
                     type: "specialability",
@@ -597,7 +598,7 @@ async function importFromJSON(json) {
 
             }
         } else {
-            let newItem = await actor.createOwnedItem({
+            await actor.createOwnedItem({
                 name: a.displayName,
                 type: "specialability",
                 data: {
@@ -619,39 +620,88 @@ async function importFromJSON(json) {
         }
     }
 
-    // add spells
-    addItems(actor, spells, "Spells, rituals and cantrips")
+    // add spells // TODO: localise
+    await addItems(actor, spells, "Spells, rituals and cantrips")
 
-    addItems(actor, belongings, "Equipment")
+    // add equipment // TODO: localise
+    console.log(belongings)
+    await addItems(actor, belongings, "Equipment")
 
-    console.log("Finished setting up sheet")
-    actor.sheet.render(true)
+    console.log(`Optolith to Foundry Importer | Finished creating actor id: ${actor.id} name: ${actor.data.name}`)
+    let sheet = await actor.sheet.render(true)
+
+    
+    console.log(`Optolith to Foundry Importer | Items that were not found in compendium:`)
+    console.log(importErrors)
+    // TODO: localse
+    importErrors.sort()
+    let importErrorsList = []
+    for (let error of importErrors) {
+        importErrorsList.push(`<tr><td><i>${error.type}</i></td><td><b>${error.displayName}</b></td><td>${error.source}</td></tr>`)
+    }
+    let importErrorsMessage = `<p>The following items could not be found in the compendium and may need to be manually adjusted:</p>
+        <table>
+        <tr><th>Type</th><th>Name</th><th>Source</th></tr>
+        ${importErrorsList.join('')}
+        </table>
+        `
+
+    if (showResults && importErrors.length > 0) {
+        new Dialog({
+            title: "Import Results",
+            content: importErrorsMessage,
+            buttons: {
+                ok: {
+                    icon: "<i class='fas fa-check'></i>",
+                    label: `OK`
+                }
+            },
+            default: 'ok'
+        }, {
+            width: 700
+        }).render(true)
+    }
+    if (importErrors.length > 0) {
+        ui.notifications.warn(`${actor.data.name} imported with some unrecognised items`)
+    } else {
+        ui.notifications.info(`${actor.data.name} imported successfully`)
+    }
+
+
 
 }
 
 
 
-/* -------------------------------------------- */
-
+// TODO: localise
 function importFromOptolithDialog() {
     new Dialog({
         title: `Import Optolith File`,
-        content: `<form autocomplete="off" onsubmit="event.preventDefault();">
-        <p class="notes">You may import a hero from a JSON file exported from Optolith.</p>
-        <p class="notes">This operation will create a new Actor.</p>
-        <div class="form-group">
-            <label for="data">Source Data</label>
-            <input type="file" name="data"/>
-        </div>
-    </form>`,
+        content: `
+            <form autocomplete="off" onsubmit="event.preventDefault();">
+                <p class="notes">You may import a hero from a JSON file exported from Optolith.</p>
+                <p class="notes">This operation will create a new Actor.</p>
+                <div class="">
+                    <p><label for="data">Optolith JSON file</label><br>
+                    <input type="file" name="data"/></p>
+                    <p>
+                        <label for="results">Show results?</label>
+                        <input type="checkbox" name="results"/>
+                    </p>
+                </div>
+            </form>
+            `,
         buttons: {
             import: {
                 icon: '<i class="fas fa-file-import"></i>',
                 label: "Import",
                 callback: html => {
                     const form = html.find("form")[0];
-                    if (!form.data.files.length) return ui.notifications.error("You did not upload a data file!");
-                    readTextFromFile(form.data.files[0]).then(json => importFromJSON(json));
+                    if (!form.data.files.length) return ui.notifications.error("You did not upload a data file!")
+                    var showResults // TODO: do a better job with optional paramenters!
+                    if (form.results.checked ) { showResults = true } else { showResults = false }
+                    // showResults = true
+                    readTextFromFile(form.data.files[0]).then(json => importFromJSON(json, showResults));
                 }
             },
             no: {
