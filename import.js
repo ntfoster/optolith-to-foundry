@@ -133,11 +133,11 @@ function parseActivatable(data) {
                                         var option1 = game.i18n.localize(`SPELL.${i.sid}.name`)
                                         break
                                     default:
-                                        var option1 = s.id
+                                        var option1 = i.sid
                                         break
                                 }
                                 itemName = `${baseName} ()`
-                                displayname = `${baseName} (${option1})`
+                                displayName = `${baseName} (${option1})`
                             }
                             /*
                             } else if (i.sid.startsWith("TAL_")) { // Incompetant
