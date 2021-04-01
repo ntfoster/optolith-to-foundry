@@ -27,23 +27,25 @@ function parseSkills(data, prefix) {
 }
 
 async function parseSpells(data) {
+    const SPELLS = await fetch('modules/optolith-to-foundry/data/spells.json').then((response) => {return response.json() })
+
     const {
         SPELL_MAP
     } = await import("./data/spells.js")
     var items = []
     for (let spell of data) {
         let item = {}
-        // console.log(spell[0])
+        console.log(spell[0])
         // spell[0] = "SPELL_58"
         let spellID = spell[0]
-        item.displayName = item.itemName = game.i18n.localize(`SPELL.${spell[0]}.name`)
+        item.displayName = item.itemName = SPELLS[spell[0]].name
         item.type = "spell"
         item.data = {
             talentValue: {
                 value: spell[1]
             }
         }
-        let sourceData = game.i18n.localize(`SPELL.${spell[0]}.src`)
+        let sourceData = SPELLS[spell[0]].src
         let sources = []
         for (let src of sourceData) {
             sources.push(`${game.i18n.localize(`BOOK.${src.src}`)} <i>(Page: ${src.page}</i>)`)
@@ -69,6 +71,193 @@ async function parseSpells(data) {
     return items
 }
 
+async function parseLiturgies(data) {
+    const LITURGIES = await fetch('modules/optolith-to-foundry/data/liturgies.json').then((response) => {return response.json() })
+    var items = []
+    for (let spell of data) {
+        let item = {}
+        // console.log(spell[0])
+        // spell[0] = "SPELL_58"
+        let spellID = spell[0]
+        item.displayName = item.itemName = LITURGIES[spell[0]].name
+        item.type = "liturgy"
+        item.data = {
+            talentValue: {
+                value: spell[1]
+            }
+        }
+        let sourceData = LITURGIES[spell[0]].src
+        let sources = []
+        for (let src of sourceData) {
+            sources.push(`${game.i18n.localize(`BOOK.${src.src}`)} <i>(Page: ${src.page}</i>)`)
+        }
+        items.push(item)
+    }
+    return items
+    
+}
+
+async function parseBlessings(data) {
+    const BLESSINGS = await fetch('modules/optolith-to-foundry/data/blessings.json').then((response) => {return response.json() })
+
+    var items = []
+    for (let item of data) {
+        let newItem = {}
+        newItem.displayName = newItem.itemName = BLESSINGS[item].name
+        newItem.type = "blessing"
+        items.push(newItem)
+    }
+    // console.log(items)
+    return items
+}
+
+async function parseCantrips(data) {
+    const CANTRIPS = await fetch('modules/optolith-to-foundry/data/cantrips.json').then((response) => {return response.json() })
+
+    var items = []
+    for (let item of data) {
+        let newItem = {}
+        newItem.displayName = newItem.itemName = CANTRIPS[item].name
+        newItem.type = "magictrick"
+        items.push(newItem)
+    }
+    // console.log(items)
+    return items
+}
+
+
+function parseActivatables(data) {
+    var advantages = []
+    var disadvantages = []
+    var specialAbilities = []
+
+    for (let a of data) {
+        let id = a[0]
+        switch(id.substring(0, id.indexOf('_'))) {
+            case "ADV":
+                for (let i of a[1]) { // multiple of same advantage
+                    i.id = id
+                    i.type = "advantage"
+                    advantages.push(i)
+                }
+                break
+            case "DISADV":
+                for (let i of a[1]) {
+                    i.id = id
+                    i.type = "disadvantage"
+                    disadvantages.push(i)
+                }
+                break
+            case "SA":
+                for (let i of a[1]) {
+                    i.id = id
+                    i.type = "specialability"
+                    specialAbilities.push(i)
+                }
+                break
+        }
+    }
+
+    return {advantages: advantages, disadvantages: disadvantages, specialAbilities: specialAbilities}
+}
+
+function parseAbility(data,prefix) {
+    var PREFIX
+    for (let a of data) {
+        switch(a.type) {
+            case "advantage":
+                PREFIX = "ADVANTAGE"
+                break
+            case "disadvantage":
+                PREFIX = "DISADVANTAGE"
+                break
+            case "specialability":
+                PREFIX = "ABILITY"
+                break
+        }
+        var baseName = game.i18n.localize(`${PREFIX}}.${a.id}.name`)
+        var itemName 
+        var displayName
+        switch (a.id) { // handle special cases
+            case "ADV_0": // Custom
+                itemName = displayName = a.sid
+                var source = "Custom Advantage"
+                break
+            case "DISADV_0": // Custom
+                itemName = displayName = a.sid
+                var source = "Custom Disadvantage"
+                break
+            case "SA_0": // Custom
+                itemName = displayName = i.sid
+                var source = "Custom Ability"
+                break
+            case "ADV_50": // Spellcaster, needed for correct AE
+                var effect = "+20 AE"
+                break
+            case "ADV_12": // Blessed, needed for correct KP
+                var effect = "+20 KP"
+                break
+            case "SA_9": // Skill Specialization, need to localize both options
+                itemName = `${itemName} ()`
+                var option1 = game.i18n.localize(`SKILL.${i.sid}`)
+                var option2 = game.i18n.localize(`SPECIALISATION.${i.sid}.${i.sid2}`)
+                displayName = `${displayName} (${option1}: ${option2})`
+                var effect = `${option1} FP2`
+                break
+            case "DISADV_34":
+            case "SA_12": // Terrain Knowledge 
+            case "SA_28": // Writing
+            case "SA_87": // Aspect Knowledge // These have pre-defined options that Foundry doesn't have pre-made items for
+                itemName = `${itemName} ()`
+                var option1 = game.i18n.localize(`${id}.options.${i.sid - 1}`)
+                displayName = `${baseName} (${option1})`
+                break
+            default:
+                if (i.sid) {
+                    if (typeof (i.sid) == "number") {
+                        var option1 = game.i18n.localize(`${id}.options.${i.sid - 1}`)
+                        itemName = displayName = `${baseName} (${option1})`
+                    } else {
+                        switch (i.sid.substring(0, i.sid.indexOf('_'))) {
+                            case "TAL":
+                                var option1 = game.i18n.localize(`SKILL.${i.sid}`)
+                                break
+                            case "CT":
+                                var option1 = game.i18n.localize(`COMBATSKILL.${i.sid}`)
+                                break
+                            case "SPELL":
+                                var option1 = game.i18n.localize(`SPELL.${i.sid}.name`)
+                                break
+                            default:
+                                var option1 = i.sid
+                                break
+                        }
+                        if (!baseName.includes('(')) {
+                            itemName = `${baseName} ()`
+                        }
+                        displayName = `${baseName} (${option1})`
+                    }
+                }
+                if (i.sid2) {
+                    var option2 = i.sid2
+                    displayName = `${baseName} (${option1}: ${option2})`
+                }
+                if (type == "specialability") {
+                    var source = ""
+                    let sourceData = game.i18n.localize(`${id}.src`)
+                    for (let src of sourceData) {
+                        // source += ' ' + game.i18n.localize(`${src.src}.name`)+` <i>(Page: ${src.page}</i>)`
+                        source += ` ${game.i18n.localize(`BOOK.${src.src}`)} <i>(Page: ${src.page}</i>)`
+                    }
+                } else {
+                    source = ""
+                }
+
+
+        }
+    }
+}
+
 // Advntages, Disadvantages and Special Abilities
 function parseActivatable(data) {
     var advantages = []
@@ -77,17 +266,18 @@ function parseActivatable(data) {
             var type
             var id = d[0]
             var t = d[0].substring(0, d[0].indexOf('_'))
+            var baseName
             // console.log(t)
             switch (t) {
                 case "ADV":
                     type = "advantage"
-                    break;
+                    break
                 case "DISADV":
                     type = "disadvantage"
-                    break;
+                    break
                 case "SA":
                     type = "specialability"
-                    break;
+                    break
             }
             d[1].forEach(i => {
                 var baseName = game.i18n.localize(`${id}.name`)
@@ -138,10 +328,11 @@ function parseActivatable(data) {
                     case "SA_9": // Skill Specialization, need to localize both options
                         itemName = `${itemName} ()`
                         var option1 = game.i18n.localize(`SKILL.${i.sid}`)
-                        var option2 = game.i18n.localize(`SPEC.${i.sid}.${i.sid2}`)
+                        var option2 = game.i18n.localize(`SPECIALISATION.${i.sid}.${i.sid2}`)
                         displayName = `${displayName} (${option1}: ${option2})`
                         var effect = `${option1} FP2`
                         break
+                    case "DISADV_34":
                     case "SA_12": // Terrain Knowledge 
                     case "SA_28": // Writing
                     case "SA_87": // Aspect Knowledge // These have pre-defined options that Foundry doesn't have pre-made items for
@@ -245,7 +436,6 @@ function parseActivatable(data) {
     });
     return advantages
 }
-
 async function parseBelongings(data) {
     const {ITEM_TYPE_MAP, ITEM_CATEGORY_MAP} = await import("./data/items.js");
     var items = []
@@ -293,6 +483,7 @@ async function addItems(actor, items, compendium) {
         let index = await pack.getIndex()
         for (let item of items) {
             let newItem = {}
+            // ignore case and match
             let entry = index.find(i =>
                 i.name.localeCompare(item.itemName, undefined, {
                     sensitivity: 'accent'
@@ -336,8 +527,17 @@ async function addItems(actor, items, compendium) {
             let newItem = {
                 name: item.displayName,
                 type: item.type,
-                data: item.data
-            }
+                img: DSAItem.defaultImages[item.type],
+                data: {
+                    ...item.data,
+                    ...item.customData,
+                    ...{
+                        description: {
+                            value: `<p>Source:</p><p>${item.source}</p>`
+                        }
+                    }
+                }
+        }
             // console.log(newItem)
             await actor.createOwnedItem(newItem)
         }
@@ -365,12 +565,28 @@ async function importFromJSON(json, showResults) {
     var spells = await parseSpells(Object.entries(data.spells))
     // console.log(spells)
 
+    var cantrips = await parseCantrips(data.cantrips) // array not object
+ 
+    var liturgies = await parseLiturgies(Object.entries(data.liturgies))
+
+    const allActivatables = parseActivatables(Object.entries(data.activatable))
+    console.log(allActivatables)
+
     var activatables = parseActivatable(Object.entries(data.activatable))
     // console.log(activatables)
+
+    var blessings = await parseBlessings(data.blessings) // array not object
 
     // parse belongings
     var belongings = await parseBelongings(Object.entries(data.belongings.items))
     // console.log(belongings)
+
+    var money = []
+    money.push({id:"OCRi6UuKBIHCbZuF", quantity: data.belongings.purse.d})
+    money.push({id:"xN0OtnyZqB4BaWAX", quantity: data.belongings.purse.s})
+    money.push({id:"G4piFlEAWb2stJCn", quantity: data.belongings.purse.h})
+    money.push({id:"NDf42upvVWmHi8Ty", quantity: data.belongings.purse.k})
+
 
     // setup base character data
     var charData = {}
@@ -391,6 +607,9 @@ async function importFromJSON(json, showResults) {
             },
             culture: {
                 value: game.i18n.localize(`CULTURE.${data.c}`)
+            },
+            career: {
+                value: game.i18n.localize(`PROFESSION.${data.p}`)
             },
             socialstate: {
                 value: game.i18n.localize(`SOCIALSTATUS.${data.pers.socialstatus}`)
@@ -486,7 +705,15 @@ async function importFromJSON(json, showResults) {
         actor.updateEmbeddedEntity("OwnedItem", update);
     }
 
-    // add activables TODO: refactor into function
+    for(let coin of money) {
+        const update = {
+            _id: coin.id,
+            'data.quantity.value': (coin.quantity ? coin.quantity : 0)
+        }
+        actor.updateEmbeddedEntity("OwnedItem", update);
+    }
+
+    // add activatables TODO: refactor into function
     let advantages = activatables.filter(a => a.type.includes("advantage"))
     for (let a of advantages) {
         var pack = await game.packs.entries.find(p => p.metadata.label == "Disadvantages and Advantages");
@@ -620,19 +847,29 @@ async function importFromJSON(json, showResults) {
         }
     }
 
-    // add spells // TODO: localise
+    // add spells // TODO: localise, and don't require specific compendium
     await addItems(actor, spells, "Spells, rituals and cantrips")
 
+    await addItems(actor, cantrips, "Spells, rituals and cantrips")
+
+    await addItems(actor, blessings, "Liturgies, ceremonies and blessings")
+
+    await addItems(actor, liturgies, "Liturgies, ceremonies and blessings")
+
     // add equipment // TODO: localise
-    console.log(belongings)
     await addItems(actor, belongings, "Equipment")
 
     console.log(`Optolith to Foundry Importer | Finished creating actor id: ${actor.id} name: ${actor.data.name}`)
     let sheet = await actor.sheet.render(true)
 
     
-    console.log(`Optolith to Foundry Importer | Items that were not found in compendium:`)
-    console.log(importErrors)
+    if (importErrors.length > 0) {
+        console.log(`Optolith to Foundry Importer | Items that were not found in compendium:`)
+        console.log(importErrors)
+        ui.notifications.warn(`${actor.data.name} imported with some unrecognised items`)
+    } else {
+        ui.notifications.info(`${actor.data.name} imported successfully`)
+    }
     // TODO: localse
     importErrors.sort()
     let importErrorsList = []
@@ -648,7 +885,7 @@ async function importFromJSON(json, showResults) {
 
     if (showResults && importErrors.length > 0) {
         new Dialog({
-            title: "Import Results",
+            title: `Import Results for ${actor.name}`,
             content: importErrorsMessage,
             buttons: {
                 ok: {
@@ -716,7 +953,7 @@ function importFromOptolithDialog() {
 }
 
 Hooks.on("renderActorDirectory", (app, html, data) => {
-
+    // TODO: check user has permission to create Actor
     const button = $(`<button title="${game.i18n.localize("Tooltip.import")}"><i class="fas fa-file-import"></i>${game.i18n.localize("Button.import")}</button>`);
     html.find(".header-actions").append(button);
     button.click(() => importFromOptolithDialog())

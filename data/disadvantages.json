@@ -1,0 +1,474 @@
+{
+    "DISADV_0": {
+        "name": "Custom Disadvantage",
+        "src": [{
+            "src": "US25001E",
+            "page": 1
+        }]
+    },
+    "DISADV_1": {
+        "name": "Afraid of",
+        "src": [{
+            "src": "US25001E",
+            "page": 170
+        }],
+        "options": ["Blood", "Darkness", "Heights", "Insects", "the Sea", "Reptiles", "Confined Spaces", "Spiders", "the Dead and the Undead"]
+    },
+    "DISADV_2": {
+        "name": "Poor",
+        "src": [{
+            "src": "US25001E",
+            "page": 176
+        }]
+    },
+    "DISADV_3": {
+        "name": "Artifact-Bound",
+        "src": [{
+            "src": "US25001E",
+            "page": 171
+        }]
+    },
+    "DISADV_4": {
+        "name": "Slow",
+        "src": [{
+            "src": "US25001E",
+            "page": 177
+        }]
+    },
+    "DISADV_5": {
+        "name": "Blind",
+        "src": [{
+            "src": "US25001E",
+            "page": 171
+        }]
+    },
+    "DISADV_6": {
+        "name": "Frenzy",
+        "src": [{
+            "src": "US25001E",
+            "page": 172
+        }]
+    },
+    "DISADV_7": {
+        "name": "Restricted Sense",
+        "src": [{
+            "src": "US25001E",
+            "page": 176
+        }],
+        "options": ["Sight", "Hearing", "Smell & Taste", "Tactile Sense"]
+    },
+    "DISADV_11": {
+        "name": "Color-Blind",
+        "src": [{
+            "src": "US25001E",
+            "page": 172
+        }]
+    },
+    "DISADV_12": {
+        "name": "Fat",
+        "src": [{
+            "src": "US25001E",
+            "page": 172
+        }]
+    },
+    "DISADV_13": {
+        "name": "Susceptible to Poison",
+        "src": [{
+            "src": "US25001E",
+            "page": 178
+        }]
+    },
+    "DISADV_14": {
+        "name": "Ugly",
+        "src": [{
+            "src": "US25001E",
+            "page": 178
+        }]
+    },
+    "DISADV_15": {
+        "name": "Susceptible to Heat",
+        "src": [{
+            "src": "US25001E",
+            "page": 178
+        }]
+    },
+    "DISADV_16": {
+        "name": "Susceptible to Cold",
+        "src": [{
+            "src": "US25001E",
+            "page": 177
+        }]
+    },
+    "DISADV_17": {
+        "name": "No Flying Balm",
+        "src": [{
+            "src": "US25001E",
+            "page": 174
+        }]
+    },
+    "DISADV_18": {
+        "name": "No Familiar",
+        "src": [{
+            "src": "US25001E",
+            "page": 174
+        }]
+    },
+    "DISADV_19": {
+        "name": "Hair-Bound Power",
+        "src": [{
+            "src": "US25001E",
+            "page": 172
+        }]
+    },
+    "DISADV_20": {
+        "name": "Physical Peculiarity",
+        "src": [{
+            "src": "US25001E",
+            "page": 176
+        }]
+    },
+    "DISADV_21": {
+        "name": "Susceptible to Disease",
+        "src": [{
+            "src": "US25001E",
+            "page": 178
+        }]
+    },
+    "DISADV_22": {
+        "name": "Annoyed by Minor Spirits",
+        "src": [{
+            "src": "US25001E",
+            "page": 170
+        }]
+    },
+    "DISADV_23": {
+        "name": "Sensitive to Sunlight",
+        "src": [{
+            "src": "US25001E",
+            "page": 177
+        }]
+    },
+    "DISADV_24": {
+        "name": "Magical Restriction",
+        "src": [{
+            "src": "US25001E",
+            "page": 173
+        }],
+        "options": ["Curse of Glades", "Curse of Mountains", "Curse of Ice", "Curse of Seas", "Curse of Night", "Curse of Forests"]
+    },
+    "DISADV_25": {
+        "name": "Night-Blind",
+        "src": [{
+            "src": "US25001E",
+            "page": 174
+        }]
+    },
+    "DISADV_26": {
+        "name": "Decreased Arcane Power",
+        "src": [{
+            "src": "US25001E",
+            "page": 172
+        }]
+    },
+    "DISADV_27": {
+        "name": "Decreased Karma Points",
+        "src": [{
+            "src": "US25001E",
+            "page": 172
+        }]
+    },
+    "DISADV_28": {
+        "name": "Decreased Life Points",
+        "src": [{
+            "src": "US25001E",
+            "page": 172
+        }]
+    },
+    "DISADV_29": {
+        "name": "Decreased Spirit",
+        "src": [{
+            "src": "US25001E",
+            "page": 172
+        }]
+    },
+    "DISADV_30": {
+        "name": "Decreased Toughness",
+        "src": [{
+            "src": "US25001E",
+            "page": 172
+        }]
+    },
+    "DISADV_31": {
+        "name": "Bad Luck",
+        "src": [{
+            "src": "US25001E",
+            "page": 171
+        }]
+    },
+    "DISADV_32": {
+        "name": "Misfortune",
+        "src": [{
+            "src": "US25001E",
+            "page": 173
+        }]
+    },
+    "DISADV_33": {
+        "name": "Personality Flaw",
+        "src": [{
+            "src": "US25001E",
+            "page": 175
+        }],
+        "options": ["Arrogance", "Vanity", "Envy", "Feistiness", "Unpleasant", "Spoiled", "Prejudice", "Unworldly"]
+    },
+    "DISADV_34": {
+        "name": "Principles",
+        "src": [{
+            "src": "US25001E",
+            "page": 176
+        }],
+        "options": ["99 Laws", "Code of the Church of Hesinde", "Code of the Church of Phex", "Code of the Church of Peraine", "Warrior's Honor", "Knight's Honor", "Elven worldview", "Code of the Church of Boron", "Code of the Church of Praios", "Code of the Church of Rondra", "Dwarven Code", "Pacifism", "Code of the Church of Efferd", "Code of the Church of Travia", "Code of the Church of Firun", "Code of the Church of Tsa", "Code of the Church of Ingerimm", "Code of the Church of Rahja", "Code of the Church of Aves", "Code of the Church of Ifirn", "Code of the Church of Kor", "Code of the Church of Nandus", "Code of the Church of Swafnir"]
+    },
+    "DISADV_35": {
+        "name": "Sleepwalker",
+        "src": [{
+            "src": "US25001E",
+            "page": 177
+        }]
+    },
+    "DISADV_36": {
+        "name": "Bad Habit",
+        "src": [{
+            "src": "US25001E",
+            "page": 171
+        }],
+        "options": ["Barefoot", "Third Person", "First", "Crybaby", "Hypochondriac", "Sir", "Late Sleeper", "Left and Right", "My Child", "Nail-Biter", "Nervous", "Cleaning Bug", "Smoker", "Talk a Mile a Minute", "Bad Table Manners", "Talks to Themselves", "Messy", "We"]
+    },
+    "DISADV_37": {
+        "name": "Negative Trait",
+        "src": [{
+            "src": "US25001E",
+            "page": 173
+        }],
+        "options": ["Superstition", "Submissive to Authorities", "Stinginess", "Avarice", "Short Temper", "Kleptomaniac", "Gullible", "Curiosity", "Vengeance", "Gambling Addiction", "Wastefulness"]
+    },
+    "DISADV_38": {
+        "name": "Weak Regeneration (Arcane Energy)",
+        "src": [{
+            "src": "US25001E",
+            "page": 178
+        }]
+    },
+    "DISADV_39": {
+        "name": "Weak Regeneration (Karma Points)",
+        "src": [{
+            "src": "US25001E",
+            "page": 178
+        }]
+    },
+    "DISADV_40": {
+        "name": "Weak Regeneration (Life Points)",
+        "src": [{
+            "src": "US25001E",
+            "page": 179
+        }]
+    },
+    "DISADV_41": {
+        "name": "Weak Astral Body",
+        "src": [{
+            "src": "US25001E",
+            "page": 178
+        }]
+    },
+    "DISADV_42": {
+        "name": "Weak Karmic Body",
+        "src": [{
+            "src": "US25001E",
+            "page": 178
+        }]
+    },
+    "DISADV_43": {
+        "name": "Sensitive Nose",
+        "src": [{
+            "src": "US25001E",
+            "page": 176
+        }]
+    },
+    "DISADV_44": {
+        "name": "Speech Impediment",
+        "src": [{
+            "src": "US25001E",
+            "page": 177
+        }]
+    },
+    "DISADV_45": {
+        "name": "Stigma",
+        "src": [{
+            "src": "US25001E",
+            "page": 177
+        }],
+        "options": ["Albino", "Brands", "Green Hair", "Cat Eyes", "Snake Scales"]
+    },
+    "DISADV_46": {
+        "name": "Mute",
+        "src": [{
+            "src": "US25001E",
+            "page": 173
+        }]
+    },
+    "DISADV_47": {
+        "name": "Deaf",
+        "src": [{
+            "src": "US25001E",
+            "page": 172
+        }]
+    },
+    "DISADV_48": {
+        "name": "Incompetent",
+        "src": [{
+            "src": "US25001E",
+            "page": 173
+        }]
+    },
+    "DISADV_49": {
+        "name": "Not Free",
+        "src": [{
+            "src": "US25001E",
+            "page": 174
+        }]
+    },
+    "DISADV_50": {
+        "name": "Obligations",
+        "src": [{
+            "src": "US25001E",
+            "page": 174
+        }],
+        "options": ["from a family member to the family", "an indebted hero", "a noble to a liege", "a Blessed One to a Church", "a Blessed One to his Temple", "a mage to a tutor", "a mage to academy", "a mage to a guild", "a member of radical sect to the sect's leaders"]
+    },
+    "DISADV_51": {
+        "name": "Maimed",
+        "src": [{
+            "src": "US25001E",
+            "page": 173
+        }],
+        "options": ["One-Armed", "One-Eyed", "One-Legged", "One-Handed", "One-Eared"]
+    },
+    "DISADV_52": {
+        "name": "True Name",
+        "src": [{
+            "src": "US25001E",
+            "page": 178
+        }]
+    },
+    "DISADV_53": {
+        "name": "Wild Magic",
+        "src": [{
+            "src": "US25001E",
+            "page": 179
+        }]
+    },
+    "DISADV_54": {
+        "name": "Susceptible to Spells",
+        "src": [{
+            "src": "US25001E",
+            "page": 178
+        }]
+    },
+    "DISADV_55": {
+        "name": "Sensitive to Pain",
+        "src": [{
+            "src": "US25001E",
+            "page": 177
+        }]
+    },
+    "DISADV_56": {
+        "name": "Brittle Bone",
+        "src": [{
+            "src": "US25003E",
+            "page": 133
+        }]
+    },
+    "DISADV_57": {
+        "name": "Glass Jaw",
+        "src": [{
+            "src": "US25003E",
+            "page": 133
+        }]
+    },
+    "DISADV_58": {
+        "name": "Unstable Casting",
+        "src": [{
+            "src": "US25004E",
+            "page": 226
+        }]
+    },
+    "DISADV_59": {
+        "name": "Small Spell Selection",
+        "src": [{
+            "src": "US25004E",
+            "page": 226
+        }]
+    },
+    "DISADV_60": {
+        "name": "Weak Magical Melodies",
+        "src": [{
+            "src": "US25004E",
+            "page": 226
+        }]
+    },
+    "DISADV_61": {
+        "name": "Weak Magical Dances",
+        "src": [{
+            "src": "US25004E",
+            "page": 226
+        }]
+    },
+    "DISADV_62": {
+        "name": "Limited Magical Melodies",
+        "src": [{
+            "src": "US25004E",
+            "page": 226
+        }]
+    },
+    "DISADV_63": {
+        "name": "Limited Magical Dances",
+        "src": [{
+            "src": "US25004E",
+            "page": 226
+        }]
+    },
+    "DISADV_64": {
+        "name": "Smell of the Prey",
+        "src": [{
+            "src": "US25201E",
+            "page": 121
+        }]
+    },
+    "DISADV_65": {
+        "name": "Smell of the Predator",
+        "src": [{
+            "src": "US25201E",
+            "page": 121
+        }]
+    },
+    "DISADV_71": {
+        "name": "Alcohol Intolerance",
+        "src": [{
+            "src": "US25514E",
+            "page": 13
+        }]
+    },
+    "DISADV_72": {
+        "name": "Fewer Sermons",
+        "src": [{
+            "src": "US25005E",
+            "page": 228
+        }]
+    },
+    "DISADV_73": {
+        "name": "Fewer Visions",
+        "src": [{
+            "src": "US25005E",
+            "page": 228
+        }]
+    }
+}

@@ -1,0 +1,1346 @@
+{
+    "LITURGY_1": {
+        "name": "Banish Darkness",
+        "src": [{
+            "src": "US25001E",
+            "page": 324
+        }]
+    },
+    "LITURGY_2": {
+        "name": "Banish Fear",
+        "src": [{
+            "src": "US25001E",
+            "page": 324
+        }]
+    },
+    "LITURGY_3": {
+        "name": "Banish Light",
+        "src": [{
+            "src": "US25001E",
+            "page": 324
+        }]
+    },
+    "LITURGY_4": {
+        "name": "Blinding Ray",
+        "src": [{
+            "src": "US25001E",
+            "page": 325
+        }]
+    },
+    "LITURGY_5": {
+        "name": "Enforce Honor",
+        "src": [{
+            "src": "US25001E",
+            "page": 326
+        }]
+    },
+    "LITURGY_6": {
+        "name": "Decipher Text",
+        "src": [{
+            "src": "US25001E",
+            "page": 326
+        }]
+    },
+    "LITURGY_7": {
+        "name": "Encourage",
+        "src": [{
+            "src": "US25001E",
+            "page": 326
+        }]
+    },
+    "LITURGY_8": {
+        "name": "Fall into Nothing",
+        "src": [{
+            "src": "US25001E",
+            "page": 326
+        }]
+    },
+    "LITURGY_9": {
+        "name": "Peaceful Aura",
+        "src": [{
+            "src": "US25001E",
+            "page": 328
+        }]
+    },
+    "LITURGY_10": {
+        "name": "Banish Poison",
+        "src": [{
+            "src": "US25001E",
+            "page": 325
+        }]
+    },
+    "LITURGY_11": {
+        "name": "Divine Guidance",
+        "src": [{
+            "src": "US25001E",
+            "page": 326
+        }]
+    },
+    "LITURGY_12": {
+        "name": "Divine Sign",
+        "src": [{
+            "src": "US25001E",
+            "page": 326
+        }]
+    },
+    "LITURGY_13": {
+        "name": "Blessing of Healing",
+        "src": [{
+            "src": "US25001E",
+            "page": 325
+        }]
+    },
+    "LITURGY_14": {
+        "name": "Minor Undead Ban",
+        "src": [{
+            "src": "US25001E",
+            "page": 327
+        }]
+    },
+    "LITURGY_15": {
+        "name": "Minor Banishing Ray",
+        "src": [{
+            "src": "US25001E",
+            "page": 327
+        }]
+    },
+    "LITURGY_16": {
+        "name": "Banish Disease",
+        "src": [{
+            "src": "US25001E",
+            "page": 324
+        }]
+    },
+    "LITURGY_17": {
+        "name": "Without a Sound",
+        "src": [{
+            "src": "US25001E",
+            "page": 331
+        }]
+    },
+    "LITURGY_18": {
+        "name": "Protection from Magic",
+        "src": [{
+            "src": "US25001E",
+            "page": 328
+        }]
+    },
+    "LITURGY_19": {
+        "name": "See Magic",
+        "src": [{
+            "src": "US25001E",
+            "page": 329
+        }]
+    },
+    "LITURGY_20": {
+        "name": "Moon's Gaze",
+        "src": [{
+            "src": "US25001E",
+            "page": 327
+        }]
+    },
+    "LITURGY_21": {
+        "name": "Moonsilver Tongue",
+        "src": [{
+            "src": "US25001E",
+            "page": 328
+        }]
+    },
+    "LITURGY_22": {
+        "name": "Bless Object",
+        "src": [{
+            "src": "US25001E",
+            "page": 325
+        }]
+    },
+    "LITURGY_23": {
+        "name": "Place of Calm",
+        "src": [{
+            "src": "US25001E",
+            "page": 328
+        }]
+    },
+    "LITURGY_24": {
+        "name": "Plant Growth",
+        "src": [{
+            "src": "US25001E",
+            "page": 328
+        }]
+    },
+    "LITURGY_25": {
+        "name": "Raven Call",
+        "src": [{
+            "src": "US25001E",
+            "page": 329
+        }]
+    },
+    "LITURGY_26": {
+        "name": "Sleep",
+        "src": [{
+            "src": "US25001E",
+            "page": 330
+        }]
+    },
+    "LITURGY_27": {
+        "name": "Serpent Staff",
+        "src": [{
+            "src": "US25001E",
+            "page": 330
+        }]
+    },
+    "LITURGY_28": {
+        "name": "Serpent Tongue",
+        "src": [{
+            "src": "US25001E",
+            "page": 330
+        }]
+    },
+    "LITURGY_29": {
+        "name": "Pain Tolerance",
+        "src": [{
+            "src": "US25001E",
+            "page": 328
+        }]
+    },
+    "LITURGY_30": {
+        "name": "Protect the Defenseless",
+        "src": [{
+            "src": "US25001E",
+            "page": 329
+        }]
+    },
+    "LITURGY_31": {
+        "name": "Starshine",
+        "src": [{
+            "src": "US25001E",
+            "page": 331
+        }]
+    },
+    "LITURGY_32": {
+        "name": "Truth",
+        "src": [{
+            "src": "US25001E",
+            "page": 331
+        }]
+    },
+    "LITURGY_33": {
+        "name": "Quicksilver",
+        "src": [{
+            "src": "US25001E",
+            "page": 329
+        }]
+    },
+    "LITURGY_34": {
+        "name": "Wondrous Communication",
+        "src": [{
+            "src": "US25001E",
+            "page": 331
+        }]
+    },
+    "LITURGY_35": {
+        "name": "Field Blessing",
+        "src": [{
+            "src": "US25001E",
+            "page": 331
+        }]
+    },
+    "LITURGY_36": {
+        "name": "Exorcism",
+        "src": [{
+            "src": "US25001E",
+            "page": 331
+        }]
+    },
+    "LITURGY_37": {
+        "name": "Sacred Armor",
+        "src": [{
+            "src": "US25001E",
+            "page": 332
+        }]
+    },
+    "LITURGY_38": {
+        "name": "Lion Shape",
+        "src": [{
+            "src": "US25001E",
+            "page": 332
+        }]
+    },
+    "LITURGY_39": {
+        "name": "Fog Body",
+        "src": [{
+            "src": "US25001E",
+            "page": 332
+        }]
+    },
+    "LITURGY_40": {
+        "name": "Sanctify Object",
+        "src": [{
+            "src": "US25001E",
+            "page": 333
+        }]
+    },
+    "LITURGY_41": {
+        "name": "Aggression",
+        "src": [{
+            "src": "US25005E",
+            "page": 111
+        }]
+    },
+    "LITURGY_42": {
+        "name": "Attack Wave",
+        "src": [{
+            "src": "US25005E",
+            "page": 112
+        }]
+    },
+    "LITURGY_43": {
+        "name": "Hunter’s Eye",
+        "src": [{
+            "src": "US25005E",
+            "page": 126
+        }]
+    },
+    "LITURGY_44": {
+        "name": "Banish Divine Gifts",
+        "src": [{
+            "src": "US25005E",
+            "page": 112
+        }]
+    },
+    "LITURGY_45": {
+        "name": "Undead Ban",
+        "src": [{
+            "src": "US25005E",
+            "page": 138
+        }]
+    },
+    "LITURGY_46": {
+        "name": "Banishing Ray",
+        "src": [{
+            "src": "US25005E",
+            "page": 112
+        }]
+    },
+    "LITURGY_47": {
+        "name": "Free the Mind",
+        "src": [{
+            "src": "US25005E",
+            "page": 121
+        }]
+    },
+    "LITURGY_48": {
+        "name": "Gifted Rider",
+        "src": [{
+            "src": "US25005E",
+            "page": 123
+        }]
+    },
+    "LITURGY_49": {
+        "name": "Calm",
+        "src": [{
+            "src": "US25005E",
+            "page": 118
+        }]
+    },
+    "LITURGY_50": {
+        "name": "Modesty",
+        "src": [{
+            "src": "US25005E",
+            "page": 129
+        }]
+    },
+    "LITURGY_51": {
+        "name": "Summon the Rat Child’s Lesser Servants",
+        "src": [{
+            "src": "US25005E",
+            "page": 137
+        }]
+    },
+    "LITURGY_52": {
+        "name": "Dazzle",
+        "src": [{
+            "src": "US25005E",
+            "page": 119
+        }]
+    },
+    "LITURGY_53": {
+        "name": "Healer’s Gaze",
+        "src": [{
+            "src": "US25005E",
+            "page": 124
+        }]
+    },
+    "LITURGY_54": {
+        "name": "Lightning Strike",
+        "src": [{
+            "src": "US25005E",
+            "page": 126
+        }]
+    },
+    "LITURGY_55": {
+        "name": "Bloody Rage",
+        "src": [{
+            "src": "US25005E",
+            "page": 114
+        }]
+    },
+    "LITURGY_56": {
+        "name": "Blood Toll",
+        "src": [{
+            "src": "US25005E",
+            "page": 113
+        }]
+    },
+    "LITURGY_57": {
+        "name": "Sanctify Ground",
+        "src": [{
+            "src": "US25005E",
+            "page": 134
+        }]
+    },
+    "LITURGY_58": {
+        "name": "Demon Wall",
+        "src": [{
+            "src": "US25005E",
+            "page": 119
+        }]
+    },
+    "LITURGY_59": {
+        "name": "Dolphin Call",
+        "src": [{
+            "src": "US25005E",
+            "page": 120
+        }]
+    },
+    "LITURGY_60": {
+        "name": "Pervasive Sphere Song of the One",
+        "src": [{
+            "src": "US25005E",
+            "page": 132
+        }]
+    },
+    "LITURGY_61": {
+        "name": "Honest Contract",
+        "src": [{
+            "src": "US25005E",
+            "page": 126
+        }]
+    },
+    "LITURGY_62": {
+        "name": "Unfettering",
+        "src": [{
+            "src": "US25005E",
+            "page": 138
+        }]
+    },
+    "LITURGY_63": {
+        "name": "Earthquake",
+        "src": [{
+            "src": "US25005E",
+            "page": 119
+        }]
+    },
+    "LITURGY_64": {
+        "name": "Sobering",
+        "src": [{
+            "src": "US25005E",
+            "page": 136
+        }]
+    },
+    "LITURGY_65": {
+        "name": "Sacrifice of Ore",
+        "src": [{
+            "src": "US25005E",
+            "page": 134
+        }]
+    },
+    "LITURGY_66": {
+        "name": "Wall of Fire",
+        "src": [{
+            "src": "US25005E",
+            "page": 139
+        }]
+    },
+    "LITURGY_67": {
+        "name": "Peacefulness",
+        "src": [{
+            "src": "US25005E",
+            "page": 132
+        }]
+    },
+    "LITURGY_68": {
+        "name": "Peaceful Ecstacy",
+        "src": [{
+            "src": "US25005E",
+            "page": 131
+        }]
+    },
+    "LITURGY_69": {
+        "name": "Frost Storm",
+        "src": [{
+            "src": "US25005E",
+            "page": 122
+        }]
+    },
+    "LITURGY_70": {
+        "name": "Master of Flame",
+        "src": [{
+            "src": "US25005E",
+            "page": 129
+        }]
+    },
+    "LITURGY_71": {
+        "name": "Ghost Sight",
+        "src": [{
+            "src": "US25005E",
+            "page": 122
+        }]
+    },
+    "LITURGY_72": {
+        "name": "Blessed Ecstasy",
+        "src": [{
+            "src": "US25005E",
+            "page": 113
+        }]
+    },
+    "LITURGY_73": {
+        "name": "Grain Growth",
+        "src": [{
+            "src": "US25005E",
+            "page": 123
+        }]
+    },
+    "LITURGY_74": {
+        "name": "Golden Hand",
+        "src": [{
+            "src": "US25005E",
+            "page": 123
+        }]
+    },
+    "LITURGY_75": {
+        "name": "Golden Armor",
+        "src": [{
+            "src": "US25005E",
+            "page": 123
+        }]
+    },
+    "LITURGY_76": {
+        "name": "Divine Blade",
+        "src": [{
+            "src": "US25005E",
+            "page": 119
+        }]
+    },
+    "LITURGY_77": {
+        "name": "Divine Communication",
+        "src": [{
+            "src": "US25005E",
+            "page": 119
+        }]
+    },
+    "LITURGY_78": {
+        "name": "Holy Command",
+        "src": [{
+            "src": "US25005E",
+            "page": 123
+        }]
+    },
+    "LITURGY_79": {
+        "name": "Holy Dalliance",
+        "src": [{
+            "src": "US25005E",
+            "page": 123
+        }]
+    },
+    "LITURGY_80": {
+        "name": "Healing Well",
+        "src": [{
+            "src": "US25005E",
+            "page": 124
+        }]
+    },
+    "LITURGY_81": {
+        "name": "Hero’s Strength",
+        "src": [{
+            "src": "US25005E",
+            "page": 125
+        }]
+    },
+    "LITURGY_82": {
+        "name": "Helping Hand",
+        "src": [{
+            "src": "US25005E",
+            "page": 124
+        }]
+    },
+    "LITURGY_83": {
+        "name": "Call the Rat Child’s Horde (Rats)",
+        "src": [{
+            "src": "US25005E",
+            "page": 115
+        }]
+    },
+    "LITURGY_84": {
+        "name": "Call the Rat Child’s Horde (Jackals)",
+        "src": [{
+            "src": "US25005E",
+            "page": 115
+        }]
+    },
+    "LITURGY_85": {
+        "name": "Call the Rat Child’s Horde (Vampire Bats)",
+        "src": [{
+            "src": "US25005E",
+            "page": 117
+        }]
+    },
+    "LITURGY_86": {
+        "name": "Call the Rat Child’s Horde (Wolf Spiders)",
+        "src": [{
+            "src": "US25005E",
+            "page": 117
+        }]
+    },
+    "LITURGY_87": {
+        "name": "Lord of Flames",
+        "src": [{
+            "src": "US25005E",
+            "page": 127
+        }]
+    },
+    "LITURGY_88": {
+        "name": "Helpful Soul",
+        "src": [{
+            "src": "US25005E",
+            "page": 124
+        }]
+    },
+    "LITURGY_89": {
+        "name": "Inner Calm",
+        "src": [{
+            "src": "US25005E",
+            "page": 126
+        }]
+    },
+    "LITURGY_90": {
+        "name": "Clear Mind",
+        "src": [{
+            "src": "US25005E",
+            "page": 118
+        }]
+    },
+    "LITURGY_91": {
+        "name": "Small Whirlwind",
+        "src": [{
+            "src": "US25005E",
+            "page": 135
+        }]
+    },
+    "LITURGY_92": {
+        "name": "Protect Life",
+        "src": [{
+            "src": "US25005E",
+            "page": 133
+        }]
+    },
+    "LITURGY_93": {
+        "name": "Liturgical Shield",
+        "src": [{
+            "src": "US25005E",
+            "page": 127
+        }]
+    },
+    "LITURGY_94": {
+        "name": "Powerful Attack",
+        "src": [{
+            "src": "US25005E",
+            "page": 132
+        }]
+    },
+    "LITURGY_95": {
+        "name": "Magic Ban",
+        "src": [{
+            "src": "US25005E",
+            "page": 128
+        }]
+    },
+    "LITURGY_96": {
+        "name": "Magic Mirror",
+        "src": [{
+            "src": "US25005E",
+            "page": 128
+        }]
+    },
+    "LITURGY_97": {
+        "name": "Mask",
+        "src": [{
+            "src": "US25005E",
+            "page": 129
+        }]
+    },
+    "LITURGY_98": {
+        "name": "Strike of Stupidity",
+        "src": [{
+            "src": "US25005E",
+            "page": 136
+        }]
+    },
+    "LITURGY_99": {
+        "name": "Motivation",
+        "src": [{
+            "src": "US25005E",
+            "page": 129
+        }]
+    },
+    "LITURGY_100": {
+        "name": "Nameless Cold",
+        "src": [{
+            "src": "US25005E",
+            "page": 130
+        }]
+    },
+    "LITURGY_101": {
+        "name": "Nameless Frenzy",
+        "src": [{
+            "src": "US25005E",
+            "page": 130
+        }]
+    },
+    "LITURGY_102": {
+        "name": "Nameless Doubt",
+        "src": [{
+            "src": "US25005E",
+            "page": 130
+        }]
+    },
+    "LITURGY_103": {
+        "name": "Nameless Oblivion",
+        "src": [{
+            "src": "US25005E",
+            "page": 132
+        }]
+    },
+    "LITURGY_104": {
+        "name": "Obsession",
+        "src": [{
+            "src": "US25005E",
+            "page": 131
+        }]
+    },
+    "LITURGY_105": {
+        "name": "Revelation of the Mind",
+        "src": [{
+            "src": "US25005E",
+            "page": 133
+        }]
+    },
+    "LITURGY_106": {
+        "name": "The Great Sacrifice",
+        "src": [{
+            "src": "US25005E",
+            "page": 137
+        }]
+    },
+    "LITURGY_107": {
+        "name": "Fire and Brimstone",
+        "src": [{
+            "src": "US25005E",
+            "page": 121
+        }]
+    },
+    "LITURGY_108": {
+        "name": "Rat Swarm",
+        "src": [{
+            "src": "US25005E",
+            "page": 133
+        }]
+    },
+    "LITURGY_109": {
+        "name": "Call of Home",
+        "src": [{
+            "src": "US25005E",
+            "page": 114
+        }]
+    },
+    "LITURGY_110": {
+        "name": "Creeping Rot",
+        "src": [{
+            "src": "US25005E",
+            "page": 118
+        }]
+    },
+    "LITURGY_111": {
+        "name": "Protective Blessing",
+        "src": [{
+            "src": "US25005E",
+            "page": 133
+        }]
+    },
+    "LITURGY_112": {
+        "name": "Waning Magic",
+        "src": [{
+            "src": "US25005E",
+            "page": 139
+        }]
+    },
+    "LITURGY_113": {
+        "name": "Soul Shadow",
+        "src": [{
+            "src": "US25005E",
+            "page": 136
+        }]
+    },
+    "LITURGY_114": {
+        "name": "Seabird Tongue",
+        "src": [{
+            "src": "US25005E",
+            "page": 135
+        }]
+    },
+    "LITURGY_115": {
+        "name": "Safe Path",
+        "src": [{
+            "src": "US25005E",
+            "page": 134
+        }]
+    },
+    "LITURGY_116": {
+        "name": "Call Storm",
+        "src": [{
+            "src": "US25005E",
+            "page": 114
+        }]
+    },
+    "LITURGY_117": {
+        "name": "Soothe Animals",
+        "src": [{
+            "src": "US25005E",
+            "page": 136
+        }]
+    },
+    "LITURGY_118": {
+        "name": "Ease Animal Pain",
+        "src": [{
+            "src": "US25005E",
+            "page": 120
+        }]
+    },
+    "LITURGY_119": {
+        "name": "Animal Tongue",
+        "src": [{
+            "src": "US25005E",
+            "page": 111
+        }]
+    },
+    "LITURGY_120": {
+        "name": "Faithful Companion",
+        "src": [{
+            "src": "US25005E",
+            "page": 120
+        }]
+    },
+    "LITURGY_121": {
+        "name": "Breathe Underwater",
+        "src": [{
+            "src": "US25005E",
+            "page": 114
+        }]
+    },
+    "LITURGY_122": {
+        "name": "Petrification",
+        "src": [{
+            "src": "US25005E",
+            "page": 132
+        }]
+    },
+    "LITURGY_123": {
+        "name": "Walk on Water",
+        "src": [{
+            "src": "US25005E",
+            "page": 139
+        }]
+    },
+    "LITURGY_124": {
+        "name": "Whirlwind",
+        "src": [{
+            "src": "US25005E",
+            "page": 140
+        }]
+    },
+    "LITURGY_125": {
+        "name": "Call Wind",
+        "src": [{
+            "src": "US25005E",
+            "page": 118
+        }]
+    },
+    "LITURGY_126": {
+        "name": "Tough Skin",
+        "src": [{
+            "src": "US25005E",
+            "page": 138
+        }]
+    },
+    "LITURGY_127": {
+        "name": "Ostracism (Excommunication)",
+        "src": [{
+            "src": "US25005E",
+            "page": 153
+        }]
+    },
+    "LITURGY_128": {
+        "name": "Admittance (Initiation)",
+        "src": [{
+            "src": "US25005E",
+            "page": 140
+        }]
+    },
+    "LITURGY_129": {
+        "name": "Cauterization (Purgation)",
+        "src": [{
+            "src": "US25005E",
+            "page": 141
+        }]
+    },
+    "LITURGY_130": {
+        "name": "Damnation (Anathema)",
+        "src": [{
+            "src": "US25005E",
+            "page": 143
+        }]
+    },
+    "LITURGY_131": {
+        "name": "Celebratory Wine",
+        "src": [{
+            "src": "US25005E",
+            "page": 142
+        }]
+    },
+    "LITURGY_132": {
+        "name": "Summon the Rat Child’s High Servants",
+        "src": [{
+            "src": "US25005E",
+            "page": 161
+        }]
+    },
+    "LITURGY_133": {
+        "name": "Summon the Rat Child’s Powerful Servants",
+        "src": [{
+            "src": "US25005E",
+            "page": 161
+        }]
+    },
+    "LITURGY_134": {
+        "name": "Eternal Image",
+        "src": [{
+            "src": "US25005E",
+            "page": 145
+        }]
+    },
+    "LITURGY_135": {
+        "name": "Gaze Into the Flames",
+        "src": [{
+            "src": "US25005E",
+            "page": 147
+        }]
+    },
+    "LITURGY_136": {
+        "name": "Dolphin Shape",
+        "src": [{
+            "src": "US25005E",
+            "page": 144
+        }]
+    },
+    "LITURGY_137": {
+        "name": "Lizard Shape",
+        "src": [{
+            "src": "US25005E",
+            "page": 152
+        }]
+    },
+    "LITURGY_138": {
+        "name": "Polar Bear Shape",
+        "src": [{
+            "src": "US25005E",
+            "page": 154
+        }]
+    },
+    "LITURGY_139": {
+        "name": "Remember",
+        "src": [{
+            "src": "US25005E",
+            "page": 156
+        }]
+    },
+    "LITURGY_140": {
+        "name": "Festival of Joy",
+        "src": [{
+            "src": "US25005E",
+            "page": 146
+        }]
+    },
+    "LITURGY_141": {
+        "name": "Protection from Frost",
+        "src": [{
+            "src": "US25005E",
+            "page": 155
+        }]
+    },
+    "LITURGY_142": {
+        "name": "Fertility",
+        "src": [{
+            "src": "US25005E",
+            "page": 145
+        }]
+    },
+    "LITURGY_143": {
+        "name": "Fox Shape",
+        "src": [{
+            "src": "US25005E",
+            "page": 146
+        }]
+    },
+    "LITURGY_144": {
+        "name": "Goose Shape",
+        "src": [{
+            "src": "US25005E",
+            "page": 147
+        }]
+    },
+    "LITURGY_145": {
+        "name": "Swift Pace",
+        "src": [{
+            "src": "US25005E",
+            "page": 162
+        }]
+    },
+    "LITURGY_146": {
+        "name": "Divine Insight",
+        "src": [{
+            "src": "US25005E",
+            "page": 143
+        }]
+    },
+    "LITURGY_147": {
+        "name": "Griffon Call",
+        "src": [{
+            "src": "US25005E",
+            "page": 148
+        }]
+    },
+    "LITURGY_148": {
+        "name": "Good Catch",
+        "src": [{
+            "src": "US25005E",
+            "page": 147
+        }]
+    },
+    "LITURGY_149": {
+        "name": "Shed Skin",
+        "src": [{
+            "src": "US25005E",
+            "page": 159
+        }]
+    },
+    "LITURGY_150": {
+        "name": "Holy Vow",
+        "src": [{
+            "src": "US25005E",
+            "page": 149
+        }]
+    },
+    "LITURGY_151": {
+        "name": "Master of the Oceans",
+        "src": [{
+            "src": "US25005E",
+            "page": 152
+        }]
+    },
+    "LITURGY_152": {
+        "name": "In Times of Need",
+        "src": [{
+            "src": "US25005E",
+            "page": 151
+        }]
+    },
+    "LITURGY_153": {
+        "name": "Inspiration",
+        "src": [{
+            "src": "US25005E",
+            "page": 151
+        }]
+    },
+    "LITURGY_154": {
+        "name": "Hunter’s Luck",
+        "src": [{
+            "src": "US25005E",
+            "page": 150
+        }]
+    },
+    "LITURGY_155": {
+        "name": "Youthfulness",
+        "src": [{
+            "src": "US25005E",
+            "page": 164
+        }]
+    },
+    "LITURGY_156": {
+        "name": "Minor Morale Boost",
+        "src": [{
+            "src": "US25005E",
+            "page": 153
+        }]
+    },
+    "LITURGY_157": {
+        "name": "Clarification of the Ore",
+        "src": [{
+            "src": "US25005E",
+            "page": 142
+        }]
+    },
+    "LITURGY_158": {
+        "name": "Liturgical Absorption",
+        "src": [{
+            "src": "US25005E",
+            "page": 151
+        }]
+    },
+    "LITURGY_159": {
+        "name": "Immaculate Body",
+        "src": [{
+            "src": "US25005E",
+            "page": 151
+        }]
+    },
+    "LITURGY_160": {
+        "name": "Heat Metal",
+        "src": [{
+            "src": "US25005E",
+            "page": 149
+        }]
+    },
+    "LITURGY_161": {
+        "name": "Morale Boost",
+        "src": [{
+            "src": "US25005E",
+            "page": 153
+        }]
+    },
+    "LITURGY_162": {
+        "name": "Purify Food",
+        "src": [{
+            "src": "US25005E",
+            "page": 155
+        }]
+    },
+    "LITURGY_163": {
+        "name": "Billowing Fog",
+        "src": [{
+            "src": "US25005E",
+            "page": 140
+        }]
+    },
+    "LITURGY_164": {
+        "name": "Sanctify Location (Sanctum)",
+        "src": [{
+            "src": "US25005E",
+            "page": 157
+        }]
+    },
+    "LITURGY_165": {
+        "name": "Panther Shape",
+        "src": [{
+            "src": "US25005E",
+            "page": 154
+        }]
+    },
+    "LITURGY_166": {
+        "name": "Bird of Paradise Shape",
+        "src": [{
+            "src": "US25005E",
+            "page": 141
+        }]
+    },
+    "LITURGY_167": {
+        "name": "Horse Shape",
+        "src": [{
+            "src": "US25005E",
+            "page": 150
+        }]
+    },
+    "LITURGY_168": {
+        "name": "Priest Consecration (Ordination)",
+        "src": [{
+            "src": "US25005E",
+            "page": 155
+        }]
+    },
+    "LITURGY_169": {
+        "name": "Raven Shape",
+        "src": [{
+            "src": "US25005E",
+            "page": 156
+        }]
+    },
+    "LITURGY_170": {
+        "name": "Travel Blessing",
+        "src": [{
+            "src": "US25005E",
+            "page": 163
+        }]
+    },
+    "LITURGY_171": {
+        "name": "Satiation",
+        "src": [{
+            "src": "US25005E",
+            "page": 158
+        }]
+    },
+    "LITURGY_172": {
+        "name": "Serpent Shape",
+        "src": [{
+            "src": "US25005E",
+            "page": 158
+        }]
+    },
+    "LITURGY_173": {
+        "name": "Swan Shape",
+        "src": [{
+            "src": "US25005E",
+            "page": 162
+        }]
+    },
+    "LITURGY_174": {
+        "name": "Banishment of the Soul",
+        "src": [{
+            "src": "US25005E",
+            "page": 140
+        }]
+    },
+    "LITURGY_175": {
+        "name": "Soul Survey",
+        "src": [{
+            "src": "US25005E",
+            "page": 159
+        }]
+    },
+    "LITURGY_176": {
+        "name": "Bless the Home",
+        "src": [{
+            "src": "US25005E",
+            "page": 141
+        }]
+    },
+    "LITURGY_177": {
+        "name": "Sure-Footed",
+        "src": [{
+            "src": "US25005E",
+            "page": 162
+        }]
+    },
+    "LITURGY_178": {
+        "name": "Feeding",
+        "src": [{
+            "src": "US25005E",
+            "page": 145
+        }]
+    },
+    "LITURGY_179": {
+        "name": "Dust and Mold",
+        "src": [{
+            "src": "US25005E",
+            "page": 144
+        }]
+    },
+    "LITURGY_180": {
+        "name": "Stork Shape",
+        "src": [{
+            "src": "US25005E",
+            "page": 160
+        }]
+    },
+    "LITURGY_181": {
+        "name": "Sanctify Temple (Consecration)",
+        "src": [{
+            "src": "US25005E",
+            "page": 157
+        }]
+    },
+    "LITURGY_182": {
+        "name": "Dream Vision",
+        "src": [{
+            "src": "US25005E",
+            "page": 144
+        }]
+    },
+    "LITURGY_183": {
+        "name": "Unburdened Walk",
+        "src": [{
+            "src": "US25005E",
+            "page": 163
+        }]
+    },
+    "LITURGY_184": {
+        "name": "Fading Memory",
+        "src": [{
+            "src": "US25005E",
+            "page": 145
+        }]
+    },
+    "LITURGY_185": {
+        "name": "Disremember",
+        "src": [{
+            "src": "US25005E",
+            "page": 143
+        }]
+    },
+    "LITURGY_186": {
+        "name": "Weapon Curse",
+        "src": [{
+            "src": "US25005E",
+            "page": 163
+        }]
+    },
+    "LITURGY_187": {
+        "name": "Guidepost",
+        "src": [{
+            "src": "US25005E",
+            "page": 149
+        }]
+    },
+    "LITURGY_188": {
+        "name": "Consecrate the Home",
+        "src": [{
+            "src": "US25005E",
+            "page": 142
+        }]
+    },
+    "LITURGY_189": {
+        "name": "Restoration",
+        "src": [{
+            "src": "US25005E",
+            "page": 156
+        }]
+    },
+    "LITURGY_190": {
+        "name": "Hibernation",
+        "src": [{
+            "src": "US25005E",
+            "page": 149
+        }]
+    },
+    "LITURGY_191": {
+        "name": "Shelter",
+        "src": [{
+            "src": "US25005E",
+            "page": 159
+        }]
+    },
+    "LITURGY_192": {
+        "name": "Sperm Whale Shape",
+        "src": [{
+            "src": "US25005E",
+            "page": 160
+        }]
+    }
+}

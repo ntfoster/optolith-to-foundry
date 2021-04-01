@@ -1,0 +1,1833 @@
+{
+    "SPELL_1": {
+        "name": "Eagle Eye",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 290
+            }
+        ]
+    },
+    "SPELL_2": {
+        "name": "Analyze Arcane Structure",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 287
+            }
+        ]
+    },
+    "SPELL_3": {
+        "name": "Armatrutz",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 287
+            }
+        ]
+    },
+    "SPELL_4": {
+        "name": "Axxeleratus",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 288
+            }
+        ]
+    },
+    "SPELL_5": {
+        "name": "Balsam Salabunde",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 288
+            }
+        ]
+    },
+    "SPELL_6": {
+        "name": "Bannbaladin",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 288
+            }
+        ]
+    },
+    "SPELL_7": {
+        "name": "Gaze into the Mind",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 291
+            }
+        ]
+    },
+    "SPELL_8": {
+        "name": "Blinding Flash",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 288
+            }
+        ]
+    },
+    "SPELL_9": {
+        "name": "Corpofesso",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 289
+            }
+        ]
+    },
+    "SPELL_10": {
+        "name": "Disruptivo",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 289
+            }
+        ]
+    },
+    "SPELL_11": {
+        "name": "Duplicatus",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 290
+            }
+        ]
+    },
+    "SPELL_12": {
+        "name": "Hawk Eye",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 292
+            }
+        ]
+    },
+    "SPELL_13": {
+        "name": "Glow Sphere",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 291
+            }
+        ]
+    },
+    "SPELL_14": {
+        "name": "Fulminictus",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 290
+            }
+        ]
+    },
+    "SPELL_15": {
+        "name": "Gardianum",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 291
+            }
+        ]
+    },
+    "SPELL_16": {
+        "name": "Powerful Greed",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 295
+            }
+        ]
+    },
+    "SPELL_17": {
+        "name": "Harmless Shape",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 292
+            }
+        ]
+    },
+    "SPELL_18": {
+        "name": "Witch's Bile",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 299
+            }
+        ]
+    },
+    "SPELL_19": {
+        "name": "Witch's Claws",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 299
+            }
+        ]
+    },
+    "SPELL_20": {
+        "name": "Horriphobus",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 293
+            }
+        ]
+    },
+    "SPELL_21": {
+        "name": "Ignifaxius",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 293
+            }
+        ]
+    },
+    "SPELL_22": {
+        "name": "Invocatio Minima",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 293
+            }
+        ]
+    },
+    "SPELL_23": {
+        "name": "Cat Eyes",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 289
+            }
+        ]
+    },
+    "SPELL_24": {
+        "name": "Toad Jump",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 298
+            }
+        ]
+    },
+    "SPELL_25": {
+        "name": "Manifesto",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 294
+            }
+        ]
+    },
+    "SPELL_26": {
+        "name": "Manus Miracula",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 294
+            }
+        ]
+    },
+    "SPELL_27": {
+        "name": "Motoricus",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 294
+            }
+        ]
+    },
+    "SPELL_28": {
+        "name": "Wall of Fog",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 299
+            }
+        ]
+    },
+    "SPELL_29": {
+        "name": "Oculus Illusionis",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 294
+            }
+        ]
+    },
+    "SPELL_30": {
+        "name": "Odem Arcanum",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 295
+            }
+        ]
+    },
+    "SPELL_31": {
+        "name": "Paralysis",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 295
+            }
+        ]
+    },
+    "SPELL_32": {
+        "name": "Penetrizzel",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 295
+            }
+        ]
+    },
+    "SPELL_33": {
+        "name": "Psychostabilis",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 296
+            }
+        ]
+    },
+    "SPELL_34": {
+        "name": "Fighting Stick",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 290
+            }
+        ]
+    },
+    "SPELL_35": {
+        "name": "Respondami",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 296
+            }
+        ]
+    },
+    "SPELL_36": {
+        "name": "Salander",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 296
+            }
+        ]
+    },
+    "SPELL_37": {
+        "name": "Placidity",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 295
+            }
+        ]
+    },
+    "SPELL_38": {
+        "name": "Satuaria's Splendor",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 296
+            }
+        ]
+    },
+    "SPELL_39": {
+        "name": "Silentium",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 296
+            }
+        ]
+    },
+    "SPELL_40": {
+        "name": "Somnigravis",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 297
+            }
+        ]
+    },
+    "SPELL_41": {
+        "name": "Spider Walk",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 297
+            }
+        ]
+    },
+    "SPELL_42": {
+        "name": "Traceless",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 297
+            }
+        ]
+    },
+    "SPELL_43": {
+        "name": "Transversalis",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 298
+            }
+        ]
+    },
+    "SPELL_44": {
+        "name": "Visibili",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 298
+            }
+        ]
+    },
+    "SPELL_45": {
+        "name": "Breathe Water",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 288
+            }
+        ]
+    },
+    "SPELL_46": {
+        "name": "Arcanovi",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 300
+            }
+        ]
+    },
+    "SPELL_47": {
+        "name": "Call Djinn",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 300
+            }
+        ]
+    },
+    "SPELL_48": {
+        "name": "Elemental Servant",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 300
+            }
+        ]
+    },
+    "SPELL_49": {
+        "name": "Invocatio Maior",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 300
+            }
+        ]
+    },
+    "SPELL_50": {
+        "name": "Invocatio Minor",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 300
+            }
+        ]
+    },
+    "SPELL_51": {
+        "name": "Spellblade Spiritspear",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 300
+            }
+        ]
+    },
+    "SPELL_68": {
+        "name": "Ease Fears",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 128
+            },
+            {
+                "src": "US25101E",
+                "page": 163
+            },
+            {
+                "src": "USDR3E",
+                "page": 2
+            }
+        ]
+    },
+    "SPELL_69": {
+        "name": "Breathlessness",
+        "src": [
+            {
+                "src": "US25101E",
+                "page": 162
+            },
+            {
+                "src": "USDR3E",
+                "page": 1
+            }
+        ]
+    },
+    "SPELL_70": {
+        "name": "Attributo (Strength)",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 119
+            },
+            {
+                "src": "US25101E",
+                "page": 162
+            },
+            {
+                "src": "USDR3E",
+                "page": 1
+            }
+        ]
+    },
+    "SPELL_71": {
+        "name": "Claudibus",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 125
+            },
+            {
+                "src": "US25101E",
+                "page": 162
+            },
+            {
+                "src": "USDR3E",
+                "page": 1
+            }
+        ]
+    },
+    "SPELL_72": {
+        "name": "Corpofrigo",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 126
+            },
+            {
+                "src": "US25101E",
+                "page": 162
+            },
+            {
+                "src": "USDR3E",
+                "page": 2
+            }
+        ]
+    },
+    "SPELL_73": {
+        "name": "Darkness",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 126
+            },
+            {
+                "src": "US25101E",
+                "page": 162
+            },
+            {
+                "src": "USDR3E",
+                "page": 2
+            }
+        ]
+    },
+    "SPELL_74": {
+        "name": "Ecliptifactus",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 129
+            },
+            {
+                "src": "US25101E",
+                "page": 163
+            },
+            {
+                "src": "USDR3E",
+                "page": 2
+            }
+        ]
+    },
+    "SPELL_75": {
+        "name": "Great Confusion",
+        "src": [
+            {
+                "src": "US25101E",
+                "page": 164
+            },
+            {
+                "src": "USDR3E",
+                "page": 4
+            }
+        ]
+    },
+    "SPELL_76": {
+        "name": "Lord of Animals",
+        "src": [
+            {
+                "src": "US25101E",
+                "page": 165
+            },
+            {
+                "src": "USDR3E",
+                "page": 5
+            }
+        ]
+    },
+    "SPELL_77": {
+        "name": "Witchwood",
+        "src": [
+            {
+                "src": "US25101E",
+                "page": 167
+            },
+            {
+                "src": "USDR3E",
+                "page": 7
+            }
+        ]
+    },
+    "SPELL_78": {
+        "name": "Witch Knot",
+        "src": [
+            {
+                "src": "US25101E",
+                "page": 167
+            },
+            {
+                "src": "USDR3E",
+                "page": 7
+            }
+        ]
+    },
+    "SPELL_79": {
+        "name": "Agony",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 115
+            },
+            {
+                "src": "US25101E",
+                "page": 161
+            },
+            {
+                "src": "USDR3E",
+                "page": 1
+            }
+        ]
+    },
+    "SPELL_80": {
+        "name": "Ignisphaero",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 135
+            },
+            {
+                "src": "US25101E",
+                "page": 165
+            },
+            {
+                "src": "USDR3E",
+                "page": 4
+            }
+        ]
+    },
+    "SPELL_81": {
+        "name": "Klarum Purum",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 137
+            },
+            {
+                "src": "US25101E",
+                "page": 165
+            },
+            {
+                "src": "USDR3E",
+                "page": 5
+            }
+        ]
+    },
+    "SPELL_82": {
+        "name": "Identify Pestilence",
+        "src": [
+            {
+                "src": "US25101E",
+                "page": 165
+            },
+            {
+                "src": "USDR3E",
+                "page": 4
+            }
+        ]
+    },
+    "SPELL_83": {
+        "name": "Serpent Call",
+        "src": [
+            {
+                "src": "US25101E",
+                "page": 166
+            },
+            {
+                "src": "USDR3E",
+                "page": 6
+            }
+        ]
+    },
+    "SPELL_84": {
+        "name": "Sensibar",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 145
+            },
+            {
+                "src": "US25101E",
+                "page": 166
+            },
+            {
+                "src": "USDR3E",
+                "page": 6
+            }
+        ]
+    },
+    "SPELL_85": {
+        "name": "Sumu's Elixirs",
+        "src": [
+            {
+                "src": "US25101E",
+                "page": 167
+            },
+            {
+                "src": "USDR3E",
+                "page": 6
+            }
+        ]
+    },
+    "SPELL_86": {
+        "name": "Viper Gaze",
+        "src": [
+            {
+                "src": "US25101E",
+                "page": 167
+            },
+            {
+                "src": "USDR3E",
+                "page": 6
+            }
+        ]
+    },
+    "SPELL_87": {
+        "name": "Numbed Tongue",
+        "src": [
+            {
+                "src": "US25101E",
+                "page": 166
+            },
+            {
+                "src": "USDR3E",
+                "page": 5
+            }
+        ]
+    },
+    "SPELL_88": {
+        "name": "Forced Dance",
+        "src": [
+            {
+                "src": "US25101E",
+                "page": 164
+            },
+            {
+                "src": "USDR3E",
+                "page": 3
+            }
+        ]
+    },
+    "SPELL_119": {
+        "name": "Exposami",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 130
+            },
+            {
+                "src": "US25101E",
+                "page": 163
+            },
+            {
+                "src": "USDR3E",
+                "page": 3
+            }
+        ]
+    },
+    "SPELL_122": {
+        "name": "Foramen",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 132
+            },
+            {
+                "src": "US25101E",
+                "page": 164
+            },
+            {
+                "src": "USDR3E",
+                "page": 3
+            }
+        ]
+    },
+    "SPELL_123": {
+        "name": "Fortifex",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 132
+            },
+            {
+                "src": "US25101E",
+                "page": 164
+            },
+            {
+                "src": "USDR3E",
+                "page": 4
+            }
+        ]
+    },
+    "SPELL_143": {
+        "name": "Memorans",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 138
+            },
+            {
+                "src": "US25101E",
+                "page": 166
+            },
+            {
+                "src": "USDR3E",
+                "page": 5
+            }
+        ]
+    },
+    "SPELL_89": {
+        "name": "Ablativum",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 114
+            }
+        ]
+    },
+    "SPELL_90": {
+        "name": "Abvenenum",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 115
+            }
+        ]
+    },
+    "SPELL_91": {
+        "name": "Eagle Wings",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 128
+            }
+        ]
+    },
+    "SPELL_92": {
+        "name": "Aeolito",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 115
+            }
+        ]
+    },
+    "SPELL_93": {
+        "name": "Nightmare Shape",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 140
+            }
+        ]
+    },
+    "SPELL_94": {
+        "name": "Altisonus",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 116
+            }
+        ]
+    },
+    "SPELL_95": {
+        "name": "Trigger Fear",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 148
+            }
+        ]
+    },
+    "SPELL_96": {
+        "name": "Archofaxius",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 116
+            }
+        ]
+    },
+    "SPELL_97": {
+        "name": "Archosphaero",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 117
+            }
+        ]
+    },
+    "SPELL_98": {
+        "name": "Aromatis Illusionis",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 117
+            }
+        ]
+    },
+    "SPELL_99": {
+        "name": "Attributo (Charisma)",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 118
+            }
+        ]
+    },
+    "SPELL_100": {
+        "name": "Attributo (Dexterity)",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 118
+            }
+        ]
+    },
+    "SPELL_101": {
+        "name": "Attributo (Sagacity)",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 118
+            }
+        ]
+    },
+    "SPELL_102": {
+        "name": "Awaken",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 120
+            }
+        ]
+    },
+    "SPELL_103": {
+        "name": "Eye of Limbo",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 130
+            }
+        ]
+    },
+    "SPELL_104": {
+        "name": "Aureolus",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 119
+            }
+        ]
+    },
+    "SPELL_105": {
+        "name": "Auris Illusionis",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 119
+            }
+        ]
+    },
+    "SPELL_106": {
+        "name": "Chains and Shackles",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 125
+            },
+            {
+                "src": "US25103E",
+                "page": 153
+            }
+        ]
+    },
+    "SPELL_107": {
+        "name": "Gase into the Essence",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 133
+            }
+        ]
+    },
+    "SPELL_108": {
+        "name": "Blindness",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 124
+            }
+        ]
+    },
+    "SPELL_109": {
+        "name": "Chamaelioni",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 125
+            },
+            {
+                "src": "US25101E",
+                "page": 162
+            },
+            {
+                "src": "USDR3E",
+                "page": 1
+            }
+        ]
+    },
+    "SPELL_110": {
+        "name": "Banish Property (Demons)",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 120
+            }
+        ]
+    },
+    "SPELL_111": {
+        "name": "Demon Shield",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 127
+            }
+        ]
+    },
+    "SPELL_112": {
+        "name": "Debilitatio",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 127
+            }
+        ]
+    },
+    "SPELL_113": {
+        "name": "Desintegratus",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 127
+            }
+        ]
+    },
+    "SPELL_114": {
+        "name": "Banish Property (Influence)",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 121
+            }
+        ]
+    },
+    "SPELL_115": {
+        "name": "Iron Rust",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 137
+            }
+        ]
+    },
+    "SPELL_116": {
+        "name": "Banish Property (Elemental)",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 121
+            }
+        ]
+    },
+    "SPELL_117": {
+        "name": "Elven Voice",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 130
+            }
+        ]
+    },
+    "SPELL_118": {
+        "name": "Memory Begone",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 139
+            }
+        ]
+    },
+    "SPELL_120": {
+        "name": "Favilludo",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 131
+            }
+        ]
+    },
+    "SPELL_121": {
+        "name": "Fish Fin",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 132
+            }
+        ]
+    },
+    "SPELL_124": {
+        "name": "Mental Images",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 140
+            }
+        ]
+    },
+    "SPELL_125": {
+        "name": "Found It",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 133
+            }
+        ]
+    },
+    "SPELL_126": {
+        "name": "Hazelbush",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 133
+            }
+        ]
+    },
+    "SPELL_127": {
+        "name": "Banish Property (Healing)",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 121
+            }
+        ]
+    },
+    "SPELL_128": {
+        "name": "Banish Property (Clairvoyance)",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 120
+            }
+        ]
+    },
+    "SPELL_129": {
+        "name": "Heptagramma",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 134
+            }
+        ]
+    },
+    "SPELL_130": {
+        "name": "Stop Heartbeat",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 147
+            }
+        ]
+    },
+    "SPELL_131": {
+        "name": "Hexagramma",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 134
+            }
+        ]
+    },
+    "SPELL_132": {
+        "name": "Ignorantia",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 135
+            }
+        ]
+    },
+    "SPELL_133": {
+        "name": "Banish Property (Illusion",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 121
+            }
+        ]
+    },
+    "SPELL_134": {
+        "name": "Imperavi",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 135
+            },
+            {
+                "src": "US25238E",
+                "page": 155
+            }
+        ]
+    },
+    "SPELL_135": {
+        "name": "Impersona",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 136
+            }
+        ]
+    },
+    "SPELL_136": {
+        "name": "Incendio",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 136
+            },
+            {
+                "src": "US25238E",
+                "page": 155
+            }
+        ]
+    },
+    "SPELL_137": {
+        "name": "Invercano",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 136
+            }
+        ]
+    },
+    "SPELL_138": {
+        "name": "Carnifilo",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 124
+            }
+        ]
+    },
+    "SPELL_139": {
+        "name": "Shoo",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 146
+            }
+        ]
+    },
+    "SPELL_140": {
+        "name": "Burden of Old-Age",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 124
+            }
+        ]
+    },
+    "SPELL_141": {
+        "name": "Leviathan Lung",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 138
+            }
+        ]
+    },
+    "SPELL_142": {
+        "name": "Manus Illusionis",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 138
+            }
+        ]
+    },
+    "SPELL_144": {
+        "name": "Menetekel",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 139
+            }
+        ]
+    },
+    "SPELL_145": {
+        "name": "Nuntiovolo",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 140
+            }
+        ]
+    },
+    "SPELL_146": {
+        "name": "Objectobscuro",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 141
+            }
+        ]
+    },
+    "SPELL_147": {
+        "name": "Objectofixo",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 141
+            }
+        ]
+    },
+    "SPELL_148": {
+        "name": "Banish Property (Objects)",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 122
+            }
+        ]
+    },
+    "SPELL_149": {
+        "name": "Oculus Astralis",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 141
+            }
+        ]
+    },
+    "SPELL_150": {
+        "name": "Orcanofaxius",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 142
+            }
+        ]
+    },
+    "SPELL_151": {
+        "name": "Orcanosphaero",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 142
+            }
+        ]
+    },
+    "SPELL_152": {
+        "name": "Pentagramma",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 142
+            }
+        ]
+    },
+    "SPELL_153": {
+        "name": "Physiostablis",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 143
+            }
+        ]
+    },
+    "SPELL_154": {
+        "name": "Plumbumbarum",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 143
+            }
+        ]
+    },
+    "SPELL_155": {
+        "name": "Projectimago",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 144
+            }
+        ]
+    },
+    "SPELL_156": {
+        "name": "Reflectimago",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 144
+            }
+        ]
+    },
+    "SPELL_157": {
+        "name": "Regeneratio",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 145
+            }
+        ]
+    },
+    "SPELL_158": {
+        "name": "Sapefacta",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 145
+            }
+        ]
+    },
+    "SPELL_159": {
+        "name": "Ease Pain",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 128
+            }
+        ]
+    },
+    "SPELL_160": {
+        "name": "Black and Red",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 123
+            }
+        ]
+    },
+    "SPELL_161": {
+        "name": "Black Terror",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 124
+            }
+        ]
+    },
+    "SPELL_162": {
+        "name": "Skelettarius",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 146
+            }
+        ]
+    },
+    "SPELL_163": {
+        "name": "Solidirid",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 147
+            }
+        ]
+    },
+    "SPELL_164": {
+        "name": "Deafness",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 126
+            }
+        ]
+    },
+    "SPELL_165": {
+        "name": "Banish Property (Telekinesis)",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 122
+            }
+        ]
+    },
+    "SPELL_166": {
+        "name": "Animal Thoughts",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 116
+            }
+        ]
+    },
+    "SPELL_167": {
+        "name": "Banish Property (Transformation)",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 122
+            }
+        ]
+    },
+    "SPELL_168": {
+        "name": "Bend Sound",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 123
+            }
+        ]
+    },
+    "SPELL_169": {
+        "name": "Wolf Paw",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 148
+            }
+        ]
+    },
+    "SPELL_170": {
+        "name": "Caldofrigo",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 150
+            },
+            {
+                "src": "US25101E",
+                "page": 168
+            }
+        ]
+    },
+    "SPELL_171": {
+        "name": "Nihilogravo",
+        "src": [
+            {
+                "src": "US25101E",
+                "page": 168
+            }
+        ]
+    },
+    "SPELL_172": {
+        "name": "Accuratum",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 149
+            }
+        ]
+    },
+    "SPELL_173": {
+        "name": "Hailstorm and Roar of Thunder",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 150
+            }
+        ]
+    },
+    "SPELL_174": {
+        "name": "Mold Hard Object",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 151
+            }
+        ]
+    },
+    "SPELL_175": {
+        "name": "Bond of Suffering",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 124
+            }
+        ]
+    },
+    "SPELL_176": {
+        "name": "Magic Deprivation",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 151
+            }
+        ]
+    },
+    "SPELL_177": {
+        "name": "Memorabia Falsifir",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 151
+            }
+        ]
+    },
+    "SPELL_178": {
+        "name": "Movimento",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 152
+            }
+        ]
+    },
+    "SPELL_179": {
+        "name": "Rest Body",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 152
+            }
+        ]
+    },
+    "SPELL_180": {
+        "name": "Untouched by Satinav",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 152
+            }
+        ]
+    },
+    "SPELL_181": {
+        "name": "Aversion",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 149
+            }
+        ]
+    },
+    "SPELL_182": {
+        "name": "Wind Shaping",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 153
+            },
+            {
+                "src": "US25006E",
+                "page": 137
+            }
+        ]
+    },
+    "SPELL_183": {
+        "name": "Xenographus",
+        "src": [
+            {
+                "src": "US25004E",
+                "page": 153
+            }
+        ]
+    },
+    "SPELL_52": {
+        "name": "Eat Gravel!",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 282
+            }
+        ]
+    },
+    "SPELL_53": {
+        "name": "Prey!",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 282
+            }
+        ]
+    },
+    "SPELL_54": {
+        "name": "Hail Storm",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 282
+            }
+        ]
+    },
+    "SPELL_55": {
+        "name": "Lumbago",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 282
+            }
+        ]
+    },
+    "SPELL_56": {
+        "name": "Bad Luck",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 281
+            }
+        ]
+    },
+    "SPELL_57": {
+        "name": "Pestilence",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 282
+            }
+        ]
+    },
+    "SPELL_58": {
+        "name": "Steal Sleep",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 282
+            }
+        ]
+    },
+    "SPELL_59": {
+        "name": "Barrenness",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 282
+            }
+        ]
+    },
+    "SPELL_60": {
+        "name": "Grow Warts",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 282
+            }
+        ]
+    },
+    "SPELL_61": {
+        "name": "Paralyze Tongue",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 282
+            }
+        ]
+    },
+    "SPELL_62": {
+        "name": "Song of Memory",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 284
+            }
+        ]
+    },
+    "SPELL_63": {
+        "name": "Song of Peace",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 284
+            }
+        ]
+    },
+    "SPELL_64": {
+        "name": "Song of Friendship",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 283
+            }
+        ]
+    },
+    "SPELL_65": {
+        "name": "Melody of Artistry",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 283
+            }
+        ]
+    },
+    "SPELL_66": {
+        "name": "Song of Sorrow",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 284
+            }
+        ]
+    },
+    "SPELL_67": {
+        "name": "Magical Melody",
+        "src": [
+            {
+                "src": "US25001E",
+                "page": 283
+            }
+        ]
+    }
+}
