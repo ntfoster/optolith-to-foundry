@@ -35,7 +35,6 @@ async function parseSpells(data) {
     var items = []
     for (let spell of data) {
         let item = {}
-        console.log(spell[0])
         // spell[0] = "SPELL_58"
         let spellID = spell[0]
         item.displayName = item.itemName = SPELLS[spell[0]].name
@@ -48,7 +47,7 @@ async function parseSpells(data) {
         let sourceData = SPELLS[spell[0]].src
         let sources = []
         for (let src of sourceData) {
-            sources.push(`${game.i18n.localize(`BOOK.${src.src}`)} <i>(Page: ${src.page}</i>)`)
+            sources.push(`${game.i18n.localize(`BOOK.${src.src}`)} <small>(Page: ${src.page}</small>)`)
         }
         if (!SPELL_MAP[spell[0]]) {
             console.log(`Optolith to Foundry Importer | Couldn't map spell: ${spell[0]}`)
@@ -89,7 +88,7 @@ async function parseLiturgies(data) {
         let sourceData = LITURGIES[spell[0]].src
         let sources = []
         for (let src of sourceData) {
-            sources.push(`${game.i18n.localize(`BOOK.${src.src}`)} <i>(Page: ${src.page}</i>)`)
+            sources.push(`${game.i18n.localize(`BOOK.${src.src}`)} <small>(Page: ${src.page}</i>)`)
         }
         items.push(item)
     }
@@ -161,23 +160,24 @@ function parseActivatables(data) {
     return {advantages: advantages, disadvantages: disadvantages, specialAbilities: specialAbilities}
 }
 
-function parseAbility(data,prefix) {
-    var PREFIX
+function parseAbility(data) {
+    var abilities = []
     for (let a of data) {
         switch(a.type) {
             case "advantage":
-                PREFIX = "ADVANTAGE"
+                var PREFIX = "ADVANTAGE"
                 break
             case "disadvantage":
-                PREFIX = "DISADVANTAGE"
+                var PREFIX = "DISADVANTAGE"
                 break
             case "specialability":
-                PREFIX = "ABILITY"
+                var PREFIX = "ABILITY"
                 break
         }
-        var baseName = game.i18n.localize(`${PREFIX}}.${a.id}.name`)
-        var itemName 
-        var displayName
+        var baseName = game.i18n.localize(`${PREFIX}.${a.id}.name`)
+        var itemName = baseName
+        var displayName = baseName
+        var ability = {}
         switch (a.id) { // handle special cases
             case "ADV_0": // Custom
                 itemName = displayName = a.sid
@@ -188,8 +188,9 @@ function parseAbility(data,prefix) {
                 var source = "Custom Disadvantage"
                 break
             case "SA_0": // Custom
-                itemName = displayName = i.sid
+                itemName = displayName = a.sid
                 var source = "Custom Ability"
+                var cost = a.cost
                 break
             case "ADV_50": // Spellcaster, needed for correct AE
                 var effect = "+20 AE"
@@ -198,10 +199,10 @@ function parseAbility(data,prefix) {
                 var effect = "+20 KP"
                 break
             case "SA_9": // Skill Specialization, need to localize both options
-                itemName = `${itemName} ()`
-                var option1 = game.i18n.localize(`SKILL.${i.sid}`)
-                var option2 = game.i18n.localize(`SPECIALISATION.${i.sid}.${i.sid2}`)
-                displayName = `${displayName} (${option1}: ${option2})`
+                itemName = `${baseName} ()`
+                var option1 = game.i18n.localize(`SKILL.${a.sid}`)
+                var option2 = game.i18n.localize(`SPECIALISATION.${a.sid}.${a.sid2}`)
+                displayName = `${baseName} (${option1}: ${option2})`
                 var effect = `${option1} FP2`
                 break
             case "DISADV_34":
@@ -209,27 +210,27 @@ function parseAbility(data,prefix) {
             case "SA_28": // Writing
             case "SA_87": // Aspect Knowledge // These have pre-defined options that Foundry doesn't have pre-made items for
                 itemName = `${itemName} ()`
-                var option1 = game.i18n.localize(`${id}.options.${i.sid - 1}`)
+                var option1 = game.i18n.localize(`${a.id}.options.${a.sid - 1}`)
                 displayName = `${baseName} (${option1})`
                 break
             default:
-                if (i.sid) {
-                    if (typeof (i.sid) == "number") {
-                        var option1 = game.i18n.localize(`${id}.options.${i.sid - 1}`)
+                if (a.sid) {
+                    if (typeof (a.sid) == "number") {
+                        var option1 = game.i18n.localize(`${PREFIX}.${a.id}.options.${a.sid - 1}`)
                         itemName = displayName = `${baseName} (${option1})`
                     } else {
-                        switch (i.sid.substring(0, i.sid.indexOf('_'))) {
+                        switch (a.sid.substring(0, a.sid.indexOf('_'))) {
                             case "TAL":
-                                var option1 = game.i18n.localize(`SKILL.${i.sid}`)
+                                var option1 = game.i18n.localize(`SKILL.${a.sid}`)
                                 break
                             case "CT":
-                                var option1 = game.i18n.localize(`COMBATSKILL.${i.sid}`)
+                                var option1 = game.i18n.localize(`COMBATSKILL.${a.sid}`)
                                 break
                             case "SPELL":
-                                var option1 = game.i18n.localize(`SPELL.${i.sid}.name`)
+                                var option1 = game.i18n.localize(`SPELL.${a.sid}.name`)
                                 break
                             default:
-                                var option1 = i.sid
+                                var option1 = a.sid
                                 break
                         }
                         if (!baseName.includes('(')) {
@@ -238,24 +239,40 @@ function parseAbility(data,prefix) {
                         displayName = `${baseName} (${option1})`
                     }
                 }
-                if (i.sid2) {
-                    var option2 = i.sid2
+                if (a.sid2) {
+                    var option2 = a.sid2
                     displayName = `${baseName} (${option1}: ${option2})`
                 }
-                if (type == "specialability") {
-                    var source = ""
-                    let sourceData = game.i18n.localize(`${id}.src`)
-                    for (let src of sourceData) {
-                        // source += ' ' + game.i18n.localize(`${src.src}.name`)+` <i>(Page: ${src.page}</i>)`
-                        source += ` ${game.i18n.localize(`BOOK.${src.src}`)} <i>(Page: ${src.page}</i>)`
-                    }
-                } else {
-                    source = ""
-                }
-
-
         }
+        if (!source) {
+            var sources = []
+            let sourceData = game.i18n.localize(`${PREFIX}.${a.id}.src`)
+            for (let src of sourceData) {
+                sources.push(`${game.i18n.localize(`BOOK.${src.src}`)} <small>(Page: ${src.page}</small>)`)
+            }
+            var source = sources.join('<br>')
+        }
+
+        ability.type = a.type
+        ability.itemName = itemName
+        ability.displayName = displayName
+        ability.oID = a.id
+        if (a.tier) {
+            ability.value = a.tier
+        }
+        if (effect) {
+            ability.effect = effect
+        }
+        if (source) {
+            ability.source = source
+        }
+        if (cost) {
+            ability.cost = cost
+        }
+        abilities.push(ability)
+
     }
+    return abilities
 }
 
 // Advntages, Disadvantages and Special Abilities
@@ -300,22 +317,23 @@ function parseActivatable(data) {
                     case "ADV_12": // Blessed, needed for correct KP
                         var effect = "+20 KP"
                         break
+                    case "DISADV_50":
                     case "DISADV_1": // Afraid of, can be a mix of pre-defined and custom text
                         itemName = `${baseName} ()`
                         switch (typeof (i.sid)) {
                             case "number":
                                 var option1 = game.i18n.localize(`${id}.options.${i.sid - 1}`)
                                 if (i.sid2) {
-                                    displayName = `${baseName} ${option1} (${i.sid2})`
+                                    displayName = `${baseName} (${option1}: ${i.sid2})`
                                 } else{
-                                    displayName = `${baseName} ${option1}`
+                                    displayName = `${baseName} (${option1})`
                                 }
                                 break
                             default:
                                 if (i.sid2) {
-                                    displayName = `${baseName} ${i.sid} (${i.sid2})`
+                                    displayName = `${baseName} (${i.sid}: ${i.sid2})`
                                 } else{
-                                    displayName = `${baseName} ${i.sid}`
+                                    displayName = `${baseName} (${i.sid})`
                                 }
                                 break
                         }
@@ -385,8 +403,8 @@ function parseActivatable(data) {
                             var source = ""
                             let sourceData = game.i18n.localize(`${id}.src`)
                             for (let src of sourceData) {
-                                // source += ' ' + game.i18n.localize(`${src.src}.name`)+` <i>(Page: ${src.page}</i>)`
-                                source += ` ${game.i18n.localize(`BOOK.${src.src}`)} <i>(Page: ${src.page}</i>)`
+                                // source += ' ' + game.i18n.localize(`${src.src}.name`)+` <small>(Page: ${src.page}</small>)`
+                                source += ` ${game.i18n.localize(`BOOK.${src.src}`)} <small>(Page: ${src.page}</small>)`
                             }
                         } else {
                             source = ""
@@ -451,7 +469,7 @@ async function parseBelongings(data) {
             let sourceData = game.i18n.localize(`ITEM.${itemID}.src`)
             let sources = []
             for (let src of sourceData) {
-                sources.push(`${game.i18n.localize(`BOOK.${src.src}`)} <i>(Page: ${src.page}</i>)`)
+                sources.push(`${game.i18n.localize(`BOOK.${src.src}`)} <small>(Page: ${src.page}</small>)`)
             }
             newItem.source = sources.join("<br>")
         } else {
@@ -549,16 +567,23 @@ async function importFromJSON(json, showResults) {
     importErrors = []
     const data = JSON.parse(json)
     
-    var attributes = data.attr.values
+    const ATTR_IDS = ["mu", "kl", "in", "ch", "ff", "ge", "ko", "kk"]
     var characteristics = {}
-    attributes.forEach(function (attr) {
-        var attributeName = ATTRIBUTE_MAP[attr.id]
+
+    for (let attr of ATTR_IDS) {
+        characteristics[attr] = {
+            advances: 0
+        }
+    }
+
+    for (let attr of data.attr.values) {
+        var attributeID = ATTRIBUTE_MAP[attr.id]
         var advances = attr.value - 8
-        characteristics[attributeName] = {
+        characteristics[attributeID] = {
             // "species": species,
             "advances": advances
         }
-    });
+    }
     // var improvedAttibuteMax = sheet.attr.attributeAdjustmentSelected
 
 
@@ -570,9 +595,19 @@ async function importFromJSON(json, showResults) {
     var liturgies = await parseLiturgies(Object.entries(data.liturgies))
 
     const allActivatables = parseActivatables(Object.entries(data.activatable))
-    console.log(allActivatables)
+    // console.log(allActivatables)
 
-    var activatables = parseActivatable(Object.entries(data.activatable))
+    var allAdvantages = parseAbility(allActivatables.advantages)
+    console.log(allAdvantages)
+
+    var allDisadvantages = parseAbility(allActivatables.disadvantages)
+    console.log(allDisadvantages)
+
+    var allAbilities = parseAbility(allActivatables.specialAbilities)
+    console.log(allAbilities)
+
+
+    // var activatables = parseActivatable(Object.entries(data.activatable))
     // console.log(activatables)
 
     var blessings = await parseBlessings(data.blessings) // array not object
@@ -581,6 +616,7 @@ async function importFromJSON(json, showResults) {
     var belongings = await parseBelongings(Object.entries(data.belongings.items))
     // console.log(belongings)
 
+    // can use IDs if they don't change
     var money = []
     money.push({id:"OCRi6UuKBIHCbZuF", quantity: data.belongings.purse.d})
     money.push({id:"xN0OtnyZqB4BaWAX", quantity: data.belongings.purse.s})
@@ -593,6 +629,11 @@ async function importFromJSON(json, showResults) {
     let race = data.r
     charData.name = data.name
     charData.type = "character"
+    if (data.rv) {
+        var species = `${game.i18n.localize(`RACE.${race}`)} (${game.i18n.localize(`RACEVARIANT.${data.rv}`)})`
+    } else {
+        var species = game.i18n.localize(`RACE.${race}`)
+    }
     charData.data = {
         characteristics: characteristics,
         details: {
@@ -600,7 +641,7 @@ async function importFromJSON(json, showResults) {
                 total: data.ap.total
             },
             species: {
-                value: `${game.i18n.localize(`RACE.${race}`)} (${game.i18n.localize(`RACEVARIANT.${data.rv}`)})`
+                value: species
             },
             gender: {
                 // value: game.i18n.localize(`RACE.${data.sex}`) // can't find i18n data for sex
@@ -609,7 +650,8 @@ async function importFromJSON(json, showResults) {
                 value: game.i18n.localize(`CULTURE.${data.c}`)
             },
             career: {
-                value: game.i18n.localize(`PROFESSION.${data.p}`)
+                value: `${data.p == "P_0" ? data.professionName : game.i18n.localize(`PROFESSION.${data.p}`)}`
+                // value: game.i18n.localize(`PROFESSION.${data.p}`)
             },
             socialstate: {
                 value: game.i18n.localize(`SOCIALSTATUS.${data.pers.socialstatus}`)
@@ -705,6 +747,7 @@ async function importFromJSON(json, showResults) {
         actor.updateEmbeddedEntity("OwnedItem", update);
     }
 
+    // update money by ID
     for(let coin of money) {
         const update = {
             _id: coin.id,
@@ -713,6 +756,12 @@ async function importFromJSON(json, showResults) {
         actor.updateEmbeddedEntity("OwnedItem", update);
     }
 
+    let allVantages = allAdvantages.concat(allDisadvantages)
+    await addItems(actor, allVantages, "Disadvantages and Advantages")
+
+    await addItems(actor, allAbilities, "Special Abilities")
+
+/*
     // add activatables TODO: refactor into function
     let advantages = activatables.filter(a => a.type.includes("advantage"))
     for (let a of advantages) {
@@ -846,6 +895,7 @@ async function importFromJSON(json, showResults) {
             // console.log(newItem)
         }
     }
+*/
 
     // add spells // TODO: localise, and don't require specific compendium
     await addItems(actor, spells, "Spells, rituals and cantrips")
@@ -859,17 +909,6 @@ async function importFromJSON(json, showResults) {
     // add equipment // TODO: localise
     await addItems(actor, belongings, "Equipment")
 
-    console.log(`Optolith to Foundry Importer | Finished creating actor id: ${actor.id} name: ${actor.data.name}`)
-    let sheet = await actor.sheet.render(true)
-
-    
-    if (importErrors.length > 0) {
-        console.log(`Optolith to Foundry Importer | Items that were not found in compendium:`)
-        console.log(importErrors)
-        ui.notifications.warn(`${actor.data.name} imported with some unrecognised items`)
-    } else {
-        ui.notifications.info(`${actor.data.name} imported successfully`)
-    }
     // TODO: localse
     importErrors.sort()
     let importErrorsList = []
@@ -882,6 +921,25 @@ async function importFromJSON(json, showResults) {
         ${importErrorsList.join('')}
         </table>
         `
+    
+    actor.update(
+        {
+            "data.status.wounds.value": actor.data.data.status.wounds.initial + actor.data.data.characteristics["ko"].value * 2
+    })
+
+    console.log(`Optolith to Foundry Importer | Finished creating actor id: ${actor.id} name: ${actor.data.name}`)
+    let sheet = await actor.sheet.render(true)
+
+    
+    if (importErrors.length > 0) {
+        console.log(`Optolith to Foundry Importer | Items that were not found in compendium:`)
+        console.log(importErrors)
+        ui.notifications.warn(`${actor.data.name} imported with some unrecognised items`)
+        actor.update({"data.details.notes.value": actor.data.data.details.notes.value+'<br>'+importErrorsMessage})
+
+    } else {
+        ui.notifications.info(`${actor.data.name} imported successfully`)
+    }
 
     if (showResults && importErrors.length > 0) {
         new Dialog({
@@ -898,13 +956,6 @@ async function importFromJSON(json, showResults) {
             width: 700
         }).render(true)
     }
-    if (importErrors.length > 0) {
-        ui.notifications.warn(`${actor.data.name} imported with some unrecognised items`)
-    } else {
-        ui.notifications.info(`${actor.data.name} imported successfully`)
-    }
-
-
 
 }
 
