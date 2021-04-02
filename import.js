@@ -188,6 +188,7 @@ function parseAbility(data) {
         var itemName = baseName
         var displayName = baseName
         var ability = {}
+        var source = ""
         switch (a.id) { // handle special cases
             case "ADV_0": // Custom
                 itemName = displayName = a.sid
@@ -202,6 +203,9 @@ function parseAbility(data) {
                 var source = "Custom Ability"
                 var cost = a.cost
                 break
+            case "DISADV_3": // Bound to Artefact
+                itemName = baseName + ' ()'
+                displayName = baseName
             case "ADV_50": // Spellcaster, needed for correct AE
                 var effect = "+20 AE"
                 break
@@ -215,19 +219,24 @@ function parseAbility(data) {
                 displayName = `${baseName} (${option1}: ${option2})`
                 var effect = `${option1} FP2`
                 break
-            case "DISADV_34":
-            case "SA_12": // Terrain Knowledge 
-            case "SA_28": // Writing
-            case "SA_87": // Aspect Knowledge // These have pre-defined options that Foundry doesn't have pre-made items for
-                itemName = `${itemName} ()`
-                var option1 = game.i18n.localize(`${a.id}.options.${a.sid - 1}`)
+            case "SA_70": // Tradition (Guild Mage)
+                var option1 = game.i18n.localize(`SPELL.${a.sid}.name`)
                 displayName = `${baseName} (${option1})`
                 break
+            // case "DISADV_34":
+            // case "SA_12": // Terrain Knowledge 
+            // case "SA_28": // Writing
+            // case "SA_87": // Aspect Knowledge // These have pre-defined options that Foundry doesn't have pre-made items for
+                // itemName = `${itemName} ()`
+                // var option1 = game.i18n.localize(`${a.id}.options.${a.sid - 1}`)
+                // displayName = `${baseName} (${option1})`
+                // break
             default:
                 if (a.sid) {
+                    itemName = baseName + ' ()'
                     if (typeof (a.sid) == "number") {
                         var option1 = game.i18n.localize(`${PREFIX}.${a.id}.options.${a.sid - 1}`)
-                        itemName = displayName = `${baseName} (${option1})`
+                        displayName = `${baseName} (${option1})`
                     } else {
                         switch (a.sid.substring(0, a.sid.indexOf('_'))) {
                             case "TAL":
@@ -243,9 +252,9 @@ function parseAbility(data) {
                                 var option1 = a.sid
                                 break
                         }
-                        if (!baseName.includes('(')) {
-                            itemName = `${baseName} ()`
-                        }
+                        // if (!baseName.includes('(')) {
+                        //     itemName = `${baseName} ()`
+                        // }
                         displayName = `${baseName} (${option1})`
                     }
                 }
@@ -285,185 +294,6 @@ function parseAbility(data) {
     return abilities
 }
 
-// Advntages, Disadvantages and Special Abilities
-function parseActivatable(data) {
-    var advantages = []
-    data.forEach(d => {
-        if (d[1].length > 0) {
-            var type
-            var id = d[0]
-            var t = d[0].substring(0, d[0].indexOf('_'))
-            var baseName
-            // console.log(t)
-            switch (t) {
-                case "ADV":
-                    type = "advantage"
-                    break
-                case "DISADV":
-                    type = "disadvantage"
-                    break
-                case "SA":
-                    type = "specialability"
-                    break
-            }
-            d[1].forEach(i => {
-                var baseName = game.i18n.localize(`${id}.name`)
-                var itemName = baseName
-                var displayName = baseName
-                var advantage = {}
-                switch (id) {
-                    // Special cases that need handling
-                    case "ADV_0": // Custom
-                        itemName = displayName = i.sid
-                        var source = "Custom Advantage"
-                        break
-                    case "DISADV_0": // Custom
-                        itemName = displayName = i.sid
-                        var source = "Custom Disadvantage"
-                        break
-                    case "ADV_50": // Spellcaster, needed for correct AE
-                        var effect = "+20 AE"
-                        break
-                    case "ADV_12": // Blessed, needed for correct KP
-                        var effect = "+20 KP"
-                        break
-                    case "DISADV_50":
-                    case "DISADV_1": // Afraid of, can be a mix of pre-defined and custom text
-                        itemName = `${baseName} ()`
-                        switch (typeof (i.sid)) {
-                            case "number":
-                                var option1 = game.i18n.localize(`${id}.options.${i.sid - 1}`)
-                                if (i.sid2) {
-                                    displayName = `${baseName} (${option1}: ${i.sid2})`
-                                } else{
-                                    displayName = `${baseName} (${option1})`
-                                }
-                                break
-                            default:
-                                if (i.sid2) {
-                                    displayName = `${baseName} (${i.sid}: ${i.sid2})`
-                                } else{
-                                    displayName = `${baseName} (${i.sid})`
-                                }
-                                break
-                        }
-                        break
-                    case "SA_0": // Custom
-                        itemName = displayName = i.sid
-                        var cost = i.cost
-                        var source = "Custom Ability"
-                        break
-                    case "SA_9": // Skill Specialization, need to localize both options
-                        itemName = `${itemName} ()`
-                        var option1 = game.i18n.localize(`SKILL.${i.sid}`)
-                        var option2 = game.i18n.localize(`SPECIALISATION.${i.sid}.${i.sid2}`)
-                        displayName = `${displayName} (${option1}: ${option2})`
-                        var effect = `${option1} FP2`
-                        break
-                    case "DISADV_34":
-                    case "SA_12": // Terrain Knowledge 
-                    case "SA_28": // Writing
-                    case "SA_87": // Aspect Knowledge // These have pre-defined options that Foundry doesn't have pre-made items for
-                        itemName = `${itemName} ()`
-                        var option1 = game.i18n.localize(`${id}.options.${i.sid - 1}`)
-                        displayName = `${baseName} (${option1})`
-                        break
-                    default:
-                        if (i.sid) {
-                            if (typeof (i.sid) == "number") {
-                                var option1 = game.i18n.localize(`${id}.options.${i.sid - 1}`)
-                                itemName = displayName = `${baseName} (${option1})`
-                            } else {
-                                switch (i.sid.substring(0, i.sid.indexOf('_'))) {
-                                    case "TAL":
-                                        var option1 = game.i18n.localize(`SKILL.${i.sid}`)
-                                        break
-                                    case "CT":
-                                        var option1 = game.i18n.localize(`COMBATSKILL.${i.sid}`)
-                                        break
-                                    case "SPELL":
-                                        var option1 = game.i18n.localize(`SPELL.${i.sid}.name`)
-                                        break
-                                    default:
-                                        var option1 = i.sid
-                                        break
-                                }
-                                if (!baseName.includes('(')) {
-                                    itemName = `${baseName} ()`
-                                }
-                                displayName = `${baseName} (${option1})`
-                            }
-                            /*
-                            } else if (i.sid.startsWith("TAL_")) { // Incompetant
-                                var option1 = game.i18n.localize(`SKILL.${i.sid}`)
-                                displayName = `${displayName} (${option1})`
-                                itemName = itemName = itemName + ' ()'
-                            } else {
-                                var option1 = i.sid
-                                itemName = itemName + ' ()'
-                                displayName = `${displayName} (${option1})`
-                            }
-                            */
-                        }
-                        if (i.sid2) {
-                            var option2 = i.sid2
-                            displayName = `${baseName} (${option1}: ${option2})`
-                        }
-                        if (type == "specialability") {
-                            var source = ""
-                            let sourceData = game.i18n.localize(`${id}.src`)
-                            for (let src of sourceData) {
-                                // source += ' ' + game.i18n.localize(`${src.src}.name`)+` <small>(Page: ${src.page}</small>)`
-                                source += ` ${game.i18n.localize(`BOOK.${src.src}`)} <small>(Page: ${src.page}</small>)`
-                            }
-                        } else {
-                            source = ""
-                        }
-                }
-                advantage.type = type
-                advantage.itemName = itemName
-                advantage.displayName = displayName
-                if (i.tier) {
-                    advantage.value = i.tier
-                }
-                if (effect) {
-                    advantage.effect = effect
-                }
-                if (source) {
-                    advantage.source = source
-                }
-                if (cost) {
-                    advantage.cost = cost
-                }
-
-                // advantage = {
-                //     type: type,
-                //     itemName: itemName,
-                //     displayName: displayName,
-                //     value: level,
-                //     source: source
-                // }
-
-                advantages.push(advantage)
-
-
-            })
-            //     break
-            // case "SA":
-            //     var displayName = game.i18n.localize(`${id}.name`)
-            //     var ability = {
-            //         type: type,
-            //         displayName: displayName,
-            //         itemName: displayName,
-            //     }
-            //     advantages.push(ability)
-            //     break
-            // }
-
-        }
-    });
-    return advantages
-}
 async function parseBelongings(data) {
     const {ITEM_TYPE_MAP, ITEM_CATEGORY_MAP} = await import("./data/items.js");
     var items = []
@@ -512,11 +342,18 @@ async function addItems(actor, items, compendium) {
         for (let item of items) {
             let newItem = {}
             // ignore case and match
-            let entry = index.find(i =>
-                i.name.localeCompare(item.itemName, undefined, {
+            var entry = index.find(i =>
+                i.name.localeCompare(item.displayName, undefined, {
                     sensitivity: 'accent'
                 }) === 0
             )
+            if (!entry) { // try different version of name
+                entry = index.find(i =>
+                    i.name.localeCompare(item.itemName, undefined, {
+                        sensitivity: 'accent'
+                    }) === 0
+                )
+            }
             if (entry) {
                 newItem = await pack.getEntry(entry._id)
                 newItem.name = item.displayName
@@ -575,6 +412,7 @@ async function addItems(actor, items, compendium) {
 }
 
 async function importFromJSON(json, options) {
+    let actor = null
     importErrors = []
     const data = JSON.parse(json)
     
@@ -608,7 +446,6 @@ async function importFromJSON(json, options) {
     var liturgies = await parseLiturgies(Object.entries(data.liturgies))
 
     const allActivatables = parseActivatables(Object.entries(data.activatable))
-    // console.log(allActivatables)
 
     var allAdvantages = parseAbility(allActivatables.advantages)
 
@@ -618,7 +455,7 @@ async function importFromJSON(json, options) {
 
 
     // var activatables = parseActivatable(Object.entries(data.activatable))
-    // console.log(activatables)
+    console.log(allDisadvantages)
 
 
     // parse belongings
@@ -626,23 +463,24 @@ async function importFromJSON(json, options) {
     // console.log(belongings)
 
     // can use IDs if they don't change
-    var money = []
-    money.push({id:"OCRi6UuKBIHCbZuF", quantity: data.belongings.purse.d})
-    money.push({id:"xN0OtnyZqB4BaWAX", quantity: data.belongings.purse.s})
-    money.push({id:"G4piFlEAWb2stJCn", quantity: data.belongings.purse.h})
-    money.push({id:"NDf42upvVWmHi8Ty", quantity: data.belongings.purse.k})
-
+    var money = [
+        {id:"OCRi6UuKBIHCbZuF", quantity: data.belongings.purse.d},
+        {id:"xN0OtnyZqB4BaWAX", quantity: data.belongings.purse.s},
+        {id:"G4piFlEAWb2stJCn", quantity: data.belongings.purse.h},
+        {id:"NDf42upvVWmHi8Ty", quantity: data.belongings.purse.k}
+    ]
 
     // setup base character data
-    var charData = {}
     let race = data.r
-    charData.name = data.name
-    charData.type = "character"
     if (data.rv) {
         var species = `${game.i18n.localize(`RACE.${race}`)} (${game.i18n.localize(`RACEVARIANT.${data.rv}`)})`
     } else {
         var species = game.i18n.localize(`RACE.${race}`)
     }
+
+    var charData = {}
+    charData.name = data.name
+    charData.type = "character"
     charData.data = {
         characteristics: characteristics,
         details: {
@@ -690,7 +528,8 @@ async function importFromJSON(json, options) {
                 value: data.pers.placeofbirth
             },
             biography: {
-                value: `Birthdate: ${data.pers.dateofbirth} ${data.pers.title ? `<br>Title: ${data.pers.title}` : ""}`
+                value: `${ data.pers.dateofbirth ? `Birthdate: ${data.pers.dateofbirth}` : ""} ${data.pers.title ? `<br>Title: ${data.pers.title}` : ""} `
+                // value: `Birthdate: ${data.pers.dateofbirth} ${data.pers.title ? `<br>Title: ${data.pers.title}` : ""}`
             },
             notes: {
                 value: data.pers.otherinfo
@@ -720,7 +559,7 @@ async function importFromJSON(json, options) {
         }
     }
 
-    let actor = await CONFIG.Actor.entityClass.create(charData, {
+    actor = await CONFIG.Actor.entityClass.create(charData, {
         renderSheet: false
     })
     // console.log(actor)
@@ -770,141 +609,6 @@ async function importFromJSON(json, options) {
 
     await addItems(actor, allAbilities, "Special Abilities")
 
-/*
-    // add activatables TODO: refactor into function
-    let advantages = activatables.filter(a => a.type.includes("advantage"))
-    for (let a of advantages) {
-        var pack = await game.packs.entries.find(p => p.metadata.label == "Disadvantages and Advantages");
-        if (pack) {
-            var index = await pack.getIndex();
-            var advantage = index.find(i => i.name == a.itemName)
-            if (advantage) {
-                let item = await pack.getEntry(advantage._id)
-                item.name = a.displayName
-                if (a.value > item.data.max.value) {
-                    item.data.step = {
-                        value: item.data.max.value
-                    }
-                } else {
-                    item.data.step = {
-                        value: a.value
-                    }
-                }
-                await actor.createOwnedItem(item)
-            } else {
-                // console.warn(`Can't find ${a.itemName} in compendium`)
-                importErrors.push({type: a.type, displayName: a.displayName, itemName: a.itemName, source: a.source})
-
-                let newItem = await actor.createOwnedItem({
-                    name: a.displayName,
-                    type: a.type,
-                    data: {
-                        description: {
-                            value: a.source,
-                        },
-                        APValue: {
-                            value: a.cost
-                        },
-                        effect: {
-                            value: a.effect
-                        },
-                        step: {
-                            value: a.value
-                        }
-                    }
-                })
-
-            }
-        } else {
-            await actor.createOwnedItem({
-                name: a.displayName,
-                type: a.type,
-                data: {
-                    description: {
-                        value: a.source,
-                    },
-                    APValue: {
-                        value: a.cost
-                    },
-                    effect: {
-                        value: a.effect
-                    },
-                    step: {
-                        value: a.value
-                    }
-                }
-            })
-            // console.log(newItem)
-
-        }
-    }
-
-    // add special abilities  // TODO: refactor into function
-    let abilities = activatables.filter(a => a.type == "specialability")
-    for (let a of abilities) {
-        var pack = await game.packs.entries.find(p => p.metadata.label == "Special Abilities");
-        if (pack) {
-            var index = await pack.getIndex();
-            var ability = index.find(i => i.name == a.itemName)
-            if (ability) {
-                let item = await pack.getEntry(ability._id)
-                item.name = a.displayName
-                if (a.value > item.data.maxRank.value) {
-                    item.data.step = {
-                        value: item.data.maxRank.value
-                    }
-                } else {
-                    item.data.step = {
-                        value: a.value
-                    }
-                }
-                await actor.createOwnedItem(item)
-            } else {
-                // console.warn(`Can't find ${a.itemName} in compendium`)
-                importErrors.push({type: a.type, displayName: a.displayName, itemName: a.itemName, source: a.source})
-                let newItem = await actor.createOwnedItem({
-                    name: a.displayName,
-                    type: "specialability",
-                    data: {
-                        category: {
-                            value: "general"
-                        },
-                        description: {
-                            value: a.source,
-                        },
-                        APValue: {
-                            value: a.cost
-                        },
-                        step: {
-                            value: a.tier
-                        }
-                    }
-                })
-
-            }
-        } else {
-            await actor.createOwnedItem({
-                name: a.displayName,
-                type: "specialability",
-                data: {
-                    category: {
-                        value: "general"
-                    },
-                    description: {
-                        value: a.source,
-                    },
-                    APValue: {
-                        value: a.cost
-                    },
-                    step: {
-                        value: a.tier
-                    }
-                }
-            })
-            // console.log(newItem)
-        }
-    }
-*/
 
     // add spells // TODO: localise, and don't require specific compendium
     await addItems(actor, spells, "Spells, rituals and cantrips")
