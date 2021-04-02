@@ -184,7 +184,7 @@ function parseAbility(data) {
                 var PREFIX = "ABILITY"
                 break
         }
-        var baseName = game.i18n.localize(`${PREFIX}.${a.id}.name`)
+        const baseName = game.i18n.localize(`${PREFIX}.${a.id}.name`)
         var itemName = baseName
         var displayName = baseName
         var ability = {}
@@ -222,6 +222,11 @@ function parseAbility(data) {
             case "SA_70": // Tradition (Guild Mage)
                 var option1 = game.i18n.localize(`SPELL.${a.sid}.name`)
                 displayName = `${baseName} (${option1})`
+                break
+            case "DISADV_33": // Personality Flaw
+                var option1 = game.i18n.localize(`DISADVANTAGE.${a.id}.options.${a.sid - 1}`)
+                itemName = `${baseName} (${option1})`
+                displayName = `${baseName} (${option1}: ${a.sid2})`
                 break
             // case "DISADV_34":
             // case "SA_12": // Terrain Knowledge 
