@@ -27,43 +27,43 @@ function parseSkills(data, prefix) {
 }
 
 async function parseSpells(data) {
-    const SPELLS = await fetch('modules/optolith-to-foundry/data/spells.json').then((response) => {return response.json() })
+    // const SPELLS = await fetch('modules/optolith-to-foundry/data/spells.json').then((response) => {return response.json() })
 
-    const {
-        SPELL_MAP
-    } = await import("./data/spells.js")
+    // const {
+    //     SPELL_MAP
+    // } = await import("./data/spells.js")
     var items = []
     for (let spell of data) {
         let item = {}
-        // spell[0] = "SPELL_58"
         let spellID = spell[0]
-        item.displayName = item.itemName = SPELLS[spell[0]].name
+        // item.displayName = item.itemName = SPELLS[spell[0]].name
+        item.displayName = item.itemName = game.i18n.localize(`SPELL.${spell[0]}.name`)
         item.type = "spell"
         item.data = {
             talentValue: {
                 value: spell[1]
             }
         }
-        let sourceData = SPELLS[spell[0]].src
+        let sourceData = game.i18n.localize(`SPELL.${spell[0]}.src`)
         let sources = []
         for (let src of sourceData) {
             sources.push(`${game.i18n.localize(`BOOK.${src.src}`)} <small>(Page: ${src.page}</small>)`)
         }
-        if (!SPELL_MAP[spell[0]]) {
-            console.log(`Optolith to Foundry Importer | Couldn't map spell: ${spell[0]}`)
-        } else {
-            item.customData = {
-                characteristic1: {
-                    value: ATTRIBUTE_MAP[`${SPELL_MAP[spellID].check1}`]
-                },
-                characteristic2: {
-                    value: ATTRIBUTE_MAP[`${SPELL_MAP[spellID].check2}`]
-                },
-                characteristic3: {
-                    value: ATTRIBUTE_MAP[`${SPELL_MAP[spellID].check3}`]
-                }
-            }
-        }
+        // if (!SPELL_MAP[spell[0]]) {
+        //     console.log(`Optolith to Foundry Importer | Couldn't map spell: ${spell[0]}`)
+        // } else {
+        //     item.customData = {
+        //         characteristic1: {
+        //             value: ATTRIBUTE_MAP[`${SPELL_MAP[spellID].check1}`]
+        //         },
+        //         characteristic2: {
+        //             value: ATTRIBUTE_MAP[`${SPELL_MAP[spellID].check2}`]
+        //         },
+        //         characteristic3: {
+        //             value: ATTRIBUTE_MAP[`${SPELL_MAP[spellID].check3}`]
+        //         }
+        //     }
+        // }
         item.source = sources.join("<br>")
         items.push(item)
     }
@@ -71,21 +71,21 @@ async function parseSpells(data) {
 }
 
 async function parseLiturgies(data) {
-    const LITURGIES = await fetch('modules/optolith-to-foundry/data/liturgies.json').then((response) => {return response.json() })
+    // const LITURGIES = await fetch('modules/optolith-to-foundry/data/liturgies.json').then((response) => {return response.json() })
     var items = []
     for (let spell of data) {
         let item = {}
         // console.log(spell[0])
         // spell[0] = "SPELL_58"
         let spellID = spell[0]
-        item.displayName = item.itemName = LITURGIES[spell[0]].name
+        item.displayName = item.itemName = game.i18n.localize(`LITURGY.${spell[0]}.name`)
         item.type = "liturgy"
         item.data = {
             talentValue: {
                 value: spell[1]
             }
         }
-        let sourceData = LITURGIES[spell[0]].src
+        let sourceData = game.i18n.localize(`LITURGY.${spell[0]}.src`)
         let sources = []
         for (let src of sourceData) {
             sources.push(`${game.i18n.localize(`BOOK.${src.src}`)} <small>(Page: ${src.page}</i>)`)
@@ -97,30 +97,40 @@ async function parseLiturgies(data) {
 }
 
 async function parseBlessings(data) {
-    const BLESSINGS = await fetch('modules/optolith-to-foundry/data/blessings.json').then((response) => {return response.json() })
+    // const BLESSINGS = await fetch('modules/optolith-to-foundry/data/blessings.json').then((response) => {return response.json() })
 
     var items = []
     for (let item of data) {
         let newItem = {}
-        newItem.displayName = newItem.itemName = BLESSINGS[item].name
+        newItem.displayName = newItem.itemName = game.i18n.localize(`BLESSING.${item}.name`)
         newItem.type = "blessing"
+
+        let sourceData = game.i18n.localize(`BLESSING.${item}.src`)
+        let sources = []
+        for (let src of sourceData) {
+            sources.push(`${game.i18n.localize(`BOOK.${src.src}`)} <small>(Page: ${src.page}</i>)`)
+        }
         items.push(newItem)
     }
-    // console.log(items)
     return items
 }
 
 async function parseCantrips(data) {
-    const CANTRIPS = await fetch('modules/optolith-to-foundry/data/cantrips.json').then((response) => {return response.json() })
+    // const CANTRIPS = await fetch('modules/optolith-to-foundry/data/cantrips.json').then((response) => {return response.json() })
 
     var items = []
     for (let item of data) {
         let newItem = {}
-        newItem.displayName = newItem.itemName = CANTRIPS[item].name
+        newItem.displayName = newItem.itemName = game.i18n.localize(`CANTRIP.${item}.name`)
         newItem.type = "magictrick"
+
+        let sourceData = game.i18n.localize(`CANTRIP.${item}.src`)
+        let sources = []
+        for (let src of sourceData) {
+            sources.push(`${game.i18n.localize(`BOOK.${src.src}`)} <small>(Page: ${src.page}</i>)`)
+        }
         items.push(newItem)
     }
-    // console.log(items)
     return items
 }
 
@@ -535,6 +545,7 @@ async function addItems(actor, items, compendium) {
                     }
                 }
             }
+            // console.log(newItem)
             await actor.createOwnedItem(newItem)
         }
     } else {
@@ -563,7 +574,7 @@ async function addItems(actor, items, compendium) {
     }
 }
 
-async function importFromJSON(json, showResults) {
+async function importFromJSON(json, options) {
     importErrors = []
     const data = JSON.parse(json)
     
@@ -591,6 +602,8 @@ async function importFromJSON(json, showResults) {
     // console.log(spells)
 
     var cantrips = await parseCantrips(data.cantrips) // array not object
+
+    var blessings = await parseBlessings(data.blessings) // array not object
  
     var liturgies = await parseLiturgies(Object.entries(data.liturgies))
 
@@ -598,19 +611,15 @@ async function importFromJSON(json, showResults) {
     // console.log(allActivatables)
 
     var allAdvantages = parseAbility(allActivatables.advantages)
-    console.log(allAdvantages)
 
     var allDisadvantages = parseAbility(allActivatables.disadvantages)
-    console.log(allDisadvantages)
 
     var allAbilities = parseAbility(allActivatables.specialAbilities)
-    console.log(allAbilities)
 
 
     // var activatables = parseActivatable(Object.entries(data.activatable))
     // console.log(activatables)
 
-    var blessings = await parseBlessings(data.blessings) // array not object
 
     // parse belongings
     var belongings = await parseBelongings(Object.entries(data.belongings.items))
@@ -935,26 +944,26 @@ async function importFromJSON(json, showResults) {
         console.log(`Optolith to Foundry Importer | Items that were not found in compendium:`)
         console.log(importErrors)
         ui.notifications.warn(`${actor.data.name} imported with some unrecognised items`)
-        actor.update({"data.details.notes.value": actor.data.data.details.notes.value+'<br>'+importErrorsMessage})
-
+        if (options.addResultsToNotes) {
+            actor.update({"data.details.notes.value": actor.data.data.details.notes.value+'<br>'+importErrorsMessage})
+        }
+        if (options.showResultsDialog) {
+            new Dialog({ // TODO: localise
+                title: `Import Results for ${actor.name}`,
+                content: importErrorsMessage,
+                buttons: {
+                    ok: {
+                        icon: "<i class='fas fa-check'></i>",
+                        label: `OK`
+                    }
+                },
+                default: 'ok'
+            }, {
+                width: 700
+            }).render(true)
+        }
     } else {
         ui.notifications.info(`${actor.data.name} imported successfully`)
-    }
-
-    if (showResults && importErrors.length > 0) {
-        new Dialog({
-            title: `Import Results for ${actor.name}`,
-            content: importErrorsMessage,
-            buttons: {
-                ok: {
-                    icon: "<i class='fas fa-check'></i>",
-                    label: `OK`
-                }
-            },
-            default: 'ok'
-        }, {
-            width: 700
-        }).render(true)
     }
 
 }
@@ -969,13 +978,20 @@ function importFromOptolithDialog() {
             <form autocomplete="off" onsubmit="event.preventDefault();">
                 <p class="notes">You may import a hero from a JSON file exported from Optolith.</p>
                 <p class="notes">This operation will create a new Actor.</p>
-                <div class="">
+                <div class="form-group-stacked">
                     <p><label for="data">Optolith JSON file</label><br>
                     <input type="file" name="data"/></p>
+                    <p>Results:</p>
                     <p>
-                        <label for="results">Show results?</label>
-                        <input type="checkbox" name="results"/>
+                        <input type="checkbox" name="popup"/>
+                        <label for="popup">Popup</label>
                     </p>
+                    <p>
+                        <input type="checkbox" name="notes" checked />
+                        <label for="notes">Add to Character Notes</label>
+                    </p>
+
+
                 </div>
             </form>
             `,
@@ -986,10 +1002,16 @@ function importFromOptolithDialog() {
                 callback: html => {
                     const form = html.find("form")[0];
                     if (!form.data.files.length) return ui.notifications.error("You did not upload a data file!")
-                    var showResults // TODO: do a better job with optional paramenters!
-                    if (form.results.checked ) { showResults = true } else { showResults = false }
+                    // TODO: do a better job with optional paramenters!
+                    // if (form.popup.checked ) { showResults = true } else { showResultsDialog = false }
+                    // var showResultsDialog = form.popup.checked
+                    // var addToNotes = form.notes.checked
+                    var options = {
+                        showResultsDialog: form.popup.checked,
+                        addResultsToNotes: form.notes.checked
+                    }
                     // showResults = true
-                    readTextFromFile(form.data.files[0]).then(json => importFromJSON(json, showResults));
+                    readTextFromFile(form.data.files[0]).then(json => importFromJSON(json, options));
                 }
             },
             no: {
@@ -1005,7 +1027,9 @@ function importFromOptolithDialog() {
 
 Hooks.on("renderActorDirectory", (app, html, data) => {
     // TODO: check user has permission to create Actor
-    const button = $(`<button title="${game.i18n.localize("Tooltip.import")}"><i class="fas fa-file-import"></i>${game.i18n.localize("Button.import")}</button>`);
-    html.find(".header-actions").append(button);
-    button.click(() => importFromOptolithDialog())
+    if (game.user.can("create")) {
+        const button = $(`<button title="${game.i18n.localize("UI.Tooltip_Import")}"><i class="fas fa-file-import"></i>${game.i18n.localize("UI.Button_Import")}</button>`);
+        html.find(".header-actions").append(button);
+        button.click(() => importFromOptolithDialog())
+    }
 })
