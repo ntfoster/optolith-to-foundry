@@ -347,8 +347,24 @@ async function parseBelongings(data) {
 }
 
 // TODO: get all suitable compendiums (see DSA utility), rather than specifying single one
-async function addItems(actor, items, compendium) {
-    let pack = await game.packs.entries.find(p => p.metadata.label == compendium);
+async function addItems(actor, items, tags) {
+    let pack = await game.packs.entries.find(function(p) {
+        if (p.metadata.system == "dsa5" && p.metadata.tags) {
+            // console.log(`searching pack ${p.metadata.label} for ${tags}`)
+            let match = true
+            for (let tag of tags) {
+                if (!p.metadata.tags.includes(tag)) {
+                    match = false
+                    // console.log(`couldn't find ${tag} in ${p.metadata.label}`)
+                } else {
+                    // console.log(`found ${tag} in ${p.metadata.label}`)
+                }
+            }
+            return match
+        } else {
+            return false
+        }
+    })
     if (pack) {
         let index = await pack.getIndex()
         for (let item of items) {
@@ -645,22 +661,22 @@ async function importFromJSON(json, options) {
     }
 
     let allVantages = allAdvantages.concat(allDisadvantages)
-    await addItems(actor, allVantages, "Disadvantages and Advantages")
+    await addItems(actor, allVantages, ["advantages", "disadvantages"])
 
-    await addItems(actor, allAbilities, "Special Abilities")
+    await addItems(actor, allAbilities, ["specialabilities"])
 
 
     // add spells // TODO: localise, and don't require specific compendium
-    await addItems(actor, spells, "Spells, rituals and cantrips")
+    await addItems(actor, spells, ["spells"])
 
-    await addItems(actor, cantrips, "Spells, rituals and cantrips")
+    await addItems(actor, cantrips, ["cantrips"])
 
-    await addItems(actor, blessings, "Liturgies, ceremonies and blessings")
+    await addItems(actor, blessings, ["liturgies"])
 
-    await addItems(actor, liturgies, "Liturgies, ceremonies and blessings")
+    await addItems(actor, liturgies, ["blessings"])
 
     // add equipment // TODO: localise
-    await addItems(actor, belongings, "Equipment")
+    await addItems(actor, belongings, ["equipment"])
 
     // TODO: localse
     importErrors.sort()
