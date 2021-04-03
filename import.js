@@ -548,14 +548,14 @@ async function importFromJSON(json, options) {
                 // value: game.i18n.localize(`RACE.${data.sex}`) // can't find i18n data for sex
             },
             culture: {
-                value: game.i18n.localize(`CULTURE.${data.c}`)
+                value: `${data.c ? game.i18n.localize(`CULTURE.${data.c}`) : ""}`
             },
             career: {
                 value: `${data.p == "P_0" ? data.professionName : game.i18n.localize(`PROFESSION.${data.p}`)}`
                 // value: game.i18n.localize(`PROFESSION.${data.p}`)
             },
             socialstate: {
-                value: game.i18n.localize(`SOCIALSTATUS.${data.pers.socialstatus}`)
+                value: `${data.pers.socialstatus ? game.i18n.localize(`SOCIALSTATUS.${data.pers.socialstatus}`) : ""}`
             },
             family: {
                 value: data.pers.family
@@ -564,10 +564,10 @@ async function importFromJSON(json, options) {
                 value: data.pers.age
             },
             haircolor: {
-                value: game.i18n.localize(`HAIRCOLOR.${data.pers.haircolor}`)
+                value: `${data.pers.haircolor ? game.i18n.localize(`HAIRCOLOR.${data.pers.haircolor}`) : ""}` 
             },
             eyecolor: {
-                value: game.i18n.localize(`EYECOLOR.${data.pers.eyecolor}`)
+                value: `${data.pers.eyecolor ? game.i18n.localize(`EYECOLOR.${data.pers.eyecolor}`) : ""}`
             },
             height: {
                 value: data.pers.size
