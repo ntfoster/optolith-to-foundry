@@ -10984,40 +10984,88 @@
     },
     "BLESSING": {
         "BLESSING_1": {
-            "name": "Oath Blessing"
+            "name": "Oath Blessing",
+            "src": [{
+                "src": "US25001E",
+                "page": 323
+            }]
         },
         "BLESSING_2": {
-            "name": "Fire Blessing"
+            "name": "Fire Blessing",
+            "src": [{
+                "src": "US25001E",
+                "page": 322
+            }]
         },
         "BLESSING_3": {
-            "name": "Birth Blessing"
+            "name": "Birth Blessing",
+            "src": [{
+                "src": "US25001E",
+                "page": 322
+            }]
         },
         "BLESSING_4": {
-            "name": "Luck Blessing"
+            "name": "Luck Blessing",
+            "src": [{
+                "src": "US25001E",
+                "page": 323
+            }]
         },
         "BLESSING_5": {
-            "name": "Grave Blessing"
+            "name": "Grave Blessing",
+            "src": [{
+                "src": "US25001E",
+                "page": 323
+            }]
         },
         "BLESSING_6": {
-            "name": "Harmony Blessing"
+            "name": "Harmony Blessing",
+            "src": [{
+                "src": "US25001E",
+                "page": 323
+            }]
         },
         "BLESSING_7": {
-            "name": "Minor Healing Blessing"
+            "name": "Minor Healing Blessing",
+            "src": [{
+                "src": "US25001E",
+                "page": 323
+            }]
         },
         "BLESSING_8": {
-            "name": "Minor Protection Blessing"
+            "name": "Minor Protection Blessing",
+            "src": [{
+                "src": "US25001E",
+                "page": 323
+            }]
         },
         "BLESSING_9": {
-            "name": "Food Blessing"
+            "name": "Food Blessing",
+            "src": [{
+                "src": "US25001E",
+                "page": 323
+            }]
         },
         "BLESSING_10": {
-            "name": "Strength Blessing"
+            "name": "Strength Blessing",
+            "src": [{
+                "src": "US25001E",
+                "page": 323
+            }]
         },
         "BLESSING_11": {
-            "name": "Drink Blessing"
+            "name": "Drink Blessing",
+            "src": [{
+                "src": "US25001E",
+                "page": 322
+            }]
         },
         "BLESSING_12": {
-            "name": "Wisdom Blessing"
+            "name": "Wisdom Blessing",
+            "src": [{
+                "src": "US25001E",
+                "page": 323
+            }]
         }
     },
     "CANTRIP": {
