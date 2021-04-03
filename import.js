@@ -93,7 +93,7 @@ async function parseLiturgies(data) {
         items.push(item)
     }
     return items
-    
+
 }
 
 async function parseBlessings(data) {
@@ -142,7 +142,7 @@ function parseActivatables(data) {
 
     for (let a of data) {
         let id = a[0]
-        switch(id.substring(0, id.indexOf('_'))) {
+        switch (id.substring(0, id.indexOf('_'))) {
             case "ADV":
                 for (let i of a[1]) { // multiple of same advantage
                     i.id = id
@@ -167,13 +167,17 @@ function parseActivatables(data) {
         }
     }
 
-    return {advantages: advantages, disadvantages: disadvantages, specialAbilities: specialAbilities}
+    return {
+        advantages: advantages,
+        disadvantages: disadvantages,
+        specialAbilities: specialAbilities
+    }
 }
 
 function parseAbility(data) {
     var abilities = []
     for (let a of data) {
-        switch(a.type) {
+        switch (a.type) {
             case "advantage":
                 var PREFIX = "ADVANTAGE"
                 break
@@ -228,10 +232,10 @@ function parseAbility(data) {
                 itemName = `${baseName} (${option1})`
                 displayName = `${baseName} (${option1}: ${a.sid2})`
                 break
-            // case "DISADV_34":
-            // case "SA_12": // Terrain Knowledge 
-            // case "SA_28": // Writing
-            // case "SA_87": // Aspect Knowledge // These have pre-defined options that Foundry doesn't have pre-made items for
+                // case "DISADV_34":
+                // case "SA_12": // Terrain Knowledge 
+                // case "SA_28": // Writing
+                // case "SA_87": // Aspect Knowledge // These have pre-defined options that Foundry doesn't have pre-made items for
                 // itemName = `${itemName} ()`
                 // var option1 = game.i18n.localize(`${a.id}.options.${a.sid - 1}`)
                 // displayName = `${baseName} (${option1})`
@@ -300,7 +304,10 @@ function parseAbility(data) {
 }
 
 async function parseBelongings(data) {
-    const {ITEM_TYPE_MAP, ITEM_CATEGORY_MAP} = await import("./data/items.js");
+    const {
+        ITEM_TYPE_MAP,
+        ITEM_CATEGORY_MAP
+    } = await import("./data/items.js");
     var items = []
     for (const item of data) {
         let newItem = {}
@@ -331,8 +338,8 @@ async function parseBelongings(data) {
             },
             equipmentType: {
                 value: ITEM_CATEGORY_MAP[item[1].gr]
-              },
-      
+            },
+
         }
         items.push(newItem)
     }
@@ -341,7 +348,7 @@ async function parseBelongings(data) {
 
 // TODO: get all suitable compendiums (see DSA utility), rather than specifying single one
 async function addItems(actor, items, compendium) {
-    var pack = await game.packs.entries.find(p => p.metadata.label == compendium);
+    let pack = await game.packs.entries.find(p => p.metadata.label == compendium);
     if (pack) {
         let index = await pack.getIndex()
         for (let item of items) {
@@ -370,7 +377,12 @@ async function addItems(actor, items, compendium) {
                 }
             } else {
                 // console.warn("Couldn't find item in compendium: " + item.itemName)
-                importErrors.push({type: item.type, displayName: item.displayName, itemName: item.itemName, source: item.source})
+                importErrors.push({
+                    type: item.type,
+                    displayName: item.displayName,
+                    itemName: item.itemName,
+                    source: item.source
+                })
                 // add custom item
                 newItem = {
                     name: item.displayName,
@@ -392,8 +404,13 @@ async function addItems(actor, items, compendium) {
         }
     } else {
         console.warn("No such compendium: " + compendium)
-        importErrors.push({ itemName: item.itemName, displayName: item.displayName, type: item.type, source: item.source})
         for (let item of items) {
+            importErrors.push({
+                itemName: item.itemName,
+                displayName: item.displayName,
+                type: item.type,
+                source: item.source
+            })
             // add custom item
             let newItem = {
                 name: item.displayName,
@@ -406,21 +423,28 @@ async function addItems(actor, items, compendium) {
                         description: {
                             value: `<p>Source:</p><p>${item.source}</p>`
                         }
+                    },
+                    ...{
+                        weight: {
+                            value: 0 // bug with rangeweapons where weight isn't set
+                        }
                     }
                 }
+            }
+            try {
+                await actor.createOwnedItem(newItem)
+            } catch (e) {
+                console.error(e)
+                console.log(newItem)
+            }
         }
-            // console.log(newItem)
-            await actor.createOwnedItem(newItem)
-        }
-
     }
 }
-
 async function importFromJSON(json, options) {
     let actor = null
     importErrors = []
     const data = JSON.parse(json)
-    
+
     const ATTR_IDS = ["mu", "kl", "in", "ch", "ff", "ge", "ko", "kk"]
     var characteristics = {}
 
@@ -447,7 +471,7 @@ async function importFromJSON(json, options) {
     var cantrips = await parseCantrips(data.cantrips) // array not object
 
     var blessings = await parseBlessings(data.blessings) // array not object
- 
+
     var liturgies = await parseLiturgies(Object.entries(data.liturgies))
 
     const allActivatables = parseActivatables(Object.entries(data.activatable))
@@ -468,11 +492,22 @@ async function importFromJSON(json, options) {
     // console.log(belongings)
 
     // can use IDs if they don't change
-    var money = [
-        {id:"OCRi6UuKBIHCbZuF", quantity: data.belongings.purse.d},
-        {id:"xN0OtnyZqB4BaWAX", quantity: data.belongings.purse.s},
-        {id:"G4piFlEAWb2stJCn", quantity: data.belongings.purse.h},
-        {id:"NDf42upvVWmHi8Ty", quantity: data.belongings.purse.k}
+    var money = [{
+            id: "OCRi6UuKBIHCbZuF",
+            quantity: data.belongings.purse.d
+        },
+        {
+            id: "xN0OtnyZqB4BaWAX",
+            quantity: data.belongings.purse.s
+        },
+        {
+            id: "G4piFlEAWb2stJCn",
+            quantity: data.belongings.purse.h
+        },
+        {
+            id: "NDf42upvVWmHi8Ty",
+            quantity: data.belongings.purse.k
+        }
     ]
 
     // setup base character data
@@ -601,7 +636,7 @@ async function importFromJSON(json, options) {
     }
 
     // update money by ID
-    for(let coin of money) {
+    for (let coin of money) {
         const update = {
             _id: coin.id,
             'data.quantity.value': (coin.quantity ? coin.quantity : 0)
@@ -639,22 +674,23 @@ async function importFromJSON(json, options) {
         ${importErrorsList.join('')}
         </table>
         `
-    
-    actor.update(
-        {
-            "data.status.wounds.value": actor.data.data.status.wounds.initial + actor.data.data.characteristics["ko"].value * 2
+
+    actor.update({
+        "data.status.wounds.value": actor.data.data.status.wounds.initial + actor.data.data.characteristics["ko"].value * 2
     })
 
     console.log(`Optolith to Foundry Importer | Finished creating actor id: ${actor.id} name: ${actor.data.name}`)
     let sheet = await actor.sheet.render(true)
 
-    
+
     if (importErrors.length > 0) {
         console.log(`Optolith to Foundry Importer | Items that were not found in compendium:`)
         console.log(importErrors)
         ui.notifications.warn(`${actor.data.name} imported with some unrecognised items`)
         if (options.addResultsToNotes) {
-            actor.update({"data.details.notes.value": actor.data.data.details.notes.value+'<br>'+importErrorsMessage})
+            actor.update({
+                "data.details.notes.value": actor.data.data.details.notes.value + '<br>' + importErrorsMessage
+            })
         }
         if (options.showResultsDialog) {
             new Dialog({ // TODO: localise
