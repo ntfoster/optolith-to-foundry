@@ -26,17 +26,11 @@ function parseSkills(data, prefix) {
     return items
 }
 
-async function parseSpells(data) {
-    // const SPELLS = await fetch('modules/optolith-to-foundry/data/spells.json').then((response) => {return response.json() })
-
-    // const {
-    //     SPELL_MAP
-    // } = await import("./data/spells.js")
+function parseSpells(data) {
     var items = []
     for (let spell of data) {
         let item = {}
         let spellID = spell[0]
-        // item.displayName = item.itemName = SPELLS[spell[0]].name
         item.displayName = item.itemName = game.i18n.localize(`SPELL.${spell[0]}.name`)
         item.type = "spell"
         item.data = {
@@ -49,29 +43,13 @@ async function parseSpells(data) {
         for (let src of sourceData) {
             sources.push(`${game.i18n.localize(`BOOK.${src.src}`)} <small>(Page: ${src.page}</small>)`)
         }
-        // if (!SPELL_MAP[spell[0]]) {
-        //     console.log(`Optolith to Foundry Importer | Couldn't map spell: ${spell[0]}`)
-        // } else {
-        //     item.customData = {
-        //         characteristic1: {
-        //             value: ATTRIBUTE_MAP[`${SPELL_MAP[spellID].check1}`]
-        //         },
-        //         characteristic2: {
-        //             value: ATTRIBUTE_MAP[`${SPELL_MAP[spellID].check2}`]
-        //         },
-        //         characteristic3: {
-        //             value: ATTRIBUTE_MAP[`${SPELL_MAP[spellID].check3}`]
-        //         }
-        //     }
-        // }
         item.source = sources.join("<br>")
         items.push(item)
     }
     return items
 }
 
-async function parseLiturgies(data) {
-    // const LITURGIES = await fetch('modules/optolith-to-foundry/data/liturgies.json').then((response) => {return response.json() })
+function parseLiturgies(data) {
     var items = []
     for (let spell of data) {
         let item = {}
@@ -90,13 +68,14 @@ async function parseLiturgies(data) {
         for (let src of sourceData) {
             sources.push(`${game.i18n.localize(`BOOK.${src.src}`)} <small>(Page: ${src.page}</i>)`)
         }
+        item.source = sources.join("<br>")
         items.push(item)
     }
     return items
 
 }
 
-async function parseBlessings(data) {
+function parseBlessings(data) {
     // const BLESSINGS = await fetch('modules/optolith-to-foundry/data/blessings.json').then((response) => {return response.json() })
 
     var items = []
@@ -110,14 +89,13 @@ async function parseBlessings(data) {
         for (let src of sourceData) {
             sources.push(`${game.i18n.localize(`BOOK.${src.src}`)} <small>(Page: ${src.page}</i>)`)
         }
+        newItem.source = sources.join("<br>")
         items.push(newItem)
     }
     return items
 }
 
-async function parseCantrips(data) {
-    // const CANTRIPS = await fetch('modules/optolith-to-foundry/data/cantrips.json').then((response) => {return response.json() })
-
+function parseCantrips(data) {
     var items = []
     for (let item of data) {
         let newItem = {}
@@ -129,6 +107,7 @@ async function parseCantrips(data) {
         for (let src of sourceData) {
             sources.push(`${game.i18n.localize(`BOOK.${src.src}`)} <small>(Page: ${src.page}</i>)`)
         }
+        newItem.source = sources.join("<br>")
         items.push(newItem)
     }
     return items
@@ -193,6 +172,7 @@ function parseAbility(data) {
         var displayName = baseName
         var ability = {}
         var source = ""
+        let effect
         switch (a.id) { // handle special cases
             case "ADV_0": // Custom
                 itemName = displayName = a.sid
@@ -210,18 +190,19 @@ function parseAbility(data) {
             case "DISADV_3": // Bound to Artefact
                 itemName = baseName + ' ()'
                 displayName = baseName
+                break
             case "ADV_50": // Spellcaster, needed for correct AE
-                var effect = "+20 AE"
+                effect = "+20 AE"
                 break
             case "ADV_12": // Blessed, needed for correct KP
-                var effect = "+20 KP"
+                effect = "+20 KP"
                 break
             case "SA_9": // Skill Specialization, need to localize both options
                 itemName = `${baseName} ()`
                 var option1 = game.i18n.localize(`SKILL.${a.sid}`)
                 var option2 = game.i18n.localize(`SPECIALISATION.${a.sid}.${a.sid2}`)
                 displayName = `${baseName} (${option1}: ${option2})`
-                var effect = `${option1} FP2`
+                effect = `${option1} FP2`
                 break
             case "SA_70": // Tradition (Guild Mage)
                 var option1 = game.i18n.localize(`SPELL.${a.sid}.name`)
@@ -313,8 +294,7 @@ async function parseBelongings(data) {
         let newItem = {}
         let itemID = item[1].template
         if (itemID) {
-            newItem.displayName = item[1].name
-            newItem.itemName = game.i18n.localize(`ITEM.${itemID}.name`)
+            newItem.displayName = newItem.itemName = game.i18n.localize(`ITEM.${itemID}.name`)
             if (!(newItem.type = ITEM_TYPE_MAP[item[1].gr])) {
                 newItem.type = "equipment"
             }
@@ -331,7 +311,6 @@ async function parseBelongings(data) {
                 newItem.type = "equipment"
             }
         }
-        // newItem.quantity = item[1].amount
         newItem.data = {
             quantity: {
                 value: item[1].amount
@@ -345,6 +324,43 @@ async function parseBelongings(data) {
     }
     return items
 }
+
+function createCustomItem(item) {
+    // add custom item
+    let newItem = {
+        name: item.displayName,
+        type: item.type,
+        img: DSAItem.defaultImages[item.type],
+        data: {
+            ...item.data,
+            ...{
+                description: {
+                    value: `<p>Source:</p><p>${item.source}</p>`
+                },
+                weight: {
+                    value: 0 // workaround bug with rangeweapons
+                }
+            }
+        }
+    }
+    if (item.value) {
+        newItem.data.step = {
+            value: item.value
+        }
+    }
+    if (item.effect) {
+        newItem.data.effect = {
+            value: item.effect
+        }
+    }
+    if (item.cost) {
+        newItem.data.cost = {
+            value: item.cost
+        }
+    }
+    return newItem
+}
+
 
 // TODO: get all suitable compendiums (see DSA utility), rather than specifying single one
 async function addItems(actor, items, tags) {
@@ -367,7 +383,7 @@ async function addItems(actor, items, tags) {
     })
     if (pack) {
         let index = await pack.getIndex()
-        for (let item of items) {
+        for (const item of items) {
             let newItem = {}
             // ignore case and match
             var entry = index.find(i =>
@@ -385,6 +401,16 @@ async function addItems(actor, items, tags) {
             if (entry) {
                 newItem = await pack.getEntry(entry._id)
                 newItem.name = item.displayName
+
+                if (a.value > newItem.data.maxRank.value) {
+                    newItem.data.step = {
+                        value: item.data.maxRank.value
+                    }
+                } else {
+                    newItem.data.step = {
+                        value: a.value
+                    }
+                }
                 if (item.data) {
                     newItem.data = {
                         ...newItem.data,
@@ -400,27 +426,20 @@ async function addItems(actor, items, tags) {
                     source: item.source
                 })
                 // add custom item
-                newItem = {
-                    name: item.displayName,
-                    type: item.type,
-                    img: DSAItem.defaultImages[item.type],
-                    data: {
-                        ...item.data,
-                        ...item.customData,
-                        ...{
-                            description: {
-                                value: `<p>Source:</p><p>${item.source}</p>`
-                            }
-                        }
-                    }
+                try {
+                    await actor.createOwnedItem(newItem)
+                } catch (e) {
+                    console.error(e)
+                    ui.notifications.error(e)
+                    console.log(newItem)
                 }
             }
             // console.log(newItem)
             await actor.createOwnedItem(newItem)
         }
     } else {
-        console.warn("No such compendium: " + compendium)
-        for (let item of items) {
+        console.log(`Optolith to Foundry Importer | No compendium pack with tags ${tags}:`)
+        for (const item of items) {
             importErrors.push({
                 itemName: item.itemName,
                 displayName: item.displayName,
@@ -428,29 +447,12 @@ async function addItems(actor, items, tags) {
                 source: item.source
             })
             // add custom item
-            let newItem = {
-                name: item.displayName,
-                type: item.type,
-                img: DSAItem.defaultImages[item.type],
-                data: {
-                    ...item.data,
-                    ...item.customData,
-                    ...{
-                        description: {
-                            value: `<p>Source:</p><p>${item.source}</p>`
-                        }
-                    },
-                    ...{
-                        weight: {
-                            value: 0 // bug with rangeweapons where weight isn't set
-                        }
-                    }
-                }
-            }
+            let newItem = createCustomItem(item)
             try {
                 await actor.createOwnedItem(newItem)
             } catch (e) {
                 console.error(e)
+                ui.notifications.error(e)
                 console.log(newItem)
             }
         }
@@ -481,14 +483,16 @@ async function importFromJSON(json, options) {
     // var improvedAttibuteMax = sheet.attr.attributeAdjustmentSelected
 
 
-    var spells = await parseSpells(Object.entries(data.spells))
+    var spells = parseSpells(Object.entries(data.spells))
     // console.log(spells)
 
-    var cantrips = await parseCantrips(data.cantrips) // array not object
+    var cantrips = parseCantrips(data.cantrips) // array not object
+ // array not object
 
-    var blessings = await parseBlessings(data.blessings) // array not object
+    var blessings = parseBlessings(data.blessings) // array not object
+ // array not object
 
-    var liturgies = await parseLiturgies(Object.entries(data.liturgies))
+    var liturgies = parseLiturgies(Object.entries(data.liturgies))
 
     const allActivatables = parseActivatables(Object.entries(data.activatable))
 
@@ -498,17 +502,11 @@ async function importFromJSON(json, options) {
 
     var allAbilities = parseAbility(allActivatables.specialAbilities)
 
-
-    // var activatables = parseActivatable(Object.entries(data.activatable))
-    console.log(allDisadvantages)
-
-
     // parse belongings
     var belongings = await parseBelongings(Object.entries(data.belongings.items))
-    // console.log(belongings)
 
     // can use IDs if they don't change
-    var money = [{
+    var money = [{    
             id: "OCRi6UuKBIHCbZuF",
             quantity: data.belongings.purse.d
         },
@@ -669,7 +667,7 @@ async function importFromJSON(json, options) {
     // add spells // TODO: localise, and don't require specific compendium
     await addItems(actor, spells, ["spells"])
 
-    await addItems(actor, cantrips, ["cantrips"])
+    await addItems(actor, cantrips, ["magictricks"])
 
     await addItems(actor, blessings, ["liturgies"])
 
