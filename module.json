@@ -20,6 +20,12 @@
           "lang": "en",
           "name": "English",
           "path": "lang/en.json"
+        },
+        {
+          "lang": "de",
+          "name": "English",
+          "path": "lang/de.json"
         }
+
     ]
   }

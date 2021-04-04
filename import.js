@@ -41,7 +41,7 @@ function parseSpells(data) {
         let sourceData = game.i18n.localize(`SPELL.${spell[0]}.src`)
         let sources = []
         for (let src of sourceData) {
-            sources.push(`${game.i18n.localize(`BOOK.${src.src}`)} <small>(Page: ${src.page}</small>)`)
+            sources.push(`${game.i18n.localize(`BOOK.${src.src}.name`)} <small>(Page: ${src.page}</small>)`)
         }
         item.source = sources.join("<br>")
         items.push(item)
@@ -56,17 +56,17 @@ function parseLiturgies(data) {
         // console.log(spell[0])
         // spell[0] = "SPELL_58"
         let spellID = spell[0]
-        item.displayName = item.itemName = game.i18n.localize(`LITURGY.${spell[0]}.name`)
+        item.displayName = item.itemName = game.i18n.localize(`LITURGICALCHANT.${spell[0]}.name`)
         item.type = "liturgy"
         item.data = {
             talentValue: {
                 value: spell[1]
             }
         }
-        let sourceData = game.i18n.localize(`LITURGY.${spell[0]}.src`)
+        let sourceData = game.i18n.localize(`LITURGICALCHANT.${spell[0]}.src`)
         let sources = []
         for (let src of sourceData) {
-            sources.push(`${game.i18n.localize(`BOOK.${src.src}`)} <small>(Page: ${src.page}</i>)`)
+            sources.push(`${game.i18n.localize(`BOOK.${src.src}.name`)} <small>(Page: ${src.page}</i>)`)
         }
         item.source = sources.join("<br>")
         items.push(item)
@@ -105,7 +105,7 @@ function parseCantrips(data) {
         let sourceData = game.i18n.localize(`CANTRIP.${item}.src`)
         let sources = []
         for (let src of sourceData) {
-            sources.push(`${game.i18n.localize(`BOOK.${src.src}`)} <small>(Page: ${src.page}</i>)`)
+            sources.push(`${game.i18n.localize(`BOOK.${src.src}.name`)} <small>(Page: ${src.page}</i>)`)
         }
         newItem.source = sources.join("<br>")
         items.push(newItem)
@@ -199,8 +199,8 @@ function parseAbility(data) {
                 break
             case "SA_9": // Skill Specialization, need to localize both options
                 itemName = `${baseName} ()`
-                var option1 = game.i18n.localize(`SKILL.${a.sid}`)
-                var option2 = game.i18n.localize(`SPECIALISATION.${a.sid}.${a.sid2}`)
+                var option1 = game.i18n.localize(`SKILL.${a.sid}.name`)
+                var option2 = game.i18n.localize(`SKILL.${a.sid}.applications.${a.sid2}`)
                 displayName = `${baseName} (${option1}: ${option2})`
                 effect = `${option1} FP2`
                 break
@@ -257,7 +257,7 @@ function parseAbility(data) {
             var sources = []
             let sourceData = game.i18n.localize(`${PREFIX}.${a.id}.src`)
             for (let src of sourceData) {
-                sources.push(`${game.i18n.localize(`BOOK.${src.src}`)} <small>(Page: ${src.page}</small>)`)
+                sources.push(`${game.i18n.localize(`BOOK.${src.src}.name`)} <small>(Page: ${src.page}</small>)`)
             }
             var source = sources.join('<br>')
         }
@@ -301,7 +301,7 @@ async function parseBelongings(data) {
             let sourceData = game.i18n.localize(`ITEM.${itemID}.src`)
             let sources = []
             for (let src of sourceData) {
-                sources.push(`${game.i18n.localize(`BOOK.${src.src}`)} <small>(Page: ${src.page}</small>)`)
+                sources.push(`${game.i18n.localize(`BOOK.${src.src}.name`)} <small>(Page: ${src.page}</small>)`)
             }
             newItem.source = sources.join("<br>")
         } else {
@@ -364,6 +364,7 @@ function createCustomItem(item) {
 
 // TODO: get all suitable compendiums (see DSA utility), rather than specifying single one
 async function addItems(actor, items, tags) {
+    // console.log(items)
     let pack = await game.packs.entries.find(function(p) {
         if (p.metadata.system == "dsa5" && p.metadata.tags) {
             // console.log(`searching pack ${p.metadata.label} for ${tags}`)
@@ -402,13 +403,13 @@ async function addItems(actor, items, tags) {
                 newItem = await pack.getEntry(entry._id)
                 newItem.name = item.displayName
 
-                if (a.value > newItem.data.maxRank.value) {
+                if (newItem.data.maxRank && item.value > newItem.data.maxRank.value) {
                     newItem.data.step = {
-                        value: item.data.maxRank.value
+                        value: newItem.data.maxRank.value
                     }
                 } else {
                     newItem.data.step = {
-                        value: a.value
+                        value: item.value
                     }
                 }
                 if (item.data) {
@@ -426,16 +427,14 @@ async function addItems(actor, items, tags) {
                     source: item.source
                 })
                 // add custom item
-                try {
-                    await actor.createOwnedItem(newItem)
-                } catch (e) {
-                    console.error(e)
-                    ui.notifications.error(e)
-                    console.log(newItem)
-                }
+                newItem = createCustomItem(item)
             }
-            // console.log(newItem)
-            await actor.createOwnedItem(newItem)
+            try {
+                await actor.createOwnedItem(newItem)
+            } catch (e) {
+                console.error(e)
+                ui.notifications.error(e)
+            }
         }
     } else {
         console.log(`Optolith to Foundry Importer | No compendium pack with tags ${tags}:`)
@@ -527,11 +526,15 @@ async function importFromJSON(json, options) {
     // setup base character data
     let race = data.r
     if (data.rv) {
-        var species = `${game.i18n.localize(`RACE.${race}`)} (${game.i18n.localize(`RACEVARIANT.${data.rv}`)})`
+        var species = `${game.i18n.localize(`RACE.${race}.name`)} (${game.i18n.localize(`RACEVARIANT.${data.rv}.name`)})`
     } else {
-        var species = game.i18n.localize(`RACE.${race}`)
+        var species = game.i18n.localize(`RACE.${race}.name`)
     }
 
+    let profession = game.i18n.localize(`PROFESSION.${data.p}.name`)
+    if (typeof profession == "object") {
+        profession = game.i18n.localize(`PROFESSION.${data.p}.name.${data.sex}`)
+    }
     var charData = {}
     charData.name = data.name
     charData.type = "character"
@@ -545,17 +548,16 @@ async function importFromJSON(json, options) {
                 value: species
             },
             gender: {
-                // value: game.i18n.localize(`RACE.${data.sex}`) // can't find i18n data for sex
+                value: game.i18n.localize(`SEX.${data.sex}`)
             },
             culture: {
-                value: `${data.c ? game.i18n.localize(`CULTURE.${data.c}`) : ""}`
+                value: `${data.c ? game.i18n.localize(`CULTURE.${data.c}.name`) : ""}`
             },
             career: {
-                value: `${data.p == "P_0" ? data.professionName : game.i18n.localize(`PROFESSION.${data.p}`)}`
-                // value: game.i18n.localize(`PROFESSION.${data.p}`)
+                value: profession
             },
             socialstate: {
-                value: `${data.pers.socialstatus ? game.i18n.localize(`SOCIALSTATUS.${data.pers.socialstatus}`) : ""}`
+                value: `${data.pers.socialstatus ? game.i18n.localize(`SOCIALSTATUS.${data.pers.socialstatus}.name`) : ""}`
             },
             family: {
                 value: data.pers.family
@@ -564,10 +566,10 @@ async function importFromJSON(json, options) {
                 value: data.pers.age
             },
             haircolor: {
-                value: `${data.pers.haircolor ? game.i18n.localize(`HAIRCOLOR.${data.pers.haircolor}`) : ""}` 
+                value: `${data.pers.haircolor ? game.i18n.localize(`HAIRCOLOR.${data.pers.haircolor}.name`) : ""}` 
             },
             eyecolor: {
-                value: `${data.pers.eyecolor ? game.i18n.localize(`EYECOLOR.${data.pers.eyecolor}`) : ""}`
+                value: `${data.pers.eyecolor ? game.i18n.localize(`EYECOLOR.${data.pers.eyecolor}.name`) : ""}`
             },
             height: {
                 value: data.pers.size
@@ -581,7 +583,7 @@ async function importFromJSON(json, options) {
             Home: {
                 value: data.pers.placeofbirth
             },
-            biography: {
+            biography: { //TODO: localise
                 value: `${ data.pers.dateofbirth ? `Birthdate: ${data.pers.dateofbirth}` : ""} ${data.pers.title ? `<br>Title: ${data.pers.title}` : ""} `
                 // value: `Birthdate: ${data.pers.dateofbirth} ${data.pers.title ? `<br>Title: ${data.pers.title}` : ""}`
             },
