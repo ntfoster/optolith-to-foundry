@@ -365,7 +365,7 @@ function createCustomItem(item) {
 // TODO: get all suitable compendiums (see DSA utility), rather than specifying single one
 async function addItems(actor, items, tags) {
     // console.log(items)
-    let pack = await game.packs.entries.find(function(p) {
+    let pack = await game.packs.entries.find(function (p) {
         if (p.metadata.system == "dsa5" && p.metadata.tags) {
             // console.log(`searching pack ${p.metadata.label} for ${tags}`)
             let match = true
@@ -486,10 +486,10 @@ async function importFromJSON(json, options) {
     // console.log(spells)
 
     var cantrips = parseCantrips(data.cantrips) // array not object
- // array not object
+    // array not object
 
     var blessings = parseBlessings(data.blessings) // array not object
- // array not object
+    // array not object
 
     var liturgies = parseLiturgies(Object.entries(data.liturgies))
 
@@ -505,7 +505,7 @@ async function importFromJSON(json, options) {
     var belongings = await parseBelongings(Object.entries(data.belongings.items))
 
     // can use IDs if they don't change
-    var money = [{    
+    var money = [{
             id: "OCRi6UuKBIHCbZuF",
             quantity: data.belongings.purse.d
         },
@@ -531,10 +531,15 @@ async function importFromJSON(json, options) {
         var species = game.i18n.localize(`RACE.${race}.name`)
     }
 
-    let profession = game.i18n.localize(`PROFESSION.${data.p}.name`)
-    if (typeof profession == "object") {
-        profession = game.i18n.localize(`PROFESSION.${data.p}.name.${data.sex}`)
+    if (data.p == "P_0") {
+        var profession = data.professionName
+    } else {
+        var profession = game.i18n.localize(`PROFESSION.${data.p}.name`)
+        if (typeof profession == "object") {
+            profession = game.i18n.localize(`PROFESSION.${data.p}.name.${data.sex}`)
+        }
     }
+
     var charData = {}
     charData.name = data.name
     charData.type = "character"
@@ -566,7 +571,7 @@ async function importFromJSON(json, options) {
                 value: data.pers.age
             },
             haircolor: {
-                value: `${data.pers.haircolor ? game.i18n.localize(`HAIRCOLOR.${data.pers.haircolor}.name`) : ""}` 
+                value: `${data.pers.haircolor ? game.i18n.localize(`HAIRCOLOR.${data.pers.haircolor}.name`) : ""}`
             },
             eyecolor: {
                 value: `${data.pers.eyecolor ? game.i18n.localize(`EYECOLOR.${data.pers.eyecolor}.name`) : ""}`
@@ -674,7 +679,7 @@ async function importFromJSON(json, options) {
     await addItems(actor, liturgies, ["blessings"])
 
     await addItems(actor, belongings, ["equipment"])
-    
+
     importErrors.sort()
     let importErrorsList = []
     for (let error of importErrors) {
@@ -698,7 +703,7 @@ async function importFromJSON(json, options) {
     if (importErrors.length > 0) {
         console.log(`Optolith to Foundry Importer | Items that were not found in compendium:`)
         console.log(importErrors)
-        ui.notifications.warn(`${actor.data.name} ${game.i18n.localize('UI.ImportResultUnrecognised')}`)
+        ui.notifications.warn(`${actor.data.name} ${game.i18n.localize('UI.ImportResultsUnrecognised')}`)
         if (options.addResultsToNotes) {
             actor.update({
                 "data.details.notes.value": actor.data.data.details.notes.value + '<br>' + importErrorsMessage
@@ -741,11 +746,11 @@ function importFromOptolithDialog() {
                     <p>${game.i18n.localize('UI.Results')}:</p>
                     <p>
                         <input type="checkbox" name="popup"/>
-                        <label for="popup">${game.i18n.localize('UI.showPopup')}Popup</label>
+                        <label for="popup">${game.i18n.localize('UI.showPopup')}</label>
                     </p>
                     <p>
                         <input type="checkbox" name="notes" checked />
-                        <label for="notes">${game.i18n.localize('UI.addToNotes')}Add to Character Notes</label>
+                        <label for="notes">${game.i18n.localize('UI.addToNotes')}</label>
                     </p>
 
 
