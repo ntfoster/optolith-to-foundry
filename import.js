@@ -665,8 +665,6 @@ async function importFromJSON(json, options) {
 
     await addItems(actor, allAbilities, ["specialabilities"])
 
-
-    // add spells // TODO: localise, and don't require specific compendium
     await addItems(actor, spells, ["spells"])
 
     await addItems(actor, cantrips, ["magictricks"])
@@ -675,18 +673,16 @@ async function importFromJSON(json, options) {
 
     await addItems(actor, liturgies, ["blessings"])
 
-    // add equipment // TODO: localise
     await addItems(actor, belongings, ["equipment"])
-
-    // TODO: localse
+    
     importErrors.sort()
     let importErrorsList = []
     for (let error of importErrors) {
-        importErrorsList.push(`<tr><td><i>${error.type}</i></td><td><b>${error.displayName}</b></td><td>${error.source}</td></tr>`)
+        importErrorsList.push(`<tr><td><i>${game.i18n.localize(`ITEMTYPE.${error.type}`)}</i></td><td><b>${error.displayName}</b></td><td>${error.source}</td></tr>`)
     }
-    let importErrorsMessage = `<p>The following items could not be found in the compendium and may need to be manually adjusted:</p>
+    let importErrorsMessage = `<p>${game.i18n.localize('UI.ErrorResultIntro')}:</p>
         <table>
-        <tr><th>Type</th><th>Name</th><th>Source</th></tr>
+        <tr><th>${game.i18n.localize('UI.ItemType')}</th><th>${game.i18n.localize('UI.Name')}</th><th>${game.i18n.localize('UI.Source')}</th></tr>
         ${importErrorsList.join('')}
         </table>
         `
@@ -702,20 +698,20 @@ async function importFromJSON(json, options) {
     if (importErrors.length > 0) {
         console.log(`Optolith to Foundry Importer | Items that were not found in compendium:`)
         console.log(importErrors)
-        ui.notifications.warn(`${actor.data.name} imported with some unrecognised items`)
+        ui.notifications.warn(`${actor.data.name} ${game.i18n.localize('UI.ImportResultUnrecognised')}`)
         if (options.addResultsToNotes) {
             actor.update({
                 "data.details.notes.value": actor.data.data.details.notes.value + '<br>' + importErrorsMessage
             })
         }
         if (options.showResultsDialog) {
-            new Dialog({ // TODO: localise
-                title: `Import Results for ${actor.name}`,
+            new Dialog({
+                title: `${game.i18n.localize('UI.ImportResultsTitle')} ${actor.name}`,
                 content: importErrorsMessage,
                 buttons: {
                     ok: {
                         icon: "<i class='fas fa-check'></i>",
-                        label: `OK`
+                        label: `${game.i18n.localize('UI.OK')}`
                     }
                 },
                 default: 'ok'
@@ -724,7 +720,7 @@ async function importFromJSON(json, options) {
             }).render(true)
         }
     } else {
-        ui.notifications.info(`${actor.data.name} imported successfully`)
+        ui.notifications.info(`${actor.data.name} ${game.i18n.localize('UI.ImportResultsSuccess')}`)
     }
 
 }
@@ -734,22 +730,22 @@ async function importFromJSON(json, options) {
 // TODO: localise
 function importFromOptolithDialog() {
     new Dialog({
-        title: `Import Optolith File`,
+        title: `${game.i18n.localize('UI.ImportFile')}`,
         content: `
             <form autocomplete="off" onsubmit="event.preventDefault();">
-                <p class="notes">You may import a hero from a JSON file exported from Optolith.</p>
-                <p class="notes">This operation will create a new Actor.</p>
+                <p class="notes">${game.i18n.localize('UI.ImportDialogIntro')}.</p>
+                <p class="notes">${game.i18n.localize('UI.ImportDialogNewActor')}.</p>
                 <div class="form-group-stacked">
-                    <p><label for="data">Optolith JSON file</label><br>
+                    <p><label for="data">${game.i18n.localize('UI.jsonFile')}</label><br>
                     <input type="file" name="data"/></p>
-                    <p>Results:</p>
+                    <p>${game.i18n.localize('UI.Results')}:</p>
                     <p>
                         <input type="checkbox" name="popup"/>
-                        <label for="popup">Popup</label>
+                        <label for="popup">${game.i18n.localize('UI.showPopup')}Popup</label>
                     </p>
                     <p>
                         <input type="checkbox" name="notes" checked />
-                        <label for="notes">Add to Character Notes</label>
+                        <label for="notes">${game.i18n.localize('UI.addToNotes')}Add to Character Notes</label>
                     </p>
 
 
@@ -759,10 +755,10 @@ function importFromOptolithDialog() {
         buttons: {
             import: {
                 icon: '<i class="fas fa-file-import"></i>',
-                label: "Import",
+                label: `${game.i18n.localize('UI.Import')}`,
                 callback: html => {
                     const form = html.find("form")[0];
-                    if (!form.data.files.length) return ui.notifications.error("You did not upload a data file!")
+                    if (!form.data.files.length) return ui.notifications.error(`${game.i18n.localize('UI.noFileSelected')}`)
                     // TODO: do a better job with optional paramenters!
                     // if (form.popup.checked ) { showResults = true } else { showResultsDialog = false }
                     // var showResultsDialog = form.popup.checked
@@ -777,7 +773,7 @@ function importFromOptolithDialog() {
             },
             no: {
                 icon: '<i class="fas fa-times"></i>',
-                label: "Cancel"
+                label: `${game.i18n.localize('Cancel')}`
             }
         },
         default: "import"
@@ -789,7 +785,7 @@ function importFromOptolithDialog() {
 Hooks.on("renderActorDirectory", (app, html, data) => {
     // TODO: check user has permission to create Actor
     if (game.user.can("create")) {
-        const button = $(`<button title="${game.i18n.localize("UI.Tooltip_Import")}"><i class="fas fa-file-import"></i>${game.i18n.localize("UI.Button_Import")}</button>`);
+        const button = $(`<button title="${game.i18n.localize("UI.ImportFile")}"><i class="fas fa-file-import"></i>${game.i18n.localize("UI.Import")}</button>`);
         html.find(".header-actions").append(button);
         button.click(() => importFromOptolithDialog())
     }
