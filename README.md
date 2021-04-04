@@ -34,6 +34,7 @@ Rules modules are availabe from Ulisses from the [German F-SHOP](https://www.f-s
 
 ## Future plans
 - Support for multiple data modules
+- Automatially set values for Mage/Priest Traditions to set correct AE/KP
 - Import stats for custom items created in Optolith
 - Assign correct category to items not imported from Compendium
 - Better translation
