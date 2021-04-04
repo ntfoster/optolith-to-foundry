@@ -3,7 +3,15 @@ A module for [Foundry Virtual Tabletop](https://foundryvtt.com/) to import The D
 
 This is an early work in progress and there is likely a large number of issues and many feature stills to be implemented. I have not yet tested all possible options in Optolith annd there will be some options that are not supported yet, but the most common ones should hopefully work.
 
-# Usage
+## Installation
+
+You can install this module by using the following URL in the 'Manifest URL' box on the Install Module screen.
+```
+https://github.com/ntfoster/optolith-to-foundry/releases/latest/download/module.json
+```
+Remember to activate the module once you have launched a world (Game Settings tab > Manage Modules).
+
+## Usage
 If you are logged in as a user with permission to create new Actors, there will be an Import button at the top of the Actors Directory tab. This will open a dialog box for you to upload a JSON file from your computer. Once import is complete, the character sheet for the newly imported Actor will pop up.
 
 If you have the Core Rules module installed, (Dis)advantages, abilities, spells, liturgies and items available in that module will be imported from the Compendium, with some exceptions. Items that are not imported will still be added to the character sheet, but without descriptions or rules, etc. These will need to be manually checked and corrected if necessary.
@@ -17,13 +25,13 @@ No matter which options are picked, the list of items which were not imported is
 ## Rules modules ##
 Rules modules are availabe from Ulisses from the [German F-SHOP](https://www.f-shop.de/virtual-tabletops/) and soon to be from the [English F-SHOP](https://www.ulissesf-shop.com/)
 
-# Known issues
+## Known issues
 - Currently only works with one set of data modules (e.g. Core Data) and will likely break if you have more installed.
 - Some items don't have the exact same names in Optolith and Foundry and won't automatically import
 - Some localisation issues
 - There are probably some advantages/disadvantages, special abilities, spells etc. which don't get added properly. Please let me know or submit an issue if you come accross any. A copy of the console log would be very helpful as well (Right click in the console > Save as).
 
-# Future plans
+## Future plans
 - Support for multiple data modules
 - Import avatar image if present in Optolith JSON file
 - Import pets
