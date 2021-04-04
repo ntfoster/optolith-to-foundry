@@ -76,8 +76,6 @@ function parseLiturgies(data) {
 }
 
 function parseBlessings(data) {
-    // const BLESSINGS = await fetch('modules/optolith-to-foundry/data/blessings.json').then((response) => {return response.json() })
-
     var items = []
     for (let item of data) {
         let newItem = {}
