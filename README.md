@@ -3,6 +3,8 @@ A module for [Foundry Virtual Tabletop](https://foundryvtt.com/) to import The D
 
 This is an early work in progress and there is likely a large number of issues and many feature stills to be implemented. I have not yet tested all possible options in Optolith annd there will be some options that are not supported yet, but the most common ones should hopefully work.
 
+Please submit an issue if you find anything which does not work correctly. If you can include a copy of the console log as well that would be very helpful as well (Open console with F12, go to the Console tab, Right click in the console > Save as).
+
 ## Installation
 
 You can install this module by using the following URL in the 'Manifest URL' box on the Install Module screen.
@@ -29,7 +31,6 @@ Rules modules are availabe from Ulisses from the [German F-SHOP](https://www.f-s
 - **Currently only works with one set of data modules** (e.g. Core Data) and will likely break if you have more installed.
 - Some items don't have the exact same names in Optolith and Foundry and won't automatically import
 - Some of the German UI translation is currently machine-generated. **Es tut mir leid, mein Deutsch ist nicht so gut!**
-- There are probably some advantages/disadvantages, special abilities, spells etc. which don't get added properly. Please let me know or submit an issue if you come accross any. A copy of the console log would be very helpful as well (Right click in the console > Save as).
 
 ## Future plans
 - Support for multiple data modules
