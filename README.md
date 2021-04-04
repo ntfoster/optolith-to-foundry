@@ -28,11 +28,14 @@ Rules modules are availabe from Ulisses from the [German F-SHOP](https://www.f-s
 ## Known issues
 - Currently only works with one set of data modules (e.g. Core Data) and will likely break if you have more installed.
 - Some items don't have the exact same names in Optolith and Foundry and won't automatically import
-- Some localisation issues
+- Some of the German UK translation is currently machine-generated. Es tut mir leid, mein Deutsch ist nicht so gut! 
 - There are probably some advantages/disadvantages, special abilities, spells etc. which don't get added properly. Please let me know or submit an issue if you come accross any. A copy of the console log would be very helpful as well (Right click in the console > Save as).
 
 ## Future plans
 - Support for multiple data modules
+- Import stats for custom items created in Optolith
+- Assign correct category to items not imported from Compendium
+- Better translation
 - Import avatar image if present in Optolith JSON file
 - Import pets
 - ...and more
