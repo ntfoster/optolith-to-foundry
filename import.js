@@ -185,7 +185,7 @@ function parseAbility(data) {
                 var source = "Custom Ability"
                 var cost = a.cost
                 break
-            case "DISADV_3": // Bound to Artefact
+            case "DISADV_3": // Bound to Artifact
                 itemName = baseName + ' ()'
                 displayName = baseName
                 break
@@ -359,6 +359,75 @@ function createCustomItem(item) {
     return newItem
 }
 
+async function addFromLibrary(actor, items, index, types) {
+    if(!types) {
+		var types = []
+	}
+    for (let item of items) {
+        if (item.itemName == "Knife") {
+            if (types.includes(item.type)) {
+                console.warn(`tags include Knife type`);
+                let knifeentry
+                if (knifeentry = index.find(i => i.document.data.name.localeCompare(item.displayName, undefined, {
+                    sensitivity: 'accent'
+                }) === 0)) {
+                    console.warn(`and found knife in index`);
+                } else{
+                    console.warn(`But couldn't find Knife in index`);
+                }
+            } else {
+                console.warn(`tags don't include Knife type`);
+            }
+        }
+        let entry = index.find(i => // case-insensitive match
+            i.document.data.name.localeCompare(item.displayName, undefined, {
+                sensitivity: 'accent'
+            }) === 0 && (i.document.data.type == item.type || types.includes(item.type))
+        )
+        if (entry) {
+            // console.log(`Found entry: ${entry.document.data.name}`)
+        } else if (entry = index.find(i => // case-insensitive match
+            i.document.data.name.localeCompare(item.itemName, undefined, {
+                sensitivity: 'accent'
+            }) === 0 && (i.document.data.type == item.type || types.includes(item.type))
+        )) {
+            // console.log(`Found entry by itemName: ${entry.document.data.name}`);
+        }
+        if (entry) {
+            let newData = JSON.parse(JSON.stringify(entry.document.data)) // deep copy, not shallow
+            newData.name = item.displayName
+            if (newData.data.maxRank && item.value > newData.data.maxRank.value) {
+                newData.data.step = {
+                    value: newData.data.maxRank.value
+                }
+            } else {
+                newData.data.step = {
+                    value: item.value
+                }
+            }
+            if (item.data) {
+                newData.data = {
+                    ...newData.data,
+                    ...item.data
+                }
+            }
+
+            await actor.createOwnedItem(newData)
+
+        } else {
+            console.log(`Couldn't find item: ${item.type} - ${item.itemName}`)
+            importErrors.push({
+                itemName: item.itemName,
+                displayName: item.displayName,
+                type: item.type,
+                source: item.source
+            })
+            // add custom item
+            let newItem = createCustomItem(item)
+            await actor.createOwnedItem(newItem)
+        }
+    }
+}
 
 // TODO: get all suitable compendiums (see DSA utility), rather than specifying single one
 async function addItems(actor, items, tags) {
@@ -456,6 +525,10 @@ async function addItems(actor, items, tags) {
     }
 }
 async function importFromJSON(json, options) {
+
+    await game.dsa5.itemLibrary.buildEquipmentIndex()
+    const index = game.dsa5.itemLibrary.equipmentIndex
+
     let actor = null
     importErrors = []
     const data = JSON.parse(json)
@@ -664,19 +737,22 @@ async function importFromJSON(json, options) {
     }
 
     let allVantages = allAdvantages.concat(allDisadvantages)
-    await addItems(actor, allVantages, ["advantages", "disadvantages"])
 
-    await addItems(actor, allAbilities, ["specialabilities"])
+    await addFromLibrary(actor, allVantages, index)
+    await addFromLibrary(actor, allAbilities, index)    
+    await addFromLibrary(actor, spells, index, ["spell", "ritual"])
+    await addFromLibrary(actor, cantrips, index)
+    await addFromLibrary(actor, blessings, index)
+    await addFromLibrary(actor, liturgies, index, ["liturgy", "ceremony"])
+    await addFromLibrary(actor, belongings, index, ["equipment"])
 
-    await addItems(actor, spells, ["spells"])
-
-    await addItems(actor, cantrips, ["magictricks"])
-
-    await addItems(actor, blessings, ["liturgies"])
-
-    await addItems(actor, liturgies, ["blessings"])
-
-    await addItems(actor, belongings, ["equipment"])
+    // await addItems(actor, allVantages, ["advantages, "disadvantages"])
+    // await addItems(actor, allAbilities, ["specialabilities"])
+    // await addItems(actor, spells, ["spells"])
+    // await addItems(actor, cantrips, ["magictricks"])
+    // await addItems(actor, blessings, ["liturgies"])
+    // await addItems(actor, liturgies, ["blessings"])
+    // await addItems(actor, belongings, ["equipment"])
 
     importErrors.sort()
     let importErrorsList = []
@@ -699,7 +775,7 @@ async function importFromJSON(json, options) {
 
 
     if (importErrors.length > 0) {
-        console.log(`Optolith to Foundry Importer | Items that were not found in compendium:`)
+        console.log(`Optolith to Foundry Importer | Items that were not found in Library:`)
         console.log(importErrors)
         ui.notifications.warn(`${actor.data.name} ${game.i18n.localize('UI.ImportResultsUnrecognised')}`)
         if (options.addResultsToNotes) {
