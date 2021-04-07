@@ -610,7 +610,7 @@
             }]
         },
         "DISADV_3": {
-            "name": "Bound to Artefact",
+            "name": "Bound to Artifact",
             "src": [{
                 "src": "US25001E",
                 "page": 171
