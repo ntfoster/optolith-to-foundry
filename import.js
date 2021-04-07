@@ -228,10 +228,10 @@ function parseAbility(data) {
                     } else {
                         switch (a.sid.substring(0, a.sid.indexOf('_'))) {
                             case "TAL":
-                                var option1 = game.i18n.localize(`SKILL.${a.sid}`)
+                                var option1 = game.i18n.localize(`SKILL.${a.sid}.name`)
                                 break
                             case "CT":
-                                var option1 = game.i18n.localize(`COMBATSKILL.${a.sid}`)
+                                var option1 = game.i18n.localize(`COMBATTECHNIQUE.${a.sid}.name`)
                                 break
                             case "SPELL":
                                 var option1 = game.i18n.localize(`SPELL.${a.sid}.name`)
