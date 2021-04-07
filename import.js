@@ -364,21 +364,6 @@ async function addFromLibrary(actor, items, index, types) {
 		var types = []
 	}
     for (let item of items) {
-        if (item.itemName == "Knife") {
-            if (types.includes(item.type)) {
-                console.warn(`tags include Knife type`);
-                let knifeentry
-                if (knifeentry = index.find(i => i.document.data.name.localeCompare(item.displayName, undefined, {
-                    sensitivity: 'accent'
-                }) === 0)) {
-                    console.warn(`and found knife in index`);
-                } else{
-                    console.warn(`But couldn't find Knife in index`);
-                }
-            } else {
-                console.warn(`tags don't include Knife type`);
-            }
-        }
         let entry = index.find(i => // case-insensitive match
             i.document.data.name.localeCompare(item.displayName, undefined, {
                 sensitivity: 'accent'
@@ -415,7 +400,7 @@ async function addFromLibrary(actor, items, index, types) {
             await actor.createOwnedItem(newData)
 
         } else {
-            console.log(`Couldn't find item: ${item.type} - ${item.itemName}`)
+            // console.log(`Couldn't find item: ${item.type} - ${item.itemName}`)
             importErrors.push({
                 itemName: item.itemName,
                 displayName: item.displayName,
