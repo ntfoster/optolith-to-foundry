@@ -28996,5 +28996,163 @@
                 "page": 157
             }]
         }
+    },
+    "COMBATTECHNIQUE": {
+        "CT_1": {
+            "name": "Armbrüste",
+            "src": [{
+                "src": "US25001",
+                "page": 245
+            }]
+        },
+        "CT_2": {
+            "name": "Bögen",
+            "src": [{
+                "src": "US25001",
+                "page": 245
+            }]
+        },
+        "CT_3": {
+            "name": "Dolche",
+            "src": [{
+                "src": "US25001",
+                "page": 235
+            }]
+        },
+        "CT_4": {
+            "name": "Fechtwaffen",
+            "src": [{
+                "src": "US25001",
+                "page": 235
+            }]
+        },
+        "CT_5": {
+            "name": "Hiebwaffen",
+            "src": [{
+                "src": "US25001",
+                "page": 235
+            }]
+        },
+        "CT_6": {
+            "name": "Kettenwaffen",
+            "src": [{
+                "src": "US25001",
+                "page": 235
+            }]
+        },
+        "CT_7": {
+            "name": "Lanzen",
+            "src": [{
+                "src": "US25001",
+                "page": 235
+            }]
+        },
+        "CT_8": {
+            "name": "Peitschen",
+            "src": [{
+                "src": "US25003",
+                "page": 227
+            }, {
+                "src": "US25208",
+                "page": 122
+            }, {
+                "src": "US25213",
+                "page": 232
+            }]
+        },
+        "CT_9": {
+            "name": "Raufen",
+            "src": [{
+                "src": "US25001",
+                "page": 235
+            }]
+        },
+        "CT_10": {
+            "name": "Schilde",
+            "src": [{
+                "src": "US25001",
+                "page": 236
+            }]
+        },
+        "CT_11": {
+            "name": "Schleudern",
+            "src": [{
+                "src": "US25003",
+                "page": 227
+            }, {
+                "src": "US25208",
+                "page": 122
+            }]
+        },
+        "CT_12": {
+            "name": "Schwerter",
+            "src": [{
+                "src": "US25001",
+                "page": 236
+            }]
+        },
+        "CT_13": {
+            "name": "Stangenwaffen",
+            "src": [{
+                "src": "US25001",
+                "page": 236
+            }]
+        },
+        "CT_14": {
+            "name": "Wurfwaffen",
+            "src": [{
+                "src": "US25001",
+                "page": 245
+            }]
+        },
+        "CT_15": {
+            "name": "Zweihandhiebwaffen",
+            "src": [{
+                "src": "US25001",
+                "page": 236
+            }]
+        },
+        "CT_16": {
+            "name": "Zweihandschwerter",
+            "src": [{
+                "src": "US25001",
+                "page": 236
+            }]
+        },
+        "CT_17": {
+            "name": "Feuerspeien",
+            "src": [{
+                "src": "US25003",
+                "page": 105
+            }]
+        },
+        "CT_18": {
+            "name": "Blasrohre",
+            "src": [{
+                "src": "US25208",
+                "page": 121
+            }]
+        },
+        "CT_19": {
+            "name": "Diskusse",
+            "src": [{
+                "src": "US25208",
+                "page": 122
+            }]
+        },
+        "CT_20": {
+            "name": "Fächer",
+            "src": [{
+                "src": "US25216",
+                "page": 123
+            }]
+        },
+        "CT_21": {
+            "name": "Spießwaffen",
+            "src": [{
+                "src": "US25216",
+                "page": 123
+            }]
+        }
     }
 }

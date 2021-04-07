@@ -33,7 +33,7 @@
     },
     "UI": {
         "Button_Import": "Import from Optolith",
-        "ErrorResultIntro": "The following items could not be found in the compendium and may need to be manually adjusted",
+        "ErrorResultIntro": "The following items could not be found in the Library and may need to be manually adjusted",
         "Import": "Import",
         "ImportDialogIntro": "You may import a hero from a JSON file exported from Optolith",
         "ImportDialogNewActor": "This operation will create a new Actor",
@@ -15879,6 +15879,147 @@
             "src": [{
                 "src": "US25001E",
                 "page": 216
+            }]
+        }
+    },
+    "COMBATTECHNIQUE": {
+        "CT_1": {
+            "name": "Crossbows",
+            "src": [{
+                "src": "US25001E",
+                "page": 245
+            }]
+        },
+        "CT_2": {
+            "name": "Bows",
+            "src": [{
+                "src": "US25001E",
+                "page": 245
+            }]
+        },
+        "CT_3": {
+            "name": "Daggers",
+            "src": [{
+                "src": "US25001E",
+                "page": 235
+            }]
+        },
+        "CT_4": {
+            "name": "Fencing Weapons",
+            "src": [{
+                "src": "US25001E",
+                "page": 235
+            }]
+        },
+        "CT_5": {
+            "name": "Impact Weapons",
+            "src": [{
+                "src": "US25001E",
+                "page": 235
+            }]
+        },
+        "CT_6": {
+            "name": "Chain Weapons",
+            "src": [{
+                "src": "US25001E",
+                "page": 235
+            }]
+        },
+        "CT_7": {
+            "name": "Lances",
+            "src": [{
+                "src": "US25001E",
+                "page": 235
+            }]
+        },
+        "CT_8": {
+            "name": "Whips",
+            "src": [{
+                "src": "US25003E",
+                "page": 227
+            }, {
+                "src": "US25208E",
+                "page": 122
+            }]
+        },
+        "CT_9": {
+            "name": "Brawling",
+            "src": [{
+                "src": "US25001E",
+                "page": 235
+            }]
+        },
+        "CT_10": {
+            "name": "Shields",
+            "src": [{
+                "src": "US25001E",
+                "page": 236
+            }]
+        },
+        "CT_11": {
+            "name": "Slings",
+            "src": [{
+                "src": "US25003E",
+                "page": 227
+            }, {
+                "src": "US25208E",
+                "page": 122
+            }]
+        },
+        "CT_12": {
+            "name": "Swords",
+            "src": [{
+                "src": "US25001E",
+                "page": 236
+            }]
+        },
+        "CT_13": {
+            "name": "Polearms",
+            "src": [{
+                "src": "US25001E",
+                "page": 235
+            }]
+        },
+        "CT_14": {
+            "name": "Thrown Weapons",
+            "src": [{
+                "src": "US25001E",
+                "page": 245
+            }]
+        },
+        "CT_15": {
+            "name": "Two-Handed Impact Weapons",
+            "src": [{
+                "src": "US25001E",
+                "page": 236
+            }]
+        },
+        "CT_16": {
+            "name": "Two-Handed Swords",
+            "src": [{
+                "src": "US25001E",
+                "page": 236
+            }]
+        },
+        "CT_17": {
+            "name": "Spitting Fire",
+            "src": [{
+                "src": "US25003E",
+                "page": 106
+            }]
+        },
+        "CT_18": {
+            "name": "Blowguns",
+            "src": [{
+                "src": "US25208E",
+                "page": 122
+            }]
+        },
+        "CT_19": {
+            "name": "Discuses",
+            "src": [{
+                "src": "US25208E",
+                "page": 122
             }]
         }
     }
