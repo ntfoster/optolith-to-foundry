@@ -38,7 +38,7 @@ export const RACE_MAP = {
         "mov": 6
     }
 }
-export const SKILL_MAP = {
+export const en_SKILL_MAP = {
     "TAL_1": "kqSc1SAwmEZ54Elu",
     "TAL_2": "lXs5vPJA2qHvduHA",
     "TAL_3": "oZzIUXv6pKXxDMzZ",
@@ -99,7 +99,7 @@ export const SKILL_MAP = {
     "TAL_58": "o5l2zhU8kCTblpok",
     "TAL_59": "xFE09JznspOOYSdP",
 }
-export const COMBAT_SKILL_MAP = {
+export const en_COMBAT_SKILL_MAP = {
     "CT_1": "Xwry9dNmX42OK3Yp",
     "CT_2": "MGSk6e8AvEyRwzFn",
     "CT_3": "7tnJGZTTGzgCRyJv",
@@ -119,6 +119,93 @@ export const COMBAT_SKILL_MAP = {
     "CT_17": "VShVzpSpiVtmHNzP",
     "CT_18": "VbnRaCjujqKjRWiE",
     "CT_19": "3PneHQX1WSmCmCkQ"
+}
+
+export const de_SKILL_MAP = {
+    "TAL_1": "9yQfLiiiwWK3X0Yi",
+    "TAL_2": "kdpgpVDve9tOPQLt",
+    "TAL_3": "ncCgYQaPitwJhhxc",
+    "TAL_4": "ojjJQV9B61LRuA6f",
+    "TAL_5": "nI4pId1gxnI35cgA",
+    "TAL_6": "39PnFBP6bnQb7qW3",
+    "TAL_7": "LUAgFT2XOwZtFnml",
+    "TAL_8": "cLqMBQIHMHCKQRqR",
+    "TAL_9": "ZSmFAGPpEITCjbdd",
+    "TAL_10": "UVmFACQ956mLnT5Y",
+    "TAL_11": "tMZqrXu7m5Cvfn8g",
+    "TAL_12": "ilUCuBqCnqPHf9B7",
+    "TAL_13": "J8i425orPxFHHZ9a",
+    "TAL_14": "Z7JedSm4zKOo5WHP",
+    "TAL_15": "AJllkCyiX30nzVnk",
+    "TAL_16": "pcsBPE5K41J5L7i4",
+    "TAL_17": "lfoKBEjY4mxVnbUa",
+    "TAL_18": "smaKH8wC8rEqFG1d",
+    "TAL_19": "kXs5UX3bJxsvqpl7",
+    "TAL_20": "JmQyPfRV4YnqK2aU",
+    "TAL_21": "5339y6DnymCmllJG",
+    "TAL_22": "NOTj24sDMs4VYm3T",
+    "TAL_23": "Zok3chhH9hPD4XfF",
+    "TAL_24": "Cy0k3isSaoXWWJVg",
+    "TAL_25": "dCUbQO6CA2fF6d0q",
+    "TAL_26": "cFcqUwcf0pBwnP5Y",
+    "TAL_27": "1YFSP0lrP7zk5grd",
+    "TAL_28": "pMet3u46HiY6bEEV",
+    "TAL_29": "5O6AptyD3GOFsLyk",
+    "TAL_30": "78J9ARNFtl58miSe",
+    "TAL_31": "zpPIu6ThcF9KIy2J",
+    "TAL_32": "Qk9dc2VbQHESEbdh",
+    "TAL_33": "Jfj8o4CVjHz0OWDe",
+    "TAL_34": "YqNj3iWSmhwdU4kk",
+    "TAL_35": "PDQej1h9hgNsYJi0",
+    "TAL_36": "gkEX39BpGjJO3kJP",
+    "TAL_37": "Nhg4qKM8WYFN36sY",
+    "TAL_38": "GQbc30wJT1SV5psW",
+    "TAL_39": "HzrHuCbaj1puaUaf",
+    "TAL_40": "fCUW1oYxGo5o5IzQ",
+    "TAL_41": "prrLYkGGxuNZx1OI",
+    "TAL_42": "AOyeDyj60q6JCrtg",
+    "TAL_43": "iMinlqOKzjRpnQFU",
+    "TAL_44": "yZn9YGe3Lmcr5ZRf",
+    "TAL_45": "fStvh7COaC0L8FBX",
+    "TAL_46": "QPOtS2HJ5LUKCiH7",
+    "TAL_47": "lHUGcHDzDJO6zXG9",
+    "TAL_48": "8PRuuzLbF1dvMSa9",
+    "TAL_49": "vWIJNyuVYecWVIWb",
+    "TAL_50": "xUFEdYnjervX5KiI",
+    "TAL_51": "0KmuVEMBkkjAveVx",
+    "TAL_52": "jc7Fl8T6vXkj0EuZ",
+    "TAL_53": "GzW8VUFyRyWmezVI",
+    "TAL_54": "rmG6vFqmZHL31tAx",
+    "TAL_55": "ElCHaM3oHwQpIfMb",
+    "TAL_56": "tmDNaKVTOgl9ujK6",
+    "TAL_57": "mkckdTppF1Sklkwn",
+    "TAL_58": "4yisffyLQnCD4syy",
+    "TAL_59": "3QoBdbJviOzr18T1"
+
+}
+
+export const de_COMBAT_SKILL_MAP = {
+    "CT_1": "BdUYXhjh8Kv1OVCk",
+    "CT_2": "wHheNOu1j6Cg94lH",
+    "CT_3": "MZesvTqh0ASWasYD",
+    "CT_4": "sZ5jI0HytQH5vmTM",
+    "CT_5": "ZlOUK4A5eA11rZf0",
+    "CT_6": "XiNmaIlP35qtAL4I",
+    "CT_7": "ftFVFXrP41K4miaE",
+    "CT_8": "kdcO1c2CF1ufserH",
+    "CT_9": "l8EYKulQ4qkhWusE",
+    "CT_10": "rSy63jwAIcnZROM1",
+    "CT_11": "njWCO30OhmGoH9kg",
+    "CT_12": "q52DmyGtjcaHh4Lf",
+    "CT_21": "Cmxq54bSqwhnt8hV",
+    "CT_13": "zyXa1wv1MWBSedwD",
+    "CT_14": "dwak5lKWfYWYpS1h",
+    "CT_15": "qNeJAYyJpWMbKQDh",
+    "CT_16": "BVnoAVuci58aoSB0",
+    "CT_17": "L8QaNpLxfTVCoUxL",
+    "CT_18": "jdhb8fSix0BUjVIq",
+    "CT_19": "vQ87FlqaTsQKDDtK",
+    "CT_20": "Ll8btHvJKJHsLaPi"
 }
 export const ABILITY_MAP = {
     "SA_0": 1,

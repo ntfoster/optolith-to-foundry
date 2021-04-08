@@ -1,8 +1,10 @@
 import {
     ATTRIBUTE_MAP,
     RACE_MAP,
-    SKILL_MAP,
-    COMBAT_SKILL_MAP
+    en_SKILL_MAP,
+    en_COMBAT_SKILL_MAP,
+    de_SKILL_MAP,
+    de_COMBAT_SKILL_MAP
 } from "./data/maps.js"
 import DSAItem from "../../systems/dsa5/modules/item/item-dsa5.js"
 
@@ -697,16 +699,28 @@ async function importFromJSON(json, options) {
 
     // update skills using using IDs in SKILL_MAP
     for (let s of Object.entries(data.talents)) {
+        switch (game.i18n.lang) {
+            case "en":
+                var id = en_SKILL_MAP[s[0]]
+            case "de":
+                var id = de_SKILL_MAP[s[0]]
+        }
         const update = {
-            _id: SKILL_MAP[s[0]],
+            _id: id,
             'data.talentValue.value': s[1]
         }
         actor.updateEmbeddedEntity("OwnedItem", update);
     }
     // update combat techniques using IDs in COMBAT_SKILL_MAP
     for (let s of Object.entries(data.ct)) {
+        switch (game.i18n.lang) {
+            case "en":
+                var id = en_COMBAT_SKILL_MAP[s[0]]
+            case "de":
+                var id = de_COMBAT_SKILL_MAP[s[0]]
+        }
         const update = {
-            _id: COMBAT_SKILL_MAP[s[0]],
+            _id: id,
             'data.talentValue.value': s[1]
         }
         actor.updateEmbeddedEntity("OwnedItem", update);
