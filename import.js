@@ -699,11 +699,14 @@ async function importFromJSON(json, options) {
 
     // update skills using using IDs in SKILL_MAP
     for (let s of Object.entries(data.talents)) {
-        switch (game.i18n.lang) {
+        let locale = game.i18n.lang
+        switch (locale) {
             case "en":
                 var id = en_SKILL_MAP[s[0]]
+                break
             case "de":
                 var id = de_SKILL_MAP[s[0]]
+                break
         }
         const update = {
             _id: id,
@@ -716,8 +719,10 @@ async function importFromJSON(json, options) {
         switch (game.i18n.lang) {
             case "en":
                 var id = en_COMBAT_SKILL_MAP[s[0]]
+                break
             case "de":
                 var id = de_COMBAT_SKILL_MAP[s[0]]
+                break
         }
         const update = {
             _id: id,
