@@ -19,6 +19,7 @@ Remember to activate the module once you have launched a world (Game Settings ta
 If you are logged in as a user with permission to create new Actors, there will be an Import button at the top of the Actors Directory tab. This will open a dialog box for you to upload a JSON file from your computer. Once import is complete, the character sheet for the newly imported Actor will pop up.
 
 ![Import button in Actor Directory](actor-import-button.png "Import button in Actor Directory")
+![Import dialog](import-dialog.png "Import dialog")
 
 Any items (Advantages, Disadvantages, Special Abilities, Spells, Liturgies, and Equipment) that exist in the Library should be imported from there. There will be some exceptions, such as where Optolith and Foundry have slightly different names for the same thing.
 
