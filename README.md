@@ -42,6 +42,7 @@ Rules modules are availabe from Ulisses from the [German F-SHOP](https://www.f-s
 - Some items (e.g. Spell Enhancements) haven't been added yet
 - If you have more than one version of the same item (e.g. in an offical rules module and a custom module) then only the first one to be found will be added.
 - Some items don't have the exact same names in Optolith and Foundry and won't automatically import
+- AP Spent is not calculated. You will have to set this manually.
 - Some of the German UI translation is currently machine-generated. **Es tut mir leid, mein Deutsch ist nicht so gut!**
 
 ## Future plans
@@ -51,4 +52,4 @@ Rules modules are availabe from Ulisses from the [German F-SHOP](https://www.f-s
 - Import avatar image if present in Optolith JSON file
 - Import pets/familiars
 - Better translation
-- ...and more
+- Calculate AP Spent correctly
