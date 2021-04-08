@@ -29,8 +29,7 @@ Any items that cannot be imported from the Library will instead have a blank ite
 The list of items which were not imported from the Library can be displayed with the following options:
 - **Show Popup**: Display the list in a dialog box once the character sheet has been created. Note: this currently sometimes appears *underneath* the character sheet
 
- E.g.
- ![Results dialog](results-dialog.png "Results dialog")
+  E.g. ![Results dialog](results-dialog.png "Results dialog")
 
 - **Add to Notes**: Adds the list to the Notes section of the character sheet.
 
