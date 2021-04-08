@@ -18,12 +18,15 @@ Remember to activate the module once you have launched a world (Game Settings ta
 ## Usage
 If you are logged in as a user with permission to create new Actors, there will be an Import button at the top of the Actors Directory tab. This will open a dialog box for you to upload a JSON file from your computer. Once import is complete, the character sheet for the newly imported Actor will pop up.
 
+![Import button in Actor Directory](actor-import-button.png "Import button in Actor Directory")
+
 Any items (Advantages, Disadvantages, Special Abilities, Spells, Liturgies, and Equipment) that exist in the Library should be imported from there. There will be some exceptions, such as where Optolith and Foundry have slightly different names for the same thing.
 
 Any items that cannot be imported from the Library will instead have a blank item added with the correct name and source book(s) but no other details. These will be noted in the results and will need to be configured manually.
 
 The list of items which were not imported from the Library can be displayed with the following options:
 - **Show Popup**: Display the list in a dialog box once the character sheet has been created. Note: this currently sometimes appears *underneath* the character sheet
+E.g. ![Results dialog](actor-import-button.png "Results dialog")
 - **Add to Notes**: Adds the list to the Notes section of the character sheet.
 
 Note: No matter which options are picked, the list of items which were not imported is output to the console (F12) as an array. Look for the following line followed by an array of items: `Optolith to Foundry Importer | Items that were not found in Library:`
