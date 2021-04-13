@@ -712,7 +712,7 @@ async function importFromJSON(json, options) {
             _id: id,
             'data.talentValue.value': s[1]
         }
-        actor.updateEmbeddedEntity("OwnedItem", update);
+        await actor.updateEmbeddedEntity("OwnedItem", update);
     }
     // update combat techniques using IDs in COMBAT_SKILL_MAP
     for (let s of Object.entries(data.ct)) {
@@ -728,7 +728,7 @@ async function importFromJSON(json, options) {
             _id: id,
             'data.talentValue.value': s[1]
         }
-        actor.updateEmbeddedEntity("OwnedItem", update);
+        await actor.updateEmbeddedEntity("OwnedItem", update);
     }
 
     // update money by ID
