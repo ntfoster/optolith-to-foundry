@@ -20,7 +20,7 @@ function parseSkills(data, prefix) {
     data.forEach(s => {
         // console.log(`${skillMap[s[0]]}: ${s[1]}`)
         var item = {}
-        item["name"] = game.i18n.localize(`${prefix}.${s[0]}`)
+        item["name"] = game.i18n.localize(`${prefix}.${s[0]}.name`)
         item["data"] = {
             "talentValue": {
                 "value": s[1]
@@ -559,6 +559,8 @@ async function importFromJSON(json, options) {
     }
     // var improvedAttibuteMax = sheet.attr.attributeAdjustmentSelected
 
+    var skills = parseSkills(Object.entries(data.talents),"SKILL")
+    var combatSkills = parseSkills(Object.entries(data.ct),"COMBATTECHNIQUE")
 
     var spells = parseSpells(Object.entries(data.spells))
     // console.log(spells)
@@ -705,51 +707,62 @@ async function importFromJSON(json, options) {
 
     /* 
     * Use the following if skill IDs change
-    * 
+    */
     // update skills by finding skill name
     for (let s of skills) {
-        let item = actor.data.items.find(i => i.name === s.name)
+        let item = actor.data.items.find(i => i.name === s.name && i.type == "skill")
         const update = {
             _id: item._id,
             'data.talentValue.value': s.data.talentValue.value
         }
-        const updated = actor.updateEmbeddedEntity("OwnedItem", update);
+        await actor.updateOwnedItem(update);
     }
-    */
 
-    // update skills using using IDs in SKILL_MAP
-    for (let s of Object.entries(data.talents)) {
-        let locale = game.i18n.lang
-        switch (locale) {
-            case "en":
-                var id = en_SKILL_MAP[s[0]]
-                break
-            case "de":
-                var id = de_SKILL_MAP[s[0]]
-                break
-        }
+    for (let s of combatSkills) {
+        let item = actor.data.items.find(i => i.name === s.name && i.type == "combatskill")
         const update = {
-            _id: id,
-            'data.talentValue.value': s[1]
+            _id: item._id,
+            'data.talentValue.value': s.data.talentValue.value
         }
-        actor.updateEmbeddedEntity("OwnedItem", update);
+        console.log(`Updating: ${s.name}`);
+        await actor.updateOwnedItem(update);
     }
-    // update combat techniques using IDs in COMBAT_SKILL_MAP
-    for (let s of Object.entries(data.ct)) {
-        switch (game.i18n.lang) {
-            case "en":
-                var id = en_COMBAT_SKILL_MAP[s[0]]
-                break
-            case "de":
-                var id = de_COMBAT_SKILL_MAP[s[0]]
-                break
-        }
-        const update = {
-            _id: id,
-            'data.talentValue.value': s[1]
-        }
-        actor.updateEmbeddedEntity("OwnedItem", update);
-    }
+
+    // // update skills using using IDs in SKILL_MAP
+    // for (let s of Object.entries(data.talents)) {
+    //     let locale = game.i18n.lang
+    //     switch (locale) {
+    //         case "en":
+    //             var id = en_SKILL_MAP[s[0]]
+    //             break
+    //         case "de":
+    //             var id = de_SKILL_MAP[s[0]]
+    //             break
+    //     }
+    //     const update = {
+    //         _id: id,
+    //         'data.talentValue.value': s[1]
+    //     }
+    //     // actor.updateEmbeddedEntity("OwnedItem", update);
+    //     await actor.updateOwnedItem(update)
+    // }
+    // // update combat techniques using IDs in COMBAT_SKILL_MAP
+    // for (let s of Object.entries(data.ct)) {
+    //     switch (game.i18n.lang) {
+    //         case "en":
+    //             var id = en_COMBAT_SKILL_MAP[s[0]]
+    //             break
+    //         case "de":
+    //             var id = de_COMBAT_SKILL_MAP[s[0]]
+    //             break
+    //     }
+    //     const update = {
+    //         _id: id,
+    //         'data.talentValue.value': s[1]
+    //     }
+    //     // actor.updateEmbeddedEntity("OwnedItem", update);
+    //     await actor.updateOwnedItem(update)
+    // }
 
     // update money by ID
     for (let coin of money) {
@@ -757,7 +770,7 @@ async function importFromJSON(json, options) {
             _id: coin.id,
             'data.quantity.value': (coin.quantity ? coin.quantity : 0)
         }
-        actor.updateEmbeddedEntity("OwnedItem", update);
+        await actor.updateOwnedItem(update);
     }
 
     let allVantages = allAdvantages.concat(allDisadvantages)
