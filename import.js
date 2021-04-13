@@ -6,6 +6,10 @@ import {
     de_SKILL_MAP,
     de_COMBAT_SKILL_MAP
 } from "./data/maps.js"
+import {
+    SPELL_ENHANCEMENT_MAP,
+    LITURGY_ENHANCEMENT_MAP
+} from "./data/enhancements.js"
 import DSAItem from "../../systems/dsa5/modules/item/item-dsa5.js"
 
 var importErrors
@@ -213,14 +217,30 @@ function parseAbility(data) {
                 itemName = `${baseName} (${option1})`
                 displayName = `${baseName} (${option1}: ${a.sid2})`
                 break
-                // case "DISADV_34":
-                // case "SA_12": // Terrain Knowledge 
-                // case "SA_28": // Writing
-                // case "SA_87": // Aspect Knowledge // These have pre-defined options that Foundry doesn't have pre-made items for
-                // itemName = `${itemName} ()`
-                // var option1 = game.i18n.localize(`${a.id}.options.${a.sid - 1}`)
-                // displayName = `${baseName} (${option1})`
-                // break
+            case "SA_414": {// Spell Enhancement
+                a.type = "spellextension"
+                let enhancement = game.i18n.localize(`SPELLENHANCEMENT.${a.sid}.name`)
+                let spell = game.i18n.localize(`SPELL.${SPELL_ENHANCEMENT_MAP[a.sid]}.name`)
+                displayName = `${spell} - ${enhancement}`
+                itemName = `${spell} - ${enhancement}`
+                ability.data = {
+                    source: spell,
+                    category: "spell"
+                }
+                break
+            }
+            case "SA_663": {// Liturgy Enhancement
+                a.type = "spellextension"
+                let enhancement = game.i18n.localize(`LITURGICALCHANTENHANCEMENT.${a.sid}.name`)
+                let spell = game.i18n.localize(`LITURGICALCHANT.${LITURGY_ENHANCEMENT_MAP[a.sid]}.name`)
+                displayName = `${spell} - ${enhancement}`
+                itemName = `${spell} - ${enhancement}`
+                ability.data = {
+                    source: spell,
+                    category: "liturgy"
+                }
+                break
+            }
             default:
                 if (a.sid) {
                     itemName = baseName + ' ()'

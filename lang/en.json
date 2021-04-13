@@ -51,6 +51,7297 @@
         "noFileSelected": "You did not select a file",
         "showPopup": "Show Popup"
     },
+    "SPELLENHANCEMENT": {
+        "1": {
+            "name": "Stronger Shield",
+            "src": {
+                "src": "US25004E",
+                "page": 114
+            }
+        },
+        "2": {
+            "name": "Wider Radius",
+            "src": {
+                "src": "US25004E",
+                "page": 114
+            }
+        },
+        "3": {
+            "name": "Affect Another",
+            "src": {
+                "src": "US25004E",
+                "page": 114
+            }
+        },
+        "4": {
+            "name": "Exemption",
+            "src": {
+                "src": "US25004E",
+                "page": 115
+            }
+        },
+        "5": {
+            "name": "Greater Extent",
+            "src": {
+                "src": "US25004E",
+                "page": 115
+            }
+        },
+        "6": {
+            "name": "Flawless Taster",
+            "src": {
+                "src": "US25004E",
+                "page": 115
+            }
+        },
+        "7": {
+            "name": "Medium Animals",
+            "src": {
+                "src": "US25004E",
+                "page": 128
+            }
+        },
+        "8": {
+            "name": "Fixed Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 128
+            }
+        },
+        "9": {
+            "name": "Large Animals",
+            "src": {
+                "src": "US25004E",
+                "page": 128
+            }
+        },
+        "10": {
+            "name": "Target Category Objects",
+            "src": {
+                "src": "US25004E",
+                "page": 115
+            }
+        },
+        "11": {
+            "name": "Thrown Back Farther",
+            "src": {
+                "src": "US25004E",
+                "page": 115
+            }
+        },
+        "12": {
+            "name": "Ore Destroyer",
+            "src": {
+                "src": "US25004E",
+                "page": 115
+            }
+        },
+        "13": {
+            "name": "Two Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 140
+            }
+        },
+        "14": {
+            "name": "Four Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 140
+            }
+        },
+        "15": {
+            "name": "Eight Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 140
+            }
+        },
+        "16": {
+            "name": "Affect Another",
+            "src": {
+                "src": "US25004E",
+                "page": 116
+            }
+        },
+        "17": {
+            "name": "Even Farther",
+            "src": {
+                "src": "US25004E",
+                "page": 116
+            }
+        },
+        "18": {
+            "name": "Thundering Voice",
+            "src": {
+                "src": "US25004E",
+                "page": 116
+            }
+        },
+        "19": {
+            "name": "Target Category Living Creatures",
+            "src": {
+                "src": "US25004E",
+                "page": 148
+            }
+        },
+        "20": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 148
+            }
+        },
+        "21": {
+            "name": "Wider Radius",
+            "src": {
+                "src": "US25004E",
+                "page": 148
+            }
+        },
+        "22": {
+            "name": "Wider Range",
+            "src": {
+                "src": "US25004E",
+                "page": 128
+            }
+        },
+        "23": {
+            "name": "Spread Effects",
+            "src": {
+                "src": "US25004E",
+                "page": 128
+            }
+        },
+        "24": {
+            "name": "Two Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 128
+            }
+        },
+        "25": {
+            "name": "Intense Ray",
+            "src": {
+                "src": "US25004E",
+                "page": 116
+            }
+        },
+        "26": {
+            "name": "Winding Ray",
+            "src": {
+                "src": "US25004E",
+                "page": 116
+            }
+        },
+        "27": {
+            "name": "Two Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 116
+            }
+        },
+        "28": {
+            "name": "Intense Explosion",
+            "src": {
+                "src": "US25004E",
+                "page": 117
+            }
+        },
+        "29": {
+            "name": "FastBall",
+            "src": {
+                "src": "US25004E",
+                "page": 117
+            }
+        },
+        "30": {
+            "name": "Wider Range",
+            "src": {
+                "src": "US25004E",
+                "page": 117
+            }
+        },
+        "31": {
+            "name": "Good Illusion 1",
+            "src": {
+                "src": "US25004E",
+                "page": 117
+            }
+        },
+        "32": {
+            "name": "Good Illusion 2",
+            "src": {
+                "src": "US25004E",
+                "page": 117
+            }
+        },
+        "33": {
+            "name": "Good Illusion 3",
+            "src": {
+                "src": "US25004E",
+                "page": 117
+            }
+        },
+        "34": {
+            "name": "Target Category Living Creatures",
+            "src": {
+                "src": "US25004E",
+                "page": 118
+            }
+        },
+        "35": {
+            "name": "Fast Increase",
+            "src": {
+                "src": "US25004E",
+                "page": 118
+            }
+        },
+        "36": {
+            "name": "Fixed Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 118
+            }
+        },
+        "37": {
+            "name": "Target Category Living Creatures",
+            "src": {
+                "src": "US25004E",
+                "page": 118
+            }
+        },
+        "38": {
+            "name": "Fast Increase",
+            "src": {
+                "src": "US25004E",
+                "page": 118
+            }
+        },
+        "39": {
+            "name": "Fixed Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 118
+            }
+        },
+        "40": {
+            "name": "Target Category Living Creatures",
+            "src": {
+                "src": "US25004E",
+                "page": 118
+            }
+        },
+        "41": {
+            "name": "Fast Increase",
+            "src": {
+                "src": "US25004E",
+                "page": 118
+            }
+        },
+        "42": {
+            "name": "Fixed Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 118
+            }
+        },
+        "43": {
+            "name": "Target Category Living Creatures",
+            "src": {
+                "src": "US25004E",
+                "page": 119
+            }
+        },
+        "44": {
+            "name": "Fast Increase",
+            "src": {
+                "src": "US25004E",
+                "page": 119
+            }
+        },
+        "45": {
+            "name": "Fixed Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 119
+            }
+        },
+        "46": {
+            "name": "Two Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 120
+            }
+        },
+        "47": {
+            "name": "Four Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 120
+            }
+        },
+        "48": {
+            "name": "Mass Awakening",
+            "src": {
+                "src": "US25004E",
+                "page": 120
+            }
+        },
+        "49": {
+            "name": "Out of Limbo",
+            "src": {
+                "src": "US25004E",
+                "page": 130
+            }
+        },
+        "50": {
+            "name": "Stronger Pull",
+            "src": {
+                "src": "US25004E",
+                "page": 130
+            }
+        },
+        "51": {
+            "name": "Wider Radius",
+            "src": {
+                "src": "US25004E",
+                "page": 130
+            }
+        },
+        "52": {
+            "name": "Good Illusion 1",
+            "src": {
+                "src": "US25004E",
+                "page": 119
+            }
+        },
+        "53": {
+            "name": "Good Illusion 2",
+            "src": {
+                "src": "US25004E",
+                "page": 119
+            }
+        },
+        "54": {
+            "name": "Good Illusion 3",
+            "src": {
+                "src": "US25004E",
+                "page": 119
+            }
+        },
+        "55": {
+            "name": "Good Illusion 1",
+            "src": {
+                "src": "US25004E",
+                "page": 119
+            }
+        },
+        "56": {
+            "name": "Good Illusion 2",
+            "src": {
+                "src": "US25004E",
+                "page": 119
+            }
+        },
+        "57": {
+            "name": "Good Illusion 3",
+            "src": {
+                "src": "US25004E",
+                "page": 119
+            }
+        },
+        "58": {
+            "name": "Two Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 125
+            }
+        },
+        "59": {
+            "name": "Four Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 125
+            }
+        },
+        "60": {
+            "name": "Eight Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 125
+            }
+        },
+        "61": {
+            "name": "Mental Attributes",
+            "src": {
+                "src": "US25004E",
+                "page": 133
+            }
+        },
+        "62": {
+            "name": "Two Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 133
+            }
+        },
+        "63": {
+            "name": "Four Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 133
+            }
+        },
+        "64": {
+            "name": "Target Category Living Creatures",
+            "src": {
+                "src": "US25004E",
+                "page": 124
+            }
+        },
+        "65": {
+            "name": "Visual Impairment",
+            "src": {
+                "src": "US25004E",
+                "page": 124
+            }
+        },
+        "66": {
+            "name": "Two Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 124
+            }
+        },
+        "67": {
+            "name": "Conceal Equipment",
+            "src": {
+                "src": "US25004E",
+                "page": 125
+            }
+        },
+        "68": {
+            "name": "Invisible Stalker",
+            "src": {
+                "src": "US25004E",
+                "page": 125
+            }
+        },
+        "69": {
+            "name": "Affect Another",
+            "src": {
+                "src": "US25004E",
+                "page": 125
+            }
+        },
+        "70": {
+            "name": "Longer Duration 1",
+            "src": {
+                "src": "US25004E",
+                "page": 125
+            }
+        },
+        "71": {
+            "name": "Longer Duration 2",
+            "src": {
+                "src": "US25004E",
+                "page": 125
+            }
+        },
+        "72": {
+            "name": "Longer Duration 3",
+            "src": {
+                "src": "US25004E",
+                "page": 125
+            }
+        },
+        "73": {
+            "name": "Target Category Objects",
+            "src": {
+                "src": "US25004E",
+                "page": 126
+            }
+        },
+        "74": {
+            "name": "Bound",
+            "src": {
+                "src": "US25004E",
+                "page": 126
+            }
+        },
+        "75": {
+            "name": "Humus Destroyer",
+            "src": {
+                "src": "US25004E",
+                "page": 126
+            }
+        },
+        "76": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25004E",
+                "page": 120
+            }
+        },
+        "77": {
+            "name": "Reduce Casting Time",
+            "src": {
+                "src": "US25004E",
+                "page": 120
+            }
+        },
+        "78": {
+            "name": "Reduce Cost",
+            "src": {
+                "src": "US25004E",
+                "page": 120
+            }
+        },
+        "79": {
+            "name": "Protective Skin",
+            "src": {
+                "src": "US25004E",
+                "page": 127
+            }
+        },
+        "80": {
+            "name": "Wider Radius",
+            "src": {
+                "src": "US25004E",
+                "page": 127
+            }
+        },
+        "81": {
+            "name": "Affect Another",
+            "src": {
+                "src": "US25004E",
+                "page": 127
+            }
+        },
+        "82": {
+            "name": "Ghost Zone",
+            "src": {
+                "src": "US25004E",
+                "page": 127
+            }
+        },
+        "83": {
+            "name": "Fairy Zone",
+            "src": {
+                "src": "US25004E",
+                "page": 127
+            }
+        },
+        "84": {
+            "name": "Pervasive",
+            "src": {
+                "src": "US25004E",
+                "page": 127
+            }
+        },
+        "85": {
+            "name": "Increased Destructive Power 1",
+            "src": {
+                "src": "US25004E",
+                "page": 127
+            }
+        },
+        "86": {
+            "name": "Increased Destructive Power 2",
+            "src": {
+                "src": "US25004E",
+                "page": 127
+            }
+        },
+        "87": {
+            "name": "Greater Range of Destruction",
+            "src": {
+                "src": "US25004E",
+                "page": 127
+            }
+        },
+        "88": {
+            "name": "Wider Radius",
+            "src": {
+                "src": "US25004E",
+                "page": 126
+            }
+        },
+        "89": {
+            "name": "Terrifying Darkness",
+            "src": {
+                "src": "US25004E",
+                "page": 126
+            }
+        },
+        "90": {
+            "name": "Fixed Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 126
+            }
+        },
+        "91": {
+            "name": "Greater Distance",
+            "src": {
+                "src": "US25004E",
+                "page": 129
+            }
+        },
+        "92": {
+            "name": "Fixed Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 129
+            }
+        },
+        "93": {
+            "name": "Improved Shadow",
+            "src": {
+                "src": "US25004E",
+                "page": 129
+            }
+        },
+        "94": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25004E",
+                "page": 121
+            }
+        },
+        "95": {
+            "name": "Reduce Casting Time",
+            "src": {
+                "src": "US25004E",
+                "page": 121
+            }
+        },
+        "96": {
+            "name": "Reduce Cost",
+            "src": {
+                "src": "US25004E",
+                "page": 121
+            }
+        },
+        "97": {
+            "name": "Metal Items",
+            "src": {
+                "src": "US25004E",
+                "page": 137
+            }
+        },
+        "98": {
+            "name": "Modify Casting Time",
+            "src": {
+                "src": "US25004E",
+                "page": 137
+            }
+        },
+        "99": {
+            "name": "Extended Range of Destruction",
+            "src": {
+                "src": "US25004E",
+                "page": 137
+            }
+        },
+        "100": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25004E",
+                "page": 121
+            }
+        },
+        "101": {
+            "name": "Reduce Casting Time",
+            "src": {
+                "src": "US25004E",
+                "page": 121
+            }
+        },
+        "102": {
+            "name": "Reduce Cost",
+            "src": {
+                "src": "US25004E",
+                "page": 121
+            }
+        },
+        "103": {
+            "name": "Short Reply",
+            "src": {
+                "src": "US25004E",
+                "page": 130
+            }
+        },
+        "104": {
+            "name": "Multiple Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 130
+            }
+        },
+        "105": {
+            "name": "Line of Communication",
+            "src": {
+                "src": "US25004E",
+                "page": 130
+            }
+        },
+        "106": {
+            "name": "Longer Duration 1",
+            "src": {
+                "src": "US25004E",
+                "page": 139
+            }
+        },
+        "107": {
+            "name": "Longer Duration 2",
+            "src": {
+                "src": "US25004E",
+                "page": 139
+            }
+        },
+        "108": {
+            "name": "Longer Duration 3",
+            "src": {
+                "src": "US25004E",
+                "page": 139
+            }
+        },
+        "109": {
+            "name": "Through Ore",
+            "src": {
+                "src": "US25004E",
+                "page": 130
+            }
+        },
+        "110": {
+            "name": "Through Ice",
+            "src": {
+                "src": "US25004E",
+                "page": 130
+            }
+        },
+        "111": {
+            "name": "Specific Living Creature",
+            "src": {
+                "src": "US25004E",
+                "page": 130
+            }
+        },
+        "112": {
+            "name": "Candlelight",
+            "src": {
+                "src": "US25004E",
+                "page": 131
+            }
+        },
+        "113": {
+            "name": "Hot Aura",
+            "src": {
+                "src": "US25004E",
+                "page": 131
+            }
+        },
+        "114": {
+            "name": "Affect Another",
+            "src": {
+                "src": "US25004E",
+                "page": 131
+            }
+        },
+        "115": {
+            "name": "Medium Animals",
+            "src": {
+                "src": "US25004E",
+                "page": 132
+            }
+        },
+        "116": {
+            "name": "Fixed Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 132
+            }
+        },
+        "117": {
+            "name": "Large Animals",
+            "src": {
+                "src": "US25004E",
+                "page": 132
+            }
+        },
+        "118": {
+            "name": "Re-closeable",
+            "src": {
+                "src": "US25004E",
+                "page": 132
+            }
+        },
+        "119": {
+            "name": "Trap Sense",
+            "src": {
+                "src": "US25004E",
+                "page": 132
+            }
+        },
+        "120": {
+            "name": "The Priest-Emperors Are Coming!",
+            "src": {
+                "src": "US25004E",
+                "page": 132
+            }
+        },
+        "121": {
+            "name": "Higher Wall",
+            "src": {
+                "src": "US25004E",
+                "page": 132
+            }
+        },
+        "122": {
+            "name": "Cylinder",
+            "src": {
+                "src": "US25004E",
+                "page": 132
+            }
+        },
+        "123": {
+            "name": "Cover",
+            "src": {
+                "src": "US25004E",
+                "page": 132
+            }
+        },
+        "124": {
+            "name": "Short Reply",
+            "src": {
+                "src": "US25004E",
+                "page": 140
+            }
+        },
+        "125": {
+            "name": "Multiple Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 140
+            }
+        },
+        "126": {
+            "name": "Line of Communication",
+            "src": {
+                "src": "US25004E",
+                "page": 140
+            }
+        },
+        "127": {
+            "name": "Wider Range 1",
+            "src": {
+                "src": "US25004E",
+                "page": 133
+            }
+        },
+        "128": {
+            "name": "Wider Range 2",
+            "src": {
+                "src": "US25004E",
+                "page": 133
+            }
+        },
+        "129": {
+            "name": "Wider Range 3",
+            "src": {
+                "src": "US25004E",
+                "page": 133
+            }
+        },
+        "130": {
+            "name": "Formed Growth",
+            "src": {
+                "src": "US25004E",
+                "page": 133
+            }
+        },
+        "131": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 133
+            }
+        },
+        "132": {
+            "name": "Much Longer Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 133
+            }
+        },
+        "133": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25004E",
+                "page": 121
+            }
+        },
+        "134": {
+            "name": "Reduce Casting Time",
+            "src": {
+                "src": "US25004E",
+                "page": 121
+            }
+        },
+        "135": {
+            "name": "Reduce Cost",
+            "src": {
+                "src": "US25004E",
+                "page": 121
+            }
+        },
+        "136": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25004E",
+                "page": 120
+            }
+        },
+        "137": {
+            "name": "Reduce Casting Time",
+            "src": {
+                "src": "US25004E",
+                "page": 120
+            }
+        },
+        "138": {
+            "name": "Reduce Cost",
+            "src": {
+                "src": "US25004E",
+                "page": 120
+            }
+        },
+        "139": {
+            "name": "Modify Casting Time",
+            "src": {
+                "src": "US25004E",
+                "page": 134
+            }
+        },
+        "140": {
+            "name": "Two Geister",
+            "src": {
+                "src": "US25004E",
+                "page": 134
+            }
+        },
+        "141": {
+            "name": "Drei Geister",
+            "src": {
+                "src": "US25004E",
+                "page": 134
+            }
+        },
+        "142": {
+            "name": "Greater Anguish 1",
+            "src": {
+                "src": "US25004E",
+                "page": 147
+            }
+        },
+        "143": {
+            "name": "Greater Anguish 2",
+            "src": {
+                "src": "US25004E",
+                "page": 147
+            }
+        },
+        "144": {
+            "name": "Greater Anguish 3",
+            "src": {
+                "src": "US25004E",
+                "page": 147
+            }
+        },
+        "145": {
+            "name": "Modify Casting Time",
+            "src": {
+                "src": "US25004E",
+                "page": 134
+            }
+        },
+        "146": {
+            "name": "Two Elementare",
+            "src": {
+                "src": "US25004E",
+                "page": 134
+            }
+        },
+        "147": {
+            "name": "Drei Elementare",
+            "src": {
+                "src": "US25004E",
+                "page": 134
+            }
+        },
+        "148": {
+            "name": "Blackout",
+            "src": {
+                "src": "US25004E",
+                "page": 115
+            }
+        },
+        "149": {
+            "name": "Intense Muscle Cramps",
+            "src": {
+                "src": "US25004E",
+                "page": 115
+            }
+        },
+        "150": {
+            "name": "Longer Touch Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 115
+            }
+        },
+        "151": {
+            "name": "Intensive Explosion",
+            "src": {
+                "src": "US25004E",
+                "page": 135
+            }
+        },
+        "152": {
+            "name": "Fastball",
+            "src": {
+                "src": "US25004E",
+                "page": 135
+            }
+        },
+        "153": {
+            "name": "Wider Range",
+            "src": {
+                "src": "US25004E",
+                "page": 135
+            }
+        },
+        "154": {
+            "name": "Target Category Living Creatures",
+            "src": {
+                "src": "US25004E",
+                "page": 135
+            }
+        },
+        "155": {
+            "name": "Increased Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 135
+            }
+        },
+        "156": {
+            "name": "Transfer to Someone Else",
+            "src": {
+                "src": "US25004E",
+                "page": 135
+            }
+        },
+        "157": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25004E",
+                "page": 121
+            }
+        },
+        "158": {
+            "name": "Reduce Casting Time",
+            "src": {
+                "src": "US25004E",
+                "page": 121
+            }
+        },
+        "159": {
+            "name": "Reduce Cost",
+            "src": {
+                "src": "US25004E",
+                "page": 121
+            }
+        },
+        "160": {
+            "name": "Without Touch",
+            "src": {
+                "src": "US25004E",
+                "page": 135
+            }
+        },
+        "161": {
+            "name": "More Orders",
+            "src": {
+                "src": "US25004E",
+                "page": 135
+            }
+        },
+        "162": {
+            "name": "No Recollection",
+            "src": {
+                "src": "US25004E",
+                "page": 135
+            }
+        },
+        "163": {
+            "name": "Good Illusion 1",
+            "src": {
+                "src": "US25004E",
+                "page": 136
+            }
+        },
+        "164": {
+            "name": "Good Illusion 2",
+            "src": {
+                "src": "US25004E",
+                "page": 136
+            }
+        },
+        "165": {
+            "name": "Good Illusion 3",
+            "src": {
+                "src": "US25004E",
+                "page": 136
+            }
+        },
+        "166": {
+            "name": "Target Category Objects",
+            "src": {
+                "src": "US25004E",
+                "page": 136
+            }
+        },
+        "167": {
+            "name": "Increased Damage",
+            "src": {
+                "src": "US25004E",
+                "page": 136
+            }
+        },
+        "168": {
+            "name": "Water Destroyer",
+            "src": {
+                "src": "US25004E",
+                "page": 136
+            }
+        },
+        "169": {
+            "name": "Improved Reaction 1",
+            "src": {
+                "src": "US25004E",
+                "page": 136
+            }
+        },
+        "170": {
+            "name": "Improved Reaction 2",
+            "src": {
+                "src": "US25004E",
+                "page": 136
+            }
+        },
+        "171": {
+            "name": "Deflect to a Third Person",
+            "src": {
+                "src": "US25004E",
+                "page": 136
+            }
+        },
+        "172": {
+            "name": "Violent Madman",
+            "src": {
+                "src": "US25004E",
+                "page": 124
+            }
+        },
+        "173": {
+            "name": "Foreseeable End",
+            "src": {
+                "src": "US25004E",
+                "page": 124
+            }
+        },
+        "174": {
+            "name": "Only Specific Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 124
+            }
+        },
+        "175": {
+            "name": "Exemption",
+            "src": {
+                "src": "US25004E",
+                "page": 137
+            }
+        },
+        "176": {
+            "name": "Flawless Neutralizer",
+            "src": {
+                "src": "US25004E",
+                "page": 137
+            }
+        },
+        "177": {
+            "name": "Two Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 137
+            }
+        },
+        "178": {
+            "name": "Spread Effects",
+            "src": {
+                "src": "US25004E",
+                "page": 146
+            }
+        },
+        "179": {
+            "name": "Longer Effects",
+            "src": {
+                "src": "US25004E",
+                "page": 146
+            }
+        },
+        "180": {
+            "name": "Two Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 146
+            }
+        },
+        "181": {
+            "name": "Longer Duration 1",
+            "src": {
+                "src": "US25004E",
+                "page": 124
+            }
+        },
+        "182": {
+            "name": "Longer Touch Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 124
+            }
+        },
+        "183": {
+            "name": "Longer Duration 2",
+            "src": {
+                "src": "US25004E",
+                "page": 124
+            }
+        },
+        "184": {
+            "name": "Affect Another",
+            "src": {
+                "src": "US25004E",
+                "page": 138
+            }
+        },
+        "185": {
+            "name": "Other Actions",
+            "src": {
+                "src": "US25004E",
+                "page": 138
+            }
+        },
+        "186": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 138
+            }
+        },
+        "187": {
+            "name": "Good Illusion 1",
+            "src": {
+                "src": "US25004E",
+                "page": 138
+            }
+        },
+        "188": {
+            "name": "Good Illusion 2",
+            "src": {
+                "src": "US25004E",
+                "page": 138
+            }
+        },
+        "189": {
+            "name": "Good Illusion 3",
+            "src": {
+                "src": "US25004E",
+                "page": 138
+            }
+        },
+        "190": {
+            "name": "Remember More",
+            "src": {
+                "src": "US25004E",
+                "page": 138
+            }
+        },
+        "191": {
+            "name": "Remember Even More",
+            "src": {
+                "src": "US25004E",
+                "page": 138
+            }
+        },
+        "192": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 138
+            }
+        },
+        "193": {
+            "name": "Good Illusion 1",
+            "src": {
+                "src": "US25004E",
+                "page": 139
+            }
+        },
+        "194": {
+            "name": "Good Illusion 2",
+            "src": {
+                "src": "US25004E",
+                "page": 139
+            }
+        },
+        "195": {
+            "name": "Good Illusion 3",
+            "src": {
+                "src": "US25004E",
+                "page": 139
+            }
+        },
+        "196": {
+            "name": "Greater Base Range",
+            "src": {
+                "src": "US25004E",
+                "page": 140
+            }
+        },
+        "197": {
+            "name": "Greater Flying Range",
+            "src": {
+                "src": "US25004E",
+                "page": 140
+            }
+        },
+        "198": {
+            "name": "Fast Creature",
+            "src": {
+                "src": "US25004E",
+                "page": 140
+            }
+        },
+        "199": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 141
+            }
+        },
+        "200": {
+            "name": "Fixed Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 141
+            }
+        },
+        "201": {
+            "name": "Invisible Contents",
+            "src": {
+                "src": "US25004E",
+                "page": 141
+            }
+        },
+        "202": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 141
+            }
+        },
+        "203": {
+            "name": "Greater Weight",
+            "src": {
+                "src": "US25004E",
+                "page": 141
+            }
+        },
+        "204": {
+            "name": "Walls and Ceilings",
+            "src": {
+                "src": "US25004E",
+                "page": 141
+            }
+        },
+        "205": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25004E",
+                "page": 122
+            }
+        },
+        "206": {
+            "name": "Reduce Casting Time",
+            "src": {
+                "src": "US25004E",
+                "page": 122
+            }
+        },
+        "207": {
+            "name": "Reduce Cost",
+            "src": {
+                "src": "US25004E",
+                "page": 122
+            }
+        },
+        "208": {
+            "name": "Longer Duration 1",
+            "src": {
+                "src": "US25004E",
+                "page": 141
+            }
+        },
+        "209": {
+            "name": "Longer Duration 2",
+            "src": {
+                "src": "US25004E",
+                "page": 141
+            }
+        },
+        "210": {
+            "name": "Longer Duration 3",
+            "src": {
+                "src": "US25004E",
+                "page": 141
+            }
+        },
+        "211": {
+            "name": "Intense Ray",
+            "src": {
+                "src": "US25004E",
+                "page": 142
+            }
+        },
+        "212": {
+            "name": "Winding Ray",
+            "src": {
+                "src": "US25004E",
+                "page": 142
+            }
+        },
+        "213": {
+            "name": "Two Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 142
+            }
+        },
+        "214": {
+            "name": "Intensive Explosion",
+            "src": {
+                "src": "US25004E",
+                "page": 142
+            }
+        },
+        "215": {
+            "name": "Fast Ball",
+            "src": {
+                "src": "US25004E",
+                "page": 142
+            }
+        },
+        "216": {
+            "name": "Wider Range",
+            "src": {
+                "src": "US25004E",
+                "page": 142
+            }
+        },
+        "217": {
+            "name": "Modify Casting Time",
+            "src": {
+                "src": "US25004E",
+                "page": 142
+            }
+        },
+        "218": {
+            "name": "Two Dämonen",
+            "src": {
+                "src": "US25004E",
+                "page": 142
+            }
+        },
+        "219": {
+            "name": "Drei Dämonen",
+            "src": {
+                "src": "US25004E",
+                "page": 142
+            }
+        },
+        "220": {
+            "name": "Spread Effects",
+            "src": {
+                "src": "US25004E",
+                "page": 143
+            }
+        },
+        "221": {
+            "name": "Fast Increase",
+            "src": {
+                "src": "US25004E",
+                "page": 143
+            }
+        },
+        "222": {
+            "name": "Fixed Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 143
+            }
+        },
+        "223": {
+            "name": "Lower Parry",
+            "src": {
+                "src": "US25004E",
+                "page": 143
+            }
+        },
+        "224": {
+            "name": "Target Category Living Creatures",
+            "src": {
+                "src": "US25004E",
+                "page": 143
+            }
+        },
+        "225": {
+            "name": "Two Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 143
+            }
+        },
+        "226": {
+            "name": "Good Illusion 1",
+            "src": {
+                "src": "US25004E",
+                "page": 144
+            }
+        },
+        "227": {
+            "name": "Good Illusion 2",
+            "src": {
+                "src": "US25004E",
+                "page": 144
+            }
+        },
+        "228": {
+            "name": "Good Illusion 3",
+            "src": {
+                "src": "US25004E",
+                "page": 144
+            }
+        },
+        "229": {
+            "name": "Good Illusion 1",
+            "src": {
+                "src": "US25004E",
+                "page": 144
+            }
+        },
+        "230": {
+            "name": "Good Illusion 2",
+            "src": {
+                "src": "US25004E",
+                "page": 144
+            }
+        },
+        "231": {
+            "name": "Good Illusion 3",
+            "src": {
+                "src": "US25004E",
+                "page": 144
+            }
+        },
+        "232": {
+            "name": "Modify Casting Time",
+            "src": {
+                "src": "US25004E",
+                "page": 145
+            }
+        },
+        "233": {
+            "name": "Affect Another",
+            "src": {
+                "src": "US25004E",
+                "page": 145
+            }
+        },
+        "234": {
+            "name": "Range 8 Yards",
+            "src": {
+                "src": "US25004E",
+                "page": 145
+            }
+        },
+        "235": {
+            "name": "Smells",
+            "src": {
+                "src": "US25004E",
+                "page": 145
+            }
+        },
+        "236": {
+            "name": "Target Category Living Creatures",
+            "src": {
+                "src": "US25004E",
+                "page": 145
+            }
+        },
+        "237": {
+            "name": "Wider Radius",
+            "src": {
+                "src": "US25004E",
+                "page": 145
+            }
+        },
+        "238": {
+            "name": "Greater Range",
+            "src": {
+                "src": "US25004E",
+                "page": 128
+            }
+        },
+        "239": {
+            "name": "Spread Effects",
+            "src": {
+                "src": "US25004E",
+                "page": 128
+            }
+        },
+        "240": {
+            "name": "Two Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 128
+            }
+        },
+        "241": {
+            "name": "Target Category Living Creatures",
+            "src": {
+                "src": "US25004E",
+                "page": 123
+            }
+        },
+        "242": {
+            "name": "Weakening",
+            "src": {
+                "src": "US25004E",
+                "page": 123
+            }
+        },
+        "243": {
+            "name": "Death Curse",
+            "src": {
+                "src": "US25004E",
+                "page": 123
+            }
+        },
+        "244": {
+            "name": "Different Color",
+            "src": {
+                "src": "US25004E",
+                "page": 124
+            }
+        },
+        "245": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 124
+            }
+        },
+        "246": {
+            "name": "Greater Fear",
+            "src": {
+                "src": "US25004E",
+                "page": 124
+            }
+        },
+        "247": {
+            "name": "Predict Combat Actions",
+            "src": {
+                "src": "US25004E",
+                "page": 145
+            }
+        },
+        "248": {
+            "name": "Unnoticed",
+            "src": {
+                "src": "US25004E",
+                "page": 145
+            }
+        },
+        "249": {
+            "name": "Fixed Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 145
+            }
+        },
+        "250": {
+            "name": "More Orders",
+            "src": {
+                "src": "US25004E",
+                "page": 146
+            }
+        },
+        "251": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 146
+            }
+        },
+        "252": {
+            "name": "Powerful Being",
+            "src": {
+                "src": "US25004E",
+                "page": 146
+            }
+        },
+        "253": {
+            "name": "More Structure Points",
+            "src": {
+                "src": "US25004E",
+                "page": 147
+            }
+        },
+        "254": {
+            "name": "Increased Weight",
+            "src": {
+                "src": "US25004E",
+                "page": 147
+            }
+        },
+        "255": {
+            "name": "Longer Bridge",
+            "src": {
+                "src": "US25004E",
+                "page": 147
+            }
+        },
+        "256": {
+            "name": "Target Category Living Creatures",
+            "src": {
+                "src": "US25004E",
+                "page": 126
+            }
+        },
+        "257": {
+            "name": "Hearing Difficulties",
+            "src": {
+                "src": "US25004E",
+                "page": 126
+            }
+        },
+        "258": {
+            "name": "Two Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 126
+            }
+        },
+        "259": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25004E",
+                "page": 122
+            }
+        },
+        "260": {
+            "name": "Reduce Casting Time",
+            "src": {
+                "src": "US25004E",
+                "page": 122
+            }
+        },
+        "261": {
+            "name": "Reduce Cost",
+            "src": {
+                "src": "US25004E",
+                "page": 122
+            }
+        },
+        "262": {
+            "name": "Improved Defense",
+            "src": {
+                "src": "US25004E",
+                "page": 116
+            }
+        },
+        "263": {
+            "name": "Increased Range",
+            "src": {
+                "src": "US25004E",
+                "page": 116
+            }
+        },
+        "264": {
+            "name": "More Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 116
+            }
+        },
+        "265": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25004E",
+                "page": 122
+            }
+        },
+        "266": {
+            "name": "Reduce Casting Time",
+            "src": {
+                "src": "US25004E",
+                "page": 122
+            }
+        },
+        "267": {
+            "name": "Reduce Cost",
+            "src": {
+                "src": "US25004E",
+                "page": 122
+            }
+        },
+        "268": {
+            "name": "Good Illusion 1",
+            "src": {
+                "src": "US25004E",
+                "page": 123
+            }
+        },
+        "269": {
+            "name": "Good Illusion 2",
+            "src": {
+                "src": "US25004E",
+                "page": 123
+            }
+        },
+        "270": {
+            "name": "Good Illusion 3",
+            "src": {
+                "src": "US25004E",
+                "page": 123
+            }
+        },
+        "271": {
+            "name": "Medium Animals",
+            "src": {
+                "src": "US25004E",
+                "page": 148
+            }
+        },
+        "272": {
+            "name": "Fixed Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 148
+            }
+        },
+        "273": {
+            "name": "Large Animals",
+            "src": {
+                "src": "US25004E",
+                "page": 148
+            }
+        },
+        "274": {
+            "name": "Gaukelei Advantage",
+            "src": {
+                "src": "US25004E",
+                "page": 149
+            }
+        },
+        "275": {
+            "name": "Etiquette Advantage",
+            "src": {
+                "src": "US25004E",
+                "page": 149
+            }
+        },
+        "276": {
+            "name": "Streetwise Advantage",
+            "src": {
+                "src": "US25004E",
+                "page": 149
+            }
+        },
+        "277": {
+            "name": "Higher/Lower Temperature 1",
+            "src": {
+                "src": "US25004E",
+                "page": 150
+            }
+        },
+        "278": {
+            "name": "Higher/Lower Temperature 2",
+            "src": {
+                "src": "US25004E",
+                "page": 150
+            }
+        },
+        "279": {
+            "name": "Higher/Lower Temperature 3",
+            "src": {
+                "src": "US25004E",
+                "page": 150
+            }
+        },
+        "280": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 150
+            }
+        },
+        "281": {
+            "name": "Wider Radius",
+            "src": {
+                "src": "US25004E",
+                "page": 150
+            }
+        },
+        "282": {
+            "name": "Wider Range",
+            "src": {
+                "src": "US25004E",
+                "page": 150
+            }
+        },
+        "283": {
+            "name": "Larger Objects 1",
+            "src": {
+                "src": "US25004E",
+                "page": 151
+            }
+        },
+        "284": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 151
+            }
+        },
+        "285": {
+            "name": "Larger Objects 2",
+            "src": {
+                "src": "US25004E",
+                "page": 151
+            }
+        },
+        "286": {
+            "name": "Transfer Disease",
+            "src": {
+                "src": "US25004E",
+                "page": 149
+            }
+        },
+        "287": {
+            "name": "Transfer Poison",
+            "src": {
+                "src": "US25004E",
+                "page": 149
+            }
+        },
+        "288": {
+            "name": "Volunteer",
+            "src": {
+                "src": "US25004E",
+                "page": 149
+            }
+        },
+        "289": {
+            "name": "Instant Deprivation",
+            "src": {
+                "src": "US25004E",
+                "page": 151
+            }
+        },
+        "290": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 151
+            }
+        },
+        "291": {
+            "name": "Two Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 151
+            }
+        },
+        "292": {
+            "name": "Without Recollection",
+            "src": {
+                "src": "US25004E",
+                "page": 151
+            }
+        },
+        "293": {
+            "name": "Phases",
+            "src": {
+                "src": "US25004E",
+                "page": 151
+            }
+        },
+        "294": {
+            "name": "Other Memories",
+            "src": {
+                "src": "US25004E",
+                "page": 151
+            }
+        },
+        "295": {
+            "name": "More Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 152
+            }
+        },
+        "296": {
+            "name": "Change Target Category 1",
+            "src": {
+                "src": "US25004E",
+                "page": 152
+            }
+        },
+        "297": {
+            "name": "Change Target Category 2",
+            "src": {
+                "src": "US25004E",
+                "page": 152
+            }
+        },
+        "298": {
+            "name": "Modify Costs",
+            "src": {
+                "src": "US25004E",
+                "page": 152
+            }
+        },
+        "299": {
+            "name": "Short Regeneration Phase",
+            "src": {
+                "src": "US25004E",
+                "page": 152
+            }
+        },
+        "300": {
+            "name": "Longer Lasting Effect",
+            "src": {
+                "src": "US25004E",
+                "page": 152
+            }
+        },
+        "301": {
+            "name": "Greater Weight",
+            "src": {
+                "src": "US25004E",
+                "page": 152
+            }
+        },
+        "302": {
+            "name": "Longer Duration 1",
+            "src": {
+                "src": "US25004E",
+                "page": 152
+            }
+        },
+        "303": {
+            "name": "Longer Duration 2",
+            "src": {
+                "src": "US25004E",
+                "page": 152
+            }
+        },
+        "304": {
+            "name": "Not Everyone",
+            "src": {
+                "src": "US25004E",
+                "page": 149
+            }
+        },
+        "305": {
+            "name": "Larger Objects",
+            "src": {
+                "src": "US25004E",
+                "page": 149
+            }
+        },
+        "306": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 149
+            }
+        },
+        "307": {
+            "name": "Longer Duration 1",
+            "src": {
+                "src": "US25004E",
+                "page": 153
+            }
+        },
+        "308": {
+            "name": "Wider Radius",
+            "src": {
+                "src": "US25004E",
+                "page": 153
+            }
+        },
+        "309": {
+            "name": "Longer Duration 2",
+            "src": {
+                "src": "US25004E",
+                "page": 153
+            }
+        },
+        "310": {
+            "name": "Longer Duration 1",
+            "src": {
+                "src": "US25004E",
+                "page": 153
+            }
+        },
+        "311": {
+            "name": "Longer Duration 2",
+            "src": {
+                "src": "US25004E",
+                "page": 153
+            }
+        },
+        "312": {
+            "name": "Better Comprehension",
+            "src": {
+                "src": "US25004E",
+                "page": 153
+            }
+        },
+        "313": {
+            "name": "Sharpen Individual Sense",
+            "src": {
+                "src": "US25004E",
+                "page": 156
+            }
+        },
+        "314": {
+            "name": "Tracking",
+            "src": {
+                "src": "US25004E",
+                "page": 156
+            }
+        },
+        "315": {
+            "name": "Fixed Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 156
+            }
+        },
+        "316": {
+            "name": "Two Items",
+            "src": {
+                "src": "US25004E",
+                "page": 154
+            }
+        },
+        "317": {
+            "name": "Three Items",
+            "src": {
+                "src": "US25004E",
+                "page": 154
+            }
+        },
+        "318": {
+            "name": "Four Items",
+            "src": {
+                "src": "US25004E",
+                "page": 154
+            }
+        },
+        "319": {
+            "name": "Target Category Object",
+            "src": {
+                "src": "US25004E",
+                "page": 154
+            }
+        },
+        "320": {
+            "name": "Hard Shell",
+            "src": {
+                "src": "US25004E",
+                "page": 154
+            }
+        },
+        "321": {
+            "name": "Affect Another",
+            "src": {
+                "src": "US25004E",
+                "page": 154
+            }
+        },
+        "322": {
+            "name": "Faster 1",
+            "src": {
+                "src": "US25004E",
+                "page": 154
+            }
+        },
+        "323": {
+            "name": "Faster 2",
+            "src": {
+                "src": "US25004E",
+                "page": 154
+            }
+        },
+        "324": {
+            "name": "Faster 3",
+            "src": {
+                "src": "US25004E",
+                "page": 154
+            }
+        },
+        "325": {
+            "name": "Two Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 154
+            }
+        },
+        "326": {
+            "name": "Four Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 154
+            }
+        },
+        "327": {
+            "name": "Target Category Living Creatures",
+            "src": {
+                "src": "US25004E",
+                "page": 154
+            }
+        },
+        "328": {
+            "name": "Successful Influence 1",
+            "src": {
+                "src": "US25004E",
+                "page": 154
+            }
+        },
+        "329": {
+            "name": "Successful Influence 2",
+            "src": {
+                "src": "US25004E",
+                "page": 154
+            }
+        },
+        "330": {
+            "name": "Successful Influence 3",
+            "src": {
+                "src": "US25004E",
+                "page": 154
+            }
+        },
+        "331": {
+            "name": "Predict Combat Actions",
+            "src": {
+                "src": "US25004E",
+                "page": 157
+            }
+        },
+        "332": {
+            "name": "Unnoticed",
+            "src": {
+                "src": "US25004E",
+                "page": 157
+            }
+        },
+        "333": {
+            "name": "Fixed Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 157
+            }
+        },
+        "334": {
+            "name": "Two Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 155
+            }
+        },
+        "335": {
+            "name": "Four Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 155
+            }
+        },
+        "336": {
+            "name": "Eight Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 155
+            }
+        },
+        "337": {
+            "name": "Spread Effects",
+            "src": {
+                "src": "US25004E",
+                "page": 155
+            }
+        },
+        "338": {
+            "name": "Longer Effects",
+            "src": {
+                "src": "US25004E",
+                "page": 155
+            }
+        },
+        "339": {
+            "name": "Two Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 155
+            }
+        },
+        "340": {
+            "name": "Wider Radius",
+            "src": {
+                "src": "US25004E",
+                "page": 155
+            }
+        },
+        "341": {
+            "name": "Affect Another",
+            "src": {
+                "src": "US25004E",
+                "page": 155
+            }
+        },
+        "342": {
+            "name": "Unimpressed Spellcaster",
+            "src": {
+                "src": "US25004E",
+                "page": 155
+            }
+        },
+        "343": {
+            "name": "Good Illusion 1",
+            "src": {
+                "src": "US25004E",
+                "page": 156
+            }
+        },
+        "344": {
+            "name": "Good Illusion 2",
+            "src": {
+                "src": "US25004E",
+                "page": 156
+            }
+        },
+        "345": {
+            "name": "Good Illusion 3",
+            "src": {
+                "src": "US25004E",
+                "page": 156
+            }
+        },
+        "346": {
+            "name": "Spread Effects",
+            "src": {
+                "src": "US25004E",
+                "page": 157
+            }
+        },
+        "347": {
+            "name": "Long Lasting",
+            "src": {
+                "src": "US25004E",
+                "page": 157
+            }
+        },
+        "348": {
+            "name": "Second Shot",
+            "src": {
+                "src": "US25004E",
+                "page": 157
+            }
+        },
+        "349": {
+            "name": "Light Regulation",
+            "src": {
+                "src": "US25004E",
+                "page": 157
+            }
+        },
+        "350": {
+            "name": "Fixed Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 157
+            }
+        },
+        "351": {
+            "name": "Anchored",
+            "src": {
+                "src": "US25004E",
+                "page": 157
+            }
+        },
+        "352": {
+            "name": "Spread Damage 1",
+            "src": {
+                "src": "US25004E",
+                "page": 156
+            }
+        },
+        "353": {
+            "name": "Spread Damage 2",
+            "src": {
+                "src": "US25004E",
+                "page": 156
+            }
+        },
+        "354": {
+            "name": "Two Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 156
+            }
+        },
+        "355": {
+            "name": "Stronger Shield",
+            "src": {
+                "src": "US25004E",
+                "page": 156
+            }
+        },
+        "356": {
+            "name": "Wider Radius",
+            "src": {
+                "src": "US25004E",
+                "page": 156
+            }
+        },
+        "357": {
+            "name": "Affect Another",
+            "src": {
+                "src": "US25004E",
+                "page": 156
+            }
+        },
+        "358": {
+            "name": "Successful Influence 1",
+            "src": {
+                "src": "US25004E",
+                "page": 159
+            }
+        },
+        "359": {
+            "name": "Successful Influence 2",
+            "src": {
+                "src": "US25004E",
+                "page": 159
+            }
+        },
+        "360": {
+            "name": "Successful Influence 3",
+            "src": {
+                "src": "US25004E",
+                "page": 159
+            }
+        },
+        "361": {
+            "name": "Good Illusion 1",
+            "src": {
+                "src": "US25004E",
+                "page": 157
+            }
+        },
+        "362": {
+            "name": "Good Illusion 2",
+            "src": {
+                "src": "US25004E",
+                "page": 157
+            }
+        },
+        "363": {
+            "name": "Good Illusion 3",
+            "src": {
+                "src": "US25004E",
+                "page": 157
+            }
+        },
+        "364": {
+            "name": "Vaporize",
+            "src": {
+                "src": "US25004E",
+                "page": 162
+            }
+        },
+        "365": {
+            "name": "Increased Spitting Range",
+            "src": {
+                "src": "US25004E",
+                "page": 162
+            }
+        },
+        "366": {
+            "name": "Aftereffects",
+            "src": {
+                "src": "US25004E",
+                "page": 162
+            }
+        },
+        "367": {
+            "name": "Retractable Claws",
+            "src": {
+                "src": "US25004E",
+                "page": 162
+            }
+        },
+        "368": {
+            "name": "Climbing Aid",
+            "src": {
+                "src": "US25004E",
+                "page": 162
+            }
+        },
+        "369": {
+            "name": "Sharp Claws",
+            "src": {
+                "src": "US25004E",
+                "page": 162
+            }
+        },
+        "370": {
+            "name": "Spread Effects",
+            "src": {
+                "src": "US25004E",
+                "page": 157
+            }
+        },
+        "371": {
+            "name": "Longer Effects",
+            "src": {
+                "src": "US25004E",
+                "page": 157
+            }
+        },
+        "372": {
+            "name": "Two Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 157
+            }
+        },
+        "373": {
+            "name": "Intense Ray",
+            "src": {
+                "src": "US25004E",
+                "page": 158
+            }
+        },
+        "374": {
+            "name": "Winding Ray",
+            "src": {
+                "src": "US25004E",
+                "page": 158
+            }
+        },
+        "375": {
+            "name": "Two Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 158
+            }
+        },
+        "376": {
+            "name": "Greater Amount",
+            "src": {
+                "src": "US25004E",
+                "page": 158
+            }
+        },
+        "377": {
+            "name": "Tremendous Amount",
+            "src": {
+                "src": "US25004E",
+                "page": 158
+            }
+        },
+        "378": {
+            "name": "Vast Amount",
+            "src": {
+                "src": "US25004E",
+                "page": 158
+            }
+        },
+        "379": {
+            "name": "Sustain Longer",
+            "src": {
+                "src": "US25004E",
+                "page": 155
+            }
+        },
+        "380": {
+            "name": "Affect Another",
+            "src": {
+                "src": "US25004E",
+                "page": 155
+            }
+        },
+        "381": {
+            "name": "Multiple Living Creatures",
+            "src": {
+                "src": "US25004E",
+                "page": 155
+            }
+        },
+        "382": {
+            "name": "Higher and Farther 1",
+            "src": {
+                "src": "US25004E",
+                "page": 161
+            }
+        },
+        "383": {
+            "name": "Higher and Farther 2",
+            "src": {
+                "src": "US25004E",
+                "page": 161
+            }
+        },
+        "384": {
+            "name": "Nimble Toad",
+            "src": {
+                "src": "US25004E",
+                "page": 161
+            }
+        },
+        "385": {
+            "name": "Greater Amount",
+            "src": {
+                "src": "US25004E",
+                "page": 158
+            }
+        },
+        "386": {
+            "name": "Tremendous Amount",
+            "src": {
+                "src": "US25004E",
+                "page": 158
+            }
+        },
+        "387": {
+            "name": "Vast Amount",
+            "src": {
+                "src": "US25004E",
+                "page": 158
+            }
+        },
+        "388": {
+            "name": "More Weight",
+            "src": {
+                "src": "US25004E",
+                "page": 158
+            }
+        },
+        "389": {
+            "name": "Improved Stats",
+            "src": {
+                "src": "US25004E",
+                "page": 158
+            }
+        },
+        "390": {
+            "name": "Further Improved Stats",
+            "src": {
+                "src": "US25004E",
+                "page": 158
+            }
+        },
+        "391": {
+            "name": "Greater Weight",
+            "src": {
+                "src": "US25004E",
+                "page": 158
+            }
+        },
+        "392": {
+            "name": "Tremendous Weight",
+            "src": {
+                "src": "US25004E",
+                "page": 158
+            }
+        },
+        "393": {
+            "name": "Multiple Objects",
+            "src": {
+                "src": "US25004E",
+                "page": 158
+            }
+        },
+        "394": {
+            "name": "Wandering Fog",
+            "src": {
+                "src": "US25004E",
+                "page": 162
+            }
+        },
+        "395": {
+            "name": "Long Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 162
+            }
+        },
+        "396": {
+            "name": "Dense Fog",
+            "src": {
+                "src": "US25004E",
+                "page": 162
+            }
+        },
+        "397": {
+            "name": "Good Illusion 1",
+            "src": {
+                "src": "US25004E",
+                "page": 159
+            }
+        },
+        "398": {
+            "name": "Good Illusion 2",
+            "src": {
+                "src": "US25004E",
+                "page": 159
+            }
+        },
+        "399": {
+            "name": "Good Illusion 3",
+            "src": {
+                "src": "US25004E",
+                "page": 159
+            }
+        },
+        "400": {
+            "name": "Two Items",
+            "src": {
+                "src": "US25004E",
+                "page": 159
+            }
+        },
+        "401": {
+            "name": "Linear Sight",
+            "src": {
+                "src": "US25004E",
+                "page": 159
+            }
+        },
+        "402": {
+            "name": "All-Around Vision",
+            "src": {
+                "src": "US25004E",
+                "page": 159
+            }
+        },
+        "403": {
+            "name": "Spread Effects",
+            "src": {
+                "src": "US25004E",
+                "page": 159
+            }
+        },
+        "404": {
+            "name": "Longer Effects",
+            "src": {
+                "src": "US25004E",
+                "page": 159
+            }
+        },
+        "405": {
+            "name": "Two Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 159
+            }
+        },
+        "406": {
+            "name": "Seeing and Hearing",
+            "src": {
+                "src": "US25004E",
+                "page": 159
+            }
+        },
+        "407": {
+            "name": "Brightness",
+            "src": {
+                "src": "US25004E",
+                "page": 159
+            }
+        },
+        "408": {
+            "name": "Casting Through Walls",
+            "src": {
+                "src": "US25004E",
+                "page": 159
+            }
+        },
+        "409": {
+            "name": "Spread Effects",
+            "src": {
+                "src": "US25004E",
+                "page": 160
+            }
+        },
+        "410": {
+            "name": "Fast Increase",
+            "src": {
+                "src": "US25004E",
+                "page": 160
+            }
+        },
+        "411": {
+            "name": "Fixed Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 160
+            }
+        },
+        "412": {
+            "name": "Wide-Range Fighting Stick",
+            "src": {
+                "src": "US25004E",
+                "page": 156
+            }
+        },
+        "413": {
+            "name": "Stronger Broom",
+            "src": {
+                "src": "US25004E",
+                "page": 156
+            }
+        },
+        "414": {
+            "name": "Fixed Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 156
+            }
+        },
+        "415": {
+            "name": "More Questions",
+            "src": {
+                "src": "US25004E",
+                "page": 160
+            }
+        },
+        "416": {
+            "name": "Answers with Numbers",
+            "src": {
+                "src": "US25004E",
+                "page": 160
+            }
+        },
+        "417": {
+            "name": "Answers with Timing",
+            "src": {
+                "src": "US25004E",
+                "page": 160
+            }
+        },
+        "418": {
+            "name": "Equal",
+            "src": {
+                "src": "US25004E",
+                "page": 160
+            }
+        },
+        "419": {
+            "name": "Mental Abilities",
+            "src": {
+                "src": "US25004E",
+                "page": 160
+            }
+        },
+        "420": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 160
+            }
+        },
+        "421": {
+            "name": "Longer Duration 1",
+            "src": {
+                "src": "US25004E",
+                "page": 159
+            }
+        },
+        "422": {
+            "name": "Increased Range",
+            "src": {
+                "src": "US25004E",
+                "page": 159
+            }
+        },
+        "423": {
+            "name": "Longer Duration 2",
+            "src": {
+                "src": "US25004E",
+                "page": 159
+            }
+        },
+        "424": {
+            "name": "Affect Another",
+            "src": {
+                "src": "US25004E",
+                "page": 160
+            }
+        },
+        "425": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 160
+            }
+        },
+        "426": {
+            "name": "True Beauty",
+            "src": {
+                "src": "US25004E",
+                "page": 160
+            }
+        },
+        "427": {
+            "name": "Different Costs",
+            "src": {
+                "src": "US25004E",
+                "page": 160
+            }
+        },
+        "428": {
+            "name": "Affect Another",
+            "src": {
+                "src": "US25004E",
+                "page": 160
+            }
+        },
+        "429": {
+            "name": "Fixed Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 160
+            }
+        },
+        "430": {
+            "name": "Spread Effects",
+            "src": {
+                "src": "US25004E",
+                "page": 161
+            }
+        },
+        "431": {
+            "name": "Longer Effects",
+            "src": {
+                "src": "US25004E",
+                "page": 161
+            }
+        },
+        "432": {
+            "name": "Two Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 161
+            }
+        },
+        "433": {
+            "name": "Works Through Clothes",
+            "src": {
+                "src": "US25004E",
+                "page": 161
+            }
+        },
+        "434": {
+            "name": "Affect Another",
+            "src": {
+                "src": "US25004E",
+                "page": 161
+            }
+        },
+        "435": {
+            "name": "Fixed Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 161
+            }
+        },
+        "436": {
+            "name": "Affect Another",
+            "src": {
+                "src": "US25004E",
+                "page": 161
+            }
+        },
+        "437": {
+            "name": "Lower Costs",
+            "src": {
+                "src": "US25004E",
+                "page": 161
+            }
+        },
+        "438": {
+            "name": "Fixed Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 161
+            }
+        },
+        "439": {
+            "name": "Greater Weight",
+            "src": {
+                "src": "US25004E",
+                "page": 161
+            }
+        },
+        "440": {
+            "name": "Greater Teleportation Options",
+            "src": {
+                "src": "US25004E",
+                "page": 161
+            }
+        },
+        "441": {
+            "name": "Transport",
+            "src": {
+                "src": "US25004E",
+                "page": 161
+            }
+        },
+        "442": {
+            "name": "Lower Costs",
+            "src": {
+                "src": "US25004E",
+                "page": 162
+            }
+        },
+        "443": {
+            "name": "Fixed Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 162
+            }
+        },
+        "444": {
+            "name": "Invisible Clothes",
+            "src": {
+                "src": "US25004E",
+                "page": 162
+            }
+        },
+        "445": {
+            "name": "Lower Costs",
+            "src": {
+                "src": "US25004E",
+                "page": 155
+            }
+        },
+        "446": {
+            "name": "Fixed Duration",
+            "src": {
+                "src": "US25004E",
+                "page": 155
+            }
+        },
+        "447": {
+            "name": "Multiple Targets",
+            "src": {
+                "src": "US25004E",
+                "page": 155
+            }
+        },
+        "448": {
+            "name": "Lower Ritual Time",
+            "src": {
+                "src": "US25004E",
+                "page": 162
+            }
+        },
+        "449": {
+            "name": "Lowered Penalty 1",
+            "src": {
+                "src": "US25004E",
+                "page": 162
+            }
+        },
+        "450": {
+            "name": "Lowered Penalty 2",
+            "src": {
+                "src": "US25004E",
+                "page": 162
+            }
+        },
+        "451": {
+            "name": "More Services",
+            "src": {
+                "src": "US25004E",
+                "page": 163
+            }
+        },
+        "452": {
+            "name": "Longer Service",
+            "src": {
+                "src": "US25004E",
+                "page": 163
+            }
+        },
+        "453": {
+            "name": "Powerful Creature",
+            "src": {
+                "src": "US25004E",
+                "page": 163
+            }
+        },
+        "454": {
+            "name": "More Services",
+            "src": {
+                "src": "US25004E",
+                "page": 163
+            }
+        },
+        "455": {
+            "name": "Longer Service",
+            "src": {
+                "src": "US25004E",
+                "page": 163
+            }
+        },
+        "456": {
+            "name": "Powerful Creature",
+            "src": {
+                "src": "US25004E",
+                "page": 163
+            }
+        },
+        "457": {
+            "name": "More Services",
+            "src": {
+                "src": "US25004E",
+                "page": 163
+            }
+        },
+        "458": {
+            "name": "Longer Service",
+            "src": {
+                "src": "US25004E",
+                "page": 163
+            }
+        },
+        "459": {
+            "name": "Powerful Creature",
+            "src": {
+                "src": "US25004E",
+                "page": 163
+            }
+        },
+        "460": {
+            "name": "More Services",
+            "src": {
+                "src": "US25004E",
+                "page": 163
+            }
+        },
+        "461": {
+            "name": "Longer Service",
+            "src": {
+                "src": "US25004E",
+                "page": 163
+            }
+        },
+        "462": {
+            "name": "Powerful Creature",
+            "src": {
+                "src": "US25004E",
+                "page": 163
+            }
+        },
+        "463": {
+            "name": "Shortened Ritual Time",
+            "src": {
+                "src": "US25004E",
+                "page": 163
+            }
+        },
+        "464": {
+            "name": "Choice of Bearer",
+            "src": {
+                "src": "US25004E",
+                "page": 163
+            }
+        },
+        "465": {
+            "name": "Hatred of…",
+            "src": {
+                "src": "US25004E",
+                "page": 163
+            }
+        }
+    },
+    "LITURGICALCHANTENHANCEMENT": {
+        "1": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 111
+            }
+        },
+        "2": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 111
+            }
+        },
+        "3": {
+            "name": "More Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 111
+            }
+        },
+        "4": {
+            "name": "Hard Wave",
+            "src": {
+                "src": "US25005E",
+                "page": 112
+            }
+        },
+        "5": {
+            "name": "Thundering Wave",
+            "src": {
+                "src": "US25005E",
+                "page": 112
+            }
+        },
+        "6": {
+            "name": "More Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 112
+            }
+        },
+        "7": {
+            "name": "Specific Creatures",
+            "src": {
+                "src": "US25005E",
+                "page": 126
+            }
+        },
+        "8": {
+            "name": "Through Fire and Ore",
+            "src": {
+                "src": "US25005E",
+                "page": 126
+            }
+        },
+        "9": {
+            "name": "Clear Sight",
+            "src": {
+                "src": "US25005E",
+                "page": 126
+            }
+        },
+        "10": {
+            "name": "Modify Liturgical Time",
+            "src": {
+                "src": "US25005E",
+                "page": 112
+            }
+        },
+        "11": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 112
+            }
+        },
+        "12": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 112
+            }
+        },
+        "13": {
+            "name": "Divide Damage 1",
+            "src": {
+                "src": "US25005E",
+                "page": 138
+            }
+        },
+        "14": {
+            "name": "Divide Damage 2",
+            "src": {
+                "src": "US25005E",
+                "page": 138
+            }
+        },
+        "15": {
+            "name": "Two Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 138
+            }
+        },
+        "16": {
+            "name": "Divide Damage 1",
+            "src": {
+                "src": "US25005E",
+                "page": 112
+            }
+        },
+        "17": {
+            "name": "Divide Damage 2",
+            "src": {
+                "src": "US25005E",
+                "page": 112
+            }
+        },
+        "18": {
+            "name": "Two Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 112
+            }
+        },
+        "19": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 121
+            }
+        },
+        "20": {
+            "name": "Target Category Living Creatures",
+            "src": {
+                "src": "US25005E",
+                "page": 121
+            }
+        },
+        "21": {
+            "name": "Modify Cost",
+            "src": {
+                "src": "US25005E",
+                "page": 121
+            }
+        },
+        "22": {
+            "name": "Longer Duration I",
+            "src": {
+                "src": "US25005E",
+                "page": 123
+            }
+        },
+        "23": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 123
+            }
+        },
+        "24": {
+            "name": "Longer Duration II",
+            "src": {
+                "src": "US25005E",
+                "page": 123
+            }
+        },
+        "25": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 118
+            }
+        },
+        "26": {
+            "name": "Two Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 118
+            }
+        },
+        "27": {
+            "name": "Target Category Living Creatures",
+            "src": {
+                "src": "US25005E",
+                "page": 118
+            }
+        },
+        "28": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 129
+            }
+        },
+        "29": {
+            "name": "Strong Principles I",
+            "src": {
+                "src": "US25005E",
+                "page": 129
+            }
+        },
+        "30": {
+            "name": "Strong Principles II",
+            "src": {
+                "src": "US25005E",
+                "page": 129
+            }
+        },
+        "31": {
+            "name": "More Services",
+            "src": {
+                "src": "US25005E",
+                "page": 137
+            }
+        },
+        "32": {
+            "name": "Longer Service",
+            "src": {
+                "src": "US25005E",
+                "page": 137
+            }
+        },
+        "33": {
+            "name": "Powerful Creature",
+            "src": {
+                "src": "US25005E",
+                "page": 137
+            }
+        },
+        "34": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 119
+            }
+        },
+        "35": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 119
+            }
+        },
+        "36": {
+            "name": "Modify Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 119
+            }
+        },
+        "37": {
+            "name": "Target Category Living Creatures",
+            "src": {
+                "src": "US25005E",
+                "page": 124
+            }
+        },
+        "38": {
+            "name": "Sustained",
+            "src": {
+                "src": "US25005E",
+                "page": 124
+            }
+        },
+        "39": {
+            "name": "Precise Insight",
+            "src": {
+                "src": "US25005E",
+                "page": 124
+            }
+        },
+        "40": {
+            "name": "Confusing Lightning",
+            "src": {
+                "src": "US25005E",
+                "page": 126
+            }
+        },
+        "41": {
+            "name": "Stunning Lightning",
+            "src": {
+                "src": "US25005E",
+                "page": 126
+            }
+        },
+        "42": {
+            "name": "Burning Lightning",
+            "src": {
+                "src": "US25005E",
+                "page": 126
+            }
+        },
+        "43": {
+            "name": "Choose Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 114
+            }
+        },
+        "44": {
+            "name": "Wild Raging",
+            "src": {
+                "src": "US25005E",
+                "page": 114
+            }
+        },
+        "45": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 114
+            }
+        },
+        "46": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 113
+            }
+        },
+        "47": {
+            "name": "Modify Cost",
+            "src": {
+                "src": "US25005E",
+                "page": 113
+            }
+        },
+        "48": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 113
+            }
+        },
+        "49": {
+            "name": "Longer Duration I",
+            "src": {
+                "src": "US25005E",
+                "page": 134
+            }
+        },
+        "50": {
+            "name": "Wider Radius",
+            "src": {
+                "src": "US25005E",
+                "page": 134
+            }
+        },
+        "51": {
+            "name": "Longer Duration II",
+            "src": {
+                "src": "US25005E",
+                "page": 134
+            }
+        },
+        "52": {
+            "name": "Protective Skin",
+            "src": {
+                "src": "US25005E",
+                "page": 119
+            }
+        },
+        "53": {
+            "name": "Wider Radius",
+            "src": {
+                "src": "US25005E",
+                "page": 119
+            }
+        },
+        "54": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 119
+            }
+        },
+        "55": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 120
+            }
+        },
+        "56": {
+            "name": "Two Dolphins",
+            "src": {
+                "src": "US25005E",
+                "page": 120
+            }
+        },
+        "57": {
+            "name": "Four Dolphins",
+            "src": {
+                "src": "US25005E",
+                "page": 120
+            }
+        },
+        "58": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 132
+            }
+        },
+        "59": {
+            "name": "Reduce Resistance",
+            "src": {
+                "src": "US25005E",
+                "page": 132
+            }
+        },
+        "60": {
+            "name": "Long and Strong Slavery",
+            "src": {
+                "src": "US25005E",
+                "page": 132
+            }
+        },
+        "61": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 126
+            }
+        },
+        "62": {
+            "name": "Good Trade",
+            "src": {
+                "src": "US25005E",
+                "page": 126
+            }
+        },
+        "63": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 126
+            }
+        },
+        "64": {
+            "name": "Target Category Living Creatures",
+            "src": {
+                "src": "US25005E",
+                "page": 138
+            }
+        },
+        "65": {
+            "name": "Modify Cost",
+            "src": {
+                "src": "US25005E",
+                "page": 138
+            }
+        },
+        "66": {
+            "name": "Banish Petrification",
+            "src": {
+                "src": "US25005E",
+                "page": 138
+            }
+        },
+        "67": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 120
+            }
+        },
+        "68": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 120
+            }
+        },
+        "69": {
+            "name": "Higher Damage",
+            "src": {
+                "src": "US25005E",
+                "page": 120
+            }
+        },
+        "70": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 136
+            }
+        },
+        "71": {
+            "name": "Remove Confusion",
+            "src": {
+                "src": "US25005E",
+                "page": 136
+            }
+        },
+        "72": {
+            "name": "Remove Pain",
+            "src": {
+                "src": "US25005E",
+                "page": 136
+            }
+        },
+        "73": {
+            "name": "Stone and Metal",
+            "src": {
+                "src": "US25005E",
+                "page": 134
+            }
+        },
+        "74": {
+            "name": "Greater Weight",
+            "src": {
+                "src": "US25005E",
+                "page": 134
+            }
+        },
+        "75": {
+            "name": "Recall",
+            "src": {
+                "src": "US25005E",
+                "page": 134
+            }
+        },
+        "76": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 139
+            }
+        },
+        "77": {
+            "name": "Wider Radius",
+            "src": {
+                "src": "US25005E",
+                "page": 139
+            }
+        },
+        "78": {
+            "name": "Intense Flames",
+            "src": {
+                "src": "US25005E",
+                "page": 139
+            }
+        },
+        "79": {
+            "name": "Wider Radius",
+            "src": {
+                "src": "US25005E",
+                "page": 132
+            }
+        },
+        "80": {
+            "name": "Longer Interval",
+            "src": {
+                "src": "US25005E",
+                "page": 132
+            }
+        },
+        "81": {
+            "name": "Not Sustained",
+            "src": {
+                "src": "US25005E",
+                "page": 132
+            }
+        },
+        "82": {
+            "name": "Spread Effects",
+            "src": {
+                "src": "US25005E",
+                "page": 131
+            }
+        },
+        "83": {
+            "name": "Target Category Living Creatures",
+            "src": {
+                "src": "US25005E",
+                "page": 131
+            }
+        },
+        "84": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 131
+            }
+        },
+        "85": {
+            "name": "Wider Radius",
+            "src": {
+                "src": "US25005E",
+                "page": 122
+            }
+        },
+        "86": {
+            "name": "Extreme Cold",
+            "src": {
+                "src": "US25005E",
+                "page": 122
+            }
+        },
+        "87": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 122
+            }
+        },
+        "88": {
+            "name": "Not Sustained",
+            "src": {
+                "src": "US25005E",
+                "page": 129
+            }
+        },
+        "89": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 129
+            }
+        },
+        "90": {
+            "name": "Greater Fires",
+            "src": {
+                "src": "US25005E",
+                "page": 129
+            }
+        },
+        "91": {
+            "name": "Wider Radius",
+            "src": {
+                "src": "US25005E",
+                "page": 122
+            }
+        },
+        "92": {
+            "name": "Not Sustained",
+            "src": {
+                "src": "US25005E",
+                "page": 122
+            }
+        },
+        "93": {
+            "name": "You See Dead People, Too!",
+            "src": {
+                "src": "US25005E",
+                "page": 122
+            }
+        },
+        "94": {
+            "name": "Greater Amount I",
+            "src": {
+                "src": "US25005E",
+                "page": 113
+            }
+        },
+        "95": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 113
+            }
+        },
+        "96": {
+            "name": "Greater Amount II",
+            "src": {
+                "src": "US25005E",
+                "page": 113
+            }
+        },
+        "97": {
+            "name": "Resistant to Vermin",
+            "src": {
+                "src": "US25005E",
+                "page": 123
+            }
+        },
+        "98": {
+            "name": "Grow on Barren Ground",
+            "src": {
+                "src": "US25005E",
+                "page": 123
+            }
+        },
+        "99": {
+            "name": "Great Harvest",
+            "src": {
+                "src": "US25005E",
+                "page": 123
+            }
+        },
+        "100": {
+            "name": "Greater Value I",
+            "src": {
+                "src": "US25005E",
+                "page": 123
+            }
+        },
+        "101": {
+            "name": "Greater Value II",
+            "src": {
+                "src": "US25005E",
+                "page": 123
+            }
+        },
+        "102": {
+            "name": "Greater Value III",
+            "src": {
+                "src": "US25005E",
+                "page": 123
+            }
+        },
+        "103": {
+            "name": "Modify Liturgical Time",
+            "src": {
+                "src": "US25005E",
+                "page": 123
+            }
+        },
+        "104": {
+            "name": "Hard Shell",
+            "src": {
+                "src": "US25005E",
+                "page": 123
+            }
+        },
+        "105": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 123
+            }
+        },
+        "106": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 119
+            }
+        },
+        "107": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 119
+            }
+        },
+        "108": {
+            "name": "More Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 119
+            }
+        },
+        "109": {
+            "name": "Home Temple",
+            "src": {
+                "src": "US25005E",
+                "page": 119
+            }
+        },
+        "110": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 119
+            }
+        },
+        "111": {
+            "name": "Personal Acquaintance",
+            "src": {
+                "src": "US25005E",
+                "page": 119
+            }
+        },
+        "112": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 125
+            }
+        },
+        "113": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 125
+            }
+        },
+        "114": {
+            "name": "More Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 125
+            }
+        },
+        "115": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 125
+            }
+        },
+        "116": {
+            "name": "Longer Duration I",
+            "src": {
+                "src": "US25005E",
+                "page": 125
+            }
+        },
+        "117": {
+            "name": "Longer Duration II",
+            "src": {
+                "src": "US25005E",
+                "page": 125
+            }
+        },
+        "118": {
+            "name": "Powerful Healing Well",
+            "src": {
+                "src": "US25005E",
+                "page": 124
+            }
+        },
+        "119": {
+            "name": "Refreshing Healing Well",
+            "src": {
+                "src": "US25005E",
+                "page": 124
+            }
+        },
+        "120": {
+            "name": "Two Drinkers",
+            "src": {
+                "src": "US25005E",
+                "page": 124
+            }
+        },
+        "121": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 125
+            }
+        },
+        "122": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 125
+            }
+        },
+        "123": {
+            "name": "More Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 125
+            }
+        },
+        "124": {
+            "name": "Together, We Are Strong",
+            "src": {
+                "src": "US25005E",
+                "page": 124
+            }
+        },
+        "125": {
+            "name": "Many Strong Hands I",
+            "src": {
+                "src": "US25005E",
+                "page": 124
+            }
+        },
+        "126": {
+            "name": "Many Strong Hands II",
+            "src": {
+                "src": "US25005E",
+                "page": 124
+            }
+        },
+        "127": {
+            "name": "Aggression",
+            "src": {
+                "src": "US25005E",
+                "page": 115
+            }
+        },
+        "128": {
+            "name": "Rat Infestation",
+            "src": {
+                "src": "US25005E",
+                "page": 115
+            }
+        },
+        "129": {
+            "name": "Flood of Rats",
+            "src": {
+                "src": "US25005E",
+                "page": 115
+            }
+        },
+        "130": {
+            "name": "Aggression",
+            "src": {
+                "src": "US25005E",
+                "page": 115
+            }
+        },
+        "131": {
+            "name": "Pack",
+            "src": {
+                "src": "US25005E",
+                "page": 115
+            }
+        },
+        "132": {
+            "name": "Frenzy",
+            "src": {
+                "src": "US25005E",
+                "page": 115
+            }
+        },
+        "133": {
+            "name": "Aggression",
+            "src": {
+                "src": "US25005E",
+                "page": 117
+            }
+        },
+        "134": {
+            "name": "Bat Swarm",
+            "src": {
+                "src": "US25005E",
+                "page": 117
+            }
+        },
+        "135": {
+            "name": "Loyal Unto Death",
+            "src": {
+                "src": "US25005E",
+                "page": 117
+            }
+        },
+        "136": {
+            "name": "Aggression",
+            "src": {
+                "src": "US25005E",
+                "page": 117
+            }
+        },
+        "137": {
+            "name": "Strong Poison",
+            "src": {
+                "src": "US25005E",
+                "page": 117
+            }
+        },
+        "138": {
+            "name": "Arachnophobia",
+            "src": {
+                "src": "US25005E",
+                "page": 117
+            }
+        },
+        "139": {
+            "name": "Also Protects Equipment",
+            "src": {
+                "src": "US25005E",
+                "page": 127
+            }
+        },
+        "140": {
+            "name": "Less Fire Damage",
+            "src": {
+                "src": "US25005E",
+                "page": 127
+            }
+        },
+        "141": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 127
+            }
+        },
+        "142": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 124
+            }
+        },
+        "143": {
+            "name": "Strong Principles I",
+            "src": {
+                "src": "US25005E",
+                "page": 124
+            }
+        },
+        "144": {
+            "name": "Strong Principles II",
+            "src": {
+                "src": "US25005E",
+                "page": 124
+            }
+        },
+        "145": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 126
+            }
+        },
+        "146": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 126
+            }
+        },
+        "147": {
+            "name": "More Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 126
+            }
+        },
+        "148": {
+            "name": "Especially Clear Mind",
+            "src": {
+                "src": "US25005E",
+                "page": 118
+            }
+        },
+        "149": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 118
+            }
+        },
+        "150": {
+            "name": "Target Category Living Creatures",
+            "src": {
+                "src": "US25005E",
+                "page": 118
+            }
+        },
+        "151": {
+            "name": "Hard to Dodge",
+            "src": {
+                "src": "US25005E",
+                "page": 136
+            }
+        },
+        "152": {
+            "name": "Increase Damage",
+            "src": {
+                "src": "US25005E",
+                "page": 136
+            }
+        },
+        "153": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 136
+            }
+        },
+        "154": {
+            "name": "Target Category Living Creatures",
+            "src": {
+                "src": "US25005E",
+                "page": 133
+            }
+        },
+        "155": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 133
+            }
+        },
+        "156": {
+            "name": "Curative Salvation",
+            "src": {
+                "src": "US25005E",
+                "page": 133
+            }
+        },
+        "157": {
+            "name": "Stronger Shield",
+            "src": {
+                "src": "US25005E",
+                "page": 127
+            }
+        },
+        "158": {
+            "name": "Wider Radius",
+            "src": {
+                "src": "US25005E",
+                "page": 127
+            }
+        },
+        "159": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 127
+            }
+        },
+        "160": {
+            "name": "Three Attacks",
+            "src": {
+                "src": "US25005E",
+                "page": 132
+            }
+        },
+        "161": {
+            "name": "Six Attacks",
+            "src": {
+                "src": "US25005E",
+                "page": 132
+            }
+        },
+        "162": {
+            "name": "Nine Attacks",
+            "src": {
+                "src": "US25005E",
+                "page": 132
+            }
+        },
+        "163": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 128
+            }
+        },
+        "164": {
+            "name": "Modify Liturgical Time",
+            "src": {
+                "src": "US25005E",
+                "page": 128
+            }
+        },
+        "165": {
+            "name": "Other Effects",
+            "src": {
+                "src": "US25005E",
+                "page": 128
+            }
+        },
+        "166": {
+            "name": "Not Sustained",
+            "src": {
+                "src": "US25005E",
+                "page": 128
+            }
+        },
+        "167": {
+            "name": "Target Category Creatures",
+            "src": {
+                "src": "US25005E",
+                "page": 128
+            }
+        },
+        "168": {
+            "name": "Modify Cost",
+            "src": {
+                "src": "US25005E",
+                "page": 128
+            }
+        },
+        "169": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 129
+            }
+        },
+        "170": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 129
+            }
+        },
+        "171": {
+            "name": "Sustained",
+            "src": {
+                "src": "US25005E",
+                "page": 129
+            }
+        },
+        "172": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 136
+            }
+        },
+        "173": {
+            "name": "Senseless and Confused",
+            "src": {
+                "src": "US25005E",
+                "page": 136
+            }
+        },
+        "174": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 136
+            }
+        },
+        "175": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 129
+            }
+        },
+        "176": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 129
+            }
+        },
+        "177": {
+            "name": "More Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 129
+            }
+        },
+        "178": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 130
+            }
+        },
+        "179": {
+            "name": "Feels No Cold",
+            "src": {
+                "src": "US25005E",
+                "page": 130
+            }
+        },
+        "180": {
+            "name": "Stationary Cold",
+            "src": {
+                "src": "US25005E",
+                "page": 130
+            }
+        },
+        "181": {
+            "name": "Violent Berserker I",
+            "src": {
+                "src": "US25005E",
+                "page": 130
+            }
+        },
+        "182": {
+            "name": "Four Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 130
+            }
+        },
+        "183": {
+            "name": "Violent Berserker II",
+            "src": {
+                "src": "US25005E",
+                "page": 130
+            }
+        },
+        "184": {
+            "name": "Gullible",
+            "src": {
+                "src": "US25005E",
+                "page": 130
+            }
+        },
+        "185": {
+            "name": "Four Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 130
+            }
+        },
+        "186": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 130
+            }
+        },
+        "187": {
+            "name": "Naive",
+            "src": {
+                "src": "US25005E",
+                "page": 130
+            }
+        },
+        "188": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 130
+            }
+        },
+        "189": {
+            "name": "Four Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 130
+            }
+        },
+        "190": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 131
+            }
+        },
+        "191": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 131
+            }
+        },
+        "192": {
+            "name": "Four Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 131
+            }
+        },
+        "193": {
+            "name": "Not Sustained",
+            "src": {
+                "src": "US25005E",
+                "page": 131
+            }
+        },
+        "194": {
+            "name": "Stealthy Mind-Seeker",
+            "src": {
+                "src": "US25005E",
+                "page": 131
+            }
+        },
+        "195": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 131
+            }
+        },
+        "196": {
+            "name": "Defensive Wall",
+            "src": {
+                "src": "US25005E",
+                "page": 137
+            }
+        },
+        "197": {
+            "name": "Tough",
+            "src": {
+                "src": "US25005E",
+                "page": 137
+            }
+        },
+        "198": {
+            "name": "Good Fight",
+            "src": {
+                "src": "US25005E",
+                "page": 137
+            }
+        },
+        "199": {
+            "name": "Intense Jet",
+            "src": {
+                "src": "US25005E",
+                "page": 121
+            }
+        },
+        "200": {
+            "name": "Winding Jet",
+            "src": {
+                "src": "US25005E",
+                "page": 121
+            }
+        },
+        "201": {
+            "name": "Two Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 121
+            }
+        },
+        "202": {
+            "name": "Modify Cost",
+            "src": {
+                "src": "US25005E",
+                "page": 133
+            }
+        },
+        "203": {
+            "name": "More Rats",
+            "src": {
+                "src": "US25005E",
+                "page": 133
+            }
+        },
+        "204": {
+            "name": "One Last Rat",
+            "src": {
+                "src": "US25005E",
+                "page": 133
+            }
+        },
+        "205": {
+            "name": "Determine Distance",
+            "src": {
+                "src": "US25005E",
+                "page": 112
+            }
+        },
+        "206": {
+            "name": "Temple of the Tradition",
+            "src": {
+                "src": "US25005E",
+                "page": 112
+            }
+        },
+        "207": {
+            "name": "Determine Path",
+            "src": {
+                "src": "US25005E",
+                "page": 112
+            }
+        },
+        "208": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 118
+            }
+        },
+        "209": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 118
+            }
+        },
+        "210": {
+            "name": "More Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 118
+            }
+        },
+        "211": {
+            "name": "Versus Daimonids",
+            "src": {
+                "src": "US25005E",
+                "page": 133
+            }
+        },
+        "212": {
+            "name": "Modify Liturgical Time",
+            "src": {
+                "src": "US25005E",
+                "page": 133
+            }
+        },
+        "213": {
+            "name": "Longer Interval",
+            "src": {
+                "src": "US25005E",
+                "page": 133
+            }
+        },
+        "214": {
+            "name": "Strong Magical Drain I",
+            "src": {
+                "src": "US25005E",
+                "page": 139
+            }
+        },
+        "215": {
+            "name": "Strong Magical Drain II",
+            "src": {
+                "src": "US25005E",
+                "page": 139
+            }
+        },
+        "216": {
+            "name": "Wider Radius",
+            "src": {
+                "src": "US25005E",
+                "page": 139
+            }
+        },
+        "217": {
+            "name": "Not Sustained",
+            "src": {
+                "src": "US25005E",
+                "page": 136
+            }
+        },
+        "218": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 136
+            }
+        },
+        "219": {
+            "name": "Harder to See Through",
+            "src": {
+                "src": "US25005E",
+                "page": 136
+            }
+        },
+        "220": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 135
+            }
+        },
+        "221": {
+            "name": "More Birds",
+            "src": {
+                "src": "US25005E",
+                "page": 135
+            }
+        },
+        "222": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 135
+            }
+        },
+        "223": {
+            "name": "Stronger Safety",
+            "src": {
+                "src": "US25005E",
+                "page": 134
+            }
+        },
+        "224": {
+            "name": "Longer Interval I",
+            "src": {
+                "src": "US25005E",
+                "page": 134
+            }
+        },
+        "225": {
+            "name": "Longer Interval II",
+            "src": {
+                "src": "US25005E",
+                "page": 134
+            }
+        },
+        "226": {
+            "name": "Not Sustained",
+            "src": {
+                "src": "US25005E",
+                "page": 114
+            }
+        },
+        "227": {
+            "name": "Wider Radius",
+            "src": {
+                "src": "US25005E",
+                "page": 114
+            }
+        },
+        "228": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 114
+            }
+        },
+        "229": {
+            "name": "Longer Duration I",
+            "src": {
+                "src": "US25005E",
+                "page": 136
+            }
+        },
+        "230": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 136
+            }
+        },
+        "231": {
+            "name": "Longer Duration II",
+            "src": {
+                "src": "US25005E",
+                "page": 136
+            }
+        },
+        "232": {
+            "name": "Modify Cost",
+            "src": {
+                "src": "US25005E",
+                "page": 120
+            }
+        },
+        "233": {
+            "name": "More Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 120
+            }
+        },
+        "234": {
+            "name": "Strong Soothing",
+            "src": {
+                "src": "US25005E",
+                "page": 120
+            }
+        },
+        "235": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 111
+            }
+        },
+        "236": {
+            "name": "More Animals",
+            "src": {
+                "src": "US25005E",
+                "page": 111
+            }
+        },
+        "237": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 111
+            }
+        },
+        "238": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 121
+            }
+        },
+        "239": {
+            "name": "Larger Animals",
+            "src": {
+                "src": "US25005E",
+                "page": 121
+            }
+        },
+        "240": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 121
+            }
+        },
+        "241": {
+            "name": "Not Sustained",
+            "src": {
+                "src": "US25005E",
+                "page": 114
+            }
+        },
+        "242": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 114
+            }
+        },
+        "243": {
+            "name": "Four Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 114
+            }
+        },
+        "244": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 132
+            }
+        },
+        "245": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 132
+            }
+        },
+        "246": {
+            "name": "Quick Petrification",
+            "src": {
+                "src": "US25005E",
+                "page": 132
+            }
+        },
+        "247": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 139
+            }
+        },
+        "248": {
+            "name": "Take Another With You",
+            "src": {
+                "src": "US25005E",
+                "page": 139
+            }
+        },
+        "249": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 139
+            }
+        },
+        "250": {
+            "name": "Harder to Dodge",
+            "src": {
+                "src": "US25005E",
+                "page": 140
+            }
+        },
+        "251": {
+            "name": "Increase Damage",
+            "src": {
+                "src": "US25005E",
+                "page": 140
+            }
+        },
+        "252": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 140
+            }
+        },
+        "253": {
+            "name": "Longer Duration I",
+            "src": {
+                "src": "US25005E",
+                "page": 118
+            }
+        },
+        "254": {
+            "name": "Longer Duration II",
+            "src": {
+                "src": "US25005E",
+                "page": 118
+            }
+        },
+        "255": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 118
+            }
+        },
+        "256": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 140
+            }
+        },
+        "257": {
+            "name": "Hard Shell",
+            "src": {
+                "src": "US25005E",
+                "page": 140
+            }
+        },
+        "258": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 140
+            }
+        },
+        "259": {
+            "name": "Excommunicate Blessed Ones I",
+            "src": {
+                "src": "US25005E",
+                "page": 153
+            }
+        },
+        "260": {
+            "name": "Forever Excommunicated",
+            "src": {
+                "src": "US25005E",
+                "page": 153
+            }
+        },
+        "261": {
+            "name": "Excommunicate Blessed Ones II",
+            "src": {
+                "src": "US25005E",
+                "page": 153
+            }
+        },
+        "262": {
+            "name": "Two Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 140
+            }
+        },
+        "263": {
+            "name": "Four Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 140
+            }
+        },
+        "264": {
+            "name": "Eight Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 140
+            }
+        },
+        "265": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 141
+            }
+        },
+        "266": {
+            "name": "Two Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 141
+            }
+        },
+        "267": {
+            "name": "Modify Cost",
+            "src": {
+                "src": "US25005E",
+                "page": 141
+            }
+        },
+        "268": {
+            "name": "Damnation of Blessed Ones",
+            "src": {
+                "src": "US25005E",
+                "page": 143
+            }
+        },
+        "269": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 143
+            }
+        },
+        "270": {
+            "name": "Non-Initiates",
+            "src": {
+                "src": "US25005E",
+                "page": 143
+            }
+        },
+        "271": {
+            "name": "Other Alcohol",
+            "src": {
+                "src": "US25005E",
+                "page": 142
+            }
+        },
+        "272": {
+            "name": "More Wine!",
+            "src": {
+                "src": "US25005E",
+                "page": 142
+            }
+        },
+        "273": {
+            "name": "Even More Wine!",
+            "src": {
+                "src": "US25005E",
+                "page": 142
+            }
+        },
+        "274": {
+            "name": "More Services",
+            "src": {
+                "src": "US25005E",
+                "page": 161
+            }
+        },
+        "275": {
+            "name": "Longer Service",
+            "src": {
+                "src": "US25005E",
+                "page": 161
+            }
+        },
+        "276": {
+            "name": "Powerful Creature",
+            "src": {
+                "src": "US25005E",
+                "page": 161
+            }
+        },
+        "277": {
+            "name": "More Services",
+            "src": {
+                "src": "US25005E",
+                "page": 161
+            }
+        },
+        "278": {
+            "name": "Longer Service",
+            "src": {
+                "src": "US25005E",
+                "page": 161
+            }
+        },
+        "279": {
+            "name": "Powerful Creature",
+            "src": {
+                "src": "US25005E",
+                "page": 161
+            }
+        },
+        "280": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 145
+            }
+        },
+        "281": {
+            "name": "Modify Ceremonial Time",
+            "src": {
+                "src": "US25005E",
+                "page": 145
+            }
+        },
+        "282": {
+            "name": "All Sensory Perceptions",
+            "src": {
+                "src": "US25005E",
+                "page": 145
+            }
+        },
+        "283": {
+            "name": "Visions",
+            "src": {
+                "src": "US25005E",
+                "page": 147
+            }
+        },
+        "284": {
+            "name": "Insight",
+            "src": {
+                "src": "US25005E",
+                "page": 147
+            }
+        },
+        "285": {
+            "name": "Clarity",
+            "src": {
+                "src": "US25005E",
+                "page": 147
+            }
+        },
+        "286": {
+            "name": "Sustained",
+            "src": {
+                "src": "US25005E",
+                "page": 144
+            }
+        },
+        "287": {
+            "name": "Speech",
+            "src": {
+                "src": "US25005E",
+                "page": 144
+            }
+        },
+        "288": {
+            "name": "Clerical Animal",
+            "src": {
+                "src": "US25005E",
+                "page": 144
+            }
+        },
+        "289": {
+            "name": "Sustained",
+            "src": {
+                "src": "US25005E",
+                "page": 152
+            }
+        },
+        "290": {
+            "name": "Speech",
+            "src": {
+                "src": "US25005E",
+                "page": 152
+            }
+        },
+        "291": {
+            "name": "Clerical Animal",
+            "src": {
+                "src": "US25005E",
+                "page": 152
+            }
+        },
+        "292": {
+            "name": "Sustained",
+            "src": {
+                "src": "US25005E",
+                "page": 154
+            }
+        },
+        "293": {
+            "name": "Speech",
+            "src": {
+                "src": "US25005E",
+                "page": 154
+            }
+        },
+        "294": {
+            "name": "Clerical Animal",
+            "src": {
+                "src": "US25005E",
+                "page": 154
+            }
+        },
+        "295": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 156
+            }
+        },
+        "296": {
+            "name": "Far-Reaching Memories",
+            "src": {
+                "src": "US25005E",
+                "page": 156
+            }
+        },
+        "297": {
+            "name": "Erased Memories",
+            "src": {
+                "src": "US25005E",
+                "page": 156
+            }
+        },
+        "298": {
+            "name": "Wider Radius",
+            "src": {
+                "src": "US25005E",
+                "page": 146
+            }
+        },
+        "299": {
+            "name": "Later Star",
+            "src": {
+                "src": "US25005E",
+                "page": 146
+            }
+        },
+        "300": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 146
+            }
+        },
+        "301": {
+            "name": "Not Sustained",
+            "src": {
+                "src": "US25005E",
+                "page": 155
+            }
+        },
+        "302": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 155
+            }
+        },
+        "303": {
+            "name": "Target Category Living Creatures",
+            "src": {
+                "src": "US25005E",
+                "page": 155
+            }
+        },
+        "304": {
+            "name": "High Probability",
+            "src": {
+                "src": "US25005E",
+                "page": 145
+            }
+        },
+        "305": {
+            "name": "Single Person",
+            "src": {
+                "src": "US25005E",
+                "page": 145
+            }
+        },
+        "306": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 145
+            }
+        },
+        "307": {
+            "name": "Sustained",
+            "src": {
+                "src": "US25005E",
+                "page": 146
+            }
+        },
+        "308": {
+            "name": "Speech",
+            "src": {
+                "src": "US25005E",
+                "page": 146
+            }
+        },
+        "309": {
+            "name": "Clerical Animal",
+            "src": {
+                "src": "US25005E",
+                "page": 146
+            }
+        },
+        "310": {
+            "name": "Sustained",
+            "src": {
+                "src": "US25005E",
+                "page": 147
+            }
+        },
+        "311": {
+            "name": "Speech",
+            "src": {
+                "src": "US25005E",
+                "page": 147
+            }
+        },
+        "312": {
+            "name": "Clerical Animal",
+            "src": {
+                "src": "US25005E",
+                "page": 147
+            }
+        },
+        "313": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 162
+            }
+        },
+        "314": {
+            "name": "Change Target Category I",
+            "src": {
+                "src": "US25005E",
+                "page": 162
+            }
+        },
+        "315": {
+            "name": "Change Target Category II",
+            "src": {
+                "src": "US25005E",
+                "page": 162
+            }
+        },
+        "316": {
+            "name": "More Checks I",
+            "src": {
+                "src": "US25005E",
+                "page": 143
+            }
+        },
+        "317": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 143
+            }
+        },
+        "318": {
+            "name": "More Checks II",
+            "src": {
+                "src": "US25005E",
+                "page": 143
+            }
+        },
+        "319": {
+            "name": "Modify Ceremonial Time",
+            "src": {
+                "src": "US25005E",
+                "page": 148
+            }
+        },
+        "320": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 148
+            }
+        },
+        "321": {
+            "name": "Spend Karma",
+            "src": {
+                "src": "US25005E",
+                "page": 148
+            }
+        },
+        "322": {
+            "name": "Easier to Fish",
+            "src": {
+                "src": "US25005E",
+                "page": 147
+            }
+        },
+        "323": {
+            "name": "More Rations I",
+            "src": {
+                "src": "US25005E",
+                "page": 147
+            }
+        },
+        "324": {
+            "name": "More Rations II",
+            "src": {
+                "src": "US25005E",
+                "page": 147
+            }
+        },
+        "325": {
+            "name": "Different Eyes, Different Hair",
+            "src": {
+                "src": "US25005E",
+                "page": 159
+            }
+        },
+        "326": {
+            "name": "Taller or Shorter",
+            "src": {
+                "src": "US25005E",
+                "page": 159
+            }
+        },
+        "327": {
+            "name": "Choose Your Look",
+            "src": {
+                "src": "US25005E",
+                "page": 159
+            }
+        },
+        "328": {
+            "name": "Strong Vow I",
+            "src": {
+                "src": "US25005E",
+                "page": 149
+            }
+        },
+        "329": {
+            "name": "Strong Vow II",
+            "src": {
+                "src": "US25005E",
+                "page": 149
+            }
+        },
+        "330": {
+            "name": "Strong Vow III",
+            "src": {
+                "src": "US25005E",
+                "page": 149
+            }
+        },
+        "331": {
+            "name": "Bigger Ships I",
+            "src": {
+                "src": "US25005E",
+                "page": 152
+            }
+        },
+        "332": {
+            "name": "Bigger Ships II",
+            "src": {
+                "src": "US25005E",
+                "page": 152
+            }
+        },
+        "333": {
+            "name": "More Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 152
+            }
+        },
+        "334": {
+            "name": "Determine Distance",
+            "src": {
+                "src": "US25005E",
+                "page": 151
+            }
+        },
+        "335": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 151
+            }
+        },
+        "336": {
+            "name": "Determine Path",
+            "src": {
+                "src": "US25005E",
+                "page": 151
+            }
+        },
+        "337": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 151
+            }
+        },
+        "338": {
+            "name": "Longer Duration I",
+            "src": {
+                "src": "US25005E",
+                "page": 151
+            }
+        },
+        "339": {
+            "name": "Longer Duration II",
+            "src": {
+                "src": "US25005E",
+                "page": 151
+            }
+        },
+        "340": {
+            "name": "More Checks I",
+            "src": {
+                "src": "US25005E",
+                "page": 150
+            }
+        },
+        "341": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 150
+            }
+        },
+        "342": {
+            "name": "More Checks II",
+            "src": {
+                "src": "US25005E",
+                "page": 150
+            }
+        },
+        "343": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 164
+            }
+        },
+        "344": {
+            "name": "Target Category Living Creatures",
+            "src": {
+                "src": "US25005E",
+                "page": 164
+            }
+        },
+        "345": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 164
+            }
+        },
+        "346": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 153
+            }
+        },
+        "347": {
+            "name": "Good Morale",
+            "src": {
+                "src": "US25005E",
+                "page": 153
+            }
+        },
+        "348": {
+            "name": "Good Self-Control",
+            "src": {
+                "src": "US25005E",
+                "page": 153
+            }
+        },
+        "349": {
+            "name": "Wider Radius",
+            "src": {
+                "src": "US25005E",
+                "page": 142
+            }
+        },
+        "350": {
+            "name": "Precious Metal Rush",
+            "src": {
+                "src": "US25005E",
+                "page": 142
+            }
+        },
+        "351": {
+            "name": "Gem Rush",
+            "src": {
+                "src": "US25005E",
+                "page": 142
+            }
+        },
+        "352": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 151
+            }
+        },
+        "353": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 151
+            }
+        },
+        "354": {
+            "name": "Dispel Permanent Effects",
+            "src": {
+                "src": "US25005E",
+                "page": 151
+            }
+        },
+        "355": {
+            "name": "Modify Cost",
+            "src": {
+                "src": "US25005E",
+                "page": 151
+            }
+        },
+        "356": {
+            "name": "Longer Duration I",
+            "src": {
+                "src": "US25005E",
+                "page": 151
+            }
+        },
+        "357": {
+            "name": "Longer Duration II",
+            "src": {
+                "src": "US25005E",
+                "page": 151
+            }
+        },
+        "358": {
+            "name": "Greater Amount I",
+            "src": {
+                "src": "US25005E",
+                "page": 149
+            }
+        },
+        "359": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 149
+            }
+        },
+        "360": {
+            "name": "Greater Amount II",
+            "src": {
+                "src": "US25005E",
+                "page": 149
+            }
+        },
+        "361": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 153
+            }
+        },
+        "362": {
+            "name": "One with the Ship",
+            "src": {
+                "src": "US25005E",
+                "page": 153
+            }
+        },
+        "363": {
+            "name": "Good Self-Control",
+            "src": {
+                "src": "US25005E",
+                "page": 153
+            }
+        },
+        "364": {
+            "name": "Greater Amount I",
+            "src": {
+                "src": "US25005E",
+                "page": 155
+            }
+        },
+        "365": {
+            "name": "Greater Amount II",
+            "src": {
+                "src": "US25005E",
+                "page": 155
+            }
+        },
+        "366": {
+            "name": "Greater Amount III",
+            "src": {
+                "src": "US25005E",
+                "page": 155
+            }
+        },
+        "367": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 140
+            }
+        },
+        "368": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 140
+            }
+        },
+        "369": {
+            "name": "Shapeable Fog",
+            "src": {
+                "src": "US25005E",
+                "page": 140
+            }
+        },
+        "370": {
+            "name": "Large Buildings/Locations I",
+            "src": {
+                "src": "US25005E",
+                "page": 157
+            }
+        },
+        "371": {
+            "name": "Large Buildings/Locations II",
+            "src": {
+                "src": "US25005E",
+                "page": 157
+            }
+        },
+        "372": {
+            "name": "Large Buildings/Locations III",
+            "src": {
+                "src": "US25005E",
+                "page": 157
+            }
+        },
+        "373": {
+            "name": "Sustained",
+            "src": {
+                "src": "US25005E",
+                "page": 154
+            }
+        },
+        "374": {
+            "name": "Speech",
+            "src": {
+                "src": "US25005E",
+                "page": 154
+            }
+        },
+        "375": {
+            "name": "Clerical Animal",
+            "src": {
+                "src": "US25005E",
+                "page": 154
+            }
+        },
+        "376": {
+            "name": "Sustained",
+            "src": {
+                "src": "US25005E",
+                "page": 141
+            }
+        },
+        "377": {
+            "name": "Speech",
+            "src": {
+                "src": "US25005E",
+                "page": 141
+            }
+        },
+        "378": {
+            "name": "Clerical Animal",
+            "src": {
+                "src": "US25005E",
+                "page": 141
+            }
+        },
+        "379": {
+            "name": "Sustained",
+            "src": {
+                "src": "US25005E",
+                "page": 150
+            }
+        },
+        "380": {
+            "name": "Speech",
+            "src": {
+                "src": "US25005E",
+                "page": 150
+            }
+        },
+        "381": {
+            "name": "Clerical Animal",
+            "src": {
+                "src": "US25005E",
+                "page": 150
+            }
+        },
+        "382": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 155
+            }
+        },
+        "383": {
+            "name": "Two Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 155
+            }
+        },
+        "384": {
+            "name": "Modify Cost",
+            "src": {
+                "src": "US25005E",
+                "page": 155
+            }
+        },
+        "385": {
+            "name": "Sustained",
+            "src": {
+                "src": "US25005E",
+                "page": 156
+            }
+        },
+        "386": {
+            "name": "Speech",
+            "src": {
+                "src": "US25005E",
+                "page": 156
+            }
+        },
+        "387": {
+            "name": "Clerical Animal",
+            "src": {
+                "src": "US25005E",
+                "page": 156
+            }
+        },
+        "388": {
+            "name": "More Checks I",
+            "src": {
+                "src": "US25005E",
+                "page": 163
+            }
+        },
+        "389": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 163
+            }
+        },
+        "390": {
+            "name": "More Checks II",
+            "src": {
+                "src": "US25005E",
+                "page": 163
+            }
+        },
+        "391": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 158
+            }
+        },
+        "392": {
+            "name": "More Mouths to Feed",
+            "src": {
+                "src": "US25005E",
+                "page": 158
+            }
+        },
+        "393": {
+            "name": "Huge Amounts",
+            "src": {
+                "src": "US25005E",
+                "page": 158
+            }
+        },
+        "394": {
+            "name": "Sustained",
+            "src": {
+                "src": "US25005E",
+                "page": 158
+            }
+        },
+        "395": {
+            "name": "Speech",
+            "src": {
+                "src": "US25005E",
+                "page": 158
+            }
+        },
+        "396": {
+            "name": "Clerical Animal",
+            "src": {
+                "src": "US25005E",
+                "page": 158
+            }
+        },
+        "397": {
+            "name": "Sustained",
+            "src": {
+                "src": "US25005E",
+                "page": 162
+            }
+        },
+        "398": {
+            "name": "Speech",
+            "src": {
+                "src": "US25005E",
+                "page": 162
+            }
+        },
+        "399": {
+            "name": "Clerical Animal",
+            "src": {
+                "src": "US25005E",
+                "page": 162
+            }
+        },
+        "400": {
+            "name": "Modify Cost",
+            "src": {
+                "src": "US25005E",
+                "page": 140
+            }
+        },
+        "401": {
+            "name": "Shorter Ceremonial Time",
+            "src": {
+                "src": "US25005E",
+                "page": 140
+            }
+        },
+        "402": {
+            "name": "Mass Sacrifice",
+            "src": {
+                "src": "US25005E",
+                "page": 140
+            }
+        },
+        "403": {
+            "name": "Vow Breaker Aura",
+            "src": {
+                "src": "US25005E",
+                "page": 159
+            }
+        },
+        "404": {
+            "name": "Apostate Aura",
+            "src": {
+                "src": "US25005E",
+                "page": 159
+            }
+        },
+        "405": {
+            "name": "Damned Aura",
+            "src": {
+                "src": "US25005E",
+                "page": 159
+            }
+        },
+        "406": {
+            "name": "Longer Duration I",
+            "src": {
+                "src": "US25005E",
+                "page": 141
+            }
+        },
+        "407": {
+            "name": "Longer Duration II",
+            "src": {
+                "src": "US25005E",
+                "page": 141
+            }
+        },
+        "408": {
+            "name": "Longer Duration III",
+            "src": {
+                "src": "US25005E",
+                "page": 141
+            }
+        },
+        "409": {
+            "name": "Bigger Bonus",
+            "src": {
+                "src": "US25005E",
+                "page": 162
+            }
+        },
+        "410": {
+            "name": "Not Sustained",
+            "src": {
+                "src": "US25005E",
+                "page": 162
+            }
+        },
+        "411": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 162
+            }
+        },
+        "412": {
+            "name": "More People",
+            "src": {
+                "src": "US25005E",
+                "page": 145
+            }
+        },
+        "413": {
+            "name": "Modify Cost",
+            "src": {
+                "src": "US25005E",
+                "page": 145
+            }
+        },
+        "414": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 145
+            }
+        },
+        "415": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 144
+            }
+        },
+        "416": {
+            "name": "Target Category Magical Objects",
+            "src": {
+                "src": "US25005E",
+                "page": 144
+            }
+        },
+        "417": {
+            "name": "Target Category Karmic Objects",
+            "src": {
+                "src": "US25005E",
+                "page": 144
+            }
+        },
+        "418": {
+            "name": "Sustained",
+            "src": {
+                "src": "US25005E",
+                "page": 160
+            }
+        },
+        "419": {
+            "name": "Speech",
+            "src": {
+                "src": "US25005E",
+                "page": 160
+            }
+        },
+        "420": {
+            "name": "Clerical Animal",
+            "src": {
+                "src": "US25005E",
+                "page": 160
+            }
+        },
+        "421": {
+            "name": "Large Building I",
+            "src": {
+                "src": "US25005E",
+                "page": 157
+            }
+        },
+        "422": {
+            "name": "Large Building II",
+            "src": {
+                "src": "US25005E",
+                "page": 157
+            }
+        },
+        "423": {
+            "name": "Large Building III",
+            "src": {
+                "src": "US25005E",
+                "page": 157
+            }
+        },
+        "424": {
+            "name": "Deeper Insight",
+            "src": {
+                "src": "US25005E",
+                "page": 144
+            }
+        },
+        "425": {
+            "name": "Even Deeper Insight",
+            "src": {
+                "src": "US25005E",
+                "page": 144
+            }
+        },
+        "426": {
+            "name": "Speaking Dreamwalker",
+            "src": {
+                "src": "US25005E",
+                "page": 144
+            }
+        },
+        "427": {
+            "name": "Modify Cost",
+            "src": {
+                "src": "US25005E",
+                "page": 161
+            }
+        },
+        "428": {
+            "name": "Additional Weight",
+            "src": {
+                "src": "US25005E",
+                "page": 161
+            }
+        },
+        "429": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 161
+            }
+        },
+        "430": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 145
+            }
+        },
+        "431": {
+            "name": "Modify Cost",
+            "src": {
+                "src": "US25005E",
+                "page": 145
+            }
+        },
+        "432": {
+            "name": "Heal Sou",
+            "src": {
+                "src": "US25005E",
+                "page": 145
+            }
+        },
+        "433": {
+            "name": "Longer Duration I",
+            "src": {
+                "src": "US25005E",
+                "page": 143
+            }
+        },
+        "434": {
+            "name": "Longer Duration II",
+            "src": {
+                "src": "US25005E",
+                "page": 143
+            }
+        },
+        "435": {
+            "name": "Longer Duration III",
+            "src": {
+                "src": "US25005E",
+                "page": 143
+            }
+        },
+        "436": {
+            "name": "Confused Blessed Ones",
+            "src": {
+                "src": "US25005E",
+                "page": 163
+            }
+        },
+        "437": {
+            "name": "Scared Blessed Ones",
+            "src": {
+                "src": "US25005E",
+                "page": 163
+            }
+        },
+        "438": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 163
+            }
+        },
+        "439": {
+            "name": "Wider Radius",
+            "src": {
+                "src": "US25005E",
+                "page": 149
+            }
+        },
+        "440": {
+            "name": "Determine Distance",
+            "src": {
+                "src": "US25005E",
+                "page": 149
+            }
+        },
+        "441": {
+            "name": "Determine Path",
+            "src": {
+                "src": "US25005E",
+                "page": 149
+            }
+        },
+        "442": {
+            "name": "Large Building I",
+            "src": {
+                "src": "US25005E",
+                "page": 142
+            }
+        },
+        "443": {
+            "name": "Large Building II",
+            "src": {
+                "src": "US25005E",
+                "page": 142
+            }
+        },
+        "444": {
+            "name": "Large Building III",
+            "src": {
+                "src": "US25005E",
+                "page": 142
+            }
+        },
+        "445": {
+            "name": "Improved Repair",
+            "src": {
+                "src": "US25005E",
+                "page": 156
+            }
+        },
+        "446": {
+            "name": "Repair Weapons and Armor",
+            "src": {
+                "src": "US25005E",
+                "page": 156
+            }
+        },
+        "447": {
+            "name": "Perfect Repair",
+            "src": {
+                "src": "US25005E",
+                "page": 156
+            }
+        },
+        "448": {
+            "name": "Target Category Living Creatures",
+            "src": {
+                "src": "US25005E",
+                "page": 149
+            }
+        },
+        "449": {
+            "name": "Longer Duration I",
+            "src": {
+                "src": "US25005E",
+                "page": 149
+            }
+        },
+        "450": {
+            "name": "Longer Duration II",
+            "src": {
+                "src": "US25005E",
+                "page": 149
+            }
+        },
+        "451": {
+            "name": "Companions Allowed",
+            "src": {
+                "src": "US25005E",
+                "page": 159
+            }
+        },
+        "452": {
+            "name": "Modify Cost",
+            "src": {
+                "src": "US25005E",
+                "page": 159
+            }
+        },
+        "453": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 159
+            }
+        },
+        "454": {
+            "name": "Sustained",
+            "src": {
+                "src": "US25005E",
+                "page": 164
+            }
+        },
+        "455": {
+            "name": "Speech",
+            "src": {
+                "src": "US25005E",
+                "page": 164
+            }
+        },
+        "456": {
+            "name": "Clerical Animal",
+            "src": {
+                "src": "US25005E",
+                "page": 164
+            }
+        },
+        "457": {
+            "name": "Regulate Light",
+            "src": {
+                "src": "US25005E",
+                "page": 164
+            }
+        },
+        "458": {
+            "name": "Not Sustained",
+            "src": {
+                "src": "US25005E",
+                "page": 164
+            }
+        },
+        "459": {
+            "name": "Light Cone",
+            "src": {
+                "src": "US25005E",
+                "page": 164
+            }
+        },
+        "460": {
+            "name": "Target Category Living Creatures",
+            "src": {
+                "src": "US25005E",
+                "page": 164
+            }
+        },
+        "461": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 164
+            }
+        },
+        "462": {
+            "name": "Four Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 164
+            }
+        },
+        "463": {
+            "name": "Longer Interval",
+            "src": {
+                "src": "US25005E",
+                "page": 164
+            }
+        },
+        "464": {
+            "name": "Wider Radius",
+            "src": {
+                "src": "US25005E",
+                "page": 164
+            }
+        },
+        "465": {
+            "name": "Not Sustained",
+            "src": {
+                "src": "US25005E",
+                "page": 164
+            }
+        },
+        "466": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 165
+            }
+        },
+        "467": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 165
+            }
+        },
+        "468": {
+            "name": "Four Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 165
+            }
+        },
+        "469": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 166
+            }
+        },
+        "470": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 166
+            }
+        },
+        "471": {
+            "name": "Four Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 166
+            }
+        },
+        "472": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 165
+            }
+        },
+        "473": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 165
+            }
+        },
+        "474": {
+            "name": "Four Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 165
+            }
+        },
+        "475": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 165
+            }
+        },
+        "476": {
+            "name": "Quick Effect",
+            "src": {
+                "src": "US25005E",
+                "page": 165
+            }
+        },
+        "477": {
+            "name": "Four Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 165
+            }
+        },
+        "478": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 166
+            }
+        },
+        "479": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 166
+            }
+        },
+        "480": {
+            "name": "Drop From Cliffs",
+            "src": {
+                "src": "US25005E",
+                "page": 166
+            }
+        },
+        "481": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 166
+            }
+        },
+        "482": {
+            "name": "Sustained",
+            "src": {
+                "src": "US25005E",
+                "page": 166
+            }
+        },
+        "483": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 166
+            }
+        },
+        "484": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 164
+            }
+        },
+        "485": {
+            "name": "Flawless Detox",
+            "src": {
+                "src": "US25005E",
+                "page": 164
+            }
+        },
+        "486": {
+            "name": "Four Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 164
+            }
+        },
+        "487": {
+            "name": "Farther Item",
+            "src": {
+                "src": "US25005E",
+                "page": 165
+            }
+        },
+        "488": {
+            "name": "Magical Guidance",
+            "src": {
+                "src": "US25005E",
+                "page": 165
+            }
+        },
+        "489": {
+            "name": "Karmic Guidance",
+            "src": {
+                "src": "US25005E",
+                "page": 165
+            }
+        },
+        "490": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 165
+            }
+        },
+        "491": {
+            "name": "Wider Radius",
+            "src": {
+                "src": "US25005E",
+                "page": 165
+            }
+        },
+        "492": {
+            "name": "Powerful Sign",
+            "src": {
+                "src": "US25005E",
+                "page": 165
+            }
+        },
+        "493": {
+            "name": "Target Category Living Creatures",
+            "src": {
+                "src": "US25005E",
+                "page": 165
+            }
+        },
+        "494": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 165
+            }
+        },
+        "495": {
+            "name": "Four Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 165
+            }
+        },
+        "496": {
+            "name": "Divide Damage 1",
+            "src": {
+                "src": "US25005E",
+                "page": 166
+            }
+        },
+        "497": {
+            "name": "Divide Damage 2",
+            "src": {
+                "src": "US25005E",
+                "page": 166
+            }
+        },
+        "498": {
+            "name": "Two Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 166
+            }
+        },
+        "499": {
+            "name": "Divide Damage 1",
+            "src": {
+                "src": "US25005E",
+                "page": 166
+            }
+        },
+        "500": {
+            "name": "Divide Damage 2",
+            "src": {
+                "src": "US25005E",
+                "page": 166
+            }
+        },
+        "501": {
+            "name": "Two Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 166
+            }
+        },
+        "502": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 164
+            }
+        },
+        "503": {
+            "name": "Flawless Healer",
+            "src": {
+                "src": "US25005E",
+                "page": 164
+            }
+        },
+        "504": {
+            "name": "Four Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 164
+            }
+        },
+        "505": {
+            "name": "Hide",
+            "src": {
+                "src": "US25005E",
+                "page": 168
+            }
+        },
+        "506": {
+            "name": "Not Sustained",
+            "src": {
+                "src": "US25005E",
+                "page": 168
+            }
+        },
+        "507": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 168
+            }
+        },
+        "508": {
+            "name": "Not Sustained",
+            "src": {
+                "src": "US25005E",
+                "page": 167
+            }
+        },
+        "509": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 167
+            }
+        },
+        "510": {
+            "name": "Protect Companions",
+            "src": {
+                "src": "US25005E",
+                "page": 167
+            }
+        },
+        "511": {
+            "name": "Two Items",
+            "src": {
+                "src": "US25005E",
+                "page": 167
+            }
+        },
+        "512": {
+            "name": "Cone Sight",
+            "src": {
+                "src": "US25005E",
+                "page": 167
+            }
+        },
+        "513": {
+            "name": "All-Around Vision",
+            "src": {
+                "src": "US25005E",
+                "page": 167
+            }
+        },
+        "514": {
+            "name": "Longer Interval",
+            "src": {
+                "src": "US25005E",
+                "page": 166
+            }
+        },
+        "515": {
+            "name": "Not Sustained",
+            "src": {
+                "src": "US25005E",
+                "page": 166
+            }
+        },
+        "516": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 166
+            }
+        },
+        "517": {
+            "name": "Longer Duration I",
+            "src": {
+                "src": "US25005E",
+                "page": 166
+            }
+        },
+        "518": {
+            "name": "Longer Duration II",
+            "src": {
+                "src": "US25005E",
+                "page": 166
+            }
+        },
+        "519": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 166
+            }
+        },
+        "520": {
+            "name": "Longer Duration I",
+            "src": {
+                "src": "US25005E",
+                "page": 164
+            }
+        },
+        "521": {
+            "name": "Strong Object Blessing",
+            "src": {
+                "src": "US25005E",
+                "page": 164
+            }
+        },
+        "522": {
+            "name": "Longer Duration II",
+            "src": {
+                "src": "US25005E",
+                "page": 164
+            }
+        },
+        "523": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 167
+            }
+        },
+        "524": {
+            "name": "Stronger Silence I",
+            "src": {
+                "src": "US25005E",
+                "page": 167
+            }
+        },
+        "525": {
+            "name": "Stronger Silence II",
+            "src": {
+                "src": "US25005E",
+                "page": 167
+            }
+        },
+        "526": {
+            "name": "Quick Growth",
+            "src": {
+                "src": "US25005E",
+                "page": 167
+            }
+        },
+        "527": {
+            "name": "Garden Bed",
+            "src": {
+                "src": "US25005E",
+                "page": 167
+            }
+        },
+        "528": {
+            "name": "Field",
+            "src": {
+                "src": "US25005E",
+                "page": 167
+            }
+        },
+        "529": {
+            "name": "More Ravens",
+            "src": {
+                "src": "US25005E",
+                "page": 167
+            }
+        },
+        "530": {
+            "name": "Wider Radius",
+            "src": {
+                "src": "US25005E",
+                "page": 167
+            }
+        },
+        "531": {
+            "name": "Greater Transport Range",
+            "src": {
+                "src": "US25005E",
+                "page": 167
+            }
+        },
+        "532": {
+            "name": "Modify Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 168
+            }
+        },
+        "533": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 168
+            }
+        },
+        "534": {
+            "name": "Spread Effects",
+            "src": {
+                "src": "US25005E",
+                "page": 168
+            }
+        },
+        "535": {
+            "name": "Confusing Venom",
+            "src": {
+                "src": "US25005E",
+                "page": 168
+            }
+        },
+        "536": {
+            "name": "Stout Serpent",
+            "src": {
+                "src": "US25005E",
+                "page": 168
+            }
+        },
+        "537": {
+            "name": "Quick Serpent",
+            "src": {
+                "src": "US25005E",
+                "page": 168
+            }
+        },
+        "538": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 168
+            }
+        },
+        "539": {
+            "name": "More Serpents",
+            "src": {
+                "src": "US25005E",
+                "page": 168
+            }
+        },
+        "540": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 168
+            }
+        },
+        "541": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 166
+            }
+        },
+        "542": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 166
+            }
+        },
+        "543": {
+            "name": "Pain Immunity",
+            "src": {
+                "src": "US25005E",
+                "page": 166
+            }
+        },
+        "544": {
+            "name": "Four Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 167
+            }
+        },
+        "545": {
+            "name": "Target Category Living Creatures",
+            "src": {
+                "src": "US25005E",
+                "page": 167
+            }
+        },
+        "546": {
+            "name": "Target Category Creatures",
+            "src": {
+                "src": "US25005E",
+                "page": 167
+            }
+        },
+        "547": {
+            "name": "Longer Duration I",
+            "src": {
+                "src": "US25005E",
+                "page": 168
+            }
+        },
+        "548": {
+            "name": "Longer Duration II",
+            "src": {
+                "src": "US25005E",
+                "page": 168
+            }
+        },
+        "549": {
+            "name": "Better Prices",
+            "src": {
+                "src": "US25005E",
+                "page": 168
+            }
+        },
+        "550": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 168
+            }
+        },
+        "551": {
+            "name": "Increase Range",
+            "src": {
+                "src": "US25005E",
+                "page": 168
+            }
+        },
+        "552": {
+            "name": "Other Questioners",
+            "src": {
+                "src": "US25005E",
+                "page": 168
+            }
+        },
+        "553": {
+            "name": "Quick Effect",
+            "src": {
+                "src": "US25005E",
+                "page": 167
+            }
+        },
+        "554": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 167
+            }
+        },
+        "555": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 167
+            }
+        },
+        "556": {
+            "name": "Sign Language",
+            "src": {
+                "src": "US25005E",
+                "page": 168
+            }
+        },
+        "557": {
+            "name": "Flawless Translator",
+            "src": {
+                "src": "US25005E",
+                "page": 168
+            }
+        },
+        "558": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 168
+            }
+        },
+        "559": {
+            "name": "Larger Field",
+            "src": {
+                "src": "US25005E",
+                "page": 169
+            }
+        },
+        "560": {
+            "name": "Even Larger Field",
+            "src": {
+                "src": "US25005E",
+                "page": 169
+            }
+        },
+        "561": {
+            "name": "Additional Growth Cycles",
+            "src": {
+                "src": "US25005E",
+                "page": 169
+            }
+        },
+        "562": {
+            "name": "Specialized Exorcism",
+            "src": {
+                "src": "US25005E",
+                "page": 169
+            }
+        },
+        "563": {
+            "name": "Ghost Exorcism",
+            "src": {
+                "src": "US25005E",
+                "page": 169
+            }
+        },
+        "564": {
+            "name": "Demon Exorcism",
+            "src": {
+                "src": "US25005E",
+                "page": 169
+            }
+        },
+        "565": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 169
+            }
+        },
+        "566": {
+            "name": "Strong Blessing",
+            "src": {
+                "src": "US25005E",
+                "page": 169
+            }
+        },
+        "567": {
+            "name": "Range Touch",
+            "src": {
+                "src": "US25005E",
+                "page": 169
+            }
+        },
+        "568": {
+            "name": "Sustained",
+            "src": {
+                "src": "US25005E",
+                "page": 169
+            }
+        },
+        "569": {
+            "name": "Speech",
+            "src": {
+                "src": "US25005E",
+                "page": 169
+            }
+        },
+        "570": {
+            "name": "Clerical Animal",
+            "src": {
+                "src": "US25005E",
+                "page": 169
+            }
+        },
+        "571": {
+            "name": "Longer Duration",
+            "src": {
+                "src": "US25005E",
+                "page": 169
+            }
+        },
+        "572": {
+            "name": "Transformed Clothes",
+            "src": {
+                "src": "US25005E",
+                "page": 169
+            }
+        },
+        "573": {
+            "name": "Strong Fog",
+            "src": {
+                "src": "US25005E",
+                "page": 169
+            }
+        },
+        "574": {
+            "name": "Weak Blessing",
+            "src": {
+                "src": "US25005E",
+                "page": 169
+            }
+        },
+        "575": {
+            "name": "Additional Weight",
+            "src": {
+                "src": "US25005E",
+                "page": 169
+            }
+        },
+        "576": {
+            "name": "More Targets",
+            "src": {
+                "src": "US25005E",
+                "page": 169
+            }
+        }
+    },
     "ADVANTAGE": {
         "ADV_0": {
             "name": "Custom Advantage",
