@@ -724,8 +724,7 @@ async function importFromJSON(json, options) {
             _id: item._id,
             'data.talentValue.value': s.data.talentValue.value
         }
-        console.log(`Updating: ${s.name}`);
-        await actor.updateOwnedItem(update);
+        await actor.updateEmbeddedEntity("OwnedItem", update);
     }
 
     // // update skills using using IDs in SKILL_MAP
