@@ -32,6 +32,22 @@ function parseSkills(data, prefix) {
     return items
 }
 
+function getSource(item) {
+    let source
+    const sourceData = game.i18n.localize(`${item}.src`)
+    if (typeof sourceData == 'object') {
+        let sources = []
+
+        for (let src of sourceData) {
+            sources.push(`${game.i18n.localize(`BOOK.${src.src}.name`)} <small>(Page: ${src.page}</small>)`)
+        }
+        source = sources.join('<br>')
+    } else {
+        source = "Unknown"
+    }
+    return source
+}
+
 function parseSpells(data) {
     var items = []
     for (let spell of data) {
@@ -44,12 +60,7 @@ function parseSpells(data) {
                 value: spell[1]
             }
         }
-        let sourceData = game.i18n.localize(`SPELL.${spell[0]}.src`)
-        let sources = []
-        for (let src of sourceData) {
-            sources.push(`${game.i18n.localize(`BOOK.${src.src}.name`)} <small>(Page: ${src.page}</small>)`)
-        }
-        item.source = sources.join("<br>")
+        item.source = getSource(`SPELL.${spell[0]}`)
         items.push(item)
     }
     return items
@@ -69,12 +80,7 @@ function parseLiturgies(data) {
                 value: spell[1]
             }
         }
-        let sourceData = game.i18n.localize(`LITURGICALCHANT.${spell[0]}.src`)
-        let sources = []
-        for (let src of sourceData) {
-            sources.push(`${game.i18n.localize(`BOOK.${src.src}.name`)} <small>(Page: ${src.page}</i>)`)
-        }
-        item.source = sources.join("<br>")
+        item.source = getSource(`LITURGICALCHANT.${spell[0]}`)
         items.push(item)
     }
     return items
@@ -87,13 +93,7 @@ function parseBlessings(data) {
         let newItem = {}
         newItem.displayName = newItem.itemName = game.i18n.localize(`BLESSING.${item}.name`)
         newItem.type = "blessing"
-
-        let sourceData = game.i18n.localize(`BLESSING.${item}.src`)
-        let sources = []
-        for (let src of sourceData) {
-            sources.push(`${game.i18n.localize(`BOOK.${src.src}`)} <small>(Page: ${src.page}</i>)`)
-        }
-        newItem.source = sources.join("<br>")
+        newItem.source = getSource(`BLESSING.${item}`)
         items.push(newItem)
     }
     return items
@@ -105,13 +105,7 @@ function parseCantrips(data) {
         let newItem = {}
         newItem.displayName = newItem.itemName = game.i18n.localize(`CANTRIP.${item}.name`)
         newItem.type = "magictrick"
-
-        let sourceData = game.i18n.localize(`CANTRIP.${item}.src`)
-        let sources = []
-        for (let src of sourceData) {
-            sources.push(`${game.i18n.localize(`BOOK.${src.src}.name`)} <small>(Page: ${src.page}</i>)`)
-        }
-        newItem.source = sources.join("<br>")
+        newItem.source = getSource(`CANTRIP.${item}`)
         items.push(newItem)
     }
     return items
@@ -175,20 +169,20 @@ function parseAbility(data) {
         var itemName = baseName
         var displayName = baseName
         var ability = {}
-        var source = ""
+        var source
         let effect
         switch (a.id) { // handle special cases
             case "ADV_0": // Custom
                 itemName = displayName = a.sid
-                var source = "Custom Advantage"
+                source = "Custom Advantage"
                 break
             case "DISADV_0": // Custom
                 itemName = displayName = a.sid
-                var source = "Custom Disadvantage"
+                source = "Custom Disadvantage"
                 break
             case "SA_0": // Custom
                 itemName = displayName = a.sid
-                var source = "Custom Ability"
+                source = "Custom Ability"
                 var cost = a.cost
                 break
             case "DISADV_3": // Bound to Artifact
@@ -274,12 +268,7 @@ function parseAbility(data) {
                 }
         }
         if (!source) {
-            var sources = []
-            let sourceData = game.i18n.localize(`${PREFIX}.${a.id}.src`)
-            for (let src of sourceData) {
-                sources.push(`${game.i18n.localize(`BOOK.${src.src}.name`)} <small>(Page: ${src.page}</small>)`)
-            }
-            var source = sources.join('<br>')
+            source = getSource(`${PREFIX}.${a.id}`)
         }
 
         ability.type = a.type
