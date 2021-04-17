@@ -15056,6 +15056,63 @@
                 "page": 184
             }]
         },
+        "SPELL_339": {
+            "name": "Ausbruch unterdrückter Gefühle",
+            "src": [{
+                "src": "US25101",
+                "page": 170
+            }, {
+                "src": "US25008",
+                "page": 23
+            }]
+        },
+        "SPELL_340": {
+            "name": "Figur der Schmerzen",
+            "src": [{
+                "src": "US25101",
+                "page": 170
+            }, {
+                "src": "US25008",
+                "page": 23
+            }]
+        },
+        "SPELL_341": {
+            "name": "Fluch der Pestilenz",
+            "src": [{
+                "src": "US25101",
+                "page": 170
+            }, {
+                "src": "US25008",
+                "page": 23
+            }]
+        },
+        "SPELL_342": {
+            "name": "Fluch der Schlaflosigkeit",
+            "src": [{
+                "src": "US25101",
+                "page": 170
+            }, {
+                "src": "US25008",
+                "page": 23
+            }]
+        },
+        "SPELL_343": {
+            "name": "Macht über Schlafwandler",
+            "src": [{
+                "src": "US25101",
+                "page": 170
+            }, {
+                "src": "US25008",
+                "page": 24
+            }]
+        },
+        "SPELL_465": {
+            "name": "Kristall der Herrschaft",
+            "src": [{
+                "src": "US25008",
+                "page": 23
+            }]
+        },
         "SPELL_62": {
             "name": "Erinnerungsmelodie",
             "src": [{

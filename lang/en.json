@@ -9789,6 +9789,41 @@
                 "page": 282
             }]
         },
+        "SPELL_339": {
+            "name": "Outbreak of Suppressed Emotions",
+            "src": [{
+                "src": "US25101E",
+                "page": 170
+            }]
+        },
+        "SPELL_340": {
+            "name": "Figurine of Pain",
+            "src": [{
+                "src": "US25101E",
+                "page": 169
+            }]
+        },
+        "SPELL_341": {
+            "name": "Curse of Pestilence",
+            "src": [{
+                "src": "US25101E",
+                "page": 169
+            }]
+        },
+        "SPELL_342": {
+            "name": "Curse of Sleeplessness",
+            "src": [{
+                "src": "US25101E",
+                "page": 169
+            }]
+        },
+        "SPELL_343": {
+            "name": "Power Over Sleepwalkers",
+            "src": [{
+                "src": "US25101E",
+                "page": 170
+            }]
+        },
         "SPELL_62": {
             "name": "Song of Memory",
             "src": [{
