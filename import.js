@@ -1,15 +1,13 @@
 import {
     ATTRIBUTE_MAP,
     RACE_MAP,
-    en_SKILL_MAP,
-    en_COMBAT_SKILL_MAP,
-    de_SKILL_MAP,
-    de_COMBAT_SKILL_MAP
 } from "./data/maps.js"
 import {
     SPELL_ENHANCEMENT_MAP,
     LITURGY_ENHANCEMENT_MAP
 } from "./data/enhancements.js"
+import {SPELL_MAP} from "./data/spells.js"
+import {LITURGY_MAP} from "./data/liturgies.js"
 import DSAItem from "../../systems/dsa5/modules/item/item-dsa5.js"
 
 var importErrors
