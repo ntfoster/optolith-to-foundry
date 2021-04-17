@@ -11,22 +11,24 @@ Please submit an issue if you find anything which does not work correctly. If yo
 
 ## Installation
 
-You can install this module by using the following URL in the 'Manifest URL' box on the Install Module screen.
+Use this URL in the 'Manifest URL' box on the Install Module screen:
 ```
 https://github.com/ntfoster/optolith-to-foundry/releases/latest/download/module.json
 ```
 Remember to activate the module once you have launched a world (Game Settings tab > Manage Modules).
 
 ## Usage
-If you are logged in as a user with permission to create new Actors, there will be an Import button at the top of the Actors Directory tab. This will open a dialog box for you to upload a JSON file from your computer. Once import is complete, the character sheet for the newly imported Actor will pop up.
+If you are logged in as a user with permission to create new Actors, there will be an Import button at the top of the Actors Directory tab.: 
 
 ![Import button in Actor Directory](docs/actor-import-button.png "Import button in Actor Directory")
 
+This will open a dialog box for you to upload a JSON file from your computer.
+
 ![Import dialog](docs/import-dialog.png "Import dialog")
 
-Any items (Advantages, Disadvantages, Special Abilities, Spells, Liturgies, and Equipment) that exist in the Library should be imported from there. There will be some exceptions, such as where Optolith and Foundry have slightly different names for the same thing.
+Any items (Advantages, Disadvantages, Special Abilities, Spells, Liturgies, and Equipment) that exist in the Library should be imported. There will be some exceptions, such as where Optolith and Foundry have slightly different names for the same thing.
 
-Any items that cannot be imported from the Library will instead have a blank item added with the correct name and source book(s) but no other details. These will be noted in the results and will need to be configured manually.
+Any items that cannot be imported from the Library will instead have a blank item added with only the correct name and source book(s). These will be noted in the results and will need to be configured manually.
 
 The list of items which were not imported from the Library can be displayed with the following options:
 - **Show Popup**: Display the list in a dialog box once the character sheet has been created. Note: this currently sometimes appears *underneath* the character sheet
