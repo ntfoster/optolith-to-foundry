@@ -215,7 +215,7 @@ function parseAbility(data) {
                 itemName = `${spell} - ${enhancement}`
                 ability.data = {
                     source: spell,
-                    category: "spell"
+                    category: SPELL_MAP[SPELL_ENHANCEMENT_MAP[a.sid]]
                 }
                 break
             }
@@ -227,7 +227,7 @@ function parseAbility(data) {
                 itemName = `${spell} - ${enhancement}`
                 ability.data = {
                     source: spell,
-                    category: "liturgy"
+                    category: LITURGY_MAP[LITURGY_ENHANCEMENT_MAP[a.sid]]
                 }
                 break
             }
