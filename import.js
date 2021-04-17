@@ -50,7 +50,6 @@ function parseSpells(data) {
     var items = []
     for (let spell of data) {
         let item = {}
-        let spellID = spell[0]
         item.displayName = item.itemName = game.i18n.localize(`SPELL.${spell[0]}.name`)
         let type  = SPELL_MAP[spell[0]] ?? "spell"
         item.type = type
@@ -69,9 +68,6 @@ function parseLiturgies(data) {
     var items = []
     for (let spell of data) {
         let item = {}
-        // console.log(spell[0])
-        // spell[0] = "SPELL_58"
-        let spellID = spell[0]
         item.displayName = item.itemName = game.i18n.localize(`LITURGICALCHANT.${spell[0]}.name`)
         let type  = LITURGY_MAP[spell[0]] ?? "liturgy"
         item.type = type
