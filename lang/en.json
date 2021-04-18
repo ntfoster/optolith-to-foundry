@@ -7485,7 +7485,7 @@
             }]
         },
         "ADV_23": {
-            "name": "Increased Astral Power",
+            "name": "Increased Arcane Power",
             "src": [{
                 "src": "US25001E",
                 "page": 166
@@ -23283,7 +23283,7 @@
             }]
         },
         "CT_11": {
-            "name": "Slings",
+            "name": "Slingshots",
             "src": [{
                 "src": "US25003E",
                 "page": 227
@@ -23307,7 +23307,7 @@
             }]
         },
         "CT_14": {
-            "name": "Thrown Weapons",
+            "name": "Throwing Weapons",
             "src": [{
                 "src": "US25001E",
                 "page": 245
@@ -23335,7 +23335,7 @@
             }]
         },
         "CT_18": {
-            "name": "Blowguns",
+            "name": "Blowpipes",
             "src": [{
                 "src": "US25208E",
                 "page": 122
