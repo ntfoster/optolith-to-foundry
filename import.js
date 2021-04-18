@@ -165,7 +165,7 @@ function parseAbility(data) {
         var itemName = baseName
         var displayName = baseName
         var ability = {}
-        var source
+        let source
         let effect
         switch (a.id) { // handle special cases
             case "ADV_0": // Custom
