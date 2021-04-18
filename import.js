@@ -1,11 +1,13 @@
 import {
     ATTRIBUTE_MAP,
     RACE_MAP,
-    en_SKILL_MAP,
-    en_COMBAT_SKILL_MAP,
-    de_SKILL_MAP,
-    de_COMBAT_SKILL_MAP
 } from "./data/maps.js"
+import {
+    SPELL_ENHANCEMENT_MAP,
+    LITURGY_ENHANCEMENT_MAP
+} from "./data/enhancements.js"
+import {SPELL_MAP} from "./data/spells.js"
+import {LITURGY_MAP} from "./data/liturgies.js"
 import DSAItem from "../../systems/dsa5/modules/item/item-dsa5.js"
 
 var importErrors
@@ -16,7 +18,7 @@ function parseSkills(data, prefix) {
     data.forEach(s => {
         // console.log(`${skillMap[s[0]]}: ${s[1]}`)
         var item = {}
-        item["name"] = game.i18n.localize(`${prefix}.${s[0]}`)
+        item["name"] = game.i18n.localize(`${prefix}.${s[0]}.name`)
         item["data"] = {
             "talentValue": {
                 "value": s[1]
@@ -28,24 +30,35 @@ function parseSkills(data, prefix) {
     return items
 }
 
+function getSource(item) {
+    let source
+    const sourceData = game.i18n.localize(`${item}.src`)
+    if (typeof sourceData == 'object') {
+        let sources = []
+
+        for (let src of sourceData) {
+            sources.push(`${game.i18n.localize(`BOOK.${src.src}.name`)} <small>(Page: ${src.page}</small>)`)
+        }
+        source = sources.join('<br>')
+    } else {
+        source = "Unknown"
+    }
+    return source
+}
+
 function parseSpells(data) {
     var items = []
     for (let spell of data) {
         let item = {}
-        let spellID = spell[0]
         item.displayName = item.itemName = game.i18n.localize(`SPELL.${spell[0]}.name`)
-        item.type = "spell"
+        let type  = SPELL_MAP[spell[0]] ?? "spell"
+        item.type = type
         item.data = {
             talentValue: {
                 value: spell[1]
             }
         }
-        let sourceData = game.i18n.localize(`SPELL.${spell[0]}.src`)
-        let sources = []
-        for (let src of sourceData) {
-            sources.push(`${game.i18n.localize(`BOOK.${src.src}.name`)} <small>(Page: ${src.page}</small>)`)
-        }
-        item.source = sources.join("<br>")
+        item.source = getSource(`SPELL.${spell[0]}`)
         items.push(item)
     }
     return items
@@ -55,22 +68,15 @@ function parseLiturgies(data) {
     var items = []
     for (let spell of data) {
         let item = {}
-        // console.log(spell[0])
-        // spell[0] = "SPELL_58"
-        let spellID = spell[0]
         item.displayName = item.itemName = game.i18n.localize(`LITURGICALCHANT.${spell[0]}.name`)
-        item.type = "liturgy"
+        let type  = LITURGY_MAP[spell[0]] ?? "liturgy"
+        item.type = type
         item.data = {
             talentValue: {
                 value: spell[1]
             }
         }
-        let sourceData = game.i18n.localize(`LITURGICALCHANT.${spell[0]}.src`)
-        let sources = []
-        for (let src of sourceData) {
-            sources.push(`${game.i18n.localize(`BOOK.${src.src}.name`)} <small>(Page: ${src.page}</i>)`)
-        }
-        item.source = sources.join("<br>")
+        item.source = getSource(`LITURGICALCHANT.${spell[0]}`)
         items.push(item)
     }
     return items
@@ -83,13 +89,7 @@ function parseBlessings(data) {
         let newItem = {}
         newItem.displayName = newItem.itemName = game.i18n.localize(`BLESSING.${item}.name`)
         newItem.type = "blessing"
-
-        let sourceData = game.i18n.localize(`BLESSING.${item}.src`)
-        let sources = []
-        for (let src of sourceData) {
-            sources.push(`${game.i18n.localize(`BOOK.${src.src}`)} <small>(Page: ${src.page}</i>)`)
-        }
-        newItem.source = sources.join("<br>")
+        newItem.source = getSource(`BLESSING.${item}`)
         items.push(newItem)
     }
     return items
@@ -101,13 +101,7 @@ function parseCantrips(data) {
         let newItem = {}
         newItem.displayName = newItem.itemName = game.i18n.localize(`CANTRIP.${item}.name`)
         newItem.type = "magictrick"
-
-        let sourceData = game.i18n.localize(`CANTRIP.${item}.src`)
-        let sources = []
-        for (let src of sourceData) {
-            sources.push(`${game.i18n.localize(`BOOK.${src.src}.name`)} <small>(Page: ${src.page}</i>)`)
-        }
-        newItem.source = sources.join("<br>")
+        newItem.source = getSource(`CANTRIP.${item}`)
         items.push(newItem)
     }
     return items
@@ -171,20 +165,20 @@ function parseAbility(data) {
         var itemName = baseName
         var displayName = baseName
         var ability = {}
-        var source = ""
+        let source
         let effect
         switch (a.id) { // handle special cases
             case "ADV_0": // Custom
                 itemName = displayName = a.sid
-                var source = "Custom Advantage"
+                source = "Custom Advantage"
                 break
             case "DISADV_0": // Custom
                 itemName = displayName = a.sid
-                var source = "Custom Disadvantage"
+                source = "Custom Disadvantage"
                 break
             case "SA_0": // Custom
                 itemName = displayName = a.sid
-                var source = "Custom Ability"
+                source = "Custom Ability"
                 var cost = a.cost
                 break
             case "DISADV_3": // Bound to Artifact
@@ -213,14 +207,30 @@ function parseAbility(data) {
                 itemName = `${baseName} (${option1})`
                 displayName = `${baseName} (${option1}: ${a.sid2})`
                 break
-                // case "DISADV_34":
-                // case "SA_12": // Terrain Knowledge 
-                // case "SA_28": // Writing
-                // case "SA_87": // Aspect Knowledge // These have pre-defined options that Foundry doesn't have pre-made items for
-                // itemName = `${itemName} ()`
-                // var option1 = game.i18n.localize(`${a.id}.options.${a.sid - 1}`)
-                // displayName = `${baseName} (${option1})`
-                // break
+            case "SA_414": {// Spell Enhancement
+                a.type = "spellextension"
+                let enhancement = game.i18n.localize(`SPELLENHANCEMENT.${a.sid}.name`)
+                let spell = game.i18n.localize(`SPELL.${SPELL_ENHANCEMENT_MAP[a.sid]}.name`)
+                displayName = `${spell} - ${enhancement}`
+                itemName = `${spell} - ${enhancement}`
+                ability.data = {
+                    source: spell,
+                    category: SPELL_MAP[SPELL_ENHANCEMENT_MAP[a.sid]]
+                }
+                break
+            }
+            case "SA_663": {// Liturgy Enhancement
+                a.type = "spellextension"
+                let enhancement = game.i18n.localize(`LITURGICALCHANTENHANCEMENT.${a.sid}.name`)
+                let spell = game.i18n.localize(`LITURGICALCHANT.${LITURGY_ENHANCEMENT_MAP[a.sid]}.name`)
+                displayName = `${spell} - ${enhancement}`
+                itemName = `${spell} - ${enhancement}`
+                ability.data = {
+                    source: spell,
+                    category: LITURGY_MAP[LITURGY_ENHANCEMENT_MAP[a.sid]]
+                }
+                break
+            }
             default:
                 if (a.sid) {
                     itemName = baseName + ' ()'
@@ -254,12 +264,7 @@ function parseAbility(data) {
                 }
         }
         if (!source) {
-            var sources = []
-            let sourceData = game.i18n.localize(`${PREFIX}.${a.id}.src`)
-            for (let src of sourceData) {
-                sources.push(`${game.i18n.localize(`BOOK.${src.src}.name`)} <small>(Page: ${src.page}</small>)`)
-            }
-            var source = sources.join('<br>')
+            source = getSource(`${PREFIX}.${a.id}`)
         }
 
         ability.type = a.type
@@ -539,6 +544,8 @@ async function importFromJSON(json, options) {
     }
     // var improvedAttibuteMax = sheet.attr.attributeAdjustmentSelected
 
+    var skills = parseSkills(Object.entries(data.talents),"SKILL")
+    var combatSkills = parseSkills(Object.entries(data.ct),"COMBATTECHNIQUE")
 
     var spells = parseSpells(Object.entries(data.spells))
     // console.log(spells)
@@ -685,51 +692,71 @@ async function importFromJSON(json, options) {
 
     /* 
     * Use the following if skill IDs change
-    * 
+    */
     // update skills by finding skill name
     for (let s of skills) {
-        let item = actor.data.items.find(i => i.name === s.name)
-        const update = {
-            _id: item._id,
-            'data.talentValue.value': s.data.talentValue.value
+        let item = actor.data.items.find(i => i.name === s.name && i.type == "skill")
+        if (item) {
+            const update = {
+                _id: item._id,
+                'data.talentValue.value': s.data.talentValue.value
+            }
+            await actor.updateOwnedItem(update);
+    
+        } else {
+            console.error(`Can't find skill: ${s.name}`)
         }
-        const updated = actor.updateEmbeddedEntity("OwnedItem", update);
     }
-    */
 
-    // update skills using using IDs in SKILL_MAP
-    for (let s of Object.entries(data.talents)) {
-        let locale = game.i18n.lang
-        switch (locale) {
-            case "en":
-                var id = en_SKILL_MAP[s[0]]
-                break
-            case "de":
-                var id = de_SKILL_MAP[s[0]]
-                break
+    for (let s of combatSkills) {
+        let item = actor.data.items.find(i => i.name === s.name && i.type == "combatskill")
+        if (item) {
+            const update = {
+                _id: item._id,
+                'data.talentValue.value': s.data.talentValue.value
+            }
+            await actor.updateOwnedItem(update);
+    
+        } else {
+            console.error(`Can't find combat technique: ${s.name}`)
         }
-        const update = {
-            _id: id,
-            'data.talentValue.value': s[1]
-        }
-        await actor.updateEmbeddedEntity("OwnedItem", update);
     }
-    // update combat techniques using IDs in COMBAT_SKILL_MAP
-    for (let s of Object.entries(data.ct)) {
-        switch (game.i18n.lang) {
-            case "en":
-                var id = en_COMBAT_SKILL_MAP[s[0]]
-                break
-            case "de":
-                var id = de_COMBAT_SKILL_MAP[s[0]]
-                break
-        }
-        const update = {
-            _id: id,
-            'data.talentValue.value': s[1]
-        }
-        await actor.updateEmbeddedEntity("OwnedItem", update);
-    }
+
+    // // update skills using using IDs in SKILL_MAP
+    // for (let s of Object.entries(data.talents)) {
+    //     let locale = game.i18n.lang
+    //     switch (locale) {
+    //         case "en":
+    //             var id = en_SKILL_MAP[s[0]]
+    //             break
+    //         case "de":
+    //             var id = de_SKILL_MAP[s[0]]
+    //             break
+    //     }
+    //     const update = {
+    //         _id: id,
+    //         'data.talentValue.value': s[1]
+    //     }
+    //     // actor.updateEmbeddedEntity("OwnedItem", update);
+    //     await actor.updateOwnedItem(update)
+    // }
+    // // update combat techniques using IDs in COMBAT_SKILL_MAP
+    // for (let s of Object.entries(data.ct)) {
+    //     switch (game.i18n.lang) {
+    //         case "en":
+    //             var id = en_COMBAT_SKILL_MAP[s[0]]
+    //             break
+    //         case "de":
+    //             var id = de_COMBAT_SKILL_MAP[s[0]]
+    //             break
+    //     }
+    //     const update = {
+    //         _id: id,
+    //         'data.talentValue.value': s[1]
+    //     }
+    //     // actor.updateEmbeddedEntity("OwnedItem", update);
+    //     await actor.updateOwnedItem(update)
+    // }
 
     // update money by ID
     for (let coin of money) {
@@ -737,7 +764,7 @@ async function importFromJSON(json, options) {
             _id: coin.id,
             'data.quantity.value': (coin.quantity ? coin.quantity : 0)
         }
-        actor.updateEmbeddedEntity("OwnedItem", update);
+        await actor.updateOwnedItem(update);
     }
 
     let allVantages = allAdvantages.concat(allDisadvantages)
