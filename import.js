@@ -696,20 +696,30 @@ async function importFromJSON(json, options) {
     // update skills by finding skill name
     for (let s of skills) {
         let item = actor.data.items.find(i => i.name === s.name && i.type == "skill")
-        const update = {
-            _id: item._id,
-            'data.talentValue.value': s.data.talentValue.value
+        if (item) {
+            const update = {
+                _id: item._id,
+                'data.talentValue.value': s.data.talentValue.value
+            }
+            await actor.updateOwnedItem(update);
+    
+        } else {
+            console.error(`Can't find skill: ${s.name}`)
         }
-        await actor.updateOwnedItem(update);
     }
 
     for (let s of combatSkills) {
         let item = actor.data.items.find(i => i.name === s.name && i.type == "combatskill")
-        const update = {
-            _id: item._id,
-            'data.talentValue.value': s.data.talentValue.value
+        if (item) {
+            const update = {
+                _id: item._id,
+                'data.talentValue.value': s.data.talentValue.value
+            }
+            await actor.updateOwnedItem(update);
+    
+        } else {
+            console.error(`Can't find combat technique: ${s.name}`)
         }
-        await actor.updateEmbeddedEntity("OwnedItem", update);
     }
 
     // // update skills using using IDs in SKILL_MAP
