@@ -1,5 +1,6 @@
 # Optolith to Foundry Importer
-[:gb: Auf Englisch](README.md)
+:gb: [Auf Englisch](README.md)
+
 Ein Modul für [Foundry Virtual Tabletop](https://foundryvtt.com/) für [Optolith](https://optolith.app/) Heros importieren
 
 Vielen Dank an das Optolith-Team für die Übersetzungsdaten!

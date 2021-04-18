@@ -1,5 +1,5 @@
 # Optolith to Foundry Importer
-[:de: Auf Deutsch](README-de.md)
+:de: [Auf Deutsch](README-de.md)
 
 A module for [Foundry Virtual Tabletop](https://foundryvtt.com/) to import The Dark Eye/Das Schwarze Auge characters from the [Optolith](https://optolith.app/) character creator
 
