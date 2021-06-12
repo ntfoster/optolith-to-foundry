@@ -366,6 +366,49 @@ function createCustomItem(item) {
     return newItem
 }
 
+async function addFromLibraryV2(actor, items, index, types) {
+    for (let item of items) {
+        let result = await index.findCompendiumItem(item.displayName,item.type)
+        if (result.length == 0) {
+            result = await index.findCompendiumItem(item.itemName,item.type)
+        }
+        if (result.length > 0) {
+            result = result[0]
+
+            let newData = JSON.parse(JSON.stringify(result.data))
+            newData.name = item.displayName
+            if (newData.data.maxRank && item.value > newData.data.maxRank.value) {
+                newData.data.step = {
+                    value: newData.data.maxRank.value
+                }
+            } else {
+                newData.data.step = {
+                    value: item.value
+                }
+            }
+            if (item.data) {
+                newData.data = {
+                    ...newData.data,
+                    ...item.data
+                }
+            }
+            await actor.createEmbeddedDocuments("Item",[newData])
+        } else {
+            importErrors.push({
+                itemName: item.itemName,
+                displayName: item.displayName,
+                type: item.type,
+                source: item.source
+            })
+            // add custom item
+            let newItem = createCustomItem(item)
+            await actor.createEmbeddedDocuments("Item",[newItem])
+
+        }
+    }
+
+}
+
 async function addFromLibrary(actor, items, index, types) {
     if(!types) {
 		var types = []
@@ -379,7 +422,7 @@ async function addFromLibrary(actor, items, index, types) {
         if (entry) {
             // console.log(`Found entry: ${entry.document.data.name}`)
         } else if (entry = index.find(i => // case-insensitive match
-            i.document.data.name.localeCompare(item.itemName, undefined, {
+            i.document.name.localeCompare(item.itemName, undefined, {
                 sensitivity: 'accent'
             }) === 0 && (i.document.data.type == item.type || types.includes(item.type))
         )) {
@@ -518,8 +561,9 @@ async function addItems(actor, items, tags) {
 }
 async function importFromJSON(json, options) {
 
-    await game.dsa5.itemLibrary.buildEquipmentIndex()
-    const index = game.dsa5.itemLibrary.equipmentIndex
+    let library = game.dsa5.itemLibrary
+    // await game.dsa5.itemLibrary.buildEquipmentIndex()
+    // const index = game.dsa5.itemLibrary.equipmentIndex
 
     let actor = null
     importErrors = []
@@ -685,7 +729,7 @@ async function importFromJSON(json, options) {
         }
     }
 
-    actor = await CONFIG.Actor.entityClass.create(charData, {
+    actor = await CONFIG.Actor.documentClass.create(charData, {
         renderSheet: false
     })
     // console.log(actor)
@@ -698,10 +742,10 @@ async function importFromJSON(json, options) {
         let item = actor.data.items.find(i => i.name === s.name && i.type == "skill")
         if (item) {
             const update = {
-                _id: item._id,
+                _id: item.id,
                 'data.talentValue.value': s.data.talentValue.value
             }
-            await actor.updateOwnedItem(update);
+            await actor.updateEmbeddedDocuments("Item",[update])
     
         } else {
             console.error(`Can't find skill: ${s.name}`)
@@ -712,10 +756,10 @@ async function importFromJSON(json, options) {
         let item = actor.data.items.find(i => i.name === s.name && i.type == "combatskill")
         if (item) {
             const update = {
-                _id: item._id,
+                _id: item.id,
                 'data.talentValue.value': s.data.talentValue.value
             }
-            await actor.updateOwnedItem(update);
+            await actor.updateEmbeddedDocuments("Item",[update])
     
         } else {
             console.error(`Can't find combat technique: ${s.name}`)
@@ -764,18 +808,26 @@ async function importFromJSON(json, options) {
             _id: coin.id,
             'data.quantity.value': (coin.quantity ? coin.quantity : 0)
         }
-        await actor.updateOwnedItem(update);
+        await actor.updateEmbeddedDocuments("Item",[update]);
     }
 
     let allVantages = allAdvantages.concat(allDisadvantages)
 
-    await addFromLibrary(actor, allVantages, index)
-    await addFromLibrary(actor, allAbilities, index)    
-    await addFromLibrary(actor, spells, index, ["spell", "ritual"])
-    await addFromLibrary(actor, cantrips, index)
-    await addFromLibrary(actor, blessings, index)
-    await addFromLibrary(actor, liturgies, index, ["liturgy", "ceremony"])
-    await addFromLibrary(actor, belongings, index, ["equipment"])
+    // await addFromLibrary(actor, allVantages, index)
+    // await addFromLibrary(actor, allAbilities, index)    
+    // await addFromLibrary(actor, spells, index, ["spell", "ritual"])
+    // await addFromLibrary(actor, cantrips, index)
+    // await addFromLibrary(actor, blessings, index)
+    // await addFromLibrary(actor, liturgies, index, ["liturgy", "ceremony"])
+    // await addFromLibrary(actor, belongings, index, ["equipment"])
+
+    await addFromLibraryV2(actor, allVantages, library)
+    await addFromLibraryV2(actor, allAbilities, library)    
+    await addFromLibraryV2(actor, spells, library, ["spell", "ritual"])
+    await addFromLibraryV2(actor, cantrips, library)
+    await addFromLibraryV2(actor, blessings, library)
+    await addFromLibraryV2(actor, liturgies, library, ["liturgy", "ceremony"])
+    await addFromLibraryV2(actor, belongings, library, ["equipment"])
 
     // await addItems(actor, allVantages, ["advantages, "disadvantages"])
     // await addItems(actor, allAbilities, ["specialabilities"])

@@ -3,6 +3,7 @@ export const ITEM_TYPE_MAP = {
     "2": "rangeweapon",
     "3": "ammunition",
     "4": "armor",
+    "21": "poison"
 }
 
 export const ITEM_CATEGORY_MAP = {
