@@ -6,9 +6,22 @@ import {
     SPELL_ENHANCEMENT_MAP,
     LITURGY_ENHANCEMENT_MAP
 } from "./data/enhancements.js"
+
+import { ITEM_TYPE_MAP } from "./data/items.js"
 import {SPELL_MAP} from "./data/spells.js"
 import {LITURGY_MAP} from "./data/liturgies.js"
 import DSAItem from "../../systems/dsa5/modules/item/item-dsa5.js"
+
+// if (game.i18n.lang == "de") {
+//     const localeData = require("./data/optolith-data-de-DE.json")
+// } else {
+    // const localeData = require("./data/optolith-data-en-US.json")
+// }
+
+import {localeData} from "./data/optolith-data-en-US.js"
+// console.warn(localeData['Skills'])
+// console.warn(localeData['Skills']['TAL_3']['name'])
+
 
 var importErrors
 
@@ -16,28 +29,36 @@ function parseSkills(data, prefix) {
 
     var items = []
     data.forEach(s => {
-        // console.log(`${skillMap[s[0]]}: ${s[1]}`)
         var item = {}
-        item["name"] = game.i18n.localize(`${prefix}.${s[0]}.name`)
+        let skillName = localeData[prefix][s[0]]['name']
+        item["name"] = skillName
         item["data"] = {
             "talentValue": {
                 "value": s[1]
             }
         }
         items.push(item)
-        // console.log(item)
     });
     return items
 }
 
-function getSource(item) {
+function getSource(prefix,item) {
     let source
-    const sourceData = game.i18n.localize(`${item}.src`)
+    // console.warn(`Looking for ${prefix} - ${item} - source`)
+    const sourceData = localeData[prefix][item]['source']
     if (typeof sourceData == 'object') {
         let sources = []
-
+        // console.warn(sourceData)
         for (let src of sourceData) {
-            sources.push(`${game.i18n.localize(`BOOK.${src.src}.name`)} <small>(Page: ${src.page}</small>)`)
+            try {
+                var bookName = localeData['Books'][src.id]['name']
+              }
+              catch(err) {
+                var bookName = src.id
+              }
+            
+            // console.warn(`trying to find source ${src.id} in ${sourceData}`)
+            sources.push(`${bookName} <small>(Page: ${src.firstPage}</small>)`)
         }
         source = sources.join('<br>')
     } else {
@@ -50,7 +71,8 @@ function parseSpells(data) {
     var items = []
     for (let spell of data) {
         let item = {}
-        item.displayName = item.itemName = game.i18n.localize(`SPELL.${spell[0]}.name`)
+        // item.displayName = item.itemName = game.i18n.localize(`SPELL.${spell[0]}.name`)
+        item.displayName = item.itemName = localeData['Spells'][spell[0]]['name']
         let type  = SPELL_MAP[spell[0]] ?? "spell"
         item.type = type
         item.data = {
@@ -58,7 +80,7 @@ function parseSpells(data) {
                 value: spell[1]
             }
         }
-        item.source = getSource(`SPELL.${spell[0]}`)
+        item.source = getSource('Spells',spell[0])
         items.push(item)
     }
     return items
@@ -68,7 +90,8 @@ function parseLiturgies(data) {
     var items = []
     for (let spell of data) {
         let item = {}
-        item.displayName = item.itemName = game.i18n.localize(`LITURGICALCHANT.${spell[0]}.name`)
+        // item.displayName = item.itemName = game.i18n.localize(`LITURGICALCHANT.${spell[0]}.name`)
+        item.displayName = item.itemName = localeData['LiturgicalChants'][spell[0]]['name']
         let type  = LITURGY_MAP[spell[0]] ?? "liturgy"
         item.type = type
         item.data = {
@@ -76,7 +99,7 @@ function parseLiturgies(data) {
                 value: spell[1]
             }
         }
-        item.source = getSource(`LITURGICALCHANT.${spell[0]}`)
+        item.source = getSource('LiturgicalChants',spell[0])
         items.push(item)
     }
     return items
@@ -87,9 +110,9 @@ function parseBlessings(data) {
     var items = []
     for (let item of data) {
         let newItem = {}
-        newItem.displayName = newItem.itemName = game.i18n.localize(`BLESSING.${item}.name`)
+        newItem.displayName = newItem.itemName = localeData['Blessings'][item]['name']
         newItem.type = "blessing"
-        newItem.source = getSource(`BLESSING.${item}`)
+        newItem.source = getSource('Blessings',item)
         items.push(newItem)
     }
     return items
@@ -99,9 +122,9 @@ function parseCantrips(data) {
     var items = []
     for (let item of data) {
         let newItem = {}
-        newItem.displayName = newItem.itemName = game.i18n.localize(`CANTRIP.${item}.name`)
+        newItem.displayName = newItem.itemName = localeData['Cantrips'][item]['name']
         newItem.type = "magictrick"
-        newItem.source = getSource(`CANTRIP.${item}`)
+        newItem.source = getSource('Cantrips',item)
         items.push(newItem)
     }
     return items
@@ -147,21 +170,35 @@ function parseActivatables(data) {
     }
 }
 
+function getOption(prefix,item,option) {
+    // console.warn(`Trying to get option ${option} for ${prefix}.${item}`)
+    let options = localeData[prefix][item]['options']
+    // console.warn(options)
+    for (let o of options) {
+        // console.warn(o.id)
+        if (o.id == option) {
+            // console.warn(`Found option ${option}: ${o.name}`)
+            return o.name
+        }
+    }
+    console.error(`Couldn't find option ${option}`)
+}
+
 function parseAbility(data) {
     var abilities = []
     for (let a of data) {
         switch (a.type) {
             case "advantage":
-                var PREFIX = "ADVANTAGE"
+                var PREFIX = "Advantages"
                 break
             case "disadvantage":
-                var PREFIX = "DISADVANTAGE"
+                var PREFIX = "Disadvantages"
                 break
             case "specialability":
-                var PREFIX = "ABILITY"
+                var PREFIX = "SpecialAbilities"
                 break
         }
-        const baseName = game.i18n.localize(`${PREFIX}.${a.id}.name`)
+        const baseName = localeData[PREFIX][a.id]['name']
         var itemName = baseName
         var displayName = baseName
         var ability = {}
@@ -193,24 +230,38 @@ function parseAbility(data) {
                 break
             case "SA_9": // Skill Specialization, need to localize both options
                 itemName = `${baseName} ()`
-                var option1 = game.i18n.localize(`SKILL.${a.sid}.name`)
-                var option2 = game.i18n.localize(`SKILL.${a.sid}.applications.${a.sid2}`)
+                // var option1 = game.i18n.localize(`SKILL.${a.sid}.name`)
+                var option1 = localeData['Skills'][a.sid]['name']
+                // var option2 = game.i18n.localize(`SKILL.${a.sid}.applications.${a.sid2}`)
+                // var option2 = localeData['Skills'][a.sid]['applications'][a.sid2]
+                var option2 = "Unknown"
+                for (let appl of localeData['Skills'][a.sid]['applications']) {
+                    if (appl['id'] == a.sid2) {
+                        // console.warn(`Found ${option1} application: ${appl.name}`)
+                        option2 = appl.name
+                    }
+                }
                 displayName = `${baseName} (${option1}: ${option2})`
-                effect = `${option1} FP2`
+                effect = `${option1} SR2`
                 break
             case "SA_70": // Tradition (Guild Mage)
-                var option1 = game.i18n.localize(`SPELL.${a.sid}.name`)
+                // var option1 = game.i18n.localize(`SPELL.${a.sid}.name`)
+                var option1 = localeData['Spells'][a.sid]['name']
                 displayName = `${baseName} (${option1})`
                 break
             case "DISADV_33": // Personality Flaw
-                var option1 = game.i18n.localize(`DISADVANTAGE.${a.id}.options.${a.sid - 1}`)
+                // var option1 = game.i18n.localize(`DISADVANTAGE.${a.id}.options.${a.sid - 1}`)
+                // var option1 = localeData['Disadvantages'][a.id]['options'][a.sid - 1]
+                var option1 = getOption('Disadvantages',a.id,a.sid)
                 itemName = `${baseName} (${option1})`
                 displayName = `${baseName} (${option1}: ${a.sid2})`
                 break
             case "SA_414": {// Spell Enhancement
                 a.type = "spellextension"
-                let enhancement = game.i18n.localize(`SPELLENHANCEMENT.${a.sid}.name`)
-                let spell = game.i18n.localize(`SPELL.${SPELL_ENHANCEMENT_MAP[a.sid]}.name`)
+                console.warn(`looking for spell extension SpellEnhancements.${a.sid}.name`)
+                let enhancement = localeData['SpellEnhancements'][a.sid]['name']
+                let targetSpell = localeData['SpellEnhancements'][a.sid]['target']
+                let spell = localeData['Spells'][targetSpell].name
                 displayName = `${spell} - ${enhancement}`
                 itemName = `${spell} - ${enhancement}`
                 ability.data = {
@@ -221,8 +272,8 @@ function parseAbility(data) {
             }
             case "SA_663": {// Liturgy Enhancement
                 a.type = "spellextension"
-                let enhancement = game.i18n.localize(`LITURGICALCHANTENHANCEMENT.${a.sid}.name`)
-                let spell = game.i18n.localize(`LITURGICALCHANT.${LITURGY_ENHANCEMENT_MAP[a.sid]}.name`)
+                let enhancement = localeData['LiturgicalChantEnhancements'][a.sid]['name']
+                let spell = localeData['LiturgicalChants'][LITURGY_ENHANCEMENT_MAP[a.sid]]['name']
                 displayName = `${spell} - ${enhancement}`
                 itemName = `${spell} - ${enhancement}`
                 ability.data = {
@@ -231,22 +282,38 @@ function parseAbility(data) {
                 }
                 break
             }
+            case "SA_569": {  // Favorite Liturgical Chant
+                var option1 = localeData['LiturgicalChants'][a.sid]['name']
+                displayName = `${baseName} (${option1})`
+                effect = `${option1} SP2`
+                break
+            }
+            case "SA_250": { // Favorite Spellwork
+                var option1 = localeData['Spells'][a.sid]['name']
+                displayName = `${baseName} (${option1})`
+                effect = `${option1} SP2`
+                break
+            }
             default:
                 if (a.sid) {
                     itemName = baseName + ' ()'
                     if (typeof (a.sid) == "number") {
-                        var option1 = game.i18n.localize(`${PREFIX}.${a.id}.options.${a.sid - 1}`)
+                        // var option1 = localeData[PREFIX][a.id]['options'][a.sid - 1]
+                        var option1 = getOption(PREFIX,a.id,a.sid)
                         displayName = `${baseName} (${option1})`
                     } else {
                         switch (a.sid.substring(0, a.sid.indexOf('_'))) {
                             case "TAL":
-                                var option1 = game.i18n.localize(`SKILL.${a.sid}.name`)
+                                var option1 = localeData['Skills'][a.sid]['name']
                                 break
                             case "CT":
-                                var option1 = game.i18n.localize(`COMBATTECHNIQUE.${a.sid}.name`)
+                                var option1 = localeData['CombatTechniques'][a.sid]['name']
                                 break
                             case "SPELL":
-                                var option1 = game.i18n.localize(`SPELL.${a.sid}.name`)
+                                var option1 = localeData['Spells'][a.sid]['name']
+                                break
+                            case "LITURGY":
+                                var option1 = localeData['LiturgicalChants'][a.sid]['name']
                                 break
                             default:
                                 var option1 = a.sid
@@ -259,12 +326,34 @@ function parseAbility(data) {
                     }
                 }
                 if (a.sid2) {
-                    var option2 = a.sid2
+                    if (typeof (a.sid2) == "number") {
+                        // var option1 = localeData[PREFIX][a.id]['options'][a.sid - 1]
+                        var option2 = getOption(PREFIX,a.id,a.sid2)
+                    } else {
+                        switch (a.sid2.substring(0, a.sid2.indexOf('_'))) {
+                            case "TAL":
+                                var option2 = localeData['Skills'][a.sid2]['name']
+                                break
+                            case "CT":
+                                var option2 = localeData['CombatTechniques'][a.sid2]['name']
+                                break
+                            case "SPELL":
+                                var option2 = localeData['Spells'][a.sid2]['name']
+                                break
+                            case "LITURGY":
+                                var option2 = localeData['LiturgicalChants'][a.sid2]['name']
+                                break
+                            default:
+                                var option2 = a.sid2
+                                break
+                        }
+                    }
                     displayName = `${baseName} (${option1}: ${option2})`
                 }
+    
         }
         if (!source) {
-            source = getSource(`${PREFIX}.${a.id}`)
+            source = getSource(PREFIX,a.id)
         }
 
         ability.type = a.type
@@ -299,16 +388,11 @@ async function parseBelongings(data) {
         let newItem = {}
         let itemID = item[1].template
         if (itemID) {
-            newItem.displayName = newItem.itemName = game.i18n.localize(`ITEM.${itemID}.name`)
+            newItem.displayName = newItem.itemName = localeData['Items'][itemID]['name']
             if (!(newItem.type = ITEM_TYPE_MAP[item[1].gr])) {
                 newItem.type = "equipment"
             }
-            let sourceData = game.i18n.localize(`ITEM.${itemID}.src`)
-            let sources = []
-            for (let src of sourceData) {
-                sources.push(`${game.i18n.localize(`BOOK.${src.src}.name`)} <small>(Page: ${src.page}</small>)`)
-            }
-            newItem.source = sources.join("<br>")
+            newItem.source = getSource('Items',itemID)
         } else {
             newItem.displayName = newItem.itemName = item[1].name
             newItem.source = "Custom Item"
@@ -368,6 +452,7 @@ function createCustomItem(item) {
 
 async function addFromLibraryV2(actor, items, index, types) {
     for (let item of items) {
+
         let result = await index.findCompendiumItem(item.displayName,item.type)
         if (result.length == 0) {
             result = await index.findCompendiumItem(item.itemName,item.type)
@@ -391,6 +476,9 @@ async function addFromLibraryV2(actor, items, index, types) {
                     ...newData.data,
                     ...item.data
                 }
+            }
+            if (item.effect) {
+                newData.data.effect.value = item.effect
             }
             await actor.createEmbeddedDocuments("Item",[newData])
         } else {
@@ -561,6 +649,8 @@ async function addItems(actor, items, tags) {
 }
 async function importFromJSON(json, options) {
 
+    
+
     let library = game.dsa5.itemLibrary
     // await game.dsa5.itemLibrary.buildEquipmentIndex()
     // const index = game.dsa5.itemLibrary.equipmentIndex
@@ -588,8 +678,8 @@ async function importFromJSON(json, options) {
     }
     // var improvedAttibuteMax = sheet.attr.attributeAdjustmentSelected
 
-    var skills = parseSkills(Object.entries(data.talents),"SKILL")
-    var combatSkills = parseSkills(Object.entries(data.ct),"COMBATTECHNIQUE")
+    var skills = parseSkills(Object.entries(data.talents),"Skills")
+    var combatSkills = parseSkills(Object.entries(data.ct),"CombatTechniques")
 
     var spells = parseSpells(Object.entries(data.spells))
     // console.log(spells)
@@ -635,17 +725,17 @@ async function importFromJSON(json, options) {
     // setup base character data
     let race = data.r
     if (data.rv) {
-        var species = `${game.i18n.localize(`RACE.${race}.name`)} (${game.i18n.localize(`RACEVARIANT.${data.rv}.name`)})`
+        var species = `${localeData['Races'][race]['name']} (${localeData['RaceVariants'][data.rv]['name']})`
     } else {
-        var species = game.i18n.localize(`RACE.${race}.name`)
+        var species = localeData['Races'][race]['name']
     }
 
     if (data.p == "P_0") {
         var profession = data.professionName
     } else {
-        var profession = game.i18n.localize(`PROFESSION.${data.p}.name`)
+        var profession = localeData['Professions'][data.p]['name']
         if (typeof profession == "object") {
-            profession = game.i18n.localize(`PROFESSION.${data.p}.name.${data.sex}`)
+            profession = localeData['Professions'][data.p]['name'][data.sex]
         }
     }
 
@@ -665,13 +755,13 @@ async function importFromJSON(json, options) {
                 value: game.i18n.localize(`SEX.${data.sex}`)
             },
             culture: {
-                value: `${data.c ? game.i18n.localize(`CULTURE.${data.c}.name`) : ""}`
+                value: `${data.c ? localeData['Cultures'][data.c]['name'] : ""}`
             },
             career: {
                 value: profession
             },
             socialstate: {
-                value: `${data.pers.socialstatus ? game.i18n.localize(`SOCIALSTATUS.${data.pers.socialstatus}.name`) : ""}`
+                value: `${data.pers.socialstatus ? localeData['SocialStatuses'][data.pers.socialstatus]['name'] : ""}`
             },
             family: {
                 value: data.pers.family
@@ -680,10 +770,10 @@ async function importFromJSON(json, options) {
                 value: data.pers.age
             },
             haircolor: {
-                value: `${data.pers.haircolor ? game.i18n.localize(`HAIRCOLOR.${data.pers.haircolor}.name`) : ""}`
+                value: `${data.pers.haircolor ? localeData['HairColors'][data.pers.haircolor]['name'] : ""}`
             },
             eyecolor: {
-                value: `${data.pers.eyecolor ? game.i18n.localize(`EYECOLOR.${data.pers.eyecolor}.name`) : ""}`
+                value: `${data.pers.eyecolor ? localeData['EyeColors'][data.pers.eyecolor]['name'] : ""}`
             },
             height: {
                 value: data.pers.size
@@ -935,7 +1025,7 @@ function importFromOptolithDialog() {
             },
             no: {
                 icon: '<i class="fas fa-times"></i>',
-                label: `${game.i18n.localize('Cancel')}`
+                label: `${game.i18n.localize('UI.Cancel')}`
             }
         },
         default: "import"
