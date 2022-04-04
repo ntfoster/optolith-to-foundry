@@ -12,24 +12,11 @@ import {SPELL_MAP} from "./data/spells.js"
 import {LITURGY_MAP} from "./data/liturgies.js"
 import DSAItem from "../../systems/dsa5/modules/item/item-dsa5.js"
 
-// if (game.i18n.lang == "de") {
-//     const localeData = require("./data/optolith-data-de-DE.json")
-// } else {
-    // const localeData = require("./data/optolith-data-en-US.json")
-// }
-
-// import {localeData} from "./data/optolith-data-en-US.js"
 const locales = {
     "en": "en-US",
     "de": "de-DE"
 }
-// var response = await fetch(`modules/optolith-to-foundry/data/optolith-data-${locales['de']}.json`)
 var localeData
-// var localeData = import("./data/optolith-data-en-US.js")
-// console.warn(localeData['Skills'])
-// console.warn(localeData['Skills']['TAL_3']['name'])
-
-
 var importErrors
 
 function parseSkills(data, prefix) {
@@ -51,11 +38,9 @@ function parseSkills(data, prefix) {
 
 function getSource(prefix,item) {
     let source
-    // console.warn(`Looking for ${prefix} - ${item} - source`)
     const sourceData = localeData[prefix][item]['source']
     if (typeof sourceData == 'object') {
         let sources = []
-        // console.warn(sourceData)
         for (let src of sourceData) {
             try {
                 var bookName = localeData['Books'][src.id]['name']
@@ -63,8 +48,6 @@ function getSource(prefix,item) {
               catch(err) {
                 var bookName = src.id
               }
-            
-            // console.warn(`trying to find source ${src.id} in ${sourceData}`)
             sources.push(`${bookName} <small>(Page: ${src.firstPage}</small>)`)
         }
         source = sources.join('<br>')
@@ -78,7 +61,6 @@ function parseSpells(data) {
     var items = []
     for (let spell of data) {
         let item = {}
-        // item.displayName = item.itemName = game.i18n.localize(`SPELL.${spell[0]}.name`)
         item.displayName = item.itemName = localeData['Spells'][spell[0]]['name']
         let type  = SPELL_MAP[spell[0]] ?? "spell"
         item.type = type
@@ -97,7 +79,6 @@ function parseLiturgies(data) {
     var items = []
     for (let spell of data) {
         let item = {}
-        // item.displayName = item.itemName = game.i18n.localize(`LITURGICALCHANT.${spell[0]}.name`)
         item.displayName = item.itemName = localeData['LiturgicalChants'][spell[0]]['name']
         let type  = LITURGY_MAP[spell[0]] ?? "liturgy"
         item.type = type
@@ -178,13 +159,9 @@ function parseActivatables(data) {
 }
 
 function getOption(prefix,item,option) {
-    // console.warn(`Trying to get option ${option} for ${prefix}.${item}`)
     let options = localeData[prefix][item]['options']
-    // console.warn(options)
     for (let o of options) {
-        // console.warn(o.id)
         if (o.id == option) {
-            // console.warn(`Found option ${option}: ${o.name}`)
             return o.name
         }
     }
@@ -237,28 +214,20 @@ function parseAbility(data) {
                 break
             case "SA_9": // Skill Specialization, need to localize both options
                 itemName = `${baseName} ()`
-                // var option1 = game.i18n.localize(`SKILL.${a.sid}.name`)
                 var option1 = localeData['Skills'][a.sid]['name']
-                // var option2 = game.i18n.localize(`SKILL.${a.sid}.applications.${a.sid2}`)
-                // var option2 = localeData['Skills'][a.sid]['applications'][a.sid2]
                 var option2 = "Unknown"
                 for (let appl of localeData['Skills'][a.sid]['applications']) {
                     if (appl['id'] == a.sid2) {
-                        // console.warn(`Found ${option1} application: ${appl.name}`)
                         option2 = appl.name
                     }
                 }
                 displayName = `${baseName} (${option1}: ${option2})`
-                // effect = `${option1} SR2`
                 break
             case "SA_70": // Tradition (Guild Mage)
-                // var option1 = game.i18n.localize(`SPELL.${a.sid}.name`)
                 var option1 = localeData['Spells'][a.sid]['name']
                 displayName = `${baseName} (${option1})`
                 break
             case "DISADV_33": // Personality Flaw
-                // var option1 = game.i18n.localize(`DISADVANTAGE.${a.id}.options.${a.sid - 1}`)
-                // var option1 = localeData['Disadvantages'][a.id]['options'][a.sid - 1]
                 var option1 = getOption('Disadvantages',a.id,a.sid)
                 itemName = `${baseName} (${option1})`
                 displayName = `${baseName} (${option1}: ${a.sid2})`
@@ -293,7 +262,6 @@ function parseAbility(data) {
                 if (a.sid) {
                     itemName = baseName + ' ()'
                     if (typeof (a.sid) == "number") {
-                        // var option1 = localeData[PREFIX][a.id]['options'][a.sid - 1]
                         var option1 = getOption(PREFIX,a.id,a.sid)
                         displayName = `${baseName} (${option1})`
                     } else {
@@ -314,15 +282,11 @@ function parseAbility(data) {
                                 var option1 = a.sid
                                 break
                         }
-                        // if (!baseName.includes('(')) {
-                        //     itemName = `${baseName} ()`
-                        // }
                         displayName = `${baseName} (${option1})`
                     }
                 }
                 if (a.sid2) {
                     if (typeof (a.sid2) == "number") {
-                        // var option1 = localeData[PREFIX][a.id]['options'][a.sid - 1]
                         var option2 = getOption(PREFIX,a.id,a.sid2)
                     } else {
                         switch (a.sid2.substring(0, a.sid2.indexOf('_'))) {
@@ -498,156 +462,6 @@ async function addFromLibraryV2(actor, items, index, types) {
 
 }
 
-async function addFromLibrary(actor, items, index, types) {
-    if(!types) {
-		var types = []
-	}
-    for (let item of items) {
-        let entry = index.find(i => // case-insensitive match
-            i.document.data.name.localeCompare(item.displayName, undefined, {
-                sensitivity: 'accent'
-            }) === 0 && (i.document.data.type == item.type || types.includes(item.type))
-        )
-        if (entry) {
-            // console.log(`Found entry: ${entry.document.data.name}`)
-        } else if (entry = index.find(i => // case-insensitive match
-            i.document.name.localeCompare(item.itemName, undefined, {
-                sensitivity: 'accent'
-            }) === 0 && (i.document.data.type == item.type || types.includes(item.type))
-        )) {
-            // console.log(`Found entry by itemName: ${entry.document.data.name}`);
-        }
-        if (entry) {
-            let newData = JSON.parse(JSON.stringify(entry.document.data)) // deep copy, not shallow
-            newData.name = item.displayName
-            if (newData.data.maxRank && item.value > newData.data.maxRank.value) {
-                newData.data.step = {
-                    value: newData.data.maxRank.value
-                }
-            } else {
-                newData.data.step = {
-                    value: item.value
-                }
-            }
-            if (item.data) {
-                newData.data = {
-                    ...newData.data,
-                    ...item.data
-                }
-            }
-
-            await actor.createOwnedItem(newData)
-
-        } else {
-            // console.log(`Couldn't find item: ${item.type} - ${item.itemName}`)
-            importErrors.push({
-                itemName: item.itemName,
-                displayName: item.displayName,
-                type: item.type,
-                source: item.source
-            })
-            // add custom item
-            let newItem = createCustomItem(item)
-            await actor.createOwnedItem(newItem)
-        }
-    }
-}
-
-// TODO: get all suitable compendiums (see DSA utility), rather than specifying single one
-async function addItems(actor, items, tags) {
-    // console.log(items)
-    let pack = await game.packs.entries.find(function (p) {
-        if (p.metadata.system == "dsa5" && p.metadata.tags) {
-            // console.log(`searching pack ${p.metadata.label} for ${tags}`)
-            let match = true
-            for (let tag of tags) {
-                if (!p.metadata.tags.includes(tag)) {
-                    match = false
-                    // console.log(`couldn't find ${tag} in ${p.metadata.label}`)
-                } else {
-                    // console.log(`found ${tag} in ${p.metadata.label}`)
-                }
-            }
-            return match
-        } else {
-            return false
-        }
-    })
-    if (pack) {
-        let index = await pack.getIndex()
-        for (const item of items) {
-            let newItem = {}
-            // ignore case and match
-            var entry = index.find(i =>
-                i.name.localeCompare(item.displayName, undefined, {
-                    sensitivity: 'accent'
-                }) === 0
-            )
-            if (!entry) { // try different version of name
-                entry = index.find(i =>
-                    i.name.localeCompare(item.itemName, undefined, {
-                        sensitivity: 'accent'
-                    }) === 0
-                )
-            }
-            if (entry) {
-                newItem = await pack.getEntry(entry._id)
-                newItem.name = item.displayName
-
-                if (newItem.data.maxRank && item.value > newItem.data.maxRank.value) {
-                    newItem.data.step = {
-                        value: newItem.data.maxRank.value
-                    }
-                } else {
-                    newItem.data.step = {
-                        value: item.value
-                    }
-                }
-                if (item.data) {
-                    newItem.data = {
-                        ...newItem.data,
-                        ...item.data
-                    }
-                }
-            } else {
-                // console.warn("Couldn't find item in compendium: " + item.itemName)
-                importErrors.push({
-                    type: item.type,
-                    displayName: item.displayName,
-                    itemName: item.itemName,
-                    source: item.source
-                })
-                // add custom item
-                newItem = createCustomItem(item)
-            }
-            try {
-                await actor.createOwnedItem(newItem)
-            } catch (e) {
-                console.error(e)
-                ui.notifications.error(e)
-            }
-        }
-    } else {
-        console.log(`Optolith to Foundry Importer | No compendium pack with tags ${tags}:`)
-        for (const item of items) {
-            importErrors.push({
-                itemName: item.itemName,
-                displayName: item.displayName,
-                type: item.type,
-                source: item.source
-            })
-            // add custom item
-            let newItem = createCustomItem(item)
-            try {
-                await actor.createOwnedItem(newItem)
-            } catch (e) {
-                console.error(e)
-                ui.notifications.error(e)
-                console.log(newItem)
-            }
-        }
-    }
-}
 async function importFromJSON(json, options) {
 
     let library = game.dsa5.itemLibrary
@@ -681,13 +495,10 @@ async function importFromJSON(json, options) {
     var combatSkills = parseSkills(Object.entries(data.ct),"CombatTechniques")
 
     var spells = parseSpells(Object.entries(data.spells))
-    // console.log(spells)
 
     var cantrips = parseCantrips(data.cantrips) // array not object
-    // array not object
 
     var blessings = parseBlessings(data.blessings) // array not object
-    // array not object
 
     var liturgies = parseLiturgies(Object.entries(data.liturgies))
 
@@ -699,7 +510,6 @@ async function importFromJSON(json, options) {
 
     var allAbilities = parseAbility(allActivatables.specialAbilities)
 
-    // parse belongings
     var belongings = await parseBelongings(Object.entries(data.belongings.items))
 
     // can use IDs if they don't change
@@ -786,9 +596,8 @@ async function importFromJSON(json, options) {
             Home: {
                 value: data.pers.placeofbirth
             },
-            biography: { //TODO: localise
+            biography: { // TODO: localise
                 value: `${ data.pers.dateofbirth ? `Birthdate: ${data.pers.dateofbirth}` : ""} ${data.pers.title ? `<br>Title: ${data.pers.title}` : ""} `
-                // value: `Birthdate: ${data.pers.dateofbirth} ${data.pers.title ? `<br>Title: ${data.pers.title}` : ""}`
             },
             notes: {
                 value: data.pers.otherinfo
@@ -821,11 +630,7 @@ async function importFromJSON(json, options) {
     actor = await CONFIG.Actor.documentClass.create(charData, {
         renderSheet: false
     })
-    // console.log(actor)
 
-    /* 
-    * Use the following if skill IDs change
-    */
     // update skills by finding skill name
     for (let s of skills) {
         let item = actor.data.items.find(i => i.name === s.name && i.type == "skill")
@@ -855,42 +660,6 @@ async function importFromJSON(json, options) {
         }
     }
 
-    // // update skills using using IDs in SKILL_MAP
-    // for (let s of Object.entries(data.talents)) {
-    //     let locale = game.i18n.lang
-    //     switch (locale) {
-    //         case "en":
-    //             var id = en_SKILL_MAP[s[0]]
-    //             break
-    //         case "de":
-    //             var id = de_SKILL_MAP[s[0]]
-    //             break
-    //     }
-    //     const update = {
-    //         _id: id,
-    //         'data.talentValue.value': s[1]
-    //     }
-    //     // actor.updateEmbeddedEntity("OwnedItem", update);
-    //     await actor.updateOwnedItem(update)
-    // }
-    // // update combat techniques using IDs in COMBAT_SKILL_MAP
-    // for (let s of Object.entries(data.ct)) {
-    //     switch (game.i18n.lang) {
-    //         case "en":
-    //             var id = en_COMBAT_SKILL_MAP[s[0]]
-    //             break
-    //         case "de":
-    //             var id = de_COMBAT_SKILL_MAP[s[0]]
-    //             break
-    //     }
-    //     const update = {
-    //         _id: id,
-    //         'data.talentValue.value': s[1]
-    //     }
-    //     // actor.updateEmbeddedEntity("OwnedItem", update);
-    //     await actor.updateOwnedItem(update)
-    // }
-
     // update money by ID
     for (let coin of money) {
         const update = {
@@ -902,14 +671,6 @@ async function importFromJSON(json, options) {
 
     let allVantages = allAdvantages.concat(allDisadvantages)
 
-    // await addFromLibrary(actor, allVantages, index)
-    // await addFromLibrary(actor, allAbilities, index)    
-    // await addFromLibrary(actor, spells, index, ["spell", "ritual"])
-    // await addFromLibrary(actor, cantrips, index)
-    // await addFromLibrary(actor, blessings, index)
-    // await addFromLibrary(actor, liturgies, index, ["liturgy", "ceremony"])
-    // await addFromLibrary(actor, belongings, index, ["equipment"])
-
     await addFromLibraryV2(actor, allVantages, library)
     await addFromLibraryV2(actor, allAbilities, library)    
     await addFromLibraryV2(actor, spells, library, ["spell", "ritual"])
@@ -917,14 +678,6 @@ async function importFromJSON(json, options) {
     await addFromLibraryV2(actor, blessings, library)
     await addFromLibraryV2(actor, liturgies, library, ["liturgy", "ceremony"])
     await addFromLibraryV2(actor, belongings, library, ["equipment"])
-
-    // await addItems(actor, allVantages, ["advantages, "disadvantages"])
-    // await addItems(actor, allAbilities, ["specialabilities"])
-    // await addItems(actor, spells, ["spells"])
-    // await addItems(actor, cantrips, ["magictricks"])
-    // await addItems(actor, blessings, ["liturgies"])
-    // await addItems(actor, liturgies, ["blessings"])
-    // await addItems(actor, belongings, ["equipment"])
 
     importErrors.sort()
     let importErrorsList = []
@@ -944,7 +697,6 @@ async function importFromJSON(json, options) {
 
     console.log(`Optolith to Foundry Importer | Finished creating actor id: ${actor.id} name: ${actor.data.name}`)
     let sheet = await actor.sheet.render(true)
-
 
     if (importErrors.length > 0) {
         console.log(`Optolith to Foundry Importer | Items that were not found in Library:`)
@@ -976,9 +728,6 @@ async function importFromJSON(json, options) {
 
 }
 
-
-
-// TODO: localise
 function importFromOptolithDialog() {
     new Dialog({
         title: `${game.i18n.localize('UI.ImportFile')}`,
@@ -1010,15 +759,10 @@ function importFromOptolithDialog() {
                 callback: html => {
                     const form = html.find("form")[0];
                     if (!form.data.files.length) return ui.notifications.error(`${game.i18n.localize('UI.noFileSelected')}`)
-                    // TODO: do a better job with optional paramenters!
-                    // if (form.popup.checked ) { showResults = true } else { showResultsDialog = false }
-                    // var showResultsDialog = form.popup.checked
-                    // var addToNotes = form.notes.checked
                     var options = {
                         showResultsDialog: form.popup.checked,
                         addResultsToNotes: form.notes.checked
                     }
-                    // showResults = true
                     readTextFromFile(form.data.files[0]).then(json => importFromJSON(json, options));
                 }
             },
@@ -1044,9 +788,7 @@ Hooks.on("ready", (app, html, data) => {
     }
 })
 
-
 Hooks.on("renderActorDirectory", (app, html, data) => {
-    // TODO: check user has permission to create Actor
     if (game.user.can("create")) {
         const button = $(`<button title="${game.i18n.localize("UI.ImportFile")}"><i class="fas fa-file-import"></i>${game.i18n.localize("UI.Import")}</button>`);
         html.find(".header-actions").append(button);
