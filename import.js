@@ -242,7 +242,7 @@ function parseAbility(data) {
                     }
                 }
                 displayName = `${baseName} (${option1}: ${option2})`
-                effect = `${option1} SR2`
+                // effect = `${option1} SR2`
                 break
             case "SA_70": // Tradition (Guild Mage)
                 // var option1 = game.i18n.localize(`SPELL.${a.sid}.name`)
@@ -258,7 +258,6 @@ function parseAbility(data) {
                 break
             case "SA_414": {// Spell Enhancement
                 a.type = "spellextension"
-                console.warn(`looking for spell extension SpellEnhancements.${a.sid}.name`)
                 let enhancement = localeData['SpellEnhancements'][a.sid]['name']
                 let targetSpell = localeData['SpellEnhancements'][a.sid]['target']
                 let spell = localeData['Spells'][targetSpell].name
@@ -273,25 +272,14 @@ function parseAbility(data) {
             case "SA_663": {// Liturgy Enhancement
                 a.type = "spellextension"
                 let enhancement = localeData['LiturgicalChantEnhancements'][a.sid]['name']
-                let spell = localeData['LiturgicalChants'][LITURGY_ENHANCEMENT_MAP[a.sid]]['name']
+                let targetSpell = localeData['LiturgicalChantEnhancements'][a.sid]['target']
+                let spell = localeData['LiturgicalChants'][targetSpell].name
                 displayName = `${spell} - ${enhancement}`
                 itemName = `${spell} - ${enhancement}`
                 ability.data = {
                     source: spell,
                     category: LITURGY_MAP[LITURGY_ENHANCEMENT_MAP[a.sid]]
                 }
-                break
-            }
-            case "SA_569": {  // Favorite Liturgical Chant
-                var option1 = localeData['LiturgicalChants'][a.sid]['name']
-                displayName = `${baseName} (${option1})`
-                effect = `${option1} SP2`
-                break
-            }
-            case "SA_250": { // Favorite Spellwork
-                var option1 = localeData['Spells'][a.sid]['name']
-                displayName = `${baseName} (${option1})`
-                effect = `${option1} SP2`
                 break
             }
             default:
@@ -354,6 +342,12 @@ function parseAbility(data) {
         }
         if (!source) {
             source = getSource(PREFIX,a.id)
+        }
+        if (game.dsa5.config.AbilitiesNeedingAdaption[itemName] &&  game.dsa5.config.AbilitiesNeedingAdaption[itemName].effect) {
+            ability.effect = `${option1} ${game.dsa5.config.AbilitiesNeedingAdaption[itemName].effect}`
+        }
+        if (game.dsa5.config.vantagesNeedingAdaption[itemName] &&  game.dsa5.config.vantagesNeedingAdaption[itemName].effect) {
+            ability.effect = `${option1} ${game.dsa5.config.vantagesNeedingAdaption[itemName].effect}`
         }
 
         ability.type = a.type
