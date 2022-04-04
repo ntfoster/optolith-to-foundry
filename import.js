@@ -206,12 +206,12 @@ function parseAbility(data) {
                 itemName = baseName + ' ()'
                 displayName = baseName
                 break
-            case "ADV_50": // Spellcaster, needed for correct AE
-                effect = "+20 AE"
-                break
-            case "ADV_12": // Blessed, needed for correct KP
-                effect = "+20 KP"
-                break
+            // case "ADV_50": // Spellcaster, needed for correct AE
+            //     effect = "+20 AE"
+            //     break
+            // case "ADV_12": // Blessed, needed for correct KP
+            //     effect = "+20 KP"
+            //     break
             case "SA_9": // Skill Specialization, need to localize both options
                 itemName = `${baseName} ()`
                 var option1 = localeData['Skills'][a.sid]['name']
