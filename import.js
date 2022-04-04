@@ -18,7 +18,14 @@ import DSAItem from "../../systems/dsa5/modules/item/item-dsa5.js"
     // const localeData = require("./data/optolith-data-en-US.json")
 // }
 
-import {localeData} from "./data/optolith-data-en-US.js"
+// import {localeData} from "./data/optolith-data-en-US.js"
+const locales = {
+    "en": "en-US",
+    "de": "de-DE"
+}
+// var response = await fetch(`modules/optolith-to-foundry/data/optolith-data-${locales['de']}.json`)
+var localeData
+// var localeData = import("./data/optolith-data-en-US.js")
 // console.warn(localeData['Skills'])
 // console.warn(localeData['Skills']['TAL_3']['name'])
 
@@ -643,8 +650,6 @@ async function addItems(actor, items, tags) {
 }
 async function importFromJSON(json, options) {
 
-    
-
     let library = game.dsa5.itemLibrary
     // await game.dsa5.itemLibrary.buildEquipmentIndex()
     // const index = game.dsa5.itemLibrary.equipmentIndex
@@ -1027,6 +1032,18 @@ function importFromOptolithDialog() {
         width: 400
     }).render(true);
 }
+
+async function getLocaleData(locale) {
+    let response = await fetch(`modules/optolith-to-foundry/data/optolith-data-${locales[locale]}.json`)
+    localeData = await response.json()
+}
+Hooks.on("ready", (app, html, data) => {
+    if (game.user.can("create")) {
+        getLocaleData(game.i18n.lang)
+        console.log(`Optolith to Foundry | Loaded data file for locale: ${game.i18n.lang}`)
+    }
+})
+
 
 Hooks.on("renderActorDirectory", (app, html, data) => {
     // TODO: check user has permission to create Actor
