@@ -19,12 +19,25 @@ const locales = {
 var localeData
 var importErrors
 
+
+function localise(prefix,item,property='name') { // TODO: Look for German translation if can't find English
+    try {
+        var itemName = localeData[prefix][item][property]
+    } catch (error) {
+        console.warn(`Couldn't find \'${game.i18n.lang}\' translation for ${item}`)
+        var itemName = item
+    }
+    return itemName
+    
+}
+
+
 function parseSkills(data, prefix) {
 
     var items = []
     data.forEach(s => {
         var item = {}
-        let skillName = localeData[prefix][s[0]]['name']
+        let skillName = localise(prefix,s[0])
         item["name"] = skillName
         item["data"] = {
             "talentValue": {
@@ -36,14 +49,20 @@ function parseSkills(data, prefix) {
     return items
 }
 
-function getSource(prefix,item) {
+function getSource(prefix,item) { // TODO: Look for German book if can't find English
     let source
-    const sourceData = localeData[prefix][item]['source']
+    try {
+        const sourceData = localeData[prefix][item]['source']
+    } catch (error) {
+        console.warn(`Couldn't find \'${game.i18n.lang}\' source for ${item}`)
+        const sourceData = "Unknown"
+    }
+    // const sourceData = localeData[prefix][item]['source']
     if (typeof sourceData == 'object') {
         let sources = []
         for (let src of sourceData) {
             try {
-                var bookName = localeData['Books'][src.id]['name']
+                var bookName = localise('Books',src.id)
               }
               catch(err) {
                 var bookName = src.id
@@ -57,11 +76,13 @@ function getSource(prefix,item) {
     return source
 }
 
+
 function parseSpells(data) {
     var items = []
     for (let spell of data) {
         let item = {}
-        item.displayName = item.itemName = localeData['Spells'][spell[0]]['name']
+        // item.displayName = item.itemName = localeData['Spells'][spell[0]]['name']
+        item.displayName = item.itemName = localise('Spells',spell[0])
         let type  = SPELL_MAP[spell[0]] ?? "spell"
         item.type = type
         item.data = {
@@ -79,7 +100,7 @@ function parseLiturgies(data) {
     var items = []
     for (let spell of data) {
         let item = {}
-        item.displayName = item.itemName = localeData['LiturgicalChants'][spell[0]]['name']
+        item.displayName = item.itemName = localise('LiturgicalChants',spell[0])
         let type  = LITURGY_MAP[spell[0]] ?? "liturgy"
         item.type = type
         item.data = {
@@ -98,7 +119,7 @@ function parseBlessings(data) {
     var items = []
     for (let item of data) {
         let newItem = {}
-        newItem.displayName = newItem.itemName = localeData['Blessings'][item]['name']
+        newItem.displayName = newItem.itemName = localise('Blessings',item)
         newItem.type = "blessing"
         newItem.source = getSource('Blessings',item)
         items.push(newItem)
@@ -110,7 +131,7 @@ function parseCantrips(data) {
     var items = []
     for (let item of data) {
         let newItem = {}
-        newItem.displayName = newItem.itemName = localeData['Cantrips'][item]['name']
+        newItem.displayName = newItem.itemName = localise('Cantrips',item)
         newItem.type = "magictrick"
         newItem.source = getSource('Cantrips',item)
         items.push(newItem)
@@ -182,7 +203,7 @@ function parseAbility(data) {
                 var PREFIX = "SpecialAbilities"
                 break
         }
-        const baseName = localeData[PREFIX][a.id]['name']
+        const baseName = localise(PREFIX,a.id)
         var itemName = baseName
         var displayName = baseName
         var ability = {}
@@ -214,7 +235,7 @@ function parseAbility(data) {
             //     break
             case "SA_9": // Skill Specialization, need to localize both options
                 itemName = `${baseName} ()`
-                var option1 = localeData['Skills'][a.sid]['name']
+                var option1 = localise('Skills',a.sid)
                 var option2 = "Unknown"
                 for (let appl of localeData['Skills'][a.sid]['applications']) {
                     if (appl['id'] == a.sid2) {
@@ -224,7 +245,7 @@ function parseAbility(data) {
                 displayName = `${baseName} (${option1}: ${option2})`
                 break
             case "SA_70": // Tradition (Guild Mage)
-                var option1 = localeData['Spells'][a.sid]['name']
+                var option1 = localise('Spells',a.sid)
                 displayName = `${baseName} (${option1})`
                 break
             case "DISADV_33": // Personality Flaw
@@ -234,8 +255,8 @@ function parseAbility(data) {
                 break
             case "SA_414": {// Spell Enhancement
                 a.type = "spellextension"
-                let enhancement = localeData['SpellEnhancements'][a.sid]['name']
-                let targetSpell = localeData['SpellEnhancements'][a.sid]['target']
+                let enhancement = localise('SpellEnhancements',a.sid)
+                let targetSpell = localise('SpellEnhancements',a.sid,'target')
                 let spell = localeData['Spells'][targetSpell].name
                 displayName = `${spell} - ${enhancement}`
                 itemName = `${spell} - ${enhancement}`
@@ -247,7 +268,7 @@ function parseAbility(data) {
             }
             case "SA_663": {// Liturgy Enhancement
                 a.type = "spellextension"
-                let enhancement = localeData['LiturgicalChantEnhancements'][a.sid]['name']
+                let enhancement = localise('LiturgicalChantEnhancements',a.sid)
                 let targetSpell = localeData['LiturgicalChantEnhancements'][a.sid]['target']
                 let spell = localeData['LiturgicalChants'][targetSpell].name
                 displayName = `${spell} - ${enhancement}`
@@ -267,16 +288,16 @@ function parseAbility(data) {
                     } else {
                         switch (a.sid.substring(0, a.sid.indexOf('_'))) {
                             case "TAL":
-                                var option1 = localeData['Skills'][a.sid]['name']
+                                var option1 = localise('Skills',a.sid)
                                 break
                             case "CT":
-                                var option1 = localeData['CombatTechniques'][a.sid]['name']
+                                var option1 = localise('CombatTechniques',a.sid)
                                 break
                             case "SPELL":
-                                var option1 = localeData['Spells'][a.sid]['name']
+                                var option1 = localise('Spells',a.sid)
                                 break
                             case "LITURGY":
-                                var option1 = localeData['LiturgicalChants'][a.sid]['name']
+                                var option1 = localise('LiturgicalChants',a.sid)
                                 break
                             default:
                                 var option1 = a.sid
@@ -291,16 +312,16 @@ function parseAbility(data) {
                     } else {
                         switch (a.sid2.substring(0, a.sid2.indexOf('_'))) {
                             case "TAL":
-                                var option2 = localeData['Skills'][a.sid2]['name']
+                                var option2 = localise('Skills',a.sid2)
                                 break
                             case "CT":
-                                var option2 = localeData['CombatTechniques'][a.sid2]['name']
+                                var option2 = localise('CombatTechniques',a.sid2)
                                 break
                             case "SPELL":
-                                var option2 = localeData['Spells'][a.sid2]['name']
+                                var option2 = localise('Spells',a.sid2)
                                 break
                             case "LITURGY":
-                                var option2 = localeData['LiturgicalChants'][a.sid2]['name']
+                                var option2 = localise('LiturgicalChants',a.sid2)
                                 break
                             default:
                                 var option2 = a.sid2
@@ -353,7 +374,7 @@ async function parseBelongings(data) {
         let newItem = {}
         let itemID = item[1].template
         if (itemID) {
-            newItem.displayName = newItem.itemName = localeData['Items'][itemID]['name']
+            newItem.displayName = newItem.itemName = localise('Items',itemID)
             if (!(newItem.type = ITEM_TYPE_MAP[item[1].gr])) {
                 newItem.type = "equipment"
             }
@@ -534,17 +555,17 @@ async function importFromJSON(json, options) {
     // setup base character data
     let race = data.r
     if (data.rv) {
-        var species = `${localeData['Races'][race]['name']} (${localeData['RaceVariants'][data.rv]['name']})`
+        var species = `${localise('Races',race)} (${localise('RaceVariants',data.rv)})`
     } else {
-        var species = localeData['Races'][race]['name']
+        var species = localise('Races',race)
     }
 
     if (data.p == "P_0") {
         var profession = data.professionName
     } else {
-        var profession = localeData['Professions'][data.p]['name']
+        var profession = localise('Professions',data.p)
         if (typeof profession == "object") {
-            profession = localeData['Professions'][data.p]['name'][data.sex]
+            profession = profession[data.sex]
         }
     }
 
@@ -564,13 +585,13 @@ async function importFromJSON(json, options) {
                 value: game.i18n.localize(`SEX.${data.sex}`)
             },
             culture: {
-                value: `${data.c ? localeData['Cultures'][data.c]['name'] : ""}`
+                value: `${data.c ? localise('Cultures',data.c) : ""}`
             },
             career: {
                 value: profession
             },
             socialstate: {
-                value: `${data.pers.socialstatus ? localeData['SocialStatuses'][data.pers.socialstatus]['name'] : ""}`
+                value: `${data.pers.socialstatus ? localise('SocialStatuses',data.pers.socialstatus) : ""}`
             },
             family: {
                 value: data.pers.family
@@ -579,10 +600,10 @@ async function importFromJSON(json, options) {
                 value: data.pers.age
             },
             haircolor: {
-                value: `${data.pers.haircolor ? localeData['HairColors'][data.pers.haircolor]['name'] : ""}`
+                value: `${data.pers.haircolor ? localise('HairColors',data.pers.haircolor) : ""}`
             },
             eyecolor: {
-                value: `${data.pers.eyecolor ? localeData['EyeColors'][data.pers.eyecolor]['name'] : ""}`
+                value: `${data.pers.eyecolor ? localise('EyeColors',data.pers.eyecolor) : ""}`
             },
             height: {
                 value: data.pers.size
