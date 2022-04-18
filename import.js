@@ -461,6 +461,7 @@ async function addFromLibraryV2(actor, items, index, types) {
             result = await index.findCompendiumItem(item.itemName,item.type)
         }
         if (result.length > 0) {
+            // TODO: Add from most recent compendium?
             result = result[0]
 
             let newData = JSON.parse(JSON.stringify(result.data))
@@ -484,6 +485,35 @@ async function addFromLibraryV2(actor, items, index, types) {
                 newData.data.effect.value = item.effect
             }
             await actor.createEmbeddedDocuments("Item",[newData])
+
+            // if adding a Religious/Magical Tradition, try to add the primary attribute
+            if (item.displayName.startsWith('Tradition')) {
+                console.warn(`Adding a Tradition: ${newData.name}`)
+                // console.warn(newData.data.description)
+                let regex = (game.i18n.lang == 'en')? /The primary attribute of \w+ Tradition is (\w+)\./ : /Die Leiteigenschaft \w+ Tradition ist (\w+)\./ 
+                let result = newData.data.description.value.match(regex)
+                if (result) {
+                    for (let a in localeData['Attributes']) {
+                        if (localeData['Attributes'][a]['name'] == result[1]) {
+                            var primaryAttribute = ATTRIBUTE_MAP[a]
+                            console.warn(`Primary attribute: ${primaryAttribute}`)
+                            if (newData.data.category.value == 'clerical') {
+                                actor.update({"data.guidevalue.clerical": primaryAttribute})
+                            } else {
+                                actor.update({"data.guidevalue.magical": primaryAttribute})
+                            }
+                        }
+                    }
+                } else {
+                    importErrors.push({
+                        itemName: item.itemName,
+                        displayName: item.displayName,
+                        type: item.type,
+                        source: item.source
+                    })
+                }
+            }
+
         } else {
             importErrors.push({
                 itemName: item.itemName,
@@ -494,7 +524,6 @@ async function addFromLibraryV2(actor, items, index, types) {
             // add custom item
             let newItem = createCustomItem(item)
             await actor.createEmbeddedDocuments("Item",[newItem])
-
         }
     }
 
@@ -730,7 +759,9 @@ async function importFromJSON(json, options) {
         `
 
     actor.update({
-        "data.status.wounds.value": actor.data.data.status.wounds.initial + actor.data.data.characteristics["ko"].value * 2
+        "data.status.wounds.value": actor.data.data.status.wounds.initial + actor.data.data.characteristics["ko"].value * 2,
+        "data.status.astralenergy.value": actor.data.data.status.astralenergy.max,
+        "data.status.karmaenergy.value": actor.data.data.status.karmaenergy.max
     })
 
     console.log(`Optolith to Foundry Importer | Finished creating actor id: ${actor.id} name: ${actor.data.name}`)
