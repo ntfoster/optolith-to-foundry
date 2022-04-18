@@ -3,9 +3,9 @@
     "title": "Optolith to Foundry Importer",
     "description": "A tool to import The Dark Eye/Das Schwarze Auge heroes created in Optolith (https://optolith.app/)",
     "author": "ntfoster",
-    "version": "0.6.0",
+    "version": "0.6.1",
     "minimumCoreVersion": "0.7.9",
-    "compatibleCoreVersion": "9.255",
+    "compatibleCoreVersion": "9",
     "system": "dsa5",
     "esmodules": [
         "import.js"
