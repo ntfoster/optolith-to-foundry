@@ -18,7 +18,8 @@
         "addToNotes": "Zu Notizen hinzufügen",
         "jsonFile": "Wählen Sie die JSON-Datei",
         "noFileSelected": "Sie haben keine Datei ausgewählt",
-        "showPopup": "Popup zeigen"
+        "showPopup": "Popup zeigen",
+        "Option": "Wahl"
     },
     "SEX": {
         "f": "Weiblich",

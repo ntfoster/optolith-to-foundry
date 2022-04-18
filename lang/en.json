@@ -18,7 +18,8 @@
         "addToNotes": "Add to Notes",
         "jsonFile": "Choose JSON file",
         "noFileSelected": "You did not select a file",
-        "showPopup": "Show Popup"
+        "showPopup": "Show Popup",
+        "Option": "Option"
     },
     "SEX": {
         "m": "Male",

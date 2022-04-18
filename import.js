@@ -17,17 +17,38 @@ const locales = {
     "de": "de-DE"
 }
 var localeData
+var altLocaleData
 var importErrors
 
+async function getLocaleData(locale) {
+    let response = await fetch(`modules/optolith-to-foundry/data/optolith-data-${locales[locale]}.json`)
+    localeData = await response.json()
 
-function localise(prefix,item,property='name') { // TODO: Look for German translation if can't find English
+    // load 'de' data as backup in case a file with german-only content is imported
+    if (locale == 'en') {
+        response = await fetch(`modules/optolith-to-foundry/data/optolith-data-${locales['de']}.json`)
+        altLocaleData = await response.json()    
+    }
+
+}
+
+function localise(prefix,item,property='name') {
     try {
         var itemName = localeData[prefix][item][property]
+        return itemName
     } catch (error) {
-        console.warn(`Couldn't find \'${game.i18n.lang}\' translation for ${item}`)
-        var itemName = item
+        console.warn(`Couldn't find \'${game.i18n.lang}\' translation for $${prefix}.${item}.${property}`)
+        try {
+            var itemName = altLocaleData[prefix][item][property]
+            if (property == 'name') {
+                itemName = `[de] ${itemName}`
+            }
+            return itemName
+        } catch (error) {
+            console.error(`Couldn't find any translation for $${prefix}.${item}.${property}`)
+            return (property == 'name') ? item : null
+        }
     }
-    return itemName
     
 }
 
@@ -49,16 +70,10 @@ function parseSkills(data, prefix) {
     return items
 }
 
-function getSource(prefix,item) { // TODO: Look for German book if can't find English
+function getSource(prefix,item) {
     let source
-    try {
-        const sourceData = localeData[prefix][item]['source']
-    } catch (error) {
-        console.warn(`Couldn't find \'${game.i18n.lang}\' source for ${item}`)
-        const sourceData = "Unknown"
-    }
-    // const sourceData = localeData[prefix][item]['source']
-    if (typeof sourceData == 'object') {
+    const sourceData = localise(prefix,item,"source")
+    if (sourceData != null) {
         let sources = []
         for (let src of sourceData) {
             try {
@@ -81,7 +96,6 @@ function parseSpells(data) {
     var items = []
     for (let spell of data) {
         let item = {}
-        // item.displayName = item.itemName = localeData['Spells'][spell[0]]['name']
         item.displayName = item.itemName = localise('Spells',spell[0])
         let type  = SPELL_MAP[spell[0]] ?? "spell"
         item.type = type
@@ -180,13 +194,16 @@ function parseActivatables(data) {
 }
 
 function getOption(prefix,item,option) {
-    let options = localeData[prefix][item]['options']
-    for (let o of options) {
-        if (o.id == option) {
-            return o.name
+    let options = localise(prefix,item,"options")
+    if (options) {
+        for (let o of options) {
+            if (o.id == option) {
+                return o.name
+            }
         }
     }
-    console.error(`Couldn't find option ${option}`)
+    console.error(`Couldn't find option ${prefix}.${item}.${option}`)
+    return `${game.i18n.localize("UI.Option")} ${option}`
 }
 
 function parseAbility(data) {
@@ -798,10 +815,6 @@ function importFromOptolithDialog() {
     }).render(true);
 }
 
-async function getLocaleData(locale) {
-    let response = await fetch(`modules/optolith-to-foundry/data/optolith-data-${locales[locale]}.json`)
-    localeData = await response.json()
-}
 Hooks.on("ready", (app, html, data) => {
     if (game.user.can("create")) {
         getLocaleData(game.i18n.lang)
