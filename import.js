@@ -466,30 +466,42 @@ async function addFromLibraryV2(actor, items, index, types) {
             } else {
 
                 // need to filter because findCompendiumItem() doesn't match name exactly
-                result = result.filter(i => i.name.toLowerCase() == item.displayName.toLowerCase() || i.name.toLowerCase() == item.itemName.toLowerCase())
+                let matches = result.filter(i => i.name.toLowerCase() == item.displayName.toLowerCase() || i.name.toLowerCase() == item.itemName.toLowerCase())
+                if (matches.length > 0) {
+                    if (matches.length == 1) {
+                        result = matches[0]
+                    } else if (matches.length > 1) {
+                        let packs = []
+                        for (let p of result) {
+                            packs.push(p.pack)
+                        }
+                        console.warn(`Multiple matches found for ${item.displayName}: ${packs}`)
 
-                if (result.length > 1) {
-                    let packs = []
-                    for (let p of result) {
-                        packs.push(p.pack)
-                    }
-                    console.warn(`Multiple matches found for ${item.displayName}: ${packs}`)
-
-                    for (let i of result) {
-                        if (i.pack.startsWith('dsa5-core.')) {
-                            continue
-                        } else {
-                            console.warn(`Choosing pack: ${i.pack}`)
-                            result = i
-                            break
+                        for (let i of result) {
+                            if (i.pack.startsWith('dsa5-core.')) {
+                                continue
+                            } else {
+                                console.warn(`Choosing pack: ${i.pack}`)
+                                result = i
+                                break
+                            }
                         }
                     }
-                } else {
-                    result = result[0]
+                } else { // multiple items but no exact match, can't be certain
+                    importErrors.push({
+                        itemName: item.itemName,
+                        displayName: item.displayName,
+                        type: item.type,
+                        source: item.source
+                    })
+                    // add custom item
+                    let newItem = createCustomItem(item)
+                    await actor.createEmbeddedDocuments("Item",[newItem])
+                    continue
                 }
+        
             }
-
-            let newData = JSON.parse(JSON.stringify(result.data))
+            var newData = JSON.parse(JSON.stringify(result.data))
             newData.name = item.displayName
             if (newData.data.maxRank && item.value > newData.data.maxRank.value) {
                 newData.data.step = {
