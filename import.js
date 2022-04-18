@@ -462,7 +462,25 @@ async function addFromLibraryV2(actor, items, index, types) {
         }
         if (result.length > 0) {
             // TODO: Add from most recent compendium?
-            result = result[0]
+            if (result.length > 1) {
+                let packs = []
+                for (let p of result) {
+                    packs.push(p.pack)
+                }
+                console.warn(`Multiple matches found for ${item.displayName}: ${packs}`)
+
+                for (let i of result) {
+                    if (i.pack.startsWith('dsa5-core.')) {
+                        continue
+                    } else {
+                        console.warn(`Choosing pack: ${i.pack}`)
+                        result = i
+                        break
+                    }
+                }
+            } else {
+                result = result[0]
+            }
 
             let newData = JSON.parse(JSON.stringify(result.data))
             newData.name = item.displayName
@@ -490,7 +508,7 @@ async function addFromLibraryV2(actor, items, index, types) {
             if (item.displayName.startsWith('Tradition')) {
                 console.warn(`Adding a Tradition: ${newData.name}`)
                 // console.warn(newData.data.description)
-                let regex = (game.i18n.lang == 'en')? /The primary attribute of \w+ Tradition is (\w+)\./ : /Die Leiteigenschaft \w+ Tradition ist (\w+)\./ 
+                let regex = (game.i18n.lang == 'en')? /The primary attribute of \w+ Tradition is (\w+)\./ : /Leiteigenschaft \w+ Tradition ist (\w+)\./ 
                 let result = newData.data.description.value.match(regex)
                 if (result) {
                     for (let a in localeData['Attributes']) {
