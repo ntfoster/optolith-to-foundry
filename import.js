@@ -461,25 +461,32 @@ async function addFromLibraryV2(actor, items, index, types) {
             result = await index.findCompendiumItem(item.itemName,item.type)
         }
         if (result.length > 0) {
-            // TODO: Add from most recent compendium?
-            if (result.length > 1) {
-                let packs = []
-                for (let p of result) {
-                    packs.push(p.pack)
-                }
-                console.warn(`Multiple matches found for ${item.displayName}: ${packs}`)
-
-                for (let i of result) {
-                    if (i.pack.startsWith('dsa5-core.')) {
-                        continue
-                    } else {
-                        console.warn(`Choosing pack: ${i.pack}`)
-                        result = i
-                        break
-                    }
-                }
-            } else {
+            if (result.length == 1) {
                 result = result[0]
+            } else {
+
+                // need to filter because findCompendiumItem() doesn't match name exactly
+                result = result.filter(i => i.name.toLowerCase() == item.displayName.toLowerCase() || i.name.toLowerCase() == item.itemName.toLowerCase())
+
+                if (result.length > 1) {
+                    let packs = []
+                    for (let p of result) {
+                        packs.push(p.pack)
+                    }
+                    console.warn(`Multiple matches found for ${item.displayName}: ${packs}`)
+
+                    for (let i of result) {
+                        if (i.pack.startsWith('dsa5-core.')) {
+                            continue
+                        } else {
+                            console.warn(`Choosing pack: ${i.pack}`)
+                            result = i
+                            break
+                        }
+                    }
+                } else {
+                    result = result[0]
+                }
             }
 
             let newData = JSON.parse(JSON.stringify(result.data))
