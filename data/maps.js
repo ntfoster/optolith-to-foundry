@@ -8,6 +8,11 @@ export const ATTRIBUTE_MAP = {
     "ATTR_7": "ko",
     "ATTR_8": "kk"
 }
+export const TRADITION_MAP = {
+    "Witch": "Witches",
+    "Elf": "Elves",
+    
+}
 export const RACE_MAP = {
     "R_1": {
         "cost": 0,

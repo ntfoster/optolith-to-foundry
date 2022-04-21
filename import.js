@@ -1,6 +1,7 @@
 import {
     ATTRIBUTE_MAP,
     RACE_MAP,
+    TRADITION_MAP,
 } from "./data/maps.js"
 import {
     SPELL_ENHANCEMENT_MAP,
@@ -51,7 +52,6 @@ function localise(prefix,item,property='name') {
     }
     
 }
-
 
 function parseSkills(data, prefix) {
 
@@ -524,20 +524,28 @@ async function addFromLibraryV2(actor, items, index, types) {
             await actor.createEmbeddedDocuments("Item",[newData])
 
             // if adding a Religious/Magical Tradition, try to add the primary attribute
-            if (item.displayName.startsWith('Tradition')) {
-                console.warn(`Adding a Tradition: ${newData.name}`)
-                // console.warn(newData.data.description)
+            let tradition = item.displayName.match(/Tradition \((.+)\)/)
+            if (tradition) {
+                console.warn('Adding a tradition')
+                console.warn(`Tradition name: ${tradition[1]}`)
+            // if (item.displayName.startsWith('Tradition')) {
                 let regex = (game.i18n.lang == 'en')? /The primary attribute of \w+ Tradition is (\w+)\./ : /Leiteigenschaft \w+ Tradition ist (\w+)\./ 
                 let result = newData.data.description.value.match(regex)
                 if (result) {
                     for (let a in localeData['Attributes']) {
                         if (localeData['Attributes'][a]['name'] == result[1]) {
                             var primaryAttribute = ATTRIBUTE_MAP[a]
-                            console.warn(`Primary attribute: ${primaryAttribute}`)
+                            var traditionName = (TRADITION_MAP[tradition[1]]) ? TRADITION_MAP[tradition[1]] : tradition[1]
                             if (newData.data.category.value == 'clerical') {
-                                actor.update({"data.guidevalue.clerical": primaryAttribute})
+                                actor.update({
+                                    "data.guidevalue.clerical": primaryAttribute,
+                                    "data.tradition.clerical": traditionName
+                                })
                             } else {
-                                actor.update({"data.guidevalue.magical": primaryAttribute})
+                                actor.update({
+                                    "data.guidevalue.magical": primaryAttribute,
+                                    "data.tradition.magical": traditionName
+                            })
                             }
                         }
                     }
