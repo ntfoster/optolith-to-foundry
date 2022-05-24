@@ -17,6 +17,7 @@ const locales = {
     "en": "en-US",
     "de": "de-DE"
 }
+var library
 var localeData
 var altLocaleData
 var importErrors
@@ -453,54 +454,138 @@ function createCustomItem(item) {
     return newItem
 }
 
+function getBestItem(items) {
+    for (let item of items) {
+        if (item.pack.startsWith('dsa5-core.')) {
+            continue
+        } else {
+            // TODO implement a proper pack hierarchy.
+            console.log(`Choosing ${item.name} from pack: ${item.pack}`)
+            return item
+        }
+
+    }
+}
+
+function findMatch(itemName,items) {
+    let matches = items.filter(i => i.name.toLowerCase() == itemName.toLowerCase() )
+    if (matches.length == 1) { 
+        return matches[0] 
+    } else if (matches.length > 1) {
+        return getBestItem(matches)
+    } else {
+        return null
+    }
+}
+
+async function getItem(item) {
+    let search = item.displayName
+    let results = await library.findCompendiumItem(search,item.type)
+    if (results.length == 0) {
+        search = item.itemName
+        results = await library.findCompendiumItem(search,item.type)
+    }
+
+    let match = findMatch(search, results)
+    if (!match) {
+        switch (item.type) {
+            case 'meleeweapon':
+                match = findMatch(search+' (2H)',results)
+                break;
+            default:
+                match = null
+                break;
+        }
+    }
+    return match
+}
+
+function addTradition(tradition, actor) {
+    let traditionName = tradition.name.match(/Tradition \((.+)\)/)[1]
+
+    let regex = (game.i18n.lang == 'en')? /The primary attribute of \w+ Tradition is (\w+)\./ : /Leiteigenschaft \w+ Tradition ist (\w+)\./ 
+    let result = tradition.data.description.value.match(regex)
+    if (result) {
+        for (let a in localeData['Attributes']) {
+            if (localeData['Attributes'][a]['name'] == result[1]) {
+                var primaryAttribute = ATTRIBUTE_MAP[a]
+                if (TRADITION_MAP.hasOwnProperty(traditionName)) {
+                    traditionName = TRADITION_MAP[traditionName]
+                }
+                console.warn(`Adding Tradition ${traditionName} with attribute: ${primaryAttribute}`)
+
+                if (tradition.data.category.value == 'clerical') {
+                    actor.update({
+                        "data.guidevalue.clerical": primaryAttribute,
+                        "data.tradition.clerical": traditionName
+                    })
+                } else {
+                    actor.update({
+                        "data.guidevalue.magical": primaryAttribute,
+                        "data.tradition.magical": traditionName
+                })
+                }
+            }
+        }
+    }
+
+}
+
 async function addFromLibraryV2(actor, items, index, types) {
     for (let item of items) {
 
-        let result = await index.findCompendiumItem(item.displayName,item.type)
-        if (result.length == 0) {
-            result = await index.findCompendiumItem(item.itemName,item.type)
-        }
-        if (result.length > 0) {
-            if (result.length == 1) {
-                result = result[0]
-            } else {
+        // let search = item.displayName
+        // let result = await index.findCompendiumItem(search,item.type)
+        // if (result.length == 0) {
+        //     search = item.itemName
+        //     result = await index.findCompendiumItem(search,item.type)
+        // }
+    
+        // // TODO: if weapon, try " (2H)"" after name
+        // if (result.length > 0) {
+        //     if (result.length == 1) {
+        //         result = result[0]
+        //     } else {
 
-                // need to filter because findCompendiumItem() doesn't match name exactly
-                let matches = result.filter(i => i.name.toLowerCase() == item.displayName.toLowerCase() || i.name.toLowerCase() == item.itemName.toLowerCase())
-                if (matches.length > 0) {
-                    if (matches.length == 1) {
-                        result = matches[0]
-                    } else if (matches.length > 1) {
-                        let packs = []
-                        for (let p of result) {
-                            packs.push(p.pack)
-                        }
-                        console.warn(`Multiple matches found for ${item.displayName}: ${packs}`)
+        //         // need to filter because findCompendiumItem() doesn't match name exactly
+        //         let matches = result.filter(i => i.name.toLowerCase() == item.displayName.toLowerCase() || i.name.toLowerCase() == item.itemName.toLowerCase())
+        //         if (matches.length > 0) {
+        //             if (matches.length == 1) {
+        //                 result = matches[0]
+        //             } else if (matches.length > 1) {
+        //                 let packs = []
+        //                 for (let p of result) {
+        //                     packs.push(p.pack)
+        //                 }
+        //                 console.warn(`Multiple matches found for ${item.displayName}: ${packs}`)
 
-                        for (let i of result) {
-                            if (i.pack.startsWith('dsa5-core.')) {
-                                continue
-                            } else {
-                                console.warn(`Choosing pack: ${i.pack}`)
-                                result = i
-                                break
-                            }
-                        }
-                    }
-                } else { // multiple items but no exact match, can't be certain
-                    importErrors.push({
-                        itemName: item.itemName,
-                        displayName: item.displayName,
-                        type: item.type,
-                        source: item.source
-                    })
-                    // add custom item
-                    let newItem = createCustomItem(item)
-                    await actor.createEmbeddedDocuments("Item",[newItem])
-                    continue
-                }
+        //                 for (let i of result) {
+        //                     if (i.pack.startsWith('dsa5-core.')) {
+        //                         continue
+        //                     } else {
+        //                         console.warn(`Choosing pack: ${i.pack}`)
+        //                         result = i
+        //                         break
+        //                     }
+        //                 }
+        //             }
+        //         } else { // multiple items but no exact match, can't be certain
+        //             console.warn(`Multiple matches found for ${item.displayName}`)
+        //             importErrors.push({
+        //                 itemName: item.itemName,
+        //                 displayName: item.displayName,
+        //                 type: item.type,
+        //                 source: item.source
+        //             })
+        //             // add custom item
+        //             let newItem = createCustomItem(item)
+        //             await actor.createEmbeddedDocuments("Item",[newItem])
+        //             continue
+        //         }
         
-            }
+        //     }
+        let result = await getItem(item)
+        if (result) {
             var newData = JSON.parse(JSON.stringify(result.data))
             newData.name = item.displayName
             if (newData.data.maxRank && item.value > newData.data.maxRank.value) {
@@ -526,37 +611,38 @@ async function addFromLibraryV2(actor, items, index, types) {
             // if adding a Religious/Magical Tradition, try to add the primary attribute
             let tradition = item.displayName.match(/Tradition \((.+)\)/)
             if (tradition) {
-                console.warn('Adding a tradition')
-                console.warn(`Tradition name: ${tradition[1]}`)
+                // console.warn('Adding a tradition')
+                // console.warn(`Tradition name: ${tradition[1]}`)
+            addTradition(newData,actor)
             // if (item.displayName.startsWith('Tradition')) {
-                let regex = (game.i18n.lang == 'en')? /The primary attribute of \w+ Tradition is (\w+)\./ : /Leiteigenschaft \w+ Tradition ist (\w+)\./ 
-                let result = newData.data.description.value.match(regex)
-                if (result) {
-                    for (let a in localeData['Attributes']) {
-                        if (localeData['Attributes'][a]['name'] == result[1]) {
-                            var primaryAttribute = ATTRIBUTE_MAP[a]
-                            var traditionName = (TRADITION_MAP[tradition[1]]) ? TRADITION_MAP[tradition[1]] : tradition[1]
-                            if (newData.data.category.value == 'clerical') {
-                                actor.update({
-                                    "data.guidevalue.clerical": primaryAttribute,
-                                    "data.tradition.clerical": traditionName
-                                })
-                            } else {
-                                actor.update({
-                                    "data.guidevalue.magical": primaryAttribute,
-                                    "data.tradition.magical": traditionName
-                            })
-                            }
-                        }
-                    }
-                } else {
-                    importErrors.push({
-                        itemName: item.itemName,
-                        displayName: item.displayName,
-                        type: item.type,
-                        source: item.source
-                    })
-                }
+                // let regex = (game.i18n.lang == 'en')? /The primary attribute of \w+ Tradition is (\w+)\./ : /Leiteigenschaft \w+ Tradition ist (\w+)\./ 
+                // let result = newData.data.description.value.match(regex)
+                // if (result) {
+                //     for (let a in localeData['Attributes']) {
+                //         if (localeData['Attributes'][a]['name'] == result[1]) {
+                //             var primaryAttribute = ATTRIBUTE_MAP[a]
+                //             var traditionName = (TRADITION_MAP[tradition[1]]) ? TRADITION_MAP[tradition[1]] : tradition[1]
+                //             if (newData.data.category.value == 'clerical') {
+                //                 actor.update({
+                //                     "data.guidevalue.clerical": primaryAttribute,
+                //                     "data.tradition.clerical": traditionName
+                //                 })
+                //             } else {
+                //                 actor.update({
+                //                     "data.guidevalue.magical": primaryAttribute,
+                //                     "data.tradition.magical": traditionName
+                //             })
+                //             }
+                //         }
+                //     }
+                // } else {
+                //     importErrors.push({
+                //         itemName: item.itemName,
+                //         displayName: item.displayName,
+                //         type: item.type,
+                //         source: item.source
+                //     })
+                // }
             }
 
         } else {
@@ -576,7 +662,7 @@ async function addFromLibraryV2(actor, items, index, types) {
 
 async function importFromJSON(json, options) {
 
-    let library = game.dsa5.itemLibrary
+    library = game.dsa5.itemLibrary
     // await game.dsa5.itemLibrary.buildEquipmentIndex()
     // const index = game.dsa5.itemLibrary.equipmentIndex
 
