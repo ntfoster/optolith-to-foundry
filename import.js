@@ -100,7 +100,7 @@ function parseSpells(data) {
         item.displayName = item.itemName = localise('Spells',spell[0])
         let type  = SPELL_MAP[spell[0]] ?? "spell"
         item.type = type
-        item.data = {
+        item.system = {
             talentValue: {
                 value: spell[1]
             }
@@ -504,7 +504,7 @@ function addTradition(tradition, actor) {
     let traditionName = tradition.name.match(/Tradition \((.+)\)/)[1]
 
     let regex = (game.i18n.lang == 'en')? /The primary attribute of \w+ Tradition is (\w+)\./ : /Leiteigenschaft \w+ Tradition ist (\w+)\./ 
-    let result = tradition.data.description.value.match(regex)
+    let result = tradition.system.description.value.match(regex)
     if (result) {
         for (let a in localeData['Attributes']) {
             if (localeData['Attributes'][a]['name'] == result[1]) {
@@ -514,7 +514,7 @@ function addTradition(tradition, actor) {
                 }
                 console.warn(`Adding Tradition ${traditionName} with attribute: ${primaryAttribute}`)
 
-                if (tradition.data.category.value == 'clerical') {
+                if (tradition.system.category.value == 'clerical') {
                     actor.update({
                         "data.guidevalue.clerical": primaryAttribute,
                         "data.tradition.clerical": traditionName
@@ -586,25 +586,25 @@ async function addFromLibraryV2(actor, items, index, types) {
         //     }
         let result = await getItem(item)
         if (result) {
-            var newData = JSON.parse(JSON.stringify(result.data))
+            var newData = JSON.parse(JSON.stringify(result))
             newData.name = item.displayName
-            if (newData.data.maxRank && item.value > newData.data.maxRank.value) {
-                newData.data.step = {
-                    value: newData.data.maxRank.value
+            if (newData.system.maxRank && item.value > newData.system.maxRank.value) {
+                newData.system.step = {
+                    value: newData.system.maxRank.value
                 }
             } else {
-                newData.data.step = {
+                newData.system.step = {
                     value: item.value
                 }
             }
             if (item.data) {
-                newData.data = {
-                    ...newData.data,
+                newData.system = {
+                    ...newData.system,
                     ...item.data
                 }
             }
             if (item.effect) {
-                newData.data.effect.value = item.effect
+                newData.system.effect = item.effect
             }
             await actor.createEmbeddedDocuments("Item",[newData])
 
@@ -749,7 +749,7 @@ async function importFromJSON(json, options) {
     var charData = {}
     charData.name = data.name
     charData.type = "character"
-    charData.data = {
+    charData.system = {
         characteristics: characteristics,
         details: {
             experience: {
@@ -831,7 +831,7 @@ async function importFromJSON(json, options) {
 
     // update skills by finding skill name
     for (let s of skills) {
-        let item = actor.data.items.find(i => i.name === s.name && i.type == "skill")
+        let item = actor.items.find(i => i.name === s.name && i.type == "skill")
         if (item) {
             const update = {
                 _id: item.id,
@@ -845,7 +845,7 @@ async function importFromJSON(json, options) {
     }
 
     for (let s of combatSkills) {
-        let item = actor.data.items.find(i => i.name === s.name && i.type == "combatskill")
+        let item = actor.items.find(i => i.name === s.name && i.type == "combatskill")
         if (item) {
             const update = {
                 _id: item.id,
@@ -890,21 +890,21 @@ async function importFromJSON(json, options) {
         `
 
     actor.update({
-        "data.status.wounds.value": actor.data.data.status.wounds.initial + actor.data.data.characteristics["ko"].value * 2,
-        "data.status.astralenergy.value": actor.data.data.status.astralenergy.max,
-        "data.status.karmaenergy.value": actor.data.data.status.karmaenergy.max
+        "data.status.wounds.value": actor.system.status.wounds.initial + actor.system.characteristics["ko"].value * 2,
+        "data.status.astralenergy.value": actor.system.status.astralenergy.max,
+        "data.status.karmaenergy.value": actor.system.status.karmaenergy.max
     })
 
-    console.log(`Optolith to Foundry Importer | Finished creating actor id: ${actor.id} name: ${actor.data.name}`)
+    console.log(`Optolith to Foundry Importer | Finished creating actor id: ${actor.id} name: ${actor.name}`)
     let sheet = await actor.sheet.render(true)
 
     if (importErrors.length > 0) {
         console.log(`Optolith to Foundry Importer | Items that were not found in Library:`)
         console.log(importErrors)
-        ui.notifications.warn(`${actor.data.name} ${game.i18n.localize('UI.ImportResultsUnrecognised')}`)
+        ui.notifications.warn(`${actor.name} ${game.i18n.localize('UI.ImportResultsUnrecognised')}`)
         if (options.addResultsToNotes) {
             actor.update({
-                "data.details.notes.value": actor.data.data.details.notes.value + '<br>' + importErrorsMessage
+                "data.details.notes.value": actor.system.details.notes.value + '<br>' + importErrorsMessage
             })
         }
         if (options.showResultsDialog) {
@@ -923,7 +923,7 @@ async function importFromJSON(json, options) {
             }).render(true)
         }
     } else {
-        ui.notifications.info(`${actor.data.name} ${game.i18n.localize('UI.ImportResultsSuccess')}`)
+        ui.notifications.info(`${actor.name} ${game.i18n.localize('UI.ImportResultsSuccess')}`)
     }
 
 }
