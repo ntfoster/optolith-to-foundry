@@ -100,7 +100,7 @@ function parseSpells(data) {
         item.displayName = item.itemName = localise('Spells',spell[0])
         let type  = SPELL_MAP[spell[0]] ?? "spell"
         item.type = type
-        item.system = {
+        item.data = {
             talentValue: {
                 value: spell[1]
             }
@@ -510,17 +510,19 @@ async function getItem(item) {
 
 function addTradition(tradition, actor) {
     let traditionName = tradition.name.match(/Tradition \((.+)\)/)[1]
+    if (traditionName.startsWith("Guild Mage")) traditionName = "Guild Mage"
+    if (traditionName.startsWith("Gildenmagier")) traditionName = "Gildenmagier"
 
-    let regex = (game.i18n.lang == 'en')? /The primary attribute of \w+ Tradition is (\w+)\./ : /Leiteigenschaft \w+ Tradition ist (\w+)\./ 
+    let regex = (game.i18n.lang == 'en')? /(?:The primary attribute of \w+ Tradition|This Tradition’s primary attribute) is (\w+)/ : /Leiteigenschaft \w+ Tradition ist (\w+)\./ 
     let result = tradition.system.description.value.match(regex)
     if (result) {
+        
         for (let a in localeData['Attributes']) {
             if (localeData['Attributes'][a]['name'] == result[1]) {
                 var primaryAttribute = ATTRIBUTE_MAP[a]
                 if (TRADITION_MAP.hasOwnProperty(traditionName)) {
                     traditionName = TRADITION_MAP[traditionName]
                 }
-                console.warn(`Adding Tradition ${traditionName} with attribute: ${primaryAttribute}`)
 
                 if (tradition.system.category.value == 'clerical') {
                     actor.update({
