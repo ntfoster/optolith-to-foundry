@@ -1,33 +1,46 @@
 {
-    "name": "optolith-to-foundry",
-    "title": "Optolith to Foundry Importer",
-    "description": "A tool to import The Dark Eye/Das Schwarze Auge heroes created in Optolith (https://optolith.app/)",
-    "author": "ntfoster",
-    "version": "0.6.2",
-    "minimumCoreVersion": "0.7.9",
-    "compatibleCoreVersion": "9",
-    "system": "dsa5",
-    "esmodules": [
-        "import.js"
-    ],
-    "dependencies": [
-      {
-        "name": "dsa5",
-        "type": "system"
+  "id": "optolith-to-foundry",
+  "title": "Optolith to Foundry Importer",
+  "description": "A tool to import The Dark Eye/Das Schwarze Auge heroes created in Optolith (https://optolith.app/)",
+  "authors": [
+    {
+      "name": "Neil Foster",
+      "email": "ntfoster@gmail.com",
+      "discord": "GigaFuzz#7802"
+    }
+  ],
+  "version": "0.7.0",
+  "compatibility": {
+    "minimum": 10,
+    "verified": "10.285"
+  },
+  "system": "dsa5",
+  "esmodules": [
+      "import.js"
+  ],
+  "relationships": {
+    "systems": [{
+      "id": "dsa5",
+      "type": "system",
+      "mainfiest": "https://raw.githubusercontent.com/Plushtoast/dsa5-foundryVTT/foundry10/system.json",
+      "compatibility": {
+        "minimum": "4.0.0",
+        "verified": "4.0.7"
       }
-    ],
-    "languages": [
-        {
-          "lang": "en",
-          "name": "English",
-          "path": "lang/en.json"
-        },
-        {
-          "lang": "de",
-          "name": "English",
-          "path": "lang/de.json"
-        }
+    }]
+  },
+  "languages": [
+      {
+        "lang": "en",
+        "name": "English",
+        "path": "lang/en.json"
+      },
+      {
+        "lang": "de",
+        "name": "Deutsch",
+        "path": "lang/de.json"
+      }
 
-    ],
-    "url": "https://github.com/ntfoster/optolith-to-foundry"
-  }
+  ],
+  "url": "https://github.com/ntfoster/optolith-to-foundry"
+}
