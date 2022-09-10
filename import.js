@@ -392,11 +392,19 @@ async function parseBelongings(data) {
         let newItem = {}
         let itemID = item[1].template
         if (itemID) {
-            newItem.displayName = newItem.itemName = localise('Items',itemID)
+            if (!item[1].isTemplateLocked) {
+                console.warn(`custom item:  ${item[1].name}`)
+                newItem.custom = true
+                newItem.displayName = newItem.itemName = item[1].name
+                newItem.source = "Custom Item"
+            } else {
+                newItem.displayName = newItem.itemName = localise('Items',itemID)
+                newItem.source = getSource('Items',itemID)
+            }
+    
             if (!(newItem.type = ITEM_TYPE_MAP[item[1].gr])) {
                 newItem.type = "equipment"
             }
-            newItem.source = getSource('Items',itemID)
         } else {
             newItem.displayName = newItem.itemName = item[1].name
             newItem.source = "Custom Item"
