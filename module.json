@@ -22,7 +22,7 @@
     "systems": [{
       "id": "dsa5",
       "type": "system",
-      "mainfiest": "https://raw.githubusercontent.com/Plushtoast/dsa5-foundryVTT/foundry10/system.json",
+      "manifest": "https://raw.githubusercontent.com/Plushtoast/dsa5-foundryVTT/foundry10/system.json",
       "compatibility": {
         "minimum": "4.0.0",
         "verified": "4.0.7"
