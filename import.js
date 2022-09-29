@@ -614,7 +614,7 @@ async function addFromLibraryV2(actor, items, index, types) {
                 }
             }
             if (item.effect) {
-                newData.system.effect = item.effect
+                newData.system.effect.value = item.effect
             }
             await actor.createEmbeddedDocuments("Item",[newData])
 
