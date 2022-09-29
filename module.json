@@ -9,10 +9,10 @@
       "discord": "GigaFuzz#7802"
     }
   ],
-  "version": "0.7.0",
+  "version": "0.7.1",
   "compatibility": {
     "minimum": 10,
-    "verified": "10.285"
+    "verified": "10.286"
   },
   "system": "dsa5",
   "esmodules": [
@@ -25,7 +25,7 @@
       "manifest": "https://raw.githubusercontent.com/Plushtoast/dsa5-foundryVTT/foundry10/system.json",
       "compatibility": {
         "minimum": "4.0.0",
-        "verified": "4.0.7"
+        "verified": "4.1.6"
       }
     }]
   },
@@ -44,6 +44,6 @@
   ],
   "url": "https://github.com/ntfoster/optolith-to-foundry",
   "manifest": "https://github.com/ntfoster/optolith-to-foundry/releases/latest/download/module.json",
-  "download": "https://github.com/ntfoster/optolith-to-foundry/releases/latest/download/optolith-to-foundry-0.7.0.zip"
+  "download": "https://github.com/ntfoster/optolith-to-foundry/releases/latest/download/optolith-to-foundry-0.7.1.zip"
 
 }
