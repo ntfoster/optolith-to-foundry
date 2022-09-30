@@ -14,8 +14,9 @@
     "minimum": 10,
     "verified": "10.286"
   },
+  "system": "dsa5",
   "esmodules": [
-      "scripts/import.js"
+      "import.js"
   ],
   "relationships": {
     "systems": [{
@@ -43,6 +44,6 @@
   ],
   "url": "https://github.com/ntfoster/optolith-to-foundry",
   "manifest": "https://github.com/ntfoster/optolith-to-foundry/releases/latest/download/module.json",
-  "download": "https://github.com/ntfoster/optolith-to-foundry/releases/latest/download/optolith-to-foundry-0.7.1.zip",
-  "readme": "README.md"
+  "download": "https://github.com/ntfoster/optolith-to-foundry/releases/latest/download/optolith-to-foundry-0.7.1.zip"
+
 }
